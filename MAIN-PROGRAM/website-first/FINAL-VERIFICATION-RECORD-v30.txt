@@ -1,0 +1,11 @@
+Katha Vistaar v30 — Final Verification Record
+Release: KV30-P2-30W
+Direct predecessor: KV30-P2-30N
+Source Run 1: Backend 28/28 PASS; Website 166/166 PASS
+Source Run 2: Backend 28/28 PASS; Website 166/166 PASS
+Source Run 3: Backend 28/28 PASS; Website 166/166 PASS
+Persistence registry: PASS
+Backup snapshot: KV30-P2-30W-SNAPSHOT
+Master Admin Emergency Backup: KV30-P2-30W
+Production secrets: external/not bundled
+Physical Android/iOS device acceptance: PENDING

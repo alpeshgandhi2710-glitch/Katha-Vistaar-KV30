@@ -1,0 +1,20 @@
+{
+  "version": "30.0.0",
+  "customization": [
+    "font",
+    "font_size",
+    "spacing",
+    "theme",
+    "color",
+    "brightness",
+    "zoom"
+  ],
+  "follow_author": true,
+  "subscribe_author": true,
+  "stickers": [
+    "author",
+    "work",
+    "part"
+  ],
+  "author_also_reader": true
+}

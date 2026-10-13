@@ -1,0 +1,24 @@
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const path=require('node:path');
+const root=path.resolve(__dirname,'..');
+const dart=fs.readFileSync(path.join(root,'lib','main.dart'),'utf8');
+const tools=fs.readFileSync(path.join(root,'lib','mobile_tools.dart'),'utf8');
+const server=fs.readFileSync(path.join(root,'..','website-first','src','server.js'),'utf8');
+assert.match(dart,/class ReelStudioScreen extends StatefulWidget/);
+assert.match(dart,/api\.saveClip/);
+assert.match(dart,/api\.storyboard/);
+assert.match(dart,/api\.render/);
+assert.match(tools,/class KvReelApi/);
+assert.match(tools,/\/api\/reel\/projects/);
+assert.match(tools,/\/api\/reel\/clips/);
+assert.match(tools,/\/api\/media\/video\/render/);
+assert.match(server,/u\.pathname==='\/api\/reel\/projects'/);
+assert.match(server,/u\.pathname==='\/api\/reel\/clips'/);
+assert.equal((dart.match(/onTap:\s*\(\)\s*\{\s*\}/g)||[]).length,0);
+assert.equal((dart.match(/onPressed:\s*\(\)\s*\{\s*\}/g)||[]).length,0);
+assert.equal(/127\.0\.0\.1|localhost/.test(dart+tools),false);
+const locales=fs.readdirSync(path.join(root,'assets','locales')).filter(x=>x.endsWith('.json')&&x!=='registry.json');
+assert.equal(locales.length,23);
+for(const f of locales){const j=JSON.parse(fs.readFileSync(path.join(root,'assets','locales',f),'utf8'));assert.ok(Object.hasOwn(j.translations,'duration'),f);}
+console.log('R50-M9 Reel Studio parity: PASS');

@@ -1,0 +1,13 @@
+{
+  "rule_engine": true,
+  "prohibited_content": [
+    "explicit_sexual_content",
+    "targeted_abuse",
+    "spam",
+    "external_links"
+  ],
+  "uncertain_to_human_review": true,
+  "admin_override": true,
+  "master_admin_final_review": true,
+  "decision_audit": true
+}

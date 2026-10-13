@@ -1,0 +1,17 @@
+{
+  "version": "KV30-TTS-APPROVED-ASSET-SOURCES-v1",
+  "authority": "master_admin_only",
+  "policy": {
+    "externalInternetGateRequired": true,
+    "twoSidedFirewallRequired": true,
+    "httpsOnly": true,
+    "redirectsAllowed": false,
+    "sha256Required": true,
+    "licenseApprovalRequired": true,
+    "maxAssetBytes": 4294967296,
+    "timeoutMs": 120000,
+    "automaticExecution": false
+  },
+  "sources": [],
+  "note": "No source is approved until an actual immutable URL, verified SHA-256, license evidence and intended use are reviewed by Master Admin. Never invent checksums or mark unreviewed model assets approved."
+}

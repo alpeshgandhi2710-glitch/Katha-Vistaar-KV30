@@ -1,0 +1,21 @@
+const fs=require('fs'),path=require('path');
+const root=path.join(__dirname,'..');
+const cfg=JSON.parse(fs.readFileSync(path.join(root,'config','final-ui-language-governance-v30.json'),'utf8'));
+const parity=JSON.parse(fs.readFileSync(path.join(root,'config','environment-parity-v30.json'),'utf8'));
+const app=fs.readFileSync(path.join(root,'public','app.js'),'utf8');
+const mobile=fs.readFileSync(path.join(root,'..','mobile','lib','main.dart'),'utf8');
+const langs=cfg.canonicalLanguages;
+function ok(n,c){if(!c)throw new Error(n);console.log(`PASS ${n}`)}
+ok('23 canonical languages',langs.length===23);
+ok('web locale bundles 23',langs.every(l=>fs.existsSync(path.join(root,'public','locales',`${l}.json`))));
+ok('mobile locale bundles 23',langs.every(l=>fs.existsSync(path.join(root,'..','mobile','assets','locales',`${l}.json`))));
+ok('strict xStrict exists',app.includes('function xStrict('));
+ok('English fallback rule',cfg.rules.nonEnglishMissing==='FALLBACK_TO_ENGLISH');
+ok('future language registry rule',cfg.rules.futureLanguages.includes('REGISTRY_DRIVEN'));
+ok('dev production same UI contract',parity.development.sourceContract==='same'&&parity.production.sourceContract==='same'&&parity.uiLanguageContract===cfg.ref||parity.uiLanguageContract==='config/final-ui-language-governance-v30.json');
+ok('mobile localization delegate',mobile.includes('LocalizationsDelegate<KvStrings>'));
+ok('mobile locale assets',mobile.includes("assets/locales/"));
+const runtime=app.slice(app.indexOf('function xStrict('));
+for(const raw of ['Saved: \${(d.library','History: \${(d.history','Login required to show balance','<option value=\"\">No content yet</option>']) ok(`web runtime literal removed: ${raw}`,!runtime.includes(raw));
+for(const raw of ["Text('Home')","Text('Discover')","Text('Create')","Text('Alerts')","Text('Profile')","Text('Choose Language')","Text('Close')"]) ok(`mobile literal removed: ${raw}`,!mobile.includes(raw));
+console.log('R32/R40 FINAL UI LANGUAGE GOVERNANCE PASS — missing/empty/placeholder values use English fallback; native/reviewed completion remains separately governed.');

@@ -1,0 +1,8 @@
+{
+  "version": "30.0.0",
+  "paid_priority_support": true,
+  "creator_training_free": true,
+  "creator_academy": true,
+  "live_creator_sessions": true,
+  "recordings": true
+}

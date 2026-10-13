@@ -1,0 +1,46 @@
+{
+  "version": "REF-8.3.108",
+  "internal": {
+    "email": {
+      "transport": "smtp",
+      "hostEnv": "KV_INTERNAL_SMTP_EMAIL_HOST",
+      "portEnv": "KV_INTERNAL_SMTP_EMAIL_PORT",
+      "secureEnv": "KV_INTERNAL_SMTP_EMAIL_SECURE",
+      "starttlsEnv": "KV_INTERNAL_SMTP_EMAIL_STARTTLS",
+      "userEnv": "KV_INTERNAL_SMTP_EMAIL_USER",
+      "passwordEnv": "KV_INTERNAL_SMTP_EMAIL_PASSWORD",
+      "fromEnv": "KV_INTERNAL_SMTP_EMAIL_FROM"
+    },
+    "sms": {
+      "transport": "gateway",
+      "endpointEnv": "KV_INTERNAL_SMS_GATEWAY_ENDPOINT",
+      "apiKeyEnv": "KV_INTERNAL_SMS_GATEWAY_API_KEY"
+    }
+  },
+  "external": {
+    "email": {
+      "transportEnv": "KV_EMAIL_TRANSPORT",
+      "httpEndpointEnv": "KV_EMAIL_ENDPOINT",
+      "httpApiKeyEnv": "KV_EMAIL_API_KEY",
+      "smtpHostEnv": "KV_EXTERNAL_SMTP_EMAIL_HOST",
+      "smtpPortEnv": "KV_EXTERNAL_SMTP_EMAIL_PORT",
+      "smtpSecureEnv": "KV_EXTERNAL_SMTP_EMAIL_SECURE",
+      "smtpStarttlsEnv": "KV_EXTERNAL_SMTP_EMAIL_STARTTLS",
+      "smtpUserEnv": "KV_EXTERNAL_SMTP_EMAIL_USER",
+      "smtpPasswordEnv": "KV_EXTERNAL_SMTP_EMAIL_PASSWORD",
+      "smtpFromEnv": "KV_EXTERNAL_SMTP_EMAIL_FROM"
+    },
+    "sms": {
+      "transport": "gateway",
+      "endpointEnv": "KV_SMS_ENDPOINT",
+      "apiKeyEnv": "KV_SMS_API_KEY"
+    }
+  },
+  "autoFill": {
+    "internalTokenTtlSeconds": 180,
+    "singleUse": true,
+    "productionDemoOtpExposure": false,
+    "externalSmsUsesOsWebOtp": true,
+    "externalEmailUsesProviderOrDeviceIntegration": true
+  }
+}

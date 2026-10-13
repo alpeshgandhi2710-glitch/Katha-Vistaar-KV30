@@ -1,0 +1,7 @@
+{
+  "version": "30.0.0",
+  "android": "Google Play managed updates",
+  "ios": "App Store managed updates",
+  "web": "versioned deployment with compatibility gate",
+  "minimum_supported_version": "30.0.0"
+}

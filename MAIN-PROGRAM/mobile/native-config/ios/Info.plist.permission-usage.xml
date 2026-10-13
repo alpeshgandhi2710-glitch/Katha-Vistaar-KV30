@@ -1,0 +1,9 @@
+<!-- KV30 iOS permission usage strings. These are declared only for features that can request permission at runtime. -->
+<dict>
+  <key>NSCameraUsageDescription</key><string>Used only when you choose to capture or scan media.</string>
+  <key>NSMicrophoneUsageDescription</key><string>Used only when you choose to record voice or FM audio.</string>
+  <key>NSPhotoLibraryUsageDescription</key><string>Used only when you choose media from your photo library.</string>
+  <key>NSPhotoLibraryAddUsageDescription</key><string>Used only when you choose to save exported media.</string>
+  <key>NSLocationWhenInUseUsageDescription</key><string>Used only when a feature you start requires your location.</string>
+  <key>NSBluetoothAlwaysUsageDescription</key><string>Used only when you start a nearby-device feature.</string>
+</dict>

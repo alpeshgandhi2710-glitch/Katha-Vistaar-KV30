@@ -1,0 +1,17 @@
+{
+  "version": "30.0.0",
+  "enabled": true,
+  "coinBased": true,
+  "baseValueCoins": 5,
+  "adminCanChangeValue": true,
+  "readerToAuthorGift": true,
+  "cashRedemption": false,
+  "antiAbuse": [
+    "self_gift",
+    "negative_balance",
+    "mass_gifting",
+    "duplicate_reward",
+    "referral_abuse"
+  ],
+  "catalogCount": 20
+}

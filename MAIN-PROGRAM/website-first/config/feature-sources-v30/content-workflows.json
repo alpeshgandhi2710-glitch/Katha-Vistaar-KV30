@@ -1,0 +1,14 @@
+{
+  "states": [
+    "draft",
+    "scheduled",
+    "published",
+    "unpublished",
+    "archived",
+    "restored"
+  ],
+  "revision_history": true,
+  "rollback": true,
+  "author_copy_own_work_only": true,
+  "rights_matrix": true
+}

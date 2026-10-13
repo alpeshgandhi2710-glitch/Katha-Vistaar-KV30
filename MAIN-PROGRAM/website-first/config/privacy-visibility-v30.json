@@ -1,0 +1,28 @@
+{
+  "version": "30.0.0",
+  "ownerVisibility": "FULL",
+  "otherUserVisibility": "PUBLIC_MINIMUM",
+  "publicFields": [
+    "displayName",
+    "avatar",
+    "bio",
+    "role",
+    "followersCount",
+    "followingCount",
+    "publicWorksCount",
+    "verified"
+  ],
+  "neverPublic": [
+    "email",
+    "phone",
+    "address",
+    "payment",
+    "bank",
+    "royalty",
+    "KYC",
+    "security",
+    "MFA",
+    "privateAnalytics",
+    "privateNotifications"
+  ]
+}

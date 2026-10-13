@@ -1,0 +1,12 @@
+const fs=require('node:fs');
+const path=require('node:path');
+const assert=require('node:assert/strict');
+const root=path.resolve(__dirname,'..');
+const tools=fs.readFileSync(path.join(root,'lib','mobile_tools.dart'),'utf8');
+const main=fs.readFileSync(path.join(root,'lib','main.dart'),'utf8');
+assert.match(tools,/\/api\/subscriptions/);
+assert.match(tools,/\/api\/monetization\/catalog/);
+assert.match(tools,/purchaseSubscription/);
+assert.match(main,/api\.catalog\(\)/);
+assert.match(main,/api\.purchaseSubscription/);
+console.log('PASS mobile subscription purchase/state uses governed backend contracts');

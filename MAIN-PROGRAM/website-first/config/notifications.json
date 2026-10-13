@@ -1,0 +1,30 @@
+{
+  "version": "30.0.0",
+  "channels": [
+    "push",
+    "email",
+    "in_app"
+  ],
+  "per_category_user_control": true,
+  "quiet_hours": true,
+  "security_override": true,
+  "provider_unavailable": "feature_off_no_app_crash",
+  "categories": [
+    "new_part",
+    "author",
+    "follow",
+    "comment",
+    "reply",
+    "like",
+    "sticker",
+    "subscription",
+    "message",
+    "recommendation",
+    "offer",
+    "coin",
+    "payment",
+    "security",
+    "moderation",
+    "system"
+  ]
+}

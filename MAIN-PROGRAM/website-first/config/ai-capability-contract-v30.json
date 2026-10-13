@@ -1,0 +1,515 @@
+{
+  "version": "KV30-P2-30W-capability-v1",
+  "internalOnlyCore": true,
+  "externalRequired": false,
+  "languageContract": {
+    "count": 23,
+    "futureLanguagesAllowed": true
+  },
+  "ais": {
+    "ai_orchestrator": {
+      "tier": "L1",
+      "tools": [
+        "identity_check",
+        "permission_check",
+        "policy_check",
+        "memory_retrieval",
+        "specialist_route",
+        "quality_gate"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "languageSupport": "all_23_required",
+      "externalAllowed": false,
+      "productionChange": "human_approval_when_required"
+    },
+    "all_domain_master_intelligence_ai": {
+      "tier": "L1",
+      "tools": [
+        "cross_domain_plan",
+        "specialist_delegation",
+        "risk_escalation"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "languageSupport": "all_23_required",
+      "externalAllowed": false,
+      "productionChange": "human_approval_when_required"
+    },
+    "master_admin_ai": {
+      "tier": "L1",
+      "tools": [
+        "governance_review",
+        "risk_review",
+        "approval_advice"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "languageSupport": "all_23_required",
+      "externalAllowed": false,
+      "productionChange": "human_approval_when_required"
+    },
+    "designated_admin_ai": {
+      "tier": "L1",
+      "tools": [
+        "scoped_admin_review",
+        "ticket_triage"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "languageSupport": "all_23_required",
+      "externalAllowed": false,
+      "productionChange": "human_approval_when_required"
+    },
+    "admin_ai": {
+      "tier": "L1",
+      "tools": [
+        "admin_review",
+        "permission_scope_check"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "languageSupport": "all_23_required",
+      "externalAllowed": false,
+      "productionChange": "human_approval_when_required"
+    },
+    "story_ai": {
+      "tier": "L2",
+      "tools": [
+        "story_outline",
+        "continuity_check",
+        "rewrite"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "languageSupport": "all_23_required",
+      "externalAllowed": false,
+      "productionChange": "human_approval_when_required"
+    },
+    "character_ai": {
+      "tier": "L2",
+      "tools": [
+        "character_sheet",
+        "fact_check",
+        "relationship_check"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "languageSupport": "all_23_required",
+      "externalAllowed": false,
+      "productionChange": "human_approval_when_required"
+    },
+    "audio_ai": {
+      "tier": "L2",
+      "tools": [
+        "script_direction",
+        "voice_direction",
+        "audio_quality_plan"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "languageSupport": "all_23_required",
+      "externalAllowed": false,
+      "productionChange": "human_approval_when_required"
+    },
+    "comic_ai": {
+      "tier": "L2",
+      "tools": [
+        "panel_plan",
+        "dialogue_check",
+        "visual_continuity"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "languageSupport": "all_23_required",
+      "externalAllowed": false,
+      "productionChange": "human_approval_when_required"
+    },
+    "visual_ai": {
+      "tier": "L2",
+      "tools": [
+        "shot_plan",
+        "visual_prompt_plan",
+        "continuity_check"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "languageSupport": "all_23_required",
+      "externalAllowed": false,
+      "productionChange": "human_approval_when_required"
+    },
+    "quality_ai": {
+      "tier": "L2",
+      "tools": [
+        "consistency_check",
+        "regression_check",
+        "rights_policy_check"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "languageSupport": "all_23_required",
+      "externalAllowed": false,
+      "productionChange": "human_approval_when_required"
+    },
+    "research_ai": {
+      "tier": "L2",
+      "tools": [
+        "source_plan",
+        "evidence_synthesis",
+        "knowledge_proposal"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "languageSupport": "all_23_required",
+      "externalAllowed": false,
+      "productionChange": "human_approval_when_required"
+    },
+    "safety_policy_ai": {
+      "tier": "L2",
+      "tools": [
+        "privacy_check",
+        "copyright_check",
+        "policy_gate"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "languageSupport": "all_23_required",
+      "externalAllowed": false,
+      "productionChange": "human_approval_when_required"
+    },
+    "programmer_ai": {
+      "tier": "L2",
+      "tools": [
+        "static_analysis",
+        "runtime_analysis",
+        "test_plan",
+        "patch_proposal"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "languageSupport": "all_23_required",
+      "externalAllowed": false,
+      "productionChange": "human_approval_when_required"
+    },
+    "design_ai": {
+      "tier": "L2",
+      "tools": [
+        "responsive_review",
+        "accessibility_review",
+        "visual_regression"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "languageSupport": "all_23_required",
+      "externalAllowed": false,
+      "productionChange": "human_approval_when_required"
+    },
+    "creator_ai": {
+      "tier": "L2",
+      "tools": [
+        "creator_suggestion",
+        "rights_check",
+        "publication_check"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "languageSupport": "all_23_required",
+      "externalAllowed": false,
+      "productionChange": "human_approval_when_required"
+    },
+    "training_ai": {
+      "tier": "L2",
+      "tools": [
+        "curriculum",
+        "evaluation_plan",
+        "learning_candidate"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "languageSupport": "all_23_required",
+      "externalAllowed": false,
+      "productionChange": "human_approval_when_required"
+    },
+    "user_monitoring_ai": {
+      "tier": "L2",
+      "tools": [
+        "risk_assessment",
+        "abuse_signal_check"
+      ],
+      "memoryScopes": [
+        "user",
+        "knowledge"
+      ],
+      "languageSupport": "all_23_required",
+      "externalAllowed": false,
+      "productionChange": "human_approval_when_required"
+    },
+    "monitoring_ai": {
+      "tier": "L2",
+      "tools": [
+        "health_snapshot",
+        "policy_monitor"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "languageSupport": "all_23_required",
+      "externalAllowed": false,
+      "productionChange": "human_approval_when_required"
+    },
+    "damage_control_ai": {
+      "tier": "L2",
+      "tools": [
+        "incident_analysis",
+        "containment_plan",
+        "recovery_check"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "languageSupport": "all_23_required",
+      "externalAllowed": false,
+      "productionChange": "human_approval_when_required"
+    },
+    "account_management_ai": {
+      "tier": "L2",
+      "tools": [
+        "account_state_review",
+        "appeal_routing"
+      ],
+      "memoryScopes": [
+        "user",
+        "knowledge"
+      ],
+      "languageSupport": "all_23_required",
+      "externalAllowed": false,
+      "productionChange": "human_approval_when_required"
+    },
+    "security_ai": {
+      "tier": "L2",
+      "tools": [
+        "security_review",
+        "threat_check",
+        "secret_exposure_check"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "languageSupport": "all_23_required",
+      "externalAllowed": false,
+      "productionChange": "human_approval_when_required"
+    },
+    "anti_spam_malware_ai": {
+      "tier": "L2",
+      "tools": [
+        "spam_detection",
+        "malware_signal_check"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "languageSupport": "all_23_required",
+      "externalAllowed": false,
+      "productionChange": "human_approval_when_required"
+    },
+    "help_support_ai": {
+      "tier": "L2",
+      "tools": [
+        "help_resolution",
+        "ticket_routing"
+      ],
+      "memoryScopes": [
+        "user",
+        "knowledge"
+      ],
+      "languageSupport": "all_23_required",
+      "externalAllowed": false,
+      "productionChange": "human_approval_when_required"
+    },
+    "accounting_ai": {
+      "tier": "L2",
+      "tools": [
+        "ledger_check",
+        "reconciliation_plan"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "languageSupport": "all_23_required",
+      "externalAllowed": false,
+      "productionChange": "human_approval_when_required"
+    },
+    "engagement_ai": {
+      "tier": "L2",
+      "tools": [
+        "engagement_analysis"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "languageSupport": "all_23_required",
+      "externalAllowed": false,
+      "productionChange": "human_approval_when_required"
+    },
+    "analytics_ai": {
+      "tier": "L2",
+      "tools": [
+        "metric_analysis",
+        "data_quality_check"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "languageSupport": "all_23_required",
+      "externalAllowed": false,
+      "productionChange": "human_approval_when_required"
+    },
+    "reel_ai": {
+      "tier": "L2",
+      "tools": [
+        "reel_structure",
+        "duration_check",
+        "media_rights_check"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "languageSupport": "all_23_required",
+      "externalAllowed": false,
+      "productionChange": "human_approval_when_required"
+    },
+    "writing_ai": {
+      "tier": "L2",
+      "tools": [
+        "story_outline",
+        "continuity_check",
+        "rewrite"
+      ],
+      "memoryScopes": [
+        "project",
+        "knowledge",
+        "user"
+      ],
+      "languageSupport": "all_23_required",
+      "externalAllowed": false,
+      "productionChange": "human_approval_when_required"
+    },
+    "media_security_ai": {
+      "tier": "L2",
+      "tools": [
+        "security_scan",
+        "risk_assessment"
+      ],
+      "memoryScopes": [
+        "knowledge",
+        "asset_provenance"
+      ],
+      "languageSupport": "all_23_required",
+      "externalAllowed": false,
+      "productionChange": "human_approval_when_required"
+    },
+    "cyber_defense_ai": {
+      "tier": "L2",
+      "tools": [
+        "threat_analysis",
+        "risk_assessment"
+      ],
+      "memoryScopes": [
+        "knowledge",
+        "security_incidents"
+      ],
+      "languageSupport": "all_23_required",
+      "externalAllowed": false,
+      "productionChange": "master_admin_approval_required"
+    }
+  },
+  "internalModelRuntime": {
+    "requiredForNaturalLanguageGeneration": true,
+    "adapters": [
+      "ollama",
+      "llama.cpp",
+      "vllm-openai-compatible"
+    ],
+    "contractFallback": "allowed_when_local_runtime_unavailable",
+    "externalNotRequired": true
+  },
+  "modelWeights": "operator-managed-artifact",
+  "internalIntelligence": {
+    "engine": "ai-intelligence-engine",
+    "version": "KV30-P2-30W-internal-intelligence-v1",
+    "profilePerManagedAI": true,
+    "authorizedMemoryScopes": true,
+    "riskClassification": "fail_closed",
+    "selfReview": "local-model-review-and-revision-when-runtime-available",
+    "contractFallback": "governed_internal_handler",
+    "modelWeightsBundled": false,
+    "actualNaturalLanguageRequiresLocalModel": true
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "version": "30.1.0",
+  "kind": "royalty_payout",
+  "status": "approval_required",
+  "defaultRate": null,
+  "stateOverrides": {},
+  "stateCodeAliases": {
+    "MH": "MAHARASHTRA",
+    "GJ": "GUJARAT"
+  },
+  "zeroRateAllowed": true,
+  "resolverOrder": [
+    "creator_state",
+    "approved_royalty_payout_rate_override",
+    "approved_configured_default"
+  ],
+  "sourcePolicy": {
+    "governmentSourceAppliesToCustomerTaxOnlyByDefault": true,
+    "royaltyPayoutTaxRequiresSeparateApprovedTreatment": true,
+    "runtimeWebScraping": false,
+    "activationRequiresAdminApproval": true
+  }
+}

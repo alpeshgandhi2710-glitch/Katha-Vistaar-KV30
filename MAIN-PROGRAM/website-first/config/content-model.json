@@ -1,0 +1,19 @@
+{
+  "version": "30.0.0",
+  "entities": [
+    "work",
+    "part",
+    "episode",
+    "post",
+    "audio",
+    "comic",
+    "comic_page",
+    "comic_panel",
+    "asset",
+    "comment",
+    "message"
+  ],
+  "rights_granularity": true,
+  "revision_history": true,
+  "rollback": true
+}

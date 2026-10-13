@@ -1,0 +1,3 @@
+'use strict';
+const test=require('node:test');const assert=require('node:assert/strict');const tts=require('../../backend/src/services/ai-tts-runtime.js');
+test('R18 TTS rejects unsupported language instead of silently falling back to English',async()=>{assert.equal(tts.normalizeLanguage('gu'),'gu');assert.equal(tts.normalizeLanguage('en'),'en');assert.equal(tts.normalizeLanguage('xx'),null);const cap=tts.languageCapability('xx');assert.equal(cap.supported,false);const out=await tts.synthesize({text:'test',language:'xx',voice:'female_adult'});assert.equal(out.ok,false);assert.equal(out.reason,'unsupported_language');console.log('PASS REF-9.2.57.18-R18: TTS language fail-closed; no silent English fallback');});

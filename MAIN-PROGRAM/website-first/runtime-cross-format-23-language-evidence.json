@@ -1,0 +1,232 @@
+[
+  {
+    "lang": "en",
+    "status": 200,
+    "ok": true,
+    "sourceLanguage": "en",
+    "targetLanguage": "en",
+    "aiId": "audio_ai",
+    "externalUsed": false,
+    "approvalRequired": true
+  },
+  {
+    "lang": "as",
+    "status": 200,
+    "ok": true,
+    "sourceLanguage": "as",
+    "targetLanguage": "as",
+    "aiId": "audio_ai",
+    "externalUsed": false,
+    "approvalRequired": true
+  },
+  {
+    "lang": "bn",
+    "status": 200,
+    "ok": true,
+    "sourceLanguage": "bn",
+    "targetLanguage": "bn",
+    "aiId": "audio_ai",
+    "externalUsed": false,
+    "approvalRequired": true
+  },
+  {
+    "lang": "brx",
+    "status": 200,
+    "ok": true,
+    "sourceLanguage": "brx",
+    "targetLanguage": "brx",
+    "aiId": "audio_ai",
+    "externalUsed": false,
+    "approvalRequired": true
+  },
+  {
+    "lang": "doi",
+    "status": 200,
+    "ok": true,
+    "sourceLanguage": "doi",
+    "targetLanguage": "doi",
+    "aiId": "audio_ai",
+    "externalUsed": false,
+    "approvalRequired": true
+  },
+  {
+    "lang": "gu",
+    "status": 200,
+    "ok": true,
+    "sourceLanguage": "gu",
+    "targetLanguage": "gu",
+    "aiId": "audio_ai",
+    "externalUsed": false,
+    "approvalRequired": true
+  },
+  {
+    "lang": "hi",
+    "status": 200,
+    "ok": true,
+    "sourceLanguage": "hi",
+    "targetLanguage": "hi",
+    "aiId": "audio_ai",
+    "externalUsed": false,
+    "approvalRequired": true
+  },
+  {
+    "lang": "kn",
+    "status": 200,
+    "ok": true,
+    "sourceLanguage": "kn",
+    "targetLanguage": "kn",
+    "aiId": "audio_ai",
+    "externalUsed": false,
+    "approvalRequired": true
+  },
+  {
+    "lang": "ks",
+    "status": 200,
+    "ok": true,
+    "sourceLanguage": "ks",
+    "targetLanguage": "ks",
+    "aiId": "audio_ai",
+    "externalUsed": false,
+    "approvalRequired": true
+  },
+  {
+    "lang": "kok",
+    "status": 200,
+    "ok": true,
+    "sourceLanguage": "kok",
+    "targetLanguage": "kok",
+    "aiId": "audio_ai",
+    "externalUsed": false,
+    "approvalRequired": true
+  },
+  {
+    "lang": "mai",
+    "status": 200,
+    "ok": true,
+    "sourceLanguage": "mai",
+    "targetLanguage": "mai",
+    "aiId": "audio_ai",
+    "externalUsed": false,
+    "approvalRequired": true
+  },
+  {
+    "lang": "ml",
+    "status": 200,
+    "ok": true,
+    "sourceLanguage": "ml",
+    "targetLanguage": "ml",
+    "aiId": "audio_ai",
+    "externalUsed": false,
+    "approvalRequired": true
+  },
+  {
+    "lang": "mni",
+    "status": 200,
+    "ok": true,
+    "sourceLanguage": "mni",
+    "targetLanguage": "mni",
+    "aiId": "audio_ai",
+    "externalUsed": false,
+    "approvalRequired": true
+  },
+  {
+    "lang": "mr",
+    "status": 200,
+    "ok": true,
+    "sourceLanguage": "mr",
+    "targetLanguage": "mr",
+    "aiId": "audio_ai",
+    "externalUsed": false,
+    "approvalRequired": true
+  },
+  {
+    "lang": "ne",
+    "status": 200,
+    "ok": true,
+    "sourceLanguage": "ne",
+    "targetLanguage": "ne",
+    "aiId": "audio_ai",
+    "externalUsed": false,
+    "approvalRequired": true
+  },
+  {
+    "lang": "or",
+    "status": 200,
+    "ok": true,
+    "sourceLanguage": "or",
+    "targetLanguage": "or",
+    "aiId": "audio_ai",
+    "externalUsed": false,
+    "approvalRequired": true
+  },
+  {
+    "lang": "pa",
+    "status": 200,
+    "ok": true,
+    "sourceLanguage": "pa",
+    "targetLanguage": "pa",
+    "aiId": "audio_ai",
+    "externalUsed": false,
+    "approvalRequired": true
+  },
+  {
+    "lang": "sa",
+    "status": 200,
+    "ok": true,
+    "sourceLanguage": "sa",
+    "targetLanguage": "sa",
+    "aiId": "audio_ai",
+    "externalUsed": false,
+    "approvalRequired": true
+  },
+  {
+    "lang": "sat",
+    "status": 200,
+    "ok": true,
+    "sourceLanguage": "sat",
+    "targetLanguage": "sat",
+    "aiId": "audio_ai",
+    "externalUsed": false,
+    "approvalRequired": true
+  },
+  {
+    "lang": "sd",
+    "status": 200,
+    "ok": true,
+    "sourceLanguage": "sd",
+    "targetLanguage": "sd",
+    "aiId": "audio_ai",
+    "externalUsed": false,
+    "approvalRequired": true
+  },
+  {
+    "lang": "ta",
+    "status": 200,
+    "ok": true,
+    "sourceLanguage": "ta",
+    "targetLanguage": "ta",
+    "aiId": "audio_ai",
+    "externalUsed": false,
+    "approvalRequired": true
+  },
+  {
+    "lang": "te",
+    "status": 200,
+    "ok": true,
+    "sourceLanguage": "te",
+    "targetLanguage": "te",
+    "aiId": "audio_ai",
+    "externalUsed": false,
+    "approvalRequired": true
+  },
+  {
+    "lang": "ur",
+    "status": 200,
+    "ok": true,
+    "sourceLanguage": "ur",
+    "targetLanguage": "ur",
+    "aiId": "audio_ai",
+    "externalUsed": false,
+    "approvalRequired": true
+  }
+]

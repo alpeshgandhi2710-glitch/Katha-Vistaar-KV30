@@ -1,0 +1,63 @@
+{
+  "version": "KV30-P2-30W-internal-runtime-v1",
+  "enabled": true,
+  "provider": "auto",
+  "baseUrl": "http://127.0.0.1:8080",
+  "openAIBaseUrl": "http://127.0.0.1:8080",
+  "model": "qwen3:32b",
+  "recommendedModels": {
+    "balanced": "Qwen3-32B",
+    "highCapability": "Qwen3-235B-A22B",
+    "localGGUFQuantization": "Q4_K_M"
+  },
+  "temperature": 0.6,
+  "topP": 0.95,
+  "maxTokens": 4096,
+  "timeoutMs": 60000,
+  "healthTimeoutMs": 5000,
+  "noCloudDependency": true,
+  "externalLayerIsSeparate": true,
+  "futureModelAdaptersAllowed": true,
+  "runtimeContract": {
+    "localOnlyByDefault": true,
+    "supportedAdapters": [
+      "ollama",
+      "llama.cpp",
+      "vllm-openai-compatible"
+    ],
+    "healthCheckRequired": true,
+    "modelMustBeLoadedForNaturalLanguageGeneration": true,
+    "contractFallbackAllowed": true
+  },
+  "modelAliases": {
+    "ollama": [
+      "qwen3:32b",
+      "Qwen3-32B-GGUF:Q4_K_M",
+      "hf.co/Qwen/Qwen3-32B-GGUF:Q4_K_M"
+    ],
+    "openai": [
+      "Qwen/Qwen3-32B-GGUF:Q4_K_M",
+      "ggml-org/Qwen3-32B-GGUF:Q4_K_M",
+      "qwen3:32b"
+    ]
+  },
+  "modelArtifact": {
+    "repo": "Qwen/Qwen3-32B-GGUF",
+    "quantization": "Q4_K_M",
+    "file": "Qwen3-32B-Q4_K_M.gguf",
+    "sha256": "efd971561896866f0e910cce52761ca77b1b138090c7f15fe284676d57d1f689",
+    "sizeBytes": 21260000000,
+    "weightsExternalToAppZip": true
+  },
+  "remoteOpenAIUrl": "",
+  "remoteModel": "Qwen/Qwen3-32B",
+  "remoteCredentialEnv": "KV_INTERNAL_REMOTE_API_KEY",
+  "remoteRuntimeContract": {
+    "explicitOptInProvider": "remote-openai-compatible",
+    "healthPath": "/v1/models",
+    "generationPath": "/v1/chat/completions",
+    "exactModelRequired": true,
+    "credentialOutsideArtifact": true,
+    "fallbackAllowedWhenUnavailable": true
+  }
+}

@@ -1,0 +1,13 @@
+const fs=require('fs'),path=require('path'),assert=require('assert');
+const root=path.resolve(__dirname,'..');
+const cfg=JSON.parse(fs.readFileSync(path.join(root,'config','studio-runtime-capabilities-v30.json'),'utf8'));
+assert.equal(cfg.advancedProductionBoundary.dependency,'none');
+assert.equal(cfg.advancedProductionBoundary.stitchReconciled,true);
+assert.equal(cfg.advancedProductionBoundary.renderTargets.reelVertical,'2160x3840@60fps');
+assert.equal(cfg.advancedProductionBoundary.renderTargets.reelLandscape,'3840x2160@60fps');
+assert.deepEqual(cfg.advancedProductionBoundary.audioProduction.sampleRatesHz,[44100,48000,96000]);
+assert.equal(cfg.advancedProductionBoundary.comicPrint.rip,'Ghostscript availability is detected; RIP certification requires validated output and print-profile evidence');
+const s=fs.readFileSync(path.join(root,'src','server.js'),'utf8');
+assert(s.includes("ffprobeAvailable")&&s.includes("h264EncoderAvailable")&&s.includes("loudnormFilterAvailable"));
+assert(s.includes("stitchDependency:false"));
+console.log('REF-8.3.155.9.2.11 advanced Stitch runtime boundary PASS');

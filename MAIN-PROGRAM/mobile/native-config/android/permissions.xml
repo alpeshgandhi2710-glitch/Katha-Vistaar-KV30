@@ -1,0 +1,16 @@
+<!-- KV30 native Android permission policy. Apply to the real AndroidManifest.xml when the Flutter host is generated. -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+  <!-- Network is app-required; no runtime prompt. -->
+  <uses-permission android:name="android.permission.INTERNET" />
+  <!-- Runtime/user-approved only when the corresponding feature is invoked. -->
+  <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+  <uses-permission android:name="android.permission.CAMERA" />
+  <uses-permission android:name="android.permission.RECORD_AUDIO" />
+  <!-- Location is feature-gated; declare only if a release enables a location feature. -->
+  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+  <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+  <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+  <!-- Android 13+ media picker should be preferred; broad storage permissions are intentionally absent. -->
+  <!-- READ_MEDIA_IMAGES/VIDEO are not required when the system Photo Picker is used. -->
+</manifest>

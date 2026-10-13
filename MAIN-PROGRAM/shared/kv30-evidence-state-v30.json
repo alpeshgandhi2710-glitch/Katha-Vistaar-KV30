@@ -1,0 +1,23 @@
+{
+  "version": "REF-9.2.57.7-evidence-state-v3",
+  "rule": "configuration_is_not_live_commissioning",
+  "classes": {
+    "INTERNAL_VERIFIED": "Executable/configuration/runtime evidence may be certified when actually tested.",
+    "PASS-EXTERNAL": "Use only for a genuinely required external provider/service boundary after its real commissioning/test evidence; do not use when no external runtime service is required.",
+    "PASS-ASSET": "Use for physical device, OS/hardware, signing material or supplied production asset acceptance; it is an acceptance class, not a substitute for claiming an unperformed device test.",
+    "PASS-HUMAN": "Use for final human/device/store acceptance activities that cannot be truthfully automated; human acceptance is supplemental and never substitutes for automated regression.",
+    "PASS-USER-TESTING": "Legacy alias retained only for historical evidence; new records must use PASS-HUMAN."
+  },
+  "current": {
+    "internal_ai_ecosystem": "IMPLEMENTED_AND_TESTABLE",
+    "external_runtime_services": "NOT_REQUIRED_FOR_CORE_STORY_ACCEPTANCE",
+    "external_provider_commissioning": "SEPARATE_EVIDENCE_GATE",
+    "asset_acceptance": "PASS-ASSET ACCEPTANCE CLASS FOR PHYSICAL_DEVICE_SIGNING_AND_STORE_ASSETS",
+    "human_acceptance": "PASS-HUMAN ACCEPTANCE CLASS FOR IRREDUCIBLY_HUMAN_STEPS",
+    "user_testing": "FINAL_PROJECT_COMPLETION_GATE"
+  },
+  "prohibited": "Do not invent endpoints, credentials, provider activation, asset evidence or human-testing PASS. Do not leave a dependency as an undefined OPEN blocker when it has been correctly classified as PASS-EXTERNAL, PASS-ASSET or PASS-HUMAN; record the exact execution evidence or acceptance protocol instead.",
+  "runtime_parity": "FRESH_LOCAL_FOUR_RUNTIME_SMOKE",
+  "ai_ecosystem": "IMPLEMENTED_AND_TESTABLE",
+  "external_service_minimization": "Internal-first; external runtime services are optional and disabled unless explicitly commissioned by Master Admin. CI infrastructure is build/test infrastructure, not a product runtime dependency."
+}

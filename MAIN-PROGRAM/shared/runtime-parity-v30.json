@@ -1,0 +1,143 @@
+{
+  "version": "REF-9.2.57.8-runtime-parity-v2",
+  "purpose": "One governed code/capability contract must operate in Development and Production; only runtime state, secrets, test hooks and external provider activation differ.",
+  "runtimes": [
+    {
+      "id": "development_internal",
+      "port": 8787,
+      "externalAI": false,
+      "testHooks": true
+    },
+    {
+      "id": "development_external",
+      "port": 8788,
+      "externalAI": true,
+      "testHooks": true
+    },
+    {
+      "id": "production_internal",
+      "port": 9797,
+      "externalAI": false,
+      "testHooks": false
+    },
+    {
+      "id": "production_external",
+      "port": 9798,
+      "externalAI": true,
+      "testHooks": false
+    }
+  ],
+  "sharedRequiredRoutes": [
+    "/api/health",
+    "/api/master-admin/login",
+    "/api/register",
+    "/api/login"
+  ],
+  "developmentOnlyRoutes": [
+    "/api/test/expire-otp",
+    "/api/test/clear-data"
+  ],
+  "productionRule": "/api/test/* is not available in production and must return 404.",
+  "isolation": [
+    "users",
+    "sessions",
+    "adminSessions",
+    "otpStore",
+    "audit",
+    "runtime data",
+    "secrets"
+  ],
+  "aiAliases": {
+    "report_ai": [
+      "analytics_ai"
+    ],
+    "account_ai": [
+      "account_management_ai",
+      "help_support_ai",
+      "accounting_ai"
+    ]
+  },
+  "purchaseFlow": [
+    "purchase_request",
+    "purchase_order",
+    "purchase_invoice",
+    "procurement_payment",
+    "reconciliation"
+  ],
+  "otpFlow": [
+    "registration",
+    "resend",
+    "login",
+    "forgot_password",
+    "reset_password",
+    "payment"
+  ],
+  "authority": "human_master_admin",
+  "studioFormats": {
+    "story": {
+      "studio": "Story Studio",
+      "manual": true,
+      "ai_assist": true,
+      "ai_generate": true,
+      "draft": true,
+      "autosave": true,
+      "revision": true,
+      "media": true,
+      "preview": true,
+      "publish": true,
+      "moderation": true,
+      "rights": true,
+      "analytics": true
+    },
+    "comic": {
+      "studio": "Comic Studio",
+      "manual": true,
+      "ai_assist": true,
+      "ai_generate": true,
+      "pages": true,
+      "panels": true,
+      "assets": true,
+      "preview": true,
+      "revision": true,
+      "publish": true,
+      "moderation": true,
+      "rights": true
+    },
+    "audio": {
+      "studio": "FM Studio",
+      "manual": true,
+      "ai_assist": true,
+      "ai_generate": true,
+      "episodes": true,
+      "segments": true,
+      "narration": true,
+      "mix": true,
+      "preview": true,
+      "tts": true,
+      "revision": true,
+      "publish": true,
+      "moderation": true,
+      "rights": true
+    },
+    "reel": {
+      "studio": "Reel Studio",
+      "manual": true,
+      "ai_assist": true,
+      "ai_generate": true,
+      "clips": true,
+      "timeline": true,
+      "preview": true,
+      "render": true,
+      "revision": true,
+      "publish": true,
+      "moderation": true,
+      "rights": true
+    }
+  },
+  "studioSharedRules": [
+    "The same governed studio source and API contracts are used by Development and Production.",
+    "Environment changes may alter secrets, external provider activation and test hooks only; they may not remove a format capability.",
+    "Every format follows UI/control -> API -> authorization -> business logic -> persistence -> audit -> publish/recovery -> test.",
+    "External media/render providers remain optional; internal capability is authoritative and unavailable external services must not create false success."
+  ]
+}

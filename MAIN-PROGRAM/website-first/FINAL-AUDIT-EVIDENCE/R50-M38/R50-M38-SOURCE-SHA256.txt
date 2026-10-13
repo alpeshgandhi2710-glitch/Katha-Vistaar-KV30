@@ -1,0 +1,6 @@
+97b331b3ad6daf9fa0ed72e1c72a5149b3f5fd6a90956d6e1bb20da452cc8e9b  src/server.js
+b5b994175eb6c158b99018dea9e12914095a72fef880500ea12c92894db3544b  scripts/run-all-tests.js
+8ff79325e91fffb180f86ec22e61c8b2ba4dce64e475f83946a57cb42abbcb9f  tests/r50-m11-master-admin-cross-platform.test.js
+61cb7b8f35f56088ff79b647b43a5e8e74c3eeb1d98704165ea46541d5d8f423  config/version.json
+7ac0014ad0feca343b39aec99b0bd2ea2e53d5340dbac8543ad9c75b0ae34791  config/release-registry-v30.json
+f4bdec6d06633e3eb15a2bf5ef0a940096dedd94e09ef9c38009a8b17c1ff95d  RELEASE-MANIFEST-v30.json

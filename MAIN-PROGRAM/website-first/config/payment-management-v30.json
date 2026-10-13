@@ -1,0 +1,20 @@
+{
+  "version": "30.0.0",
+  "methods": [
+    "bank_account",
+    "atm_debit_card",
+    "credit_card",
+    "upi",
+    "wallet",
+    "mobile_banking",
+    "net_banking",
+    "qr"
+  ],
+  "externalGatewayOptional": true,
+  "internalTestLedger": true,
+  "profitExcludesComplimentaryEntitlements": true,
+  "licenseGateRequiredForLivePayments": true,
+  "idempotencyRequired": true,
+  "ledger": "append_only_test_or_live",
+  "reconciliation": "required"
+}

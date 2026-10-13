@@ -1,0 +1,224 @@
+{
+  "version": "KV30-P2-30W",
+  "principle": "Every managed AI has executable smoke/contract benchmarks; domain fixtures may expand without changing authority rules.",
+  "minimumCasesPerAI": 1,
+  "cases": {
+    "ai_orchestrator": [
+      {
+        "task": "contract-smoke",
+        "input": "Perform the primary ai_orchestrator function safely.",
+        "expectedDomain": "ai_orchestrator"
+      }
+    ],
+    "all_domain_master_intelligence_ai": [
+      {
+        "task": "contract-smoke",
+        "input": "Perform the primary all_domain_master_intelligence_ai function safely.",
+        "expectedDomain": "all_domain_master_intelligence"
+      }
+    ],
+    "master_admin_ai": [
+      {
+        "task": "contract-smoke",
+        "input": "Perform the primary master_admin_ai function safely.",
+        "expectedDomain": "master_admin"
+      }
+    ],
+    "designated_admin_ai": [
+      {
+        "task": "contract-smoke",
+        "input": "Perform the primary designated_admin_ai function safely.",
+        "expectedDomain": "designated_admin"
+      }
+    ],
+    "admin_ai": [
+      {
+        "task": "contract-smoke",
+        "input": "Perform the primary admin_ai function safely.",
+        "expectedDomain": "admin"
+      }
+    ],
+    "story_ai": [
+      {
+        "task": "contract-smoke",
+        "input": "Perform the primary story_ai function safely.",
+        "expectedDomain": "story"
+      }
+    ],
+    "character_ai": [
+      {
+        "task": "contract-smoke",
+        "input": "Perform the primary character_ai function safely.",
+        "expectedDomain": "character"
+      }
+    ],
+    "audio_ai": [
+      {
+        "task": "contract-smoke",
+        "input": "Perform the primary audio_ai function safely.",
+        "expectedDomain": "audio"
+      }
+    ],
+    "comic_ai": [
+      {
+        "task": "contract-smoke",
+        "input": "Perform the primary comic_ai function safely.",
+        "expectedDomain": "comic"
+      }
+    ],
+    "visual_ai": [
+      {
+        "task": "contract-smoke",
+        "input": "Perform the primary visual_ai function safely.",
+        "expectedDomain": "visual"
+      }
+    ],
+    "quality_ai": [
+      {
+        "task": "contract-smoke",
+        "input": "Perform the primary quality_ai function safely.",
+        "expectedDomain": "quality"
+      }
+    ],
+    "research_ai": [
+      {
+        "task": "contract-smoke",
+        "input": "Perform the primary research_ai function safely.",
+        "expectedDomain": "research"
+      }
+    ],
+    "safety_policy_ai": [
+      {
+        "task": "contract-smoke",
+        "input": "Perform the primary safety_policy_ai function safely.",
+        "expectedDomain": "safety_policy"
+      }
+    ],
+    "programmer_ai": [
+      {
+        "task": "contract-smoke",
+        "input": "Perform the primary programmer_ai function safely.",
+        "expectedDomain": "programmer"
+      }
+    ],
+    "design_ai": [
+      {
+        "task": "contract-smoke",
+        "input": "Perform the primary design_ai function safely.",
+        "expectedDomain": "design"
+      }
+    ],
+    "creator_ai": [
+      {
+        "task": "contract-smoke",
+        "input": "Perform the primary creator_ai function safely.",
+        "expectedDomain": "creator"
+      }
+    ],
+    "training_ai": [
+      {
+        "task": "contract-smoke",
+        "input": "Perform the primary training_ai function safely.",
+        "expectedDomain": "training"
+      }
+    ],
+    "user_monitoring_ai": [
+      {
+        "task": "contract-smoke",
+        "input": "Perform the primary user_monitoring_ai function safely.",
+        "expectedDomain": "user_monitoring"
+      }
+    ],
+    "monitoring_ai": [
+      {
+        "task": "contract-smoke",
+        "input": "Perform the primary monitoring_ai function safely.",
+        "expectedDomain": "monitoring"
+      }
+    ],
+    "damage_control_ai": [
+      {
+        "task": "contract-smoke",
+        "input": "Perform the primary damage_control_ai function safely.",
+        "expectedDomain": "damage_control"
+      }
+    ],
+    "account_management_ai": [
+      {
+        "task": "contract-smoke",
+        "input": "Perform the primary account_management_ai function safely.",
+        "expectedDomain": "account_management"
+      }
+    ],
+    "security_ai": [
+      {
+        "task": "contract-smoke",
+        "input": "Perform the primary security_ai function safely.",
+        "expectedDomain": "security"
+      }
+    ],
+    "anti_spam_malware_ai": [
+      {
+        "task": "contract-smoke",
+        "input": "Perform the primary anti_spam_malware_ai function safely.",
+        "expectedDomain": "anti_spam_malware"
+      }
+    ],
+    "help_support_ai": [
+      {
+        "task": "contract-smoke",
+        "input": "Perform the primary help_support_ai function safely.",
+        "expectedDomain": "help_support"
+      }
+    ],
+    "accounting_ai": [
+      {
+        "task": "contract-smoke",
+        "input": "Perform the primary accounting_ai function safely.",
+        "expectedDomain": "accounting"
+      }
+    ],
+    "engagement_ai": [
+      {
+        "task": "contract-smoke",
+        "input": "Perform the primary engagement_ai function safely.",
+        "expectedDomain": "engagement"
+      }
+    ],
+    "analytics_ai": [
+      {
+        "task": "contract-smoke",
+        "input": "Perform the primary analytics_ai function safely.",
+        "expectedDomain": "analytics"
+      }
+    ],
+    "reel_ai": [
+      {
+        "task": "contract-smoke",
+        "input": "Perform the primary reel_ai function safely.",
+        "expectedDomain": "reel"
+      }
+    ],
+    "writing_ai": [
+      {
+        "task": "contract-smoke",
+        "input": "Perform the primary writing_ai function safely.",
+        "expectedDomain": "writing"
+      }
+    ],
+    "media_security_ai": [
+      {
+        "task": "contract-smoke",
+        "input": "Perform the primary media_security_ai function safely.",
+        "expectedDomain": "media_security"
+      }
+    ],
+    "cyber_defense_ai": [
+      {
+        "task": "contract-smoke",
+        "input": "Perform the primary cyber_defense_ai function safely.",
+        "expectedDomain": "cyber_defense"
+      }
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "version": "30.0.0",
+  "enabled": true,
+  "internalMetadata": true,
+  "externalStreamingOptional": true,
+  "contentHierarchy": [
+    "title",
+    "season",
+    "episode",
+    "clip"
+  ],
+  "rights": [
+    "read",
+    "publish",
+    "translate",
+    "audio",
+    "comic",
+    "video",
+    "film_ott",
+    "commercial_license"
+  ],
+  "requiredExternalServices": [
+    "object_storage",
+    "cdn"
+  ],
+  "fallback": "metadata_only_and_origin_delivery",
+  "masterAdminControls": [
+    "publish",
+    "unpublish",
+    "rights",
+    "territory",
+    "window",
+    "provider"
+  ]
+}

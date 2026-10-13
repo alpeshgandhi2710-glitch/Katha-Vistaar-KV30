@@ -1,0 +1,2435 @@
+{
+  "version": "REF-9.2.57.18-R22",
+  "sourceOfTruth": [
+    "config/external-gate-configuration-profile-v30.json",
+    "config/service-registry-v30.json",
+    "config/external-provider-slots-v30.json",
+    "config/internal-ai-gate-configuration-v30.json"
+  ],
+  "counts": {
+    "nonAiPrimaryGates": 23,
+    "aiSpecialistPrimaryGates": 77,
+    "canonicalPrimaryGates": 100,
+    "projectMemoryGovernanceGates": 3,
+    "totalGovernedGateRecords": 103,
+    "externalServiceClasses": 24,
+    "alternateProviderGates": 72,
+    "alternateFormula": "24×3"
+  },
+  "semantics": {
+    "internalLayer": "always_on",
+    "externalLayer": "master_admin_controlled",
+    "externalDefault": "OFF",
+    "firewall": "mandatory inbound+outbound before external call",
+    "failure": "external failure or OFF never disables internal layer",
+    "adapterRule": "same service contract may share a compatible generic adapter; different service contracts require distinct gate/configuration boundaries and a distinct adapter contract boundary; natural_sounds uses its dedicated adapter."
+  },
+  "nonAiPrimaryGates": [
+    {
+      "gate": "service_gate_email",
+      "service": "email",
+      "function": "email_notifications",
+      "endpointEnv": "KV_EMAIL_ENDPOINT",
+      "credentialEnv": "KV_EMAIL_API_KEY",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "fallback": "in_app_only"
+    },
+    {
+      "gate": "service_gate_sms",
+      "service": "sms",
+      "function": "sms_notifications",
+      "endpointEnv": "KV_SMS_ENDPOINT",
+      "credentialEnv": "KV_SMS_API_KEY",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "fallback": "in_app_only"
+    },
+    {
+      "gate": "service_gate_voice_otp",
+      "service": "voice_otp",
+      "function": "otp_verification",
+      "endpointEnv": "KV_SMS_ENDPOINT",
+      "credentialEnv": "KV_SMS_API_KEY",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "fallback": "internal_fallback"
+    },
+    {
+      "gate": "service_gate_push",
+      "service": "push",
+      "function": "push_notifications",
+      "endpointEnv": "KV_PUSH_ENDPOINT",
+      "credentialEnv": "KV_PUSH_API_KEY",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "fallback": "in_app_only"
+    },
+    {
+      "gate": "service_gate_storage",
+      "service": "storage",
+      "function": "local_media_storage",
+      "endpointEnv": null,
+      "credentialEnv": null,
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "fallback": "internal_fallback"
+    },
+    {
+      "gate": "service_gate_ai_moderation",
+      "service": "ai_moderation",
+      "function": "advanced_ai_moderation",
+      "endpointEnv": "KV_AI_MODERATION_ENDPOINT",
+      "credentialEnv": "KV_MODERATION_API_KEY",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "fallback": "internal_moderation"
+    },
+    {
+      "gate": "service_gate_payments",
+      "service": "payments",
+      "function": "payments",
+      "endpointEnv": "KV_PAYMENTS_ENDPOINT",
+      "credentialEnv": "KV_PAYMENT_SECRET",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "fallback": "feature_unavailable"
+    },
+    {
+      "gate": "service_gate_payouts",
+      "service": "payouts",
+      "function": "royalty_payouts",
+      "endpointEnv": "KV_PAYOUTS_ENDPOINT",
+      "credentialEnv": "KV_PAYOUT_API_KEY",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "fallback": "ledger_only"
+    },
+    {
+      "gate": "service_gate_google_play",
+      "service": "google_play",
+      "function": "google_play_purchase_validation",
+      "endpointEnv": "KV_GOOGLE_PLAY_ENDPOINT",
+      "credentialEnv": "KV_GOOGLE_PLAY_API_KEY",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "fallback": "internal_fallback"
+    },
+    {
+      "gate": "service_gate_apple_store",
+      "service": "apple_store",
+      "function": "apple_store_purchase_validation",
+      "endpointEnv": "KV_APPLE_STORE_ENDPOINT",
+      "credentialEnv": "KV_APPLE_STORE_API_KEY",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "fallback": "internal_fallback"
+    },
+    {
+      "gate": "service_gate_ads",
+      "service": "ads",
+      "function": "ad_network",
+      "endpointEnv": "KV_ADS_ENDPOINT",
+      "credentialEnv": "KV_AD_API_KEY",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "fallback": "no_ads"
+    },
+    {
+      "gate": "service_gate_stt",
+      "service": "stt",
+      "function": "voice_ai_input",
+      "endpointEnv": "KV_STT_ENDPOINT",
+      "credentialEnv": "KV_STT_API_KEY",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "fallback": "text_input"
+    },
+    {
+      "gate": "service_gate_tts",
+      "service": "tts",
+      "function": "voice_ai_output",
+      "endpointEnv": "KV_TTS_ENDPOINT",
+      "credentialEnv": "KV_TTS_API_KEY",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "fallback": "text_output"
+    },
+    {
+      "gate": "service_gate_whatsapp",
+      "service": "whatsapp",
+      "function": "whatsapp_ticket_updates",
+      "endpointEnv": "KV_WHATSAPP_ENDPOINT",
+      "credentialEnv": "KV_WHATSAPP_API_KEY",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "fallback": "email_or_in_app"
+    },
+    {
+      "gate": "service_gate_object_storage",
+      "service": "object_storage",
+      "function": "large_file_storage",
+      "endpointEnv": "KV_OBJECT_STORAGE_ENDPOINT",
+      "credentialEnv": "KV_STORAGE_KEY",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "fallback": "local_storage_with_limits"
+    },
+    {
+      "gate": "service_gate_cdn",
+      "service": "cdn",
+      "function": "cdn_delivery",
+      "endpointEnv": "KV_CDN_ENDPOINT",
+      "credentialEnv": "KV_CDN_API_KEY",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "fallback": "origin_delivery"
+    },
+    {
+      "gate": "service_gate_virus_scanner",
+      "service": "virus_scanner",
+      "function": "advanced_file_scanning",
+      "endpointEnv": "KV_VIRUS_SCANNER_ENDPOINT",
+      "credentialEnv": "KV_VIRUS_SCANNER_API_KEY",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "fallback": "local_extension_size_signature_checks"
+    },
+    {
+      "gate": "service_gate_reserved_01",
+      "service": "internet_access",
+      "function": "research_web_access",
+      "endpointEnv": "KV_INTERNET_ENDPOINT",
+      "credentialEnv": "KV_INTERNET_API_KEY",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "fallback": "internal_knowledge_only"
+    },
+    {
+      "gate": "service_gate_reserved_02",
+      "service": "network_server",
+      "function": "network_server_access",
+      "endpointEnv": "KV_NETWORK_ENDPOINT",
+      "credentialEnv": "KV_NETWORK_API_KEY",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "fallback": "local_server_only"
+    },
+    {
+      "gate": "service_gate_reserved_03",
+      "service": "reel_media",
+      "function": "reel_rendering",
+      "endpointEnv": "KV_REEL_MEDIA_ENDPOINT",
+      "credentialEnv": "KV_REEL_MEDIA_API_KEY",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "fallback": "internal_ffmpeg_render"
+    },
+    {
+      "gate": "service_gate_reserved_04",
+      "service": "audio_processing",
+      "function": "advanced_audio_processing",
+      "endpointEnv": "KV_AUDIO_ENDPOINT",
+      "credentialEnv": "KV_AUDIO_API_KEY",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "fallback": "internal_ffmpeg_audio"
+    },
+    {
+      "gate": "service_gate_reserved_05",
+      "service": "translation",
+      "function": "translation_fallback",
+      "endpointEnv": "KV_TRANSLATION_ENDPOINT",
+      "credentialEnv": "KV_TRANSLATION_API_KEY",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "fallback": "internal_ai_translation"
+    },
+    {
+      "gate": "service_gate_natural_sounds",
+      "service": "natural_sounds",
+      "function": "natural_sound_library",
+      "endpointEnv": "KV_NATURAL_SOUNDS_ENDPOINT",
+      "credentialEnv": "KV_NATURAL_SOUNDS_API_KEY",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "fallback": "internal_catalog",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "inboundFirewall": true,
+      "outboundFirewall": true,
+      "adapter": "natural-sound-provider-adapter"
+    }
+  ],
+  "aiSpecialistPrimaryGates": [
+    {
+      "gate": "gate_01",
+      "task": "training_assistance",
+      "aiRole": "training_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "sarvam-105b",
+      "reuseKey": "training_text",
+      "priority": "P3",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_02",
+      "task": "language_layer",
+      "aiRole": "training_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "sarvam-translate:v1",
+      "reuseKey": "language_translation",
+      "priority": "P3",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_03",
+      "task": "speech_to_text",
+      "aiRole": "audio_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "saaras:v3",
+      "reuseKey": "audio_stt",
+      "priority": "P2",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_04",
+      "task": "text_to_speech",
+      "aiRole": "audio_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "ai4bharat/indic-parler-tts",
+      "reuseKey": "audio_tts",
+      "priority": "P2",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_05",
+      "task": "coding",
+      "aiRole": "programmer_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+      "reuseKey": "programming",
+      "priority": "P3",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_06",
+      "task": "vision_design",
+      "aiRole": "design_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "black-forest-labs/FLUX.1-dev",
+      "reuseKey": "design_visual",
+      "priority": "P2",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_07",
+      "task": "long_form_story",
+      "aiRole": "story_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+      "reuseKey": "story_text",
+      "priority": "P3",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_08",
+      "task": "image_generation_editing",
+      "aiRole": "comic_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "black-forest-labs/FLUX.1-dev",
+      "reuseKey": "comic_image",
+      "priority": "P2",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_09",
+      "task": "comic_specialist",
+      "aiRole": "comic_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "black-forest-labs/FLUX.1-dev",
+      "reuseKey": "comic_image",
+      "priority": "P2",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_10",
+      "task": "video_understanding_generation",
+      "aiRole": "reel_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "Wan-AI/Wan2.2-TI2V-5B",
+      "reuseKey": "reel_video",
+      "priority": "P2",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_11",
+      "task": "fm_specialist",
+      "aiRole": "fm_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "sarvam-105b",
+      "reuseKey": "fm_audio",
+      "priority": "P2",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_12",
+      "task": "defensive_cybersecurity_analysis",
+      "aiRole": "cyber_defense_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+      "reuseKey": "cyber_defensive",
+      "priority": "P1",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_13",
+      "task": "ai_orchestrator_specialist_lane_13",
+      "aiRole": "ai_orchestrator",
+      "provider": "INTERNAL_ONLY",
+      "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+      "reuseKey": "orchestration",
+      "priority": "P3",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_14",
+      "task": "all_domain_master_intelligence_ai_specialist_lane_14",
+      "aiRole": "all_domain_master_intelligence_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+      "reuseKey": "cross_domain",
+      "priority": "P3",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_15",
+      "task": "master_admin_ai_specialist_lane_15",
+      "aiRole": "master_admin_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "INTERNAL_ONLY",
+      "reuseKey": "privileged_internal_only",
+      "priority": "P0-INTERNAL-ONLY",
+      "mode": "internal_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_16",
+      "task": "designated_admin_ai_specialist_lane_16",
+      "aiRole": "designated_admin_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "INTERNAL_ONLY",
+      "reuseKey": "privileged_internal_only",
+      "priority": "P0-INTERNAL-ONLY",
+      "mode": "internal_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_17",
+      "task": "admin_ai_specialist_lane_17",
+      "aiRole": "admin_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+      "reuseKey": "admin_sanitized_text",
+      "priority": "P1",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_18",
+      "task": "story_ai_specialist_lane_18",
+      "aiRole": "story_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+      "reuseKey": "story_text",
+      "priority": "P3",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_19",
+      "task": "character_ai_specialist_lane_19",
+      "aiRole": "character_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+      "reuseKey": "character_text",
+      "priority": "P3",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_20",
+      "task": "audio_ai_specialist_lane_20",
+      "aiRole": "audio_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "saaras:v3",
+      "reuseKey": "audio_multilingual",
+      "priority": "P2",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_21",
+      "task": "comic_ai_specialist_lane_21",
+      "aiRole": "comic_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "black-forest-labs/FLUX.1-dev",
+      "reuseKey": "comic_image",
+      "priority": "P2",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_22",
+      "task": "visual_ai_specialist_lane_22",
+      "aiRole": "visual_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "Qwen/Qwen3-VL-32B-Instruct",
+      "reuseKey": "visual_understanding",
+      "priority": "P3",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_23",
+      "task": "quality_ai_specialist_lane_23",
+      "aiRole": "quality_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+      "reuseKey": "quality_review",
+      "priority": "P3",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_24",
+      "task": "research_ai_specialist_lane_24",
+      "aiRole": "research_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+      "reuseKey": "research_text",
+      "priority": "P3",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_25",
+      "task": "safety_policy_ai_specialist_lane_25",
+      "aiRole": "safety_policy_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "INTERNAL_ONLY",
+      "reuseKey": "privileged_internal_only",
+      "priority": "P0-INTERNAL-ONLY",
+      "mode": "internal_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_26",
+      "task": "programmer_ai_specialist_lane_26",
+      "aiRole": "programmer_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+      "reuseKey": "programming",
+      "priority": "P3",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_27",
+      "task": "design_ai_specialist_lane_27",
+      "aiRole": "design_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "black-forest-labs/FLUX.1-dev",
+      "reuseKey": "design_visual",
+      "priority": "P3",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_28",
+      "task": "creator_ai_specialist_lane_28",
+      "aiRole": "creator_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+      "reuseKey": "creator_multimodal",
+      "priority": "P3",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_29",
+      "task": "training_ai_specialist_lane_29",
+      "aiRole": "training_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "sarvam-105b",
+      "reuseKey": "training_text",
+      "priority": "P3",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_30",
+      "task": "user_monitoring_ai_specialist_lane_30",
+      "aiRole": "user_monitoring_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+      "reuseKey": "user_monitoring_sanitized",
+      "priority": "P1",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_31",
+      "task": "monitoring_ai_specialist_lane_31",
+      "aiRole": "monitoring_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+      "reuseKey": "monitoring_sanitized",
+      "priority": "P1",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_32",
+      "task": "damage_control_ai_specialist_lane_32",
+      "aiRole": "damage_control_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+      "reuseKey": "damage_control_analysis",
+      "priority": "P1",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_33",
+      "task": "account_management_ai_specialist_lane_33",
+      "aiRole": "account_management_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+      "reuseKey": "account_generic_help",
+      "priority": "P3",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_34",
+      "task": "security_ai_specialist_lane_34",
+      "aiRole": "security_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "INTERNAL_ONLY",
+      "reuseKey": "privileged_internal_only",
+      "priority": "P0-INTERNAL-ONLY",
+      "mode": "internal_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_35",
+      "task": "anti_spam_malware_ai_specialist_lane_35",
+      "aiRole": "anti_spam_malware_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+      "reuseKey": "security_classifier",
+      "priority": "P3",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_36",
+      "task": "help_support_ai_specialist_lane_36",
+      "aiRole": "help_support_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+      "reuseKey": "help_support_public",
+      "priority": "P3",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_37",
+      "task": "accounting_ai_specialist_lane_37",
+      "aiRole": "accounting_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+      "reuseKey": "accounting_sanitized",
+      "priority": "P1",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_38",
+      "task": "engagement_ai_specialist_lane_38",
+      "aiRole": "engagement_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+      "reuseKey": "engagement_copy",
+      "priority": "P3",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_39",
+      "task": "planning_ai_specialist_lane_39",
+      "aiRole": "all_domain_master_intelligence_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+      "reuseKey": "planning",
+      "priority": "P3",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_40",
+      "task": "analytics_ai_specialist_lane_40",
+      "aiRole": "analytics_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+      "reuseKey": "analytics_sanitized",
+      "priority": "P3",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_41",
+      "task": "reel_ai_specialist_lane_41",
+      "aiRole": "reel_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "Wan-AI/Wan2.2-TI2V-5B",
+      "reuseKey": "reel_video",
+      "priority": "P2",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_42",
+      "task": "fm_ai_specialist_lane_42",
+      "aiRole": "fm_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "sarvam-105b",
+      "reuseKey": "fm_audio",
+      "priority": "P2",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_43",
+      "task": "cyber_defense_ai_specialist_lane_43",
+      "aiRole": "cyber_defense_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+      "reuseKey": "cyber_defensive",
+      "priority": "P1",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_44",
+      "task": "ai_orchestrator_specialist_lane_44",
+      "aiRole": "ai_orchestrator",
+      "provider": "INTERNAL_ONLY",
+      "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+      "reuseKey": "orchestration",
+      "priority": "P3",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_45",
+      "task": "all_domain_master_intelligence_ai_specialist_lane_45",
+      "aiRole": "all_domain_master_intelligence_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+      "reuseKey": "cross_domain",
+      "priority": "P3",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_46",
+      "task": "master_admin_ai_specialist_lane_46",
+      "aiRole": "master_admin_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "INTERNAL_ONLY",
+      "reuseKey": "privileged_internal_only",
+      "priority": "P0-INTERNAL-ONLY",
+      "mode": "internal_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_47",
+      "task": "designated_admin_ai_specialist_lane_47",
+      "aiRole": "designated_admin_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "INTERNAL_ONLY",
+      "reuseKey": "privileged_internal_only",
+      "priority": "P0-INTERNAL-ONLY",
+      "mode": "internal_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_48",
+      "task": "admin_ai_specialist_lane_48",
+      "aiRole": "admin_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+      "reuseKey": "admin_sanitized_text",
+      "priority": "P1",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_49",
+      "task": "story_ai_specialist_lane_49",
+      "aiRole": "story_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+      "reuseKey": "story_text",
+      "priority": "P3",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_50",
+      "task": "character_ai_specialist_lane_50",
+      "aiRole": "character_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+      "reuseKey": "character_text",
+      "priority": "P3",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_51",
+      "task": "audio_ai_specialist_lane_51",
+      "aiRole": "audio_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "saaras:v3",
+      "reuseKey": "audio_multilingual",
+      "priority": "P2",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_52",
+      "task": "comic_ai_specialist_lane_52",
+      "aiRole": "comic_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "black-forest-labs/FLUX.1-dev",
+      "reuseKey": "comic_image",
+      "priority": "P2",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_53",
+      "task": "visual_ai_specialist_lane_53",
+      "aiRole": "visual_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "Qwen/Qwen3-VL-32B-Instruct",
+      "reuseKey": "visual_understanding",
+      "priority": "P3",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_54",
+      "task": "quality_ai_specialist_lane_54",
+      "aiRole": "quality_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+      "reuseKey": "quality_review",
+      "priority": "P3",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_55",
+      "task": "research_ai_specialist_lane_55",
+      "aiRole": "research_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+      "reuseKey": "research_text",
+      "priority": "P3",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_56",
+      "task": "safety_policy_ai_specialist_lane_56",
+      "aiRole": "safety_policy_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "INTERNAL_ONLY",
+      "reuseKey": "privileged_internal_only",
+      "priority": "P0-INTERNAL-ONLY",
+      "mode": "internal_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_57",
+      "task": "programmer_ai_specialist_lane_57",
+      "aiRole": "programmer_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+      "reuseKey": "programming",
+      "priority": "P3",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_58",
+      "task": "design_ai_specialist_lane_58",
+      "aiRole": "design_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "black-forest-labs/FLUX.1-dev",
+      "reuseKey": "design_visual",
+      "priority": "P3",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_59",
+      "task": "creator_ai_specialist_lane_59",
+      "aiRole": "creator_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+      "reuseKey": "creator_multimodal",
+      "priority": "P3",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_60",
+      "task": "training_ai_specialist_lane_60",
+      "aiRole": "training_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "sarvam-105b",
+      "reuseKey": "training_text",
+      "priority": "P3",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_61",
+      "task": "user_monitoring_ai_specialist_lane_61",
+      "aiRole": "user_monitoring_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+      "reuseKey": "user_monitoring_sanitized",
+      "priority": "P1",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_62",
+      "task": "monitoring_ai_specialist_lane_62",
+      "aiRole": "monitoring_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+      "reuseKey": "monitoring_sanitized",
+      "priority": "P1",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_63",
+      "task": "damage_control_ai_specialist_lane_63",
+      "aiRole": "damage_control_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+      "reuseKey": "damage_control_analysis",
+      "priority": "P1",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_64",
+      "task": "account_management_ai_specialist_lane_64",
+      "aiRole": "account_management_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+      "reuseKey": "account_generic_help",
+      "priority": "P3",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_65",
+      "task": "security_ai_specialist_lane_65",
+      "aiRole": "security_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "INTERNAL_ONLY",
+      "reuseKey": "privileged_internal_only",
+      "priority": "P0-INTERNAL-ONLY",
+      "mode": "internal_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_66",
+      "task": "anti_spam_malware_ai_specialist_lane_66",
+      "aiRole": "anti_spam_malware_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+      "reuseKey": "security_classifier",
+      "priority": "P3",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_67",
+      "task": "help_support_ai_specialist_lane_67",
+      "aiRole": "help_support_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+      "reuseKey": "help_support_public",
+      "priority": "P3",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_68",
+      "task": "accounting_ai_specialist_lane_68",
+      "aiRole": "accounting_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+      "reuseKey": "accounting_sanitized",
+      "priority": "P1",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_69",
+      "task": "engagement_ai_specialist_lane_69",
+      "aiRole": "engagement_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+      "reuseKey": "engagement_copy",
+      "priority": "P3",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_70",
+      "task": "planning_ai_specialist_lane_70",
+      "aiRole": "all_domain_master_intelligence_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+      "reuseKey": "planning",
+      "priority": "P3",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_71",
+      "task": "analytics_ai_specialist_lane_71",
+      "aiRole": "analytics_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+      "reuseKey": "analytics_sanitized",
+      "priority": "P3",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_72",
+      "task": "reel_ai_specialist_lane_72",
+      "aiRole": "reel_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "Wan-AI/Wan2.2-TI2V-5B",
+      "reuseKey": "reel_video",
+      "priority": "P2",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_73",
+      "task": "fm_ai_specialist_lane_73",
+      "aiRole": "fm_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "sarvam-105b",
+      "reuseKey": "fm_audio",
+      "priority": "P2",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_74",
+      "task": "cyber_defense_ai_specialist_lane_74",
+      "aiRole": "cyber_defense_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+      "reuseKey": "cyber_defensive",
+      "priority": "P1",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_75",
+      "task": "ai_orchestrator_specialist_lane_75",
+      "aiRole": "ai_orchestrator",
+      "provider": "INTERNAL_ONLY",
+      "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+      "reuseKey": "orchestration",
+      "priority": "P3",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_76",
+      "task": "writing_specialist",
+      "aiRole": "writing_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+      "reuseKey": "writing_text",
+      "priority": "P3",
+      "mode": "advisory_only",
+      "enabled": false
+    },
+    {
+      "gate": "gate_77",
+      "task": "media_security_specialist",
+      "aiRole": "media_security_ai",
+      "provider": "INTERNAL_ONLY",
+      "model": "INTERNAL_ONLY",
+      "reuseKey": "media_security_internal",
+      "priority": "P1",
+      "mode": "internal_only",
+      "enabled": false
+    }
+  ],
+  "projectMemoryGovernanceGates": [
+    {
+      "id": "service_gate_tts_memory_export",
+      "enabled": false,
+      "approvedBySwitch": false,
+      "requiresExternalLayer": true,
+      "target": "project_memory_export",
+      "required": true,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true
+    },
+    {
+      "id": "service_gate_tts_memory_ingest",
+      "enabled": false,
+      "approvedBySwitch": false,
+      "requiresExternalLayer": true,
+      "target": "project_memory_ingest",
+      "required": true,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true
+    },
+    {
+      "id": "service_gate_tts_memory_promotion",
+      "enabled": false,
+      "approvedBySwitch": false,
+      "requiresExternalLayer": true,
+      "target": "project_memory_promotion",
+      "required": true,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true
+    }
+  ],
+  "providerAlternateGates": [
+    {
+      "gate": "service_gate_email_alt_01",
+      "service": "email",
+      "function": "email_alternate_provider_1",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "email_provider_01",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_email_alt_02",
+      "service": "email",
+      "function": "email_alternate_provider_2",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "email_provider_02",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_email_alt_03",
+      "service": "email",
+      "function": "email_alternate_provider_3",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "email_provider_03",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_sms_alt_01",
+      "service": "sms",
+      "function": "sms_alternate_provider_1",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "sms_provider_01",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_sms_alt_02",
+      "service": "sms",
+      "function": "sms_alternate_provider_2",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "sms_provider_02",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_sms_alt_03",
+      "service": "sms",
+      "function": "sms_alternate_provider_3",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "sms_provider_03",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_voice_otp_alt_01",
+      "service": "voice_otp",
+      "function": "voice_otp_alternate_provider_1",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "voice_otp_provider_01",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_voice_otp_alt_02",
+      "service": "voice_otp",
+      "function": "voice_otp_alternate_provider_2",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "voice_otp_provider_02",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_voice_otp_alt_03",
+      "service": "voice_otp",
+      "function": "voice_otp_alternate_provider_3",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "voice_otp_provider_03",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_push_alt_01",
+      "service": "push",
+      "function": "push_alternate_provider_1",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "push_provider_01",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_push_alt_02",
+      "service": "push",
+      "function": "push_alternate_provider_2",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "push_provider_02",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_push_alt_03",
+      "service": "push",
+      "function": "push_alternate_provider_3",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "push_provider_03",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_storage_alt_01",
+      "service": "storage",
+      "function": "storage_alternate_provider_1",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "storage_provider_01",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_storage_alt_02",
+      "service": "storage",
+      "function": "storage_alternate_provider_2",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "storage_provider_02",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_storage_alt_03",
+      "service": "storage",
+      "function": "storage_alternate_provider_3",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "storage_provider_03",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_ai_moderation_alt_01",
+      "service": "ai_moderation",
+      "function": "ai_moderation_alternate_provider_1",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "ai_moderation_provider_01",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_ai_moderation_alt_02",
+      "service": "ai_moderation",
+      "function": "ai_moderation_alternate_provider_2",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "ai_moderation_provider_02",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_ai_moderation_alt_03",
+      "service": "ai_moderation",
+      "function": "ai_moderation_alternate_provider_3",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "ai_moderation_provider_03",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_payments_alt_01",
+      "service": "payments",
+      "function": "payments_alternate_provider_1",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "payments_provider_01",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_payments_alt_02",
+      "service": "payments",
+      "function": "payments_alternate_provider_2",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "payments_provider_02",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_payments_alt_03",
+      "service": "payments",
+      "function": "payments_alternate_provider_3",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "payments_provider_03",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_payouts_alt_01",
+      "service": "payouts",
+      "function": "payouts_alternate_provider_1",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "payouts_provider_01",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_payouts_alt_02",
+      "service": "payouts",
+      "function": "payouts_alternate_provider_2",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "payouts_provider_02",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_payouts_alt_03",
+      "service": "payouts",
+      "function": "payouts_alternate_provider_3",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "payouts_provider_03",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_google_play_alt_01",
+      "service": "google_play",
+      "function": "google_play_alternate_provider_1",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "google_play_provider_01",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_google_play_alt_02",
+      "service": "google_play",
+      "function": "google_play_alternate_provider_2",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "google_play_provider_02",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_google_play_alt_03",
+      "service": "google_play",
+      "function": "google_play_alternate_provider_3",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "google_play_provider_03",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_apple_store_alt_01",
+      "service": "apple_store",
+      "function": "apple_store_alternate_provider_1",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "apple_store_provider_01",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_apple_store_alt_02",
+      "service": "apple_store",
+      "function": "apple_store_alternate_provider_2",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "apple_store_provider_02",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_apple_store_alt_03",
+      "service": "apple_store",
+      "function": "apple_store_alternate_provider_3",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "apple_store_provider_03",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_ads_alt_01",
+      "service": "ads",
+      "function": "ads_alternate_provider_1",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "ads_provider_01",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_ads_alt_02",
+      "service": "ads",
+      "function": "ads_alternate_provider_2",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "ads_provider_02",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_ads_alt_03",
+      "service": "ads",
+      "function": "ads_alternate_provider_3",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "ads_provider_03",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_stt_alt_01",
+      "service": "stt",
+      "function": "stt_alternate_provider_1",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "stt_provider_01",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_stt_alt_02",
+      "service": "stt",
+      "function": "stt_alternate_provider_2",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "stt_provider_02",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_stt_alt_03",
+      "service": "stt",
+      "function": "stt_alternate_provider_3",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "stt_provider_03",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_tts_alt_01",
+      "service": "tts",
+      "function": "tts_alternate_provider_1",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "tts_provider_01",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_tts_alt_02",
+      "service": "tts",
+      "function": "tts_alternate_provider_2",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "tts_provider_02",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_tts_alt_03",
+      "service": "tts",
+      "function": "tts_alternate_provider_3",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "tts_provider_03",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_whatsapp_alt_01",
+      "service": "whatsapp",
+      "function": "whatsapp_alternate_provider_1",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "whatsapp_provider_01",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_whatsapp_alt_02",
+      "service": "whatsapp",
+      "function": "whatsapp_alternate_provider_2",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "whatsapp_provider_02",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_whatsapp_alt_03",
+      "service": "whatsapp",
+      "function": "whatsapp_alternate_provider_3",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "whatsapp_provider_03",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "gate_75_alt_01",
+      "service": "external_ai",
+      "function": "external_ai_alternate_provider_1",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "external_ai_provider_01",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "gate_75_alt_02",
+      "service": "external_ai",
+      "function": "external_ai_alternate_provider_2",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "external_ai_provider_02",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "gate_75_alt_03",
+      "service": "external_ai",
+      "function": "external_ai_alternate_provider_3",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "external_ai_provider_03",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_object_storage_alt_01",
+      "service": "object_storage",
+      "function": "object_storage_alternate_provider_1",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "object_storage_provider_01",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_object_storage_alt_02",
+      "service": "object_storage",
+      "function": "object_storage_alternate_provider_2",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "object_storage_provider_02",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_object_storage_alt_03",
+      "service": "object_storage",
+      "function": "object_storage_alternate_provider_3",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "object_storage_provider_03",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_cdn_alt_01",
+      "service": "cdn",
+      "function": "cdn_alternate_provider_1",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "cdn_provider_01",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_cdn_alt_02",
+      "service": "cdn",
+      "function": "cdn_alternate_provider_2",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "cdn_provider_02",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_cdn_alt_03",
+      "service": "cdn",
+      "function": "cdn_alternate_provider_3",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "cdn_provider_03",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_virus_scanner_alt_01",
+      "service": "virus_scanner",
+      "function": "virus_scanner_alternate_provider_1",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "virus_scanner_provider_01",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_virus_scanner_alt_02",
+      "service": "virus_scanner",
+      "function": "virus_scanner_alternate_provider_2",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "virus_scanner_provider_02",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_virus_scanner_alt_03",
+      "service": "virus_scanner",
+      "function": "virus_scanner_alternate_provider_3",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "virus_scanner_provider_03",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_reserved_01_alt_01",
+      "service": "internet_access",
+      "function": "internet_access_alternate_provider_1",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "internet_access_provider_01",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_reserved_01_alt_02",
+      "service": "internet_access",
+      "function": "internet_access_alternate_provider_2",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "internet_access_provider_02",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_reserved_01_alt_03",
+      "service": "internet_access",
+      "function": "internet_access_alternate_provider_3",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "internet_access_provider_03",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_reserved_02_alt_01",
+      "service": "network_server",
+      "function": "network_server_alternate_provider_1",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "network_server_provider_01",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_reserved_02_alt_02",
+      "service": "network_server",
+      "function": "network_server_alternate_provider_2",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "network_server_provider_02",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_reserved_02_alt_03",
+      "service": "network_server",
+      "function": "network_server_alternate_provider_3",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "network_server_provider_03",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_reserved_03_alt_01",
+      "service": "reel_media",
+      "function": "reel_media_alternate_provider_1",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "reel_media_provider_01",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_reserved_03_alt_02",
+      "service": "reel_media",
+      "function": "reel_media_alternate_provider_2",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "reel_media_provider_02",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_reserved_03_alt_03",
+      "service": "reel_media",
+      "function": "reel_media_alternate_provider_3",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "reel_media_provider_03",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_reserved_04_alt_01",
+      "service": "audio_processing",
+      "function": "audio_processing_alternate_provider_1",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "audio_processing_provider_01",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_reserved_04_alt_02",
+      "service": "audio_processing",
+      "function": "audio_processing_alternate_provider_2",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "audio_processing_provider_02",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_reserved_04_alt_03",
+      "service": "audio_processing",
+      "function": "audio_processing_alternate_provider_3",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "audio_processing_provider_03",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_reserved_05_alt_01",
+      "service": "translation",
+      "function": "translation_alternate_provider_1",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "translation_provider_01",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_reserved_05_alt_02",
+      "service": "translation",
+      "function": "translation_alternate_provider_2",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "translation_provider_02",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_reserved_05_alt_03",
+      "service": "translation",
+      "function": "translation_alternate_provider_3",
+      "enabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "defaultEnabled": false,
+      "providerSlotId": "translation_provider_03",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required"
+    },
+    {
+      "gate": "service_gate_natural_sounds_alt_01",
+      "service": "natural_sounds",
+      "providerSlotId": "natural_sounds_provider_01",
+      "enabled": false,
+      "firewallRequired": true,
+      "externalLayer": "master_admin_controlled",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required",
+      "internalLayer": "always_on",
+      "defaultEnabled": false
+    },
+    {
+      "gate": "service_gate_natural_sounds_alt_02",
+      "service": "natural_sounds",
+      "providerSlotId": "natural_sounds_provider_02",
+      "enabled": false,
+      "firewallRequired": true,
+      "externalLayer": "master_admin_controlled",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required",
+      "internalLayer": "always_on",
+      "defaultEnabled": false
+    },
+    {
+      "gate": "service_gate_natural_sounds_alt_03",
+      "service": "natural_sounds",
+      "providerSlotId": "natural_sounds_provider_03",
+      "enabled": false,
+      "firewallRequired": true,
+      "externalLayer": "master_admin_controlled",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "languageSupport": "all_23_required",
+      "internalLayer": "always_on",
+      "defaultEnabled": false
+    }
+  ],
+  "providerServiceClasses": [
+    "ads",
+    "ai_moderation",
+    "apple_store",
+    "audio_processing",
+    "cdn",
+    "email",
+    "external_ai",
+    "google_play",
+    "internet_access",
+    "natural_sounds",
+    "network_server",
+    "object_storage",
+    "payments",
+    "payouts",
+    "push",
+    "reel_media",
+    "sms",
+    "storage",
+    "stt",
+    "translation",
+    "tts",
+    "virus_scanner",
+    "voice_otp",
+    "whatsapp"
+  ],
+  "masterAdminControl": {
+    "endpoint": "/api/admin/services/toggle",
+    "role": "master_admin",
+    "permission": "services.manage",
+    "healthBeforeEnable": true,
+    "auditRequired": true
+  },
+  "environmentParity": {
+    "development": "same governed source/config contract; dev secrets/activation separate",
+    "production": "same governed source/config contract; prod secrets/activation separate",
+    "noSourceFork": true
+  }
+}

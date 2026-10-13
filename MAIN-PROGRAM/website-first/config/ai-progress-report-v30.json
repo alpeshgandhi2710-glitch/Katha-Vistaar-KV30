@@ -1,0 +1,26 @@
+{
+  "version": "REF-9.2.57.18-R18",
+  "internalAI": "user_monitoring_ai",
+  "reportTypes": [
+    "reader_progress",
+    "author_progress",
+    "creator_progress"
+  ],
+  "privacy": "user_scoped",
+  "no_demographic_inference": true,
+  "signals": [
+    "reading_time",
+    "completion",
+    "resume",
+    "created_works",
+    "edits",
+    "revisions",
+    "media_usage",
+    "ai_assistance",
+    "voice_to_write",
+    "translation",
+    "publishing",
+    "engagement"
+  ],
+  "profileVisibility": "private_to_user_by_default"
+}

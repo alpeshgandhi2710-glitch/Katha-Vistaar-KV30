@@ -1,0 +1,18 @@
+'use strict';
+const assert=require('node:assert/strict');
+const fs=require('node:fs'),path=require('node:path');
+const root=path.resolve(__dirname,'..');
+const cfg=JSON.parse(fs.readFileSync(path.join(root,'config/payment-recovery-protocol-v30.json'),'utf8'));
+const m=require(path.join(root,'services/payment-settlement-manager.js'));
+const src=fs.readFileSync(path.join(root,'src/server.js'),'utf8');
+assert.equal(cfg.version,'REF-8.3.155.9.2.21');
+assert.equal(cfg.adminRecovery.masterAdminOnly,true);
+assert.equal(cfg.rules.recoveryRecordCarriesReplayMetadata,true);
+assert.equal(cfg.rules.ambiguousProviderOutcomeMustNotSwitchProviderAutomatically,true);
+const r=m.createRecovery({direction:'katha_vistaar_to_creator',referenceId:'PAYOUT-1',operation:'refund_on_failed_payout',transactionId:'TX-1',providerTransactionId:'PTX-1',amount:125.5,userId:'U1',reason:'royalty_payout_failed',paymentType:'royalty_payout'});
+assert.equal(r.transactionId,'TX-1'); assert.equal(r.providerTransactionId,'PTX-1'); assert.equal(r.amount,125.5); assert.equal(r.userId,'U1');
+assert.match(src,/\/api\/admin\/payment-recoveries/);
+assert.match(src,/recovery_retry_not_allowed/);
+assert.ok(src.includes('idempotencyKey:refundKey'));assert.ok(src.includes("refundKey=`refund:${String(transactionId||recovery.transactionId||recovery.referenceId||'')}`"));
+assert.match(src,/payment_recovery_persist_failed/);
+console.log('REF-8.3.155.9.2.21 payment recovery replay/direction PASS');

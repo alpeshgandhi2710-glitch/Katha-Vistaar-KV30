@@ -1,0 +1,22 @@
+const fs=require('fs'),path=require('path'),assert=require('assert');
+const root=path.resolve(__dirname,'..');
+const story=fs.readFileSync(path.join(root,'../mobile/lib/story_studio.dart'),'utf8');
+const api=story.slice(0,story.indexOf('class StoryStudioEditor'));
+const server=fs.readFileSync(path.join(root,'src/server.js'),'utf8');
+const svc=fs.readFileSync(path.join(root,'../backend/src/services/story-studio.js'),'utf8');
+
+assert(story.includes("Future<Map<String, dynamic>> getReview(KvStoryDraft d)"));
+assert(story.includes("Future<Map<String, dynamic>> publishingChecklist(KvStoryDraft d)"));
+assert(story.includes("Future<Map<String, dynamic>> saveTranslationDraft(KvStoryDraft d"));
+assert(story.includes("Future<Map<String, dynamic>> saveCharacterMatrix(KvStoryDraft d"));
+assert(story.includes("Future<Map<String, dynamic>> saveContinuity(KvStoryDraft d"));
+assert(story.includes("Future<Map<String, dynamic>> runReviewFindingUpdate(KvStoryDraft d"));
+assert(story.includes("Future<Map<String, dynamic>> storyAiAssist(KvStoryDraft d"));
+assert(!api.match(/\bdraft\.serverContentId\b/));
+assert(!api.match(/\bdraft\.language\b/));
+assert(story.includes("'acts': acts, 'scenes': scenes"), 'mobile save must map chapters into governed Story structure');
+assert(api.includes("if (d.serverContentId == null || d.dirty) await save(d);"), 'mobile publish must persist current draft before publication');
+assert(server.includes("u.pathname.endsWith('/publishing-checklist')"));
+assert(server.includes("u.pathname.endsWith('/review')"));
+assert(svc.includes("function publishingChecklist"));
+console.log(JSON.stringify({status:'PASS',mobileStoryApiSignatures:true,chapterStructureMapping:true,publishPersistsDirtyDraft:true,reviewChecklistRoutes:true,serviceContract:true},null,2));

@@ -1,0 +1,13 @@
+{
+  "ledger": [
+    "coins",
+    "gifts",
+    "premium",
+    "earnings",
+    "commission",
+    "refund",
+    "payout"
+  ],
+  "double_entry_ready": true,
+  "external_payment_required_for_real_money": true
+}

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "v30",
+  "status": "APPROVAL_REQUIRED",
+  "legalBasis": {
+    "notificationNo": "APPROVAL_REQUIRED - CA/Legal to fill",
+    "notificationDate": "APPROVAL_REQUIRED",
+    "sacHeading": "APPROVAL_REQUIRED - Master Admin to enter CA-supplied classification",
+    "sacGroup": "APPROVAL_REQUIRED - Master Admin to enter CA-supplied classification",
+    "exactClassification": "APPROVAL_REQUIRED"
+  },
+  "productionMatrix": {
+    "isApproved": false,
+    "approvedBy": null,
+    "approvedAt": null,
+    "entries": []
+  },
+  "approvalEvidence": {
+    "legalReviewer": null,
+    "evidenceReferences": [],
+    "sourceSnapshot": null,
+    "caReference": null
+  },
+  "failClosedPolicy": {
+    "onMissingOrUnapproved": "BLOCK_MONETIZATION",
+    "allowFallbackInvent": false
+  }
+}

@@ -1,0 +1,1 @@
+function canEditOwnWork(user,work){return user?.id===work.ownerId} function canChangeRights(role){return role==="admin"||role==="master_admin"} module.exports={canEditOwnWork,canChangeRights};

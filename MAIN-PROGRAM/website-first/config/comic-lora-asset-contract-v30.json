@@ -1,0 +1,23 @@
+{
+  "version": "KV30-COMIC-LORA-ASSET-CONTRACT-1",
+  "serviceId": "comic_lora",
+  "classification": "PASS-ASSET",
+  "requirement": "external_lora_asset",
+  "assetType": "LoRA character-lock model/adapter weights",
+  "assetSource": "external_provider_or_master_admin_supplied",
+  "bundledInKv30": false,
+  "verifiedProductionWeights": false,
+  "requiredBeforeLiveCharacterLockAcceptance": true,
+  "masterAdminAuthority": true,
+  "rightsRequired": true,
+  "licenseRequired": true,
+  "dataPolicyRequired": true,
+  "integrityRequired": true,
+  "contentHashRequired": "sha256_or_provider_content_address",
+  "provenanceRequired": true,
+  "trainingConsentRequired": true,
+  "deploymentRule": "Do not enable live Comic LoRA generation until the supplied external LoRA asset passes provenance, rights/license, integrity, compatibility, and character-lock evaluation.",
+  "fallback": "internal_character_comic_continuity",
+  "gateBoundary": "gate_comic_lora_rights",
+  "evidenceBoundary": "PASS-ASSET means the external asset is genuinely required; it does not claim that a production asset has already been supplied or executed."
+}

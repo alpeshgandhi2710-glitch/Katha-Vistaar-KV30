@@ -1,0 +1,60 @@
+{
+  "version": "KV30-P2-30W-user-monitoring-ai",
+  "enabled": true,
+  "monitoring": "activity_except_confidential_fields",
+  "riskLevels": [
+    "low",
+    "medium",
+    "high",
+    "critical"
+  ],
+  "autoClose": "low_only_after_user_response_and_ai_validation",
+  "escalation": {
+    "medium": "designated_admin",
+    "high": "master_admin",
+    "critical": "master_admin"
+  },
+  "visibleComments": [
+    "user",
+    "official_action_message"
+  ],
+  "privateComments": [
+    "monitoring_ai",
+    "admin_ai",
+    "master_admin_ai"
+  ],
+  "contact": {
+    "includeRegisteredVerifiedEmailAndMobile": true
+  },
+  "notifications": {
+    "admin": [
+      "in_app",
+      "sms",
+      "email",
+      "whatsapp"
+    ],
+    "master_admin": [
+      "in_app",
+      "sms",
+      "email",
+      "whatsapp"
+    ],
+    "user": [
+      "in_app",
+      "sms",
+      "email",
+      "whatsapp"
+    ],
+    "masterAdminControlsChannels": true
+  },
+  "blockedIdentityPolicy": {
+    "enabled": true,
+    "denyNewSignupOnBlockedVerifiedContact": true
+  },
+  "learning": {
+    "enabled": true,
+    "storeValidatedPatternsOnly": true,
+    "excludeConfidentialData": true,
+    "humanApprovalForPolicyOrModelChanges": true
+  }
+}

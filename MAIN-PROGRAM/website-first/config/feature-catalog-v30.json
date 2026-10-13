@@ -1,0 +1,186 @@
+{
+  "version": "30.0.0",
+  "sourcePolicy": "Old v30 program configuration is retained as a superset; newer runtime behavior wins on conflict.",
+  "features": {
+    "community-workflows": {
+      "likes": true,
+      "comments": true,
+      "replies": true,
+      "reviews": true,
+      "ratings": true,
+      "bookmarks": true,
+      "follows": true,
+      "block": true,
+      "mute": true,
+      "report": true,
+      "external_links": false,
+      "rate_limits": true
+    },
+    "content-workflows": {
+      "states": [
+        "draft",
+        "scheduled",
+        "published",
+        "unpublished",
+        "archived",
+        "restored"
+      ],
+      "revision_history": true,
+      "rollback": true,
+      "author_copy_own_work_only": true,
+      "rights_matrix": true
+    },
+    "finance-ledger": {
+      "ledger": [
+        "coins",
+        "gifts",
+        "premium",
+        "earnings",
+        "commission",
+        "refund",
+        "payout"
+      ],
+      "double_entry_ready": true,
+      "external_payment_required_for_real_money": true
+    },
+    "media-pipeline": {
+      "uploads": true,
+      "metadata": true,
+      "validation": true,
+      "audio": true,
+      "video": true,
+      "processing_jobs": true,
+      "stt_adapter": true,
+      "tts_adapter": true,
+      "external_provider_optional": true
+    },
+    "moderation": {
+      "rule_engine": true,
+      "prohibited_content": [
+        "explicit_sexual_content",
+        "targeted_abuse",
+        "spam",
+        "external_links"
+      ],
+      "uncertain_to_human_review": true,
+      "admin_override": true,
+      "master_admin_final_review": true,
+      "decision_audit": true
+    },
+    "reader-preferences": {
+      "zoom": {
+        "min": 0.8,
+        "max": 2.5,
+        "step": 0.1,
+        "default": 1.0
+      },
+      "font_size": {
+        "min": 12,
+        "max": 32,
+        "step": 1,
+        "default": 18
+      },
+      "font_family": [
+        "system",
+        "serif",
+        "sans",
+        "monospace"
+      ],
+      "line_spacing": {
+        "min": 1.0,
+        "max": 2.5,
+        "step": 0.1,
+        "default": 1.5
+      },
+      "theme": [
+        "light",
+        "sepia",
+        "dark"
+      ],
+      "text_color": "user-selectable",
+      "background_color": "user-selectable",
+      "persist_per_user": true
+    },
+    "ott_management": {
+      "enabled": true,
+      "mode": "metadata-and-entitlement-ready",
+      "externalStreamingOptional": true,
+      "rights": [
+        "film_ott",
+        "streaming",
+        "territory",
+        "window"
+      ]
+    },
+    "stickers": {
+      "enabled": true,
+      "coinGifting": true,
+      "externalPaymentOptional": true
+    },
+    "media_ai": {
+      "enabled": true,
+      "audio": true,
+      "video": true,
+      "writing": true,
+      "sttOptional": true,
+      "ttsOptional": true,
+      "externalAIOptional": true
+    },
+    "admin_dashboards": {
+      "enabled": true,
+      "reader": true,
+      "author": true,
+      "admin": true,
+      "masterAdmin": true,
+      "ai": true,
+      "account": true,
+      "profit": true,
+      "reports": true,
+      "media": true,
+      "ads": true,
+      "payments": true
+    },
+    "service_layer_controls": {
+      "internalLayerDefault": "on",
+      "externalLayerDefault": "off",
+      "masterAdminControls": true
+    },
+    "reporting_ai": {
+      "enabled": true,
+      "riskAssessment": true,
+      "gapAnalysis": true,
+      "implementationAudit": true
+    },
+    "novel_15_part_unlock": {
+      "enabled": true,
+      "coinCost": 5,
+      "dailyHours": 24,
+      "rewardedAd": true
+    },
+    "coin_purchase": {
+      "enabled": true,
+      "dependency": "payment_provider_or_internal_test_ledger"
+    },
+    "sticker_purchase_and_gifting": {
+      "enabled": true,
+      "dependency": null
+    },
+    "reader_interactions": {
+      "enabled": true,
+      "ratings": "1-5",
+      "comments": true,
+      "coins": true,
+      "stickers": true
+    },
+    "creator_ai_layers": {
+      "enabled": true,
+      "layers": [
+        "writing_ai",
+        "comic_ai",
+        "audio_ai",
+        "reel_ai"
+      ],
+      "authorApprovalRequired": true
+    }
+  }
+}

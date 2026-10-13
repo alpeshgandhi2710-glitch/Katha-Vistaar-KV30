@@ -1,0 +1,4 @@
+const test=require("node:test"),assert=require("node:assert/strict"),fs=require("node:fs"),path=require("node:path");
+const ROOT=path.resolve(__dirname,".."); const server=fs.readFileSync(path.join(ROOT,"src/server.js"),"utf8"),app=fs.readFileSync(path.join(ROOT,"public/app.js"),"utf8"),reg=JSON.parse(fs.readFileSync(path.join(ROOT,"..","shared","ai-management-registry-v30.json"),"utf8"));
+test("security defense is wired end-to-end",()=>{assert.match(server,/\/api\/ai\/security\/assess/);assert.match(server,/\/api\/admin\/ai\/security-defense/);assert.match(server,/securityDefenseAI/);assert.match(app,/securityAiForm/);assert.match(app,/Run Security AI/);assert.equal(reg.release,"KV30-P2-30W");});
+test("critical authority remains human master admin",()=>{assert.match(server,/master_admin_required_for_critical_security_signal/);assert.match(server,/masterAdminFinalAuthority:true/);});

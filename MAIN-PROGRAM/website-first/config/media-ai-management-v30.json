@@ -1,0 +1,38 @@
+{
+  "version": "30.0.0",
+  "enabled": true,
+  "layers": [
+    "writing_ai",
+    "story_ai",
+    "comic_ai",
+    "audio_ai",
+    "reel_ai",
+    "media_security_ai"
+  ],
+  "internalFirst": true,
+  "externalLearningOptional": true,
+  "externalProviderCannotChangePolicy": true,
+  "authorApprovalRequiredForChanges": true,
+  "humanApprovalForCriticalActions": true,
+  "masterAdminControlledPermissions": true,
+  "assetDriver": {
+    "enabled": true,
+    "internalFirst": true,
+    "allowedTypes": [
+      "image",
+      "audio",
+      "video",
+      "pdf"
+    ]
+  },
+  "pipeline": [
+    "quarantine",
+    "size_type_validation",
+    "internal_security_scan",
+    "copyright_policy_scan",
+    "ai_risk_assessment",
+    "transcode",
+    "publish_approval"
+  ],
+  "directPublishFromUpload": false
+}

@@ -1,0 +1,18 @@
+{
+  "version": "30.0.0",
+  "events": [
+    "writing_competition",
+    "flash_fiction",
+    "poetry",
+    "comic",
+    "audio",
+    "translation",
+    "new_author"
+  ],
+  "rewards": [
+    "prize",
+    "discovery",
+    "academy_access",
+    "adaptation_opportunity"
+  ]
+}

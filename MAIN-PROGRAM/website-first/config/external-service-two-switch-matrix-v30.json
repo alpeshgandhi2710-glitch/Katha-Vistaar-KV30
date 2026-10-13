@@ -1,0 +1,1177 @@
+{
+  "version": "REF-8.3.155.9.2.8",
+  "matrixType": "18-service-two-switch",
+  "sourceOfTruth": [
+    "service-registry-v30.json",
+    "external-provider-slots-v30.json",
+    "external-gate-configuration-profile-v30.json"
+  ],
+  "coreServiceCount": 18,
+  "coreServices": [
+    "email",
+    "sms",
+    "voice_otp",
+    "push",
+    "storage",
+    "ai_moderation",
+    "payments",
+    "payouts",
+    "google_play",
+    "apple_store",
+    "ads",
+    "stt",
+    "tts",
+    "whatsapp",
+    "external_ai",
+    "object_storage",
+    "cdn",
+    "virus_scanner"
+  ],
+  "reservedServicesExcludedFrom18Count": [
+    "internet_access",
+    "network_server",
+    "reel_media",
+    "audio_processing",
+    "translation"
+  ],
+  "internalLayer": "always_on",
+  "externalLayer": "master_admin_controlled",
+  "externalDefaultEnabled": false,
+  "failClosed": true,
+  "services": [
+    {
+      "serviceId": "email",
+      "serviceSwitch": "service_gate_email",
+      "internalFallback": "in_app_only",
+      "masterAdminControlled": true,
+      "internalAlwaysOn": true,
+      "externalDefaultEnabled": false,
+      "firewallRequired": true,
+      "primary": {
+        "gate": "service_gate_email",
+        "providerEnv": [
+          "KV_EMAIL_PROVIDER",
+          "KV_EMAIL_API_KEY"
+        ]
+      },
+      "secondarySlots": [
+        {
+          "slot": 1,
+          "providerSlotId": "email_provider_01",
+          "gate": "service_gate_email_alt_01",
+          "billingModes": [
+            "free",
+            "paid",
+            "public"
+          ],
+          "languageSupport": "all_23_required"
+        },
+        {
+          "slot": 2,
+          "providerSlotId": "email_provider_02",
+          "gate": "service_gate_email_alt_02",
+          "billingModes": [
+            "free",
+            "paid",
+            "public"
+          ],
+          "languageSupport": "all_23_required"
+        },
+        {
+          "slot": 3,
+          "providerSlotId": "email_provider_03",
+          "gate": "service_gate_email_alt_03",
+          "billingModes": [
+            "free",
+            "paid",
+            "public"
+          ],
+          "languageSupport": "all_23_required"
+        }
+      ],
+      "failureOrder": [
+        "primary",
+        "secondary_slot_1",
+        "secondary_slot_2",
+        "secondary_slot_3",
+        "internal_fallback"
+      ],
+      "paidProviderRequiresExplicitApproval": true
+    },
+    {
+      "serviceId": "sms",
+      "serviceSwitch": "service_gate_sms",
+      "internalFallback": "in_app_only",
+      "masterAdminControlled": true,
+      "internalAlwaysOn": true,
+      "externalDefaultEnabled": false,
+      "firewallRequired": true,
+      "primary": {
+        "gate": "service_gate_sms",
+        "providerEnv": [
+          "KV_SMS_PROVIDER",
+          "KV_SMS_API_KEY"
+        ]
+      },
+      "secondarySlots": [
+        {
+          "slot": 1,
+          "providerSlotId": "sms_provider_01",
+          "gate": "service_gate_sms_alt_01",
+          "billingModes": [
+            "free",
+            "paid",
+            "public"
+          ],
+          "languageSupport": "all_23_required"
+        },
+        {
+          "slot": 2,
+          "providerSlotId": "sms_provider_02",
+          "gate": "service_gate_sms_alt_02",
+          "billingModes": [
+            "free",
+            "paid",
+            "public"
+          ],
+          "languageSupport": "all_23_required"
+        },
+        {
+          "slot": 3,
+          "providerSlotId": "sms_provider_03",
+          "gate": "service_gate_sms_alt_03",
+          "billingModes": [
+            "free",
+            "paid",
+            "public"
+          ],
+          "languageSupport": "all_23_required"
+        }
+      ],
+      "failureOrder": [
+        "primary",
+        "secondary_slot_1",
+        "secondary_slot_2",
+        "secondary_slot_3",
+        "internal_fallback"
+      ],
+      "paidProviderRequiresExplicitApproval": true
+    },
+    {
+      "serviceId": "voice_otp",
+      "serviceSwitch": "service_gate_voice_otp",
+      "internalFallback": "internal_fallback",
+      "masterAdminControlled": true,
+      "internalAlwaysOn": true,
+      "externalDefaultEnabled": false,
+      "firewallRequired": true,
+      "primary": {
+        "gate": "service_gate_voice_otp",
+        "providerEnv": []
+      },
+      "secondarySlots": [
+        {
+          "slot": 1,
+          "providerSlotId": "voice_otp_provider_01",
+          "gate": "service_gate_voice_otp_alt_01",
+          "billingModes": [
+            "free",
+            "paid",
+            "public"
+          ],
+          "languageSupport": "all_23_required"
+        },
+        {
+          "slot": 2,
+          "providerSlotId": "voice_otp_provider_02",
+          "gate": "service_gate_voice_otp_alt_02",
+          "billingModes": [
+            "free",
+            "paid",
+            "public"
+          ],
+          "languageSupport": "all_23_required"
+        },
+        {
+          "slot": 3,
+          "providerSlotId": "voice_otp_provider_03",
+          "gate": "service_gate_voice_otp_alt_03",
+          "billingModes": [
+            "free",
+            "paid",
+            "public"
+          ],
+          "languageSupport": "all_23_required"
+        }
+      ],
+      "failureOrder": [
+        "primary",
+        "secondary_slot_1",
+        "secondary_slot_2",
+        "secondary_slot_3",
+        "internal_fallback"
+      ],
+      "paidProviderRequiresExplicitApproval": true
+    },
+    {
+      "serviceId": "push",
+      "serviceSwitch": "service_gate_push",
+      "internalFallback": "in_app_only",
+      "masterAdminControlled": true,
+      "internalAlwaysOn": true,
+      "externalDefaultEnabled": false,
+      "firewallRequired": true,
+      "primary": {
+        "gate": "service_gate_push",
+        "providerEnv": [
+          "KV_PUSH_PROVIDER",
+          "KV_PUSH_API_KEY"
+        ]
+      },
+      "secondarySlots": [
+        {
+          "slot": 1,
+          "providerSlotId": "push_provider_01",
+          "gate": "service_gate_push_alt_01",
+          "billingModes": [
+            "free",
+            "paid",
+            "public"
+          ],
+          "languageSupport": "all_23_required"
+        },
+        {
+          "slot": 2,
+          "providerSlotId": "push_provider_02",
+          "gate": "service_gate_push_alt_02",
+          "billingModes": [
+            "free",
+            "paid",
+            "public"
+          ],
+          "languageSupport": "all_23_required"
+        },
+        {
+          "slot": 3,
+          "providerSlotId": "push_provider_03",
+          "gate": "service_gate_push_alt_03",
+          "billingModes": [
+            "free",
+            "paid",
+            "public"
+          ],
+          "languageSupport": "all_23_required"
+        }
+      ],
+      "failureOrder": [
+        "primary",
+        "secondary_slot_1",
+        "secondary_slot_2",
+        "secondary_slot_3",
+        "internal_fallback"
+      ],
+      "paidProviderRequiresExplicitApproval": true
+    },
+    {
+      "serviceId": "storage",
+      "serviceSwitch": "service_gate_storage",
+      "internalFallback": "internal_fallback",
+      "masterAdminControlled": true,
+      "internalAlwaysOn": true,
+      "externalDefaultEnabled": false,
+      "firewallRequired": true,
+      "primary": {
+        "gate": "service_gate_storage",
+        "providerEnv": []
+      },
+      "secondarySlots": [
+        {
+          "slot": 1,
+          "providerSlotId": "storage_provider_01",
+          "gate": "service_gate_storage_alt_01",
+          "billingModes": [
+            "free",
+            "paid",
+            "public"
+          ],
+          "languageSupport": "all_23_required"
+        },
+        {
+          "slot": 2,
+          "providerSlotId": "storage_provider_02",
+          "gate": "service_gate_storage_alt_02",
+          "billingModes": [
+            "free",
+            "paid",
+            "public"
+          ],
+          "languageSupport": "all_23_required"
+        },
+        {
+          "slot": 3,
+          "providerSlotId": "storage_provider_03",
+          "gate": "service_gate_storage_alt_03",
+          "billingModes": [
+            "free",
+            "paid",
+            "public"
+          ],
+          "languageSupport": "all_23_required"
+        }
+      ],
+      "failureOrder": [
+        "primary",
+        "secondary_slot_1",
+        "secondary_slot_2",
+        "secondary_slot_3",
+        "internal_fallback"
+      ],
+      "paidProviderRequiresExplicitApproval": true
+    },
+    {
+      "serviceId": "ai_moderation",
+      "serviceSwitch": "service_gate_ai_moderation",
+      "internalFallback": "internal_moderation",
+      "masterAdminControlled": true,
+      "internalAlwaysOn": true,
+      "externalDefaultEnabled": false,
+      "firewallRequired": true,
+      "primary": {
+        "gate": "service_gate_ai_moderation",
+        "providerEnv": [
+          "KV_MODERATION_PROVIDER",
+          "KV_MODERATION_API_KEY"
+        ]
+      },
+      "secondarySlots": [
+        {
+          "slot": 1,
+          "providerSlotId": "ai_moderation_provider_01",
+          "gate": "service_gate_ai_moderation_alt_01",
+          "billingModes": [
+            "free",
+            "paid",
+            "public"
+          ],
+          "languageSupport": "all_23_required"
+        },
+        {
+          "slot": 2,
+          "providerSlotId": "ai_moderation_provider_02",
+          "gate": "service_gate_ai_moderation_alt_02",
+          "billingModes": [
+            "free",
+            "paid",
+            "public"
+          ],
+          "languageSupport": "all_23_required"
+        },
+        {
+          "slot": 3,
+          "providerSlotId": "ai_moderation_provider_03",
+          "gate": "service_gate_ai_moderation_alt_03",
+          "billingModes": [
+            "free",
+            "paid",
+            "public"
+          ],
+          "languageSupport": "all_23_required"
+        }
+      ],
+      "failureOrder": [
+        "primary",
+        "secondary_slot_1",
+        "secondary_slot_2",
+        "secondary_slot_3",
+        "internal_fallback"
+      ],
+      "paidProviderRequiresExplicitApproval": true
+    },
+    {
+      "serviceId": "payments",
+      "serviceSwitch": "service_gate_payments",
+      "internalFallback": "feature_unavailable",
+      "masterAdminControlled": true,
+      "internalAlwaysOn": true,
+      "externalDefaultEnabled": false,
+      "firewallRequired": true,
+      "primary": {
+        "gate": "service_gate_payments",
+        "providerEnv": [
+          "KV_PAYMENT_PROVIDER",
+          "KV_PAYMENT_KEY_ID",
+          "KV_PAYMENT_SECRET"
+        ]
+      },
+      "secondarySlots": [
+        {
+          "slot": 1,
+          "providerSlotId": "payments_provider_01",
+          "gate": "service_gate_payments_alt_01",
+          "billingModes": [
+            "free",
+            "paid",
+            "public"
+          ],
+          "languageSupport": "all_23_required"
+        },
+        {
+          "slot": 2,
+          "providerSlotId": "payments_provider_02",
+          "gate": "service_gate_payments_alt_02",
+          "billingModes": [
+            "free",
+            "paid",
+            "public"
+          ],
+          "languageSupport": "all_23_required"
+        },
+        {
+          "slot": 3,
+          "providerSlotId": "payments_provider_03",
+          "gate": "service_gate_payments_alt_03",
+          "billingModes": [
+            "free",
+            "paid",
+            "public"
+          ],
+          "languageSupport": "all_23_required"
+        }
+      ],
+      "failureOrder": [
+        "primary",
+        "secondary_slot_1",
+        "secondary_slot_2",
+        "secondary_slot_3",
+        "internal_fallback"
+      ],
+      "paidProviderRequiresExplicitApproval": true
+    },
+    {
+      "serviceId": "payouts",
+      "serviceSwitch": "service_gate_payouts",
+      "internalFallback": "ledger_only",
+      "masterAdminControlled": true,
+      "internalAlwaysOn": true,
+      "externalDefaultEnabled": false,
+      "firewallRequired": true,
+      "primary": {
+        "gate": "service_gate_payouts",
+        "providerEnv": [
+          "KV_PAYOUT_PROVIDER",
+          "KV_PAYOUT_API_KEY"
+        ]
+      },
+      "secondarySlots": [
+        {
+          "slot": 1,
+          "providerSlotId": "payouts_provider_01",
+          "gate": "service_gate_payouts_alt_01",
+          "billingModes": [
+            "free",
+            "paid",
+            "public"
+          ],
+          "languageSupport": "all_23_required"
+        },
+        {
+          "slot": 2,
+          "providerSlotId": "payouts_provider_02",
+          "gate": "service_gate_payouts_alt_02",
+          "billingModes": [
+            "free",
+            "paid",
+            "public"
+          ],
+          "languageSupport": "all_23_required"
+        },
+        {
+          "slot": 3,
+          "providerSlotId": "payouts_provider_03",
+          "gate": "service_gate_payouts_alt_03",
+          "billingModes": [
+            "free",
+            "paid",
+            "public"
+          ],
+          "languageSupport": "all_23_required"
+        }
+      ],
+      "failureOrder": [
+        "primary",
+        "secondary_slot_1",
+        "secondary_slot_2",
+        "secondary_slot_3",
+        "internal_fallback"
+      ],
+      "paidProviderRequiresExplicitApproval": true
+    },
+    {
+      "serviceId": "google_play",
+      "serviceSwitch": "service_gate_google_play",
+      "internalFallback": "internal_fallback",
+      "masterAdminControlled": true,
+      "internalAlwaysOn": true,
+      "externalDefaultEnabled": false,
+      "firewallRequired": true,
+      "primary": {
+        "gate": "service_gate_google_play",
+        "providerEnv": []
+      },
+      "secondarySlots": [
+        {
+          "slot": 1,
+          "providerSlotId": "google_play_provider_01",
+          "gate": "service_gate_google_play_alt_01",
+          "billingModes": [
+            "free",
+            "paid",
+            "public"
+          ],
+          "languageSupport": "all_23_required"
+        },
+        {
+          "slot": 2,
+          "providerSlotId": "google_play_provider_02",
+          "gate": "service_gate_google_play_alt_02",
+          "billingModes": [
+            "free",
+            "paid",
+            "public"
+          ],
+          "languageSupport": "all_23_required"
+        },
+        {
+          "slot": 3,
+          "providerSlotId": "google_play_provider_03",
+          "gate": "service_gate_google_play_alt_03",
+          "billingModes": [
+            "free",
+            "paid",
+            "public"
+          ],
+          "languageSupport": "all_23_required"
+        }
+      ],
+      "failureOrder": [
+        "primary",
+        "secondary_slot_1",
+        "secondary_slot_2",
+        "secondary_slot_3",
+        "internal_fallback"
+      ],
+      "paidProviderRequiresExplicitApproval": true
+    },
+    {
+      "serviceId": "apple_store",
+      "serviceSwitch": "service_gate_apple_store",
+      "internalFallback": "internal_fallback",
+      "masterAdminControlled": true,
+      "internalAlwaysOn": true,
+      "externalDefaultEnabled": false,
+      "firewallRequired": true,
+      "primary": {
+        "gate": "service_gate_apple_store",
+        "providerEnv": []
+      },
+      "secondarySlots": [
+        {
+          "slot": 1,
+          "providerSlotId": "apple_store_provider_01",
+          "gate": "service_gate_apple_store_alt_01",
+          "billingModes": [
+            "free",
+            "paid",
+            "public"
+          ],
+          "languageSupport": "all_23_required"
+        },
+        {
+          "slot": 2,
+          "providerSlotId": "apple_store_provider_02",
+          "gate": "service_gate_apple_store_alt_02",
+          "billingModes": [
+            "free",
+            "paid",
+            "public"
+          ],
+          "languageSupport": "all_23_required"
+        },
+        {
+          "slot": 3,
+          "providerSlotId": "apple_store_provider_03",
+          "gate": "service_gate_apple_store_alt_03",
+          "billingModes": [
+            "free",
+            "paid",
+            "public"
+          ],
+          "languageSupport": "all_23_required"
+        }
+      ],
+      "failureOrder": [
+        "primary",
+        "secondary_slot_1",
+        "secondary_slot_2",
+        "secondary_slot_3",
+        "internal_fallback"
+      ],
+      "paidProviderRequiresExplicitApproval": true
+    },
+    {
+      "serviceId": "ads",
+      "serviceSwitch": "service_gate_ads",
+      "internalFallback": "no_ads",
+      "masterAdminControlled": true,
+      "internalAlwaysOn": true,
+      "externalDefaultEnabled": false,
+      "firewallRequired": true,
+      "primary": {
+        "gate": "service_gate_ads",
+        "providerEnv": [
+          "KV_AD_PROVIDER",
+          "KV_AD_API_KEY"
+        ]
+      },
+      "secondarySlots": [
+        {
+          "slot": 1,
+          "providerSlotId": "ads_provider_01",
+          "gate": "service_gate_ads_alt_01",
+          "billingModes": [
+            "free",
+            "paid",
+            "public"
+          ],
+          "languageSupport": "all_23_required"
+        },
+        {
+          "slot": 2,
+          "providerSlotId": "ads_provider_02",
+          "gate": "service_gate_ads_alt_02",
+          "billingModes": [
+            "free",
+            "paid",
+            "public"
+          ],
+          "languageSupport": "all_23_required"
+        },
+        {
+          "slot": 3,
+          "providerSlotId": "ads_provider_03",
+          "gate": "service_gate_ads_alt_03",
+          "billingModes": [
+            "free",
+            "paid",
+            "public"
+          ],
+          "languageSupport": "all_23_required"
+        }
+      ],
+      "failureOrder": [
+        "primary",
+        "secondary_slot_1",
+        "secondary_slot_2",
+        "secondary_slot_3",
+        "internal_fallback"
+      ],
+      "paidProviderRequiresExplicitApproval": true
+    },
+    {
+      "serviceId": "stt",
+      "serviceSwitch": "service_gate_stt",
+      "internalFallback": "text_input",
+      "masterAdminControlled": true,
+      "internalAlwaysOn": true,
+      "externalDefaultEnabled": false,
+      "firewallRequired": true,
+      "primary": {
+        "gate": "service_gate_stt",
+        "providerEnv": [
+          "KV_STT_PROVIDER",
+          "KV_STT_API_KEY"
+        ]
+      },
+      "secondarySlots": [
+        {
+          "slot": 1,
+          "providerSlotId": "stt_provider_01",
+          "gate": "service_gate_stt_alt_01",
+          "billingModes": [
+            "free",
+            "paid",
+            "public"
+          ],
+          "languageSupport": "all_23_required"
+        },
+        {
+          "slot": 2,
+          "providerSlotId": "stt_provider_02",
+          "gate": "service_gate_stt_alt_02",
+          "billingModes": [
+            "free",
+            "paid",
+            "public"
+          ],
+          "languageSupport": "all_23_required"
+        },
+        {
+          "slot": 3,
+          "providerSlotId": "stt_provider_03",
+          "gate": "service_gate_stt_alt_03",
+          "billingModes": [
+            "free",
+            "paid",
+            "public"
+          ],
+          "languageSupport": "all_23_required"
+        }
+      ],
+      "failureOrder": [
+        "primary",
+        "secondary_slot_1",
+        "secondary_slot_2",
+        "secondary_slot_3",
+        "internal_fallback"
+      ],
+      "paidProviderRequiresExplicitApproval": true
+    },
+    {
+      "serviceId": "tts",
+      "serviceSwitch": "service_gate_tts",
+      "internalFallback": "text_output",
+      "masterAdminControlled": true,
+      "internalAlwaysOn": true,
+      "externalDefaultEnabled": false,
+      "firewallRequired": true,
+      "primary": {
+        "gate": "service_gate_tts",
+        "providerEnv": [
+          "KV_TTS_PROVIDER",
+          "KV_TTS_API_KEY"
+        ]
+      },
+      "secondarySlots": [
+        {
+          "slot": 1,
+          "providerSlotId": "tts_provider_01",
+          "gate": "service_gate_tts_alt_01",
+          "billingModes": [
+            "free",
+            "paid",
+            "public"
+          ],
+          "languageSupport": "all_23_required"
+        },
+        {
+          "slot": 2,
+          "providerSlotId": "tts_provider_02",
+          "gate": "service_gate_tts_alt_02",
+          "billingModes": [
+            "free",
+            "paid",
+            "public"
+          ],
+          "languageSupport": "all_23_required"
+        },
+        {
+          "slot": 3,
+          "providerSlotId": "tts_provider_03",
+          "gate": "service_gate_tts_alt_03",
+          "billingModes": [
+            "free",
+            "paid",
+            "public"
+          ],
+          "languageSupport": "all_23_required"
+        }
+      ],
+      "failureOrder": [
+        "primary",
+        "secondary_slot_1",
+        "secondary_slot_2",
+        "secondary_slot_3",
+        "internal_fallback"
+      ],
+      "paidProviderRequiresExplicitApproval": true
+    },
+    {
+      "serviceId": "whatsapp",
+      "serviceSwitch": "service_gate_whatsapp",
+      "internalFallback": "email_or_in_app",
+      "masterAdminControlled": true,
+      "internalAlwaysOn": true,
+      "externalDefaultEnabled": false,
+      "firewallRequired": true,
+      "primary": {
+        "gate": "service_gate_whatsapp",
+        "providerEnv": [
+          "KV_WHATSAPP_PROVIDER",
+          "KV_WHATSAPP_API_KEY"
+        ]
+      },
+      "secondarySlots": [
+        {
+          "slot": 1,
+          "providerSlotId": "whatsapp_provider_01",
+          "gate": "service_gate_whatsapp_alt_01",
+          "billingModes": [
+            "free",
+            "paid",
+            "public"
+          ],
+          "languageSupport": "all_23_required"
+        },
+        {
+          "slot": 2,
+          "providerSlotId": "whatsapp_provider_02",
+          "gate": "service_gate_whatsapp_alt_02",
+          "billingModes": [
+            "free",
+            "paid",
+            "public"
+          ],
+          "languageSupport": "all_23_required"
+        },
+        {
+          "slot": 3,
+          "providerSlotId": "whatsapp_provider_03",
+          "gate": "service_gate_whatsapp_alt_03",
+          "billingModes": [
+            "free",
+            "paid",
+            "public"
+          ],
+          "languageSupport": "all_23_required"
+        }
+      ],
+      "failureOrder": [
+        "primary",
+        "secondary_slot_1",
+        "secondary_slot_2",
+        "secondary_slot_3",
+        "internal_fallback"
+      ],
+      "paidProviderRequiresExplicitApproval": true
+    },
+    {
+      "serviceId": "external_ai",
+      "serviceSwitch": "gate_75",
+      "internalFallback": "internal_ai",
+      "masterAdminControlled": true,
+      "internalAlwaysOn": true,
+      "externalDefaultEnabled": false,
+      "firewallRequired": true,
+      "primary": {
+        "gate": "gate_75",
+        "providerEnv": [
+          "KV_AI_PROVIDER",
+          "KV_AI_API_KEY"
+        ]
+      },
+      "secondarySlots": [
+        {
+          "slot": 1,
+          "providerSlotId": "external_ai_provider_01",
+          "gate": "gate_75_alt_01",
+          "billingModes": [
+            "free",
+            "paid",
+            "public"
+          ],
+          "languageSupport": "all_23_required"
+        },
+        {
+          "slot": 2,
+          "providerSlotId": "external_ai_provider_02",
+          "gate": "gate_75_alt_02",
+          "billingModes": [
+            "free",
+            "paid",
+            "public"
+          ],
+          "languageSupport": "all_23_required"
+        },
+        {
+          "slot": 3,
+          "providerSlotId": "external_ai_provider_03",
+          "gate": "gate_75_alt_03",
+          "billingModes": [
+            "free",
+            "paid",
+            "public"
+          ],
+          "languageSupport": "all_23_required"
+        }
+      ],
+      "failureOrder": [
+        "primary",
+        "secondary_slot_1",
+        "secondary_slot_2",
+        "secondary_slot_3",
+        "internal_fallback"
+      ],
+      "paidProviderRequiresExplicitApproval": true
+    },
+    {
+      "serviceId": "object_storage",
+      "serviceSwitch": "service_gate_object_storage",
+      "internalFallback": "local_storage_with_limits",
+      "masterAdminControlled": true,
+      "internalAlwaysOn": true,
+      "externalDefaultEnabled": false,
+      "firewallRequired": true,
+      "primary": {
+        "gate": "service_gate_object_storage",
+        "providerEnv": [
+          "KV_STORAGE_PROVIDER",
+          "KV_STORAGE_BUCKET",
+          "KV_STORAGE_KEY"
+        ]
+      },
+      "secondarySlots": [
+        {
+          "slot": 1,
+          "providerSlotId": "object_storage_provider_01",
+          "gate": "service_gate_object_storage_alt_01",
+          "billingModes": [
+            "free",
+            "paid",
+            "public"
+          ],
+          "languageSupport": "all_23_required"
+        },
+        {
+          "slot": 2,
+          "providerSlotId": "object_storage_provider_02",
+          "gate": "service_gate_object_storage_alt_02",
+          "billingModes": [
+            "free",
+            "paid",
+            "public"
+          ],
+          "languageSupport": "all_23_required"
+        },
+        {
+          "slot": 3,
+          "providerSlotId": "object_storage_provider_03",
+          "gate": "service_gate_object_storage_alt_03",
+          "billingModes": [
+            "free",
+            "paid",
+            "public"
+          ],
+          "languageSupport": "all_23_required"
+        }
+      ],
+      "failureOrder": [
+        "primary",
+        "secondary_slot_1",
+        "secondary_slot_2",
+        "secondary_slot_3",
+        "internal_fallback"
+      ],
+      "paidProviderRequiresExplicitApproval": true
+    },
+    {
+      "serviceId": "cdn",
+      "serviceSwitch": "service_gate_cdn",
+      "internalFallback": "origin_delivery",
+      "masterAdminControlled": true,
+      "internalAlwaysOn": true,
+      "externalDefaultEnabled": false,
+      "firewallRequired": true,
+      "primary": {
+        "gate": "service_gate_cdn",
+        "providerEnv": [
+          "KV_CDN_PROVIDER",
+          "KV_CDN_API_KEY"
+        ]
+      },
+      "secondarySlots": [
+        {
+          "slot": 1,
+          "providerSlotId": "cdn_provider_01",
+          "gate": "service_gate_cdn_alt_01",
+          "billingModes": [
+            "free",
+            "paid",
+            "public"
+          ],
+          "languageSupport": "all_23_required"
+        },
+        {
+          "slot": 2,
+          "providerSlotId": "cdn_provider_02",
+          "gate": "service_gate_cdn_alt_02",
+          "billingModes": [
+            "free",
+            "paid",
+            "public"
+          ],
+          "languageSupport": "all_23_required"
+        },
+        {
+          "slot": 3,
+          "providerSlotId": "cdn_provider_03",
+          "gate": "service_gate_cdn_alt_03",
+          "billingModes": [
+            "free",
+            "paid",
+            "public"
+          ],
+          "languageSupport": "all_23_required"
+        }
+      ],
+      "failureOrder": [
+        "primary",
+        "secondary_slot_1",
+        "secondary_slot_2",
+        "secondary_slot_3",
+        "internal_fallback"
+      ],
+      "paidProviderRequiresExplicitApproval": true
+    },
+    {
+      "serviceId": "virus_scanner",
+      "serviceSwitch": "service_gate_virus_scanner",
+      "internalFallback": "local_extension_size_signature_checks",
+      "masterAdminControlled": true,
+      "internalAlwaysOn": true,
+      "externalDefaultEnabled": false,
+      "firewallRequired": true,
+      "primary": {
+        "gate": "service_gate_virus_scanner",
+        "providerEnv": [
+          "KV_VIRUS_SCANNER_PROVIDER",
+          "KV_VIRUS_SCANNER_API_KEY"
+        ]
+      },
+      "secondarySlots": [
+        {
+          "slot": 1,
+          "providerSlotId": "virus_scanner_provider_01",
+          "gate": "service_gate_virus_scanner_alt_01",
+          "billingModes": [
+            "free",
+            "paid",
+            "public"
+          ],
+          "languageSupport": "all_23_required"
+        },
+        {
+          "slot": 2,
+          "providerSlotId": "virus_scanner_provider_02",
+          "gate": "service_gate_virus_scanner_alt_02",
+          "billingModes": [
+            "free",
+            "paid",
+            "public"
+          ],
+          "languageSupport": "all_23_required"
+        },
+        {
+          "slot": 3,
+          "providerSlotId": "virus_scanner_provider_03",
+          "gate": "service_gate_virus_scanner_alt_03",
+          "billingModes": [
+            "free",
+            "paid",
+            "public"
+          ],
+          "languageSupport": "all_23_required"
+        }
+      ],
+      "failureOrder": [
+        "primary",
+        "secondary_slot_1",
+        "secondary_slot_2",
+        "secondary_slot_3",
+        "internal_fallback"
+      ],
+      "paidProviderRequiresExplicitApproval": true
+    }
+  ],
+  "reservedServiceBindings": [
+    {
+      "serviceId": "internet_access",
+      "serviceSwitch": "service_gate_reserved_01",
+      "reason": "reserved canonical gate outside historical 18-service core count"
+    },
+    {
+      "serviceId": "network_server",
+      "serviceSwitch": "service_gate_reserved_02",
+      "reason": "reserved canonical gate outside historical 18-service core count"
+    },
+    {
+      "serviceId": "reel_media",
+      "serviceSwitch": "service_gate_reserved_03",
+      "reason": "reserved canonical gate outside historical 18-service core count"
+    },
+    {
+      "serviceId": "audio_processing",
+      "serviceSwitch": "service_gate_reserved_04",
+      "reason": "reserved canonical gate outside historical 18-service core count"
+    },
+    {
+      "serviceId": "translation",
+      "serviceSwitch": "service_gate_reserved_05",
+      "reason": "reserved canonical gate outside historical 18-service core count"
+    },
+    {
+      "serviceId": "natural_sounds",
+      "serviceSwitch": "service_gate_natural_sounds",
+      "reason": "new governed natural-sound provider service outside historical 18-service core count",
+      "internalFallback": "internal_catalog",
+      "masterAdminControlled": true,
+      "internalAlwaysOn": true,
+      "externalDefaultEnabled": false,
+      "firewallRequired": true,
+      "primary": {
+        "gate": "service_gate_natural_sounds"
+      },
+      "secondarySlots": [
+        {
+          "slot": 1,
+          "providerSlotId": "natural_sounds_provider_01",
+          "gate": "service_gate_natural_sounds_alt_01",
+          "billingModes": [
+            "free",
+            "paid",
+            "public"
+          ],
+          "languageSupport": "all_23_required"
+        },
+        {
+          "slot": 2,
+          "providerSlotId": "natural_sounds_provider_02",
+          "gate": "service_gate_natural_sounds_alt_02",
+          "billingModes": [
+            "free",
+            "paid",
+            "public"
+          ],
+          "languageSupport": "all_23_required"
+        },
+        {
+          "slot": 3,
+          "providerSlotId": "natural_sounds_provider_03",
+          "gate": "service_gate_natural_sounds_alt_03",
+          "billingModes": [
+            "free",
+            "paid",
+            "public"
+          ],
+          "languageSupport": "all_23_required"
+        }
+      ],
+      "failureOrder": [
+        "primary",
+        "secondary_slot_1",
+        "secondary_slot_2",
+        "secondary_slot_3",
+        "internal_fallback"
+      ]
+    }
+  ]
+}

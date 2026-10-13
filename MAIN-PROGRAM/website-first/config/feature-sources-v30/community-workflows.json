@@ -1,0 +1,14 @@
+{
+  "likes": true,
+  "comments": true,
+  "replies": true,
+  "reviews": true,
+  "ratings": true,
+  "bookmarks": true,
+  "follows": true,
+  "block": true,
+  "mute": true,
+  "report": true,
+  "external_links": false,
+  "rate_limits": true
+}

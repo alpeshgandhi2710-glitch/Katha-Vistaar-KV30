@@ -1,0 +1,28 @@
+const test=require('node:test');
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const path=require('node:path');
+const ROOT=path.join(__dirname,'..');
+const gates=JSON.parse(fs.readFileSync(path.join(ROOT,'config/external-gate-configuration-profile-v30.json'),'utf8'));
+const audit=JSON.parse(fs.readFileSync(path.join(ROOT,'config/external-service-architecture-audit-v30.json'),'utf8'));
+const wiring=JSON.parse(fs.readFileSync(path.join(ROOT,'config/ai-ecosystem-wiring-v30.json'),'utf8'));
+const firewall=require('../../backend/src/services/external-gate-firewall');
+test('R20 canonical primary external gate total is 100; provider alternates are separate',()=>{
+ assert.equal(gates.nonAi.length,23);
+ assert.equal(gates.aiSpecialist.length,77);
+ assert.equal(gates.nonAi.length+gates.aiSpecialist.length,100);
+ assert.equal(gates.providerAlternate.length,72);
+ assert.equal(audit.canonicalPrimaryGateCount,100);
+ assert.equal(audit.nonAiServiceGateCount,23);
+ assert.equal(audit.aiSpecialistGateCount,77);
+ assert.equal(audit.providerAlternateGateCount,72);
+ assert.equal(wiring.externalBoundary.canonicalPrimaryGateCount,100);
+ assert.equal(wiring.externalBoundary.specialistGateCount,77);
+ assert.equal(wiring.externalBoundary.providerAlternateGates,72);
+ const s=firewall.status();
+ assert.equal(s.canonicalPrimaryGateCount,100);
+ assert.equal(s.nonAiGateCount,23);
+ assert.equal(s.aiSpecialistGateCount,77);
+ assert.equal(s.providerAlternateGateCount,72);
+});
+console.log('PASS R20 gate count: 100 canonical primary gates (23 non-AI + 77 AI); 72 provider alternates separate');

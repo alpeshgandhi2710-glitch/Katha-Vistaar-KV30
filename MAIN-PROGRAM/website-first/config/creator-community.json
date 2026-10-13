@@ -1,0 +1,16 @@
+{
+  "version": "30.0.0",
+  "features": [
+    "exclusive_chatroom",
+    "polls",
+    "qna",
+    "announcements",
+    "early_access",
+    "subscriber_badge",
+    "live_session"
+  ],
+  "moderation": true,
+  "report": true,
+  "block": true,
+  "slow_mode": true
+}

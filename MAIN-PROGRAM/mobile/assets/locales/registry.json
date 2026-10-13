@@ -1,0 +1,171 @@
+{
+  "version": "30.0.0",
+  "source": "website-first/config/languages.json",
+  "futureLanguagesAllowed": true,
+  "languages": [
+    {
+      "code": "en",
+      "name": "English",
+      "nativeName": "English",
+      "enabled": true,
+      "scheduled": false
+    },
+    {
+      "code": "as",
+      "name": "Assamese",
+      "nativeName": "অসমীয়া",
+      "enabled": false,
+      "scheduled": true
+    },
+    {
+      "code": "bn",
+      "name": "Bengali",
+      "nativeName": "বাংলা",
+      "enabled": false,
+      "scheduled": true
+    },
+    {
+      "code": "brx",
+      "name": "Bodo",
+      "nativeName": "बड़ो",
+      "enabled": false,
+      "scheduled": true
+    },
+    {
+      "code": "doi",
+      "name": "Dogri",
+      "nativeName": "डोगरी",
+      "enabled": false,
+      "scheduled": true
+    },
+    {
+      "code": "gu",
+      "name": "Gujarati",
+      "nativeName": "ગુજરાતી",
+      "enabled": false,
+      "scheduled": true
+    },
+    {
+      "code": "hi",
+      "name": "Hindi",
+      "nativeName": "हिन्दी",
+      "enabled": false,
+      "scheduled": true
+    },
+    {
+      "code": "kn",
+      "name": "Kannada",
+      "nativeName": "ಕನ್ನಡ",
+      "enabled": false,
+      "scheduled": true
+    },
+    {
+      "code": "ks",
+      "name": "Kashmiri",
+      "nativeName": "कॉशुर / کٲشُر",
+      "enabled": false,
+      "scheduled": true
+    },
+    {
+      "code": "kok",
+      "name": "Konkani",
+      "nativeName": "कोंकणी",
+      "enabled": false,
+      "scheduled": true
+    },
+    {
+      "code": "mai",
+      "name": "Maithili",
+      "nativeName": "मैथिली",
+      "enabled": false,
+      "scheduled": true
+    },
+    {
+      "code": "ml",
+      "name": "Malayalam",
+      "nativeName": "മലയാളം",
+      "enabled": false,
+      "scheduled": true
+    },
+    {
+      "code": "mni",
+      "name": "Manipuri",
+      "nativeName": "মৈতৈলোন",
+      "enabled": false,
+      "scheduled": true
+    },
+    {
+      "code": "mr",
+      "name": "Marathi",
+      "nativeName": "मराठी",
+      "enabled": false,
+      "scheduled": true
+    },
+    {
+      "code": "ne",
+      "name": "Nepali",
+      "nativeName": "नेपाली",
+      "enabled": false,
+      "scheduled": true
+    },
+    {
+      "code": "or",
+      "name": "Odia",
+      "nativeName": "ଓଡ଼ିଆ",
+      "enabled": false,
+      "scheduled": true
+    },
+    {
+      "code": "pa",
+      "name": "Punjabi",
+      "nativeName": "ਪੰਜਾਬੀ",
+      "enabled": false,
+      "scheduled": true
+    },
+    {
+      "code": "sa",
+      "name": "Sanskrit",
+      "nativeName": "संस्कृतम्",
+      "enabled": false,
+      "scheduled": true
+    },
+    {
+      "code": "sat",
+      "name": "Santali",
+      "nativeName": "ᱥᱟᱱᱛᱟᱲᱤ",
+      "enabled": false,
+      "scheduled": true
+    },
+    {
+      "code": "sd",
+      "name": "Sindhi",
+      "nativeName": "सिन्धी",
+      "enabled": false,
+      "scheduled": true
+    },
+    {
+      "code": "ta",
+      "name": "Tamil",
+      "nativeName": "தமிழ்",
+      "enabled": false,
+      "scheduled": true
+    },
+    {
+      "code": "te",
+      "name": "Telugu",
+      "nativeName": "తెలుగు",
+      "enabled": false,
+      "scheduled": true
+    },
+    {
+      "code": "ur",
+      "name": "Urdu",
+      "nativeName": "اردو",
+      "enabled": false,
+      "scheduled": true
+    }
+  ],
+  "translations": {
+    "duration": "Duration (seconds)"
+  }
+}

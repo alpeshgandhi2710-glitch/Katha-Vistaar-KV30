@@ -1,0 +1,11 @@
+{
+  "version": "30.0.0",
+  "author_control": [
+    "off",
+    "24h",
+    "48h",
+    "5d",
+    "7d"
+  ],
+  "subscriber_entitlement": true
+}

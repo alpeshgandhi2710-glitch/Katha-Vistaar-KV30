@@ -1,0 +1,28 @@
+{
+  "version": "30.0.0",
+  "ownership": "author_or_rightful_rightsholder",
+  "statuses": [
+    "original",
+    "licensed",
+    "coauthored",
+    "translation",
+    "adaptation",
+    "commissioned",
+    "public_domain",
+    "ai_assisted"
+  ],
+  "separate_rights": [
+    "read",
+    "publish",
+    "translate",
+    "audio",
+    "comic",
+    "video",
+    "film_ott",
+    "merchandising",
+    "commercial_license",
+    "ai_training",
+    "ai_transformation"
+  ],
+  "no_implied_transfer": true
+}

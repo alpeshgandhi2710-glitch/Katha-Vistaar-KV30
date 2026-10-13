@@ -1,0 +1,10 @@
+'use strict';
+const assert=require('node:assert/strict');
+const {classifyProviderResult}=require('../services/payment-settlement-manager');
+const {createManagedMonetization}=require('../core/managed-monetization');
+const fs=require('node:fs'),path=require('node:path'),os=require('node:os');
+function test(name,fn){try{fn();console.log('PASS',name)}catch(e){console.error('FAIL',name,e);process.exitCode=1}}
+test('debited subscription failure is not settled and is recoverable',()=>{const d=classifyProviderResult({status:'failed',debited:true,transactionId:'T1'});assert.equal(d.state,'debit_confirmed');assert.equal(d.debited,true);assert.equal(d.authoritative,false)});
+test('refunded payment never authorizes subscription/fulfillment',()=>{const d=classifyProviderResult({status:'refunded',debited:true,refunded:true});assert.equal(d.state,'refunded');assert.equal(d.authoritative,false);});
+test('confirmed settlement is the only fulfillment authorization',()=>{assert.equal(classifyProviderResult({status:'captured',captured:true}).state,'settled');assert.equal(classifyProviderResult({status:'pending',debited:true}).state,'reconciliation_required')});
+test('master admin royalty policy supports zero and monthly payout controls',()=>{const root=fs.mkdtempSync(path.join(os.tmpdir(),'kv148-'));fs.mkdirSync(path.join(root,'config'));fs.mkdirSync(path.join(root,'data'));fs.writeFileSync(path.join(root,'config','managed-monetization.json'),JSON.stringify({}));const audit={record(){}};const m=createManagedMonetization(root,audit);const r=m.setRoyalty('master_admin',{creatorRate:0,stickerDirectRate:0,gstRate:0,payoutFrequency:'monthly',payoutDay:15});assert.equal(r.creatorRate,0);assert.equal(r.stickerDirectRate,0);assert.equal(r.gstRate,0);assert.equal(r.payoutFrequency,'monthly');assert.equal(r.payoutDay,15);const s=m.upsertSubscription('master_admin',{id:'x',price:100,discountPercent:25,discountActive:true});assert.equal(s.discountPercent,25);m.removeSubscription('master_admin','x');assert.equal(m.get().subscriptions.find(x=>x.id==='x').active,false)});

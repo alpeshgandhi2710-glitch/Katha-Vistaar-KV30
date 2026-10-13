@@ -1,0 +1,44 @@
+{
+  "version": "KV30-R50-M30",
+  "internalDomain": "kathavistaar.internal",
+  "from": {
+    "emailEnv": "KV_INTERNAL_SMTP_EMAIL_FROM",
+    "defaultLocalPart": "no-reply",
+    "replyToEnv": "KV_INTERNAL_MAIL_REPLY_TO"
+  },
+  "smtp": {
+    "hostEnv": "KV_INTERNAL_SMTP_EMAIL_HOST",
+    "portEnv": "KV_INTERNAL_SMTP_EMAIL_PORT",
+    "secureEnv": "KV_INTERNAL_SMTP_EMAIL_SECURE",
+    "starttlsEnv": "KV_INTERNAL_SMTP_EMAIL_STARTTLS",
+    "userEnv": "KV_INTERNAL_SMTP_EMAIL_USER",
+    "passwordEnv": "KV_INTERNAL_SMTP_EMAIL_PASSWORD"
+  },
+  "sms": {
+    "transport": "internal_gateway",
+    "endpointEnv": "KV_INTERNAL_SMS_GATEWAY_ENDPOINT",
+    "apiKeyEnv": "KV_INTERNAL_SMS_GATEWAY_API_KEY",
+    "healthEnv": "KV_INTERNAL_SMS_GATEWAY_HEALTH_URL"
+  },
+  "queue": {
+    "alwaysOn": true,
+    "persistOutbox": true,
+    "maxEntries": 500,
+    "retry": {
+      "maxAttempts": 4,
+      "baseDelayMs": 250,
+      "maxDelayMs": 30000
+    }
+  },
+  "external": {
+    "masterAdminControlled": true,
+    "defaultEnabled": false,
+    "fallback": "internal_queue"
+  },
+  "rules": {
+    "internalSenderMustMatchDomain": true,
+    "internalSecretsNeverInSource": true,
+    "smsExternalProviderNeverUsedAsInternalTransport": true,
+    "deliveryFailureMustRemainQueued": true
+  }
+}

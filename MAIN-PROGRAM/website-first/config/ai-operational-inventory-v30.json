@@ -1,0 +1,824 @@
+{
+  "version": "REF-9.2.57.18-R22",
+  "sourceOfTruth": [
+    "config/ai-ecosystem-wiring-v30.json",
+    "config/internal-ai-gate-configuration-v30.json"
+  ],
+  "internalAICount": 31,
+  "internalGateCount": 31,
+  "developmentProductionContractShared": true,
+  "externalDefault": "OFF",
+  "humanMasterAdminFinalAuthority": true,
+  "noSelfRetraining": true,
+  "noPermissionElevation": true,
+  "memory": {
+    "logicalLayers": [
+      {
+        "id": "learned_observed_knowledge_memory",
+        "purpose": "approved project/character/knowledge learning and observed knowledge; never self-authorizes policy or permissions"
+      },
+      {
+        "id": "user_help_personal_assistance_memory",
+        "purpose": "user-scoped assistance context; owner-scoped and privacy restricted"
+      }
+    ],
+    "physicalRuntimeScopes": [
+      "project",
+      "user",
+      "character",
+      "knowledge"
+    ],
+    "integritySeal": "KV30-MEMORY-SEAL-1",
+    "ownerScopedOperationalMemory": true,
+    "knowledgeApprovalRequired": true,
+    "crossMemoryReads": false,
+    "externalAIOverwriteInternalMemory": false,
+    "trainingSeparated": true,
+    "masterAdminRestoreOnly": true
+  },
+  "ais": [
+    {
+      "aiId": "ai_orchestrator",
+      "tier": "L1",
+      "role": [
+        "identity_check",
+        "permission_check",
+        "policy_check",
+        "memory_retrieval",
+        "specialist_route",
+        "quality_gate"
+      ],
+      "internalGate": "internal_ai_gate_01",
+      "handlerDeclared": true,
+      "tools": [
+        "identity_check",
+        "permission_check",
+        "policy_check",
+        "memory_retrieval",
+        "specialist_route",
+        "quality_gate"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "externalAllowed": false,
+      "learningGovernance": "policy_bounded",
+      "constitution": true,
+      "benchmarkContract": "internal-ai-domain-benchmark",
+      "communicationAllowlistCount": 0
+    },
+    {
+      "aiId": "all_domain_master_intelligence_ai",
+      "tier": "L1",
+      "role": [
+        "cross_domain_plan",
+        "specialist_delegation",
+        "risk_escalation"
+      ],
+      "internalGate": "internal_ai_gate_02",
+      "handlerDeclared": true,
+      "tools": [
+        "cross_domain_plan",
+        "specialist_delegation",
+        "risk_escalation"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "externalAllowed": false,
+      "learningGovernance": "policy_bounded",
+      "constitution": true,
+      "benchmarkContract": "internal-ai-domain-benchmark",
+      "communicationAllowlistCount": 0
+    },
+    {
+      "aiId": "master_admin_ai",
+      "tier": "L1",
+      "role": [
+        "governance_review",
+        "risk_review",
+        "approval_advice"
+      ],
+      "internalGate": "internal_ai_gate_03",
+      "handlerDeclared": true,
+      "tools": [
+        "governance_review",
+        "risk_review",
+        "approval_advice"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "externalAllowed": false,
+      "learningGovernance": "policy_bounded",
+      "constitution": true,
+      "benchmarkContract": "internal-ai-domain-benchmark",
+      "communicationAllowlistCount": 0
+    },
+    {
+      "aiId": "designated_admin_ai",
+      "tier": "L1",
+      "role": [
+        "scoped_admin_review",
+        "ticket_triage"
+      ],
+      "internalGate": "internal_ai_gate_04",
+      "handlerDeclared": true,
+      "tools": [
+        "scoped_admin_review",
+        "ticket_triage"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "externalAllowed": false,
+      "learningGovernance": "policy_bounded",
+      "constitution": true,
+      "benchmarkContract": "internal-ai-domain-benchmark",
+      "communicationAllowlistCount": 0
+    },
+    {
+      "aiId": "admin_ai",
+      "tier": "L1",
+      "role": [
+        "admin_review",
+        "permission_scope_check"
+      ],
+      "internalGate": "internal_ai_gate_05",
+      "handlerDeclared": true,
+      "tools": [
+        "admin_review",
+        "permission_scope_check"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "externalAllowed": false,
+      "learningGovernance": "policy_bounded",
+      "constitution": true,
+      "benchmarkContract": "internal-ai-domain-benchmark",
+      "communicationAllowlistCount": 0
+    },
+    {
+      "aiId": "story_ai",
+      "tier": "L2",
+      "role": [
+        "story_outline",
+        "continuity_check",
+        "rewrite"
+      ],
+      "internalGate": "internal_ai_gate_06",
+      "handlerDeclared": true,
+      "tools": [
+        "story_outline",
+        "continuity_check",
+        "rewrite"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "externalAllowed": false,
+      "learningGovernance": "policy_bounded",
+      "constitution": true,
+      "benchmarkContract": "internal-ai-domain-benchmark",
+      "communicationAllowlistCount": 0
+    },
+    {
+      "aiId": "character_ai",
+      "tier": "L2",
+      "role": [
+        "character_sheet",
+        "fact_check",
+        "relationship_check"
+      ],
+      "internalGate": "internal_ai_gate_07",
+      "handlerDeclared": true,
+      "tools": [
+        "character_sheet",
+        "fact_check",
+        "relationship_check"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "externalAllowed": false,
+      "learningGovernance": "policy_bounded",
+      "constitution": true,
+      "benchmarkContract": "internal-ai-domain-benchmark",
+      "communicationAllowlistCount": 0
+    },
+    {
+      "aiId": "audio_ai",
+      "tier": "L2",
+      "role": [
+        "script_direction",
+        "voice_direction",
+        "audio_quality_plan"
+      ],
+      "internalGate": "internal_ai_gate_08",
+      "handlerDeclared": true,
+      "tools": [
+        "script_direction",
+        "voice_direction",
+        "audio_quality_plan"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "externalAllowed": false,
+      "learningGovernance": "policy_bounded",
+      "constitution": true,
+      "benchmarkContract": "internal-ai-domain-benchmark",
+      "communicationAllowlistCount": 0
+    },
+    {
+      "aiId": "comic_ai",
+      "tier": "L2",
+      "role": [
+        "panel_plan",
+        "dialogue_check",
+        "visual_continuity"
+      ],
+      "internalGate": "internal_ai_gate_09",
+      "handlerDeclared": true,
+      "tools": [
+        "panel_plan",
+        "dialogue_check",
+        "visual_continuity"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "externalAllowed": false,
+      "learningGovernance": "policy_bounded",
+      "constitution": true,
+      "benchmarkContract": "internal-ai-domain-benchmark",
+      "communicationAllowlistCount": 0
+    },
+    {
+      "aiId": "visual_ai",
+      "tier": "L2",
+      "role": [
+        "shot_plan",
+        "visual_prompt_plan",
+        "continuity_check"
+      ],
+      "internalGate": "internal_ai_gate_10",
+      "handlerDeclared": true,
+      "tools": [
+        "shot_plan",
+        "visual_prompt_plan",
+        "continuity_check"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "externalAllowed": false,
+      "learningGovernance": "policy_bounded",
+      "constitution": true,
+      "benchmarkContract": "internal-ai-domain-benchmark",
+      "communicationAllowlistCount": 0
+    },
+    {
+      "aiId": "quality_ai",
+      "tier": "L2",
+      "role": [
+        "consistency_check",
+        "regression_check",
+        "rights_policy_check"
+      ],
+      "internalGate": "internal_ai_gate_11",
+      "handlerDeclared": true,
+      "tools": [
+        "consistency_check",
+        "regression_check",
+        "rights_policy_check"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "externalAllowed": false,
+      "learningGovernance": "policy_bounded",
+      "constitution": true,
+      "benchmarkContract": "internal-ai-domain-benchmark",
+      "communicationAllowlistCount": 0
+    },
+    {
+      "aiId": "research_ai",
+      "tier": "L2",
+      "role": [
+        "source_plan",
+        "evidence_synthesis",
+        "knowledge_proposal"
+      ],
+      "internalGate": "internal_ai_gate_12",
+      "handlerDeclared": true,
+      "tools": [
+        "source_plan",
+        "evidence_synthesis",
+        "knowledge_proposal"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "externalAllowed": false,
+      "learningGovernance": "policy_bounded",
+      "constitution": true,
+      "benchmarkContract": "internal-ai-domain-benchmark",
+      "communicationAllowlistCount": 0
+    },
+    {
+      "aiId": "safety_policy_ai",
+      "tier": "L2",
+      "role": [
+        "privacy_check",
+        "copyright_check",
+        "policy_gate"
+      ],
+      "internalGate": "internal_ai_gate_13",
+      "handlerDeclared": true,
+      "tools": [
+        "privacy_check",
+        "copyright_check",
+        "policy_gate"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "externalAllowed": false,
+      "learningGovernance": "policy_bounded",
+      "constitution": true,
+      "benchmarkContract": "internal-ai-domain-benchmark",
+      "communicationAllowlistCount": 0
+    },
+    {
+      "aiId": "programmer_ai",
+      "tier": "L2",
+      "role": [
+        "static_analysis",
+        "runtime_analysis",
+        "test_plan",
+        "patch_proposal"
+      ],
+      "internalGate": "internal_ai_gate_14",
+      "handlerDeclared": true,
+      "tools": [
+        "static_analysis",
+        "runtime_analysis",
+        "test_plan",
+        "patch_proposal"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "externalAllowed": false,
+      "learningGovernance": "policy_bounded",
+      "constitution": true,
+      "benchmarkContract": "internal-ai-domain-benchmark",
+      "communicationAllowlistCount": 0
+    },
+    {
+      "aiId": "design_ai",
+      "tier": "L2",
+      "role": [
+        "responsive_review",
+        "accessibility_review",
+        "visual_regression"
+      ],
+      "internalGate": "internal_ai_gate_15",
+      "handlerDeclared": true,
+      "tools": [
+        "responsive_review",
+        "accessibility_review",
+        "visual_regression"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "externalAllowed": false,
+      "learningGovernance": "policy_bounded",
+      "constitution": true,
+      "benchmarkContract": "internal-ai-domain-benchmark",
+      "communicationAllowlistCount": 0
+    },
+    {
+      "aiId": "creator_ai",
+      "tier": "L2",
+      "role": [
+        "creator_suggestion",
+        "rights_check",
+        "publication_check"
+      ],
+      "internalGate": "internal_ai_gate_16",
+      "handlerDeclared": true,
+      "tools": [
+        "creator_suggestion",
+        "rights_check",
+        "publication_check"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "externalAllowed": false,
+      "learningGovernance": "policy_bounded",
+      "constitution": true,
+      "benchmarkContract": "internal-ai-domain-benchmark",
+      "communicationAllowlistCount": 0
+    },
+    {
+      "aiId": "training_ai",
+      "tier": "L2",
+      "role": [
+        "curriculum",
+        "evaluation_plan",
+        "learning_candidate"
+      ],
+      "internalGate": "internal_ai_gate_17",
+      "handlerDeclared": true,
+      "tools": [
+        "curriculum",
+        "evaluation_plan",
+        "learning_candidate"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "externalAllowed": false,
+      "learningGovernance": "policy_bounded",
+      "constitution": true,
+      "benchmarkContract": "internal-ai-domain-benchmark",
+      "communicationAllowlistCount": 0
+    },
+    {
+      "aiId": "user_monitoring_ai",
+      "tier": "L2",
+      "role": [
+        "risk_assessment",
+        "abuse_signal_check"
+      ],
+      "internalGate": "internal_ai_gate_18",
+      "handlerDeclared": true,
+      "tools": [
+        "risk_assessment",
+        "abuse_signal_check"
+      ],
+      "memoryScopes": [
+        "user",
+        "knowledge"
+      ],
+      "externalAllowed": false,
+      "learningGovernance": "policy_bounded",
+      "constitution": true,
+      "benchmarkContract": "internal-ai-domain-benchmark",
+      "communicationAllowlistCount": 0
+    },
+    {
+      "aiId": "monitoring_ai",
+      "tier": "L2",
+      "role": [
+        "health_snapshot",
+        "policy_monitor"
+      ],
+      "internalGate": "internal_ai_gate_19",
+      "handlerDeclared": true,
+      "tools": [
+        "health_snapshot",
+        "policy_monitor"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "externalAllowed": false,
+      "learningGovernance": "policy_bounded",
+      "constitution": true,
+      "benchmarkContract": "internal-ai-domain-benchmark",
+      "communicationAllowlistCount": 0
+    },
+    {
+      "aiId": "damage_control_ai",
+      "tier": "L2",
+      "role": [
+        "incident_analysis",
+        "containment_plan",
+        "recovery_check"
+      ],
+      "internalGate": "internal_ai_gate_20",
+      "handlerDeclared": true,
+      "tools": [
+        "incident_analysis",
+        "containment_plan",
+        "recovery_check"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "externalAllowed": false,
+      "learningGovernance": "policy_bounded",
+      "constitution": true,
+      "benchmarkContract": "internal-ai-domain-benchmark",
+      "communicationAllowlistCount": 0
+    },
+    {
+      "aiId": "account_management_ai",
+      "tier": "L2",
+      "role": [
+        "account_state_review",
+        "appeal_routing"
+      ],
+      "internalGate": "internal_ai_gate_21",
+      "handlerDeclared": true,
+      "tools": [
+        "account_state_review",
+        "appeal_routing"
+      ],
+      "memoryScopes": [
+        "user",
+        "knowledge"
+      ],
+      "externalAllowed": false,
+      "learningGovernance": "policy_bounded",
+      "constitution": true,
+      "benchmarkContract": "internal-ai-domain-benchmark",
+      "communicationAllowlistCount": 0
+    },
+    {
+      "aiId": "security_ai",
+      "tier": "L2",
+      "role": [
+        "security_review",
+        "threat_check",
+        "secret_exposure_check"
+      ],
+      "internalGate": "internal_ai_gate_22",
+      "handlerDeclared": true,
+      "tools": [
+        "security_review",
+        "threat_check",
+        "secret_exposure_check"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "externalAllowed": false,
+      "learningGovernance": "policy_bounded",
+      "constitution": true,
+      "benchmarkContract": "internal-ai-domain-benchmark",
+      "communicationAllowlistCount": 0
+    },
+    {
+      "aiId": "anti_spam_malware_ai",
+      "tier": "L2",
+      "role": [
+        "spam_detection",
+        "malware_signal_check"
+      ],
+      "internalGate": "internal_ai_gate_23",
+      "handlerDeclared": true,
+      "tools": [
+        "spam_detection",
+        "malware_signal_check"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "externalAllowed": false,
+      "learningGovernance": "policy_bounded",
+      "constitution": true,
+      "benchmarkContract": "internal-ai-domain-benchmark",
+      "communicationAllowlistCount": 0
+    },
+    {
+      "aiId": "help_support_ai",
+      "tier": "L2",
+      "role": [
+        "help_resolution",
+        "ticket_routing"
+      ],
+      "internalGate": "internal_ai_gate_24",
+      "handlerDeclared": true,
+      "tools": [
+        "help_resolution",
+        "ticket_routing"
+      ],
+      "memoryScopes": [
+        "user",
+        "knowledge"
+      ],
+      "externalAllowed": false,
+      "learningGovernance": "policy_bounded",
+      "constitution": true,
+      "benchmarkContract": "internal-ai-domain-benchmark",
+      "communicationAllowlistCount": 0
+    },
+    {
+      "aiId": "accounting_ai",
+      "tier": "L2",
+      "role": [
+        "ledger_check",
+        "reconciliation_plan"
+      ],
+      "internalGate": "internal_ai_gate_25",
+      "handlerDeclared": true,
+      "tools": [
+        "ledger_check",
+        "reconciliation_plan"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "externalAllowed": false,
+      "learningGovernance": "policy_bounded",
+      "constitution": true,
+      "benchmarkContract": "internal-ai-domain-benchmark",
+      "communicationAllowlistCount": 0
+    },
+    {
+      "aiId": "engagement_ai",
+      "tier": "L2",
+      "role": [
+        "engagement_analysis"
+      ],
+      "internalGate": "internal_ai_gate_26",
+      "handlerDeclared": true,
+      "tools": [
+        "engagement_analysis"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "externalAllowed": false,
+      "learningGovernance": "policy_bounded",
+      "constitution": true,
+      "benchmarkContract": "internal-ai-domain-benchmark",
+      "communicationAllowlistCount": 0
+    },
+    {
+      "aiId": "analytics_ai",
+      "tier": "L2",
+      "role": [
+        "metric_analysis",
+        "data_quality_check"
+      ],
+      "internalGate": "internal_ai_gate_27",
+      "handlerDeclared": true,
+      "tools": [
+        "metric_analysis",
+        "data_quality_check"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "externalAllowed": false,
+      "learningGovernance": "policy_bounded",
+      "constitution": true,
+      "benchmarkContract": "internal-ai-domain-benchmark",
+      "communicationAllowlistCount": 0
+    },
+    {
+      "aiId": "reel_ai",
+      "tier": "L2",
+      "role": [
+        "reel_structure",
+        "duration_check",
+        "media_rights_check"
+      ],
+      "internalGate": "internal_ai_gate_28",
+      "handlerDeclared": true,
+      "tools": [
+        "reel_structure",
+        "duration_check",
+        "media_rights_check"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "externalAllowed": false,
+      "learningGovernance": "policy_bounded",
+      "constitution": true,
+      "benchmarkContract": "internal-ai-domain-benchmark",
+      "communicationAllowlistCount": 0
+    },
+    {
+      "aiId": "writing_ai",
+      "tier": "L2",
+      "role": [
+        "story_outline",
+        "rewrite",
+        "continuity_check"
+      ],
+      "internalGate": "internal_ai_gate_29",
+      "handlerDeclared": true,
+      "tools": [
+        "story_outline",
+        "continuity_check",
+        "rewrite"
+      ],
+      "memoryScopes": [
+        "project",
+        "knowledge",
+        "user"
+      ],
+      "externalAllowed": false,
+      "learningGovernance": "policy_bounded",
+      "constitution": true,
+      "benchmarkContract": "internal-ai-domain-benchmark",
+      "communicationAllowlistCount": 0
+    },
+    {
+      "aiId": "media_security_ai",
+      "tier": "L2",
+      "role": [
+        "security_scan",
+        "risk_assessment"
+      ],
+      "internalGate": "internal_ai_gate_30",
+      "handlerDeclared": true,
+      "tools": [
+        "security_scan",
+        "risk_assessment"
+      ],
+      "memoryScopes": [
+        "knowledge",
+        "asset_provenance"
+      ],
+      "externalAllowed": false,
+      "learningGovernance": "policy_bounded",
+      "constitution": true,
+      "benchmarkContract": "internal-ai-domain-benchmark",
+      "communicationAllowlistCount": 0
+    },
+    {
+      "aiId": "cyber_defense_ai",
+      "tier": "L2",
+      "role": [
+        "threat_analysis",
+        "risk_assessment"
+      ],
+      "internalGate": "internal_ai_gate_31",
+      "handlerDeclared": true,
+      "tools": [
+        "threat_analysis",
+        "risk_assessment"
+      ],
+      "memoryScopes": [
+        "knowledge",
+        "security_incidents"
+      ],
+      "externalAllowed": false,
+      "learningGovernance": "policy_bounded",
+      "constitution": true,
+      "benchmarkContract": "internal-ai-domain-benchmark",
+      "communicationAllowlistCount": 0
+    }
+  ]
+}

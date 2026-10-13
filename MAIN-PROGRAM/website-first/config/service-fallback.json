@@ -1,0 +1,17 @@
+{
+  "version": "30.0.0",
+  "principle": "external-service-dependent features remain OFF/UNAVAILABLE without crashing app",
+  "services": [
+    "payments",
+    "bank_payout",
+    "KYC",
+    "SMS",
+    "email",
+    "push",
+    "ads",
+    "AI_moderation",
+    "speech_to_text",
+    "storage",
+    "CDN"
+  ]
+}

@@ -1,0 +1,6 @@
+decec58689634607235de81f6e75b2f51efcd889716734987a6bd38d519ccf58  /mnt/data/m43_verify/MAIN-PROGRAM/website-first/src/server.js
+19c434cdc8a53a6ab77f8cd9cd0e611bdd8e95fb1ec384fd2144c8c074545cee  /mnt/data/m43_verify/MAIN-PROGRAM/website-first/../backend/src/services/story-studio.js
+9e7925f96dda9ebb785861e8befeb8a177cb5976bb5a01c5b71ba634074817ee  /mnt/data/m43_verify/MAIN-PROGRAM/website-first/config/release-registry-v30.json
+098b315de81a537718c29a3b8f3d0837a93ded2a6a345a65e88d894b20275523  /mnt/data/m43_verify/MAIN-PROGRAM/website-first/config/version.json
+39e70d7b6eee3811c4762417ae54ed4f868e3c1a8c418216ef31d93944be06f6  /mnt/data/m43_verify/MAIN-PROGRAM/website-first/RELEASE-MANIFEST-v30.json
+74ba8c9077da798b39ca112c0205eca5e07f636647d4e3c854591ff0bc05e69e  /mnt/data/m43_verify/MAIN-PROGRAM/website-first/tests/r50-m45-phase2-story-collaboration.test.js

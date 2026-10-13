@@ -1,0 +1,91 @@
+{
+  "version": "30.0.0-v30-rules-hardening-1",
+  "principles": [
+    "no duplicate implementation",
+    "master_admin supremacy",
+    "least privilege",
+    "complete auditability",
+    "graceful external-service fallback"
+  ],
+  "aiCommunication": {
+    "enabled": true,
+    "allowlistOnly": true,
+    "noRoleElevation": true,
+    "ticketScopeRequired": true
+  },
+  "learning": {
+    "operationalTraining": true,
+    "continuousEvaluation": true,
+    "externalAIAdviceAllowedOnlyWhenApproved": true,
+    "noAutonomousPolicyChange": true
+  },
+  "ads": {
+    "internalCampaignsEnabled": true,
+    "externalNetworkOptional": true,
+    "previewPermissionSeparateFromAdFreeEntitlement": true
+  },
+  "identity": {
+    "oneNonDeletedLoginPerIdentity": true,
+    "masterAdminMayCreateMultiple": true,
+    "adminMayCreateInitialPendingAdminLogin": true,
+    "lockedCountsAsExisting": true,
+    "deletedOnlyReopensSlot": true,
+    "deactivatedCountsAsExisting": true,
+    "suspendedCountsAsExisting": true,
+    "verifiedCriticalFieldsChangeByTicketOnly": true
+  },
+  "staffEntitlements": {
+    "app": "complimentary_adfree",
+    "author": "complimentary_author",
+    "countsTowardProfit": false
+  },
+  "masterAdmin": {
+    "fullControl": true
+  },
+  "profileSecurity": {
+    "maskedCriticalFields": true,
+    "otpNeverFullyVisible": true,
+    "royaltyBankFieldsAuthorizedRoles": [
+      "master_admin",
+      "designated_admin"
+    ],
+    "nonRoyaltyPaymentMayUseAnySupportedMethod": true
+  },
+  "aiManagement": {
+    "programmerAi": true,
+    "designAi": true,
+    "masterAdminApprovalForProductionChanges": true,
+    "noRoleBypass": true,
+    "externalAiApprovalGated": true,
+    "policyBoundLearning": true,
+    "continuousQueueArchitecture": true
+  },
+  "authorization": {
+    "basicRule": "Admin is a role label only; an Admin may act only when Master Admin has explicitly granted the required permission. This applies to every UI, route, API, AI data view, ticket action, report, finance, moderation, content, rights, service, backup and governance operation.",
+    "masterAdminAboveAdmin": true,
+    "adminRightsExplicitlyGrantedByMasterOnly": true,
+    "noSelfGrantOrSelfElevation": true,
+    "serverSideEnforcement": true,
+    "permissionCheckOrder": [
+      "identity",
+      "role",
+      "explicit_master_granted_permission",
+      "policy",
+      "action",
+      "audit"
+    ]
+  },
+  "accountStates": {
+    "active": "Normal account operation.",
+    "locked": "Temporary login/account lock. Password-attempt lock is represented separately by loginLocked; policy lock is represented by accountStatus=locked. It is not blocked, deactivated or deleted.",
+    "deactivated": "Account disabled by Master Admin. It is not a block, password lock or deletion.",
+    "blocked": "Account blocked by Master Admin. Registered email/mobile remain reserved and cannot create another account. User cannot self-reopen.",
+    "deleted": "Account deleted. Deletion is distinct from all other states; only deletion reopens the identity slot under the identity policy."
+  },
+  "passwordSecurity": {
+    "threeConsecutiveWrongAttemptsLocks": true,
+    "forgotPasswordOtpUnlocksPasswordAttemptLockOnly": true,
+    "freshLoginAfterReset": true,
+    "passwordHistory": 3
+  }
+}

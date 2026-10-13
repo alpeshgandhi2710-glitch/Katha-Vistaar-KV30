@@ -1,0 +1,73 @@
+{
+  "schema": "KV30-COMMON-HELP-FAQ-v30",
+  "version": "1.0",
+  "governance": "Master Admin controlled; common FAQ and public Help are available before and after login; anonymous login/registration/OTP/access support tickets use a claimed mobile/email and require ticket number plus the same contact identifier for tracking/comments; authenticated users use verified session contact for full support.",
+  "items": [
+    {
+      "id": "faq_login_001",
+      "category": "login",
+      "question": "How do I log in?",
+      "answer": "Use your username, email, or mobile number with your password. If you cannot sign in, use Forgot Password or the public Help AI.",
+      "tags": [
+        "login",
+        "sign in",
+        "account"
+      ]
+    },
+    {
+      "id": "faq_otp_001",
+      "category": "otp",
+      "question": "I did not receive my OTP. What should I do?",
+      "answer": "Check the registered email or mobile number, wait for delivery, and use Resend Code. Never share an OTP with another person.",
+      "tags": [
+        "otp",
+        "verification",
+        "login"
+      ]
+    },
+    {
+      "id": "faq_password_001",
+      "category": "account",
+      "question": "How do I reset my password?",
+      "answer": "Choose Forgot Password on the login screen, verify the OTP sent to a registered contact, and create a new password.",
+      "tags": [
+        "password",
+        "reset",
+        "account"
+      ]
+    },
+    {
+      "id": "faq_ticket_001",
+      "category": "support",
+      "question": "How do I create a help ticket?",
+      "answer": "Without login, use public Help AI to get guidance and create a support ticket for login, registration, OTP or access problems by providing a mobile number or email address. The ticket number plus the same contact identifier can be used to track the ticket and add comments. After login, you can create full AI-assisted support tickets using the verified contact associated with your session.",
+      "tags": [
+        "help",
+        "ticket",
+        "support"
+      ]
+    },
+    {
+      "id": "faq_library_001",
+      "category": "library",
+      "question": "Where can I find my saved works?",
+      "answer": "After login, open Library to view saved works and reading history. Account-specific library data is available only to the authenticated user.",
+      "tags": [
+        "library",
+        "saved",
+        "history"
+      ]
+    },
+    {
+      "id": "faq_language_001",
+      "category": "language",
+      "question": "What happens if my selected language is unavailable?",
+      "answer": "When the selected language is unavailable or unsupported, the governed UI falls back to English. For an enabled language with a missing reviewed translation, the governed localization policy applies its explicit missing-key behavior.",
+      "tags": [
+        "language",
+        "fallback",
+        "english"
+      ]
+    }
+  ]
+}

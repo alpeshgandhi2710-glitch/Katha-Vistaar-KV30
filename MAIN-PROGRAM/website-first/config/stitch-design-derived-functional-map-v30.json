@@ -1,0 +1,1130 @@
+{
+  "release": "KV30-P2-30W",
+  "sourceFolders": {
+    "01_REQUIRED_PROGRAM": 127,
+    "02_INCOMPLETE_REQUIRED_PROGRAM": 58
+  },
+  "functionalImplementations": [
+    "discovery home/search/categories/AI-curated",
+    "studio hub/works/story/comic/audio/publish",
+    "AI draft completion/rewrite/world verification/asset planning/metadata/audio enhancement",
+    "AI governance policies/incidents/capabilities/performance",
+    "asset provenance and governed edit proposals",
+    "admin RBAC and user audit/force logout/reauth",
+    "finance ledger/transactions and gated payout requests",
+    "content snapshots/restore",
+    "social notification/message/follow compatibility"
+  ],
+  "artifacts": [
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "404_page_not_found",
+      "files": 2,
+      "domain": "reference/UX"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "accessibility_katha_vistaar_v30",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "account_security_katha_vistaar_v30",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "ad_monetization_dashboard_executive_control_phase_1",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "ad_policy_configuration_granular_control_phase_1",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "ad_revenue_royalty_ledger_financial_integrity_phase_1",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "admin_permissions_rbac_authority_control_phase_1",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "ai_capability_dependency_lattice",
+      "files": 2,
+      "domain": "ai/governance"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "ai_governance_policy_dashboard",
+      "files": 2,
+      "domain": "ai/governance"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "ai_help_support_hub_governed_architecture_phase_1",
+      "files": 2,
+      "domain": "ai/governance"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "ai_incident_anomaly_center",
+      "files": 2,
+      "domain": "ai/governance"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "ai_orchestrator_admin_governance_v30",
+      "files": 2,
+      "domain": "ai/governance"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "ai_performance_insights",
+      "files": 2,
+      "domain": "ai/governance"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "ai_recommendations_katha_vistaar_v30",
+      "files": 2,
+      "domain": "ai/governance"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "all_domain_master_intelligence_hud",
+      "files": 1,
+      "domain": "ai/governance"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "analytics_overview_katha_vistaar_v30",
+      "files": 2,
+      "domain": "analytics"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "analytics_overview_refined_1",
+      "files": 2,
+      "domain": "analytics"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "analytics_overview_refined_2",
+      "files": 2,
+      "domain": "analytics"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "analytics_overview_refined_v31",
+      "files": 2,
+      "domain": "analytics"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "api_specification_ai_enhanced",
+      "files": 2,
+      "domain": "ai/governance"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "asset_provenance_details",
+      "files": 2,
+      "domain": "ai/governance"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "audience_insights_katha_vistaar_v30",
+      "files": 2,
+      "domain": "analytics"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "audio_studio_ai_pacing_v30",
+      "files": 2,
+      "domain": "creator/media"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "category_explore_katha_vistaar_v30",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "chat_with_anjali_katha_vistaar_v30",
+      "files": 2,
+      "domain": "reference/UX"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "coin_ledger_katha_vistaar_v30_1",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "coin_ledger_katha_vistaar_v30_2",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "comic_engine_ai_illustrator_v30",
+      "files": 2,
+      "domain": "creator/media"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "comic_panel_engine_katha_vistaar_v30",
+      "files": 2,
+      "domain": "creator/media"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "content_performance_katha_vistaar_v30",
+      "files": 2,
+      "domain": "analytics"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "create_new_policy_ai_orchestrator",
+      "files": 2,
+      "domain": "ai/governance"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "creator_setup_katha_vistaar_v30",
+      "files": 2,
+      "domain": "creator/media"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "creator_studio_hub_1",
+      "files": 2,
+      "domain": "creator/media"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "creator_studio_hub_2",
+      "files": 2,
+      "domain": "creator/media"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "creator_studio_hub_final_audit_refined",
+      "files": 2,
+      "domain": "creator/media"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "creator_studio_hub_hardened_phase_2",
+      "files": 2,
+      "domain": "creator/media"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "creator_studio_hub_localized_v30",
+      "files": 2,
+      "domain": "creator/media"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "creator_studio_hub_refined",
+      "files": 2,
+      "domain": "creator/media"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "creator_studio_hub_v30_hardened",
+      "files": 2,
+      "domain": "creator/media"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "critical_failure_alerts_ai_orchestrator",
+      "files": 2,
+      "domain": "ai/governance"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "empty_search_results",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "fm_audio_studio_katha_vistaar_v30",
+      "files": 2,
+      "domain": "creator/media"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "functional_studio_system",
+      "files": 1,
+      "domain": "creator/media"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "governed_ai_training_forge",
+      "files": 2,
+      "domain": "ai/governance"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "home_katha_vistaar_v30_1",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "home_katha_vistaar_v30_2",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "home_localized_v30",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "immutable_coin_ledger_financial_core_phase_1",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "internal_payment_engine_authorization_phase_1",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "katha_vistaar_design_system",
+      "files": 1,
+      "domain": "reference/UX"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "katha_vistaar_v30_1",
+      "files": 1,
+      "domain": "reference/UX"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "katha_vistaar_v30_2",
+      "files": 1,
+      "domain": "reference/UX"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "katha_vistaar_v30_hud",
+      "files": 1,
+      "domain": "reference/UX"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "login_hardened_verified_1",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "login_hardened_verified_2",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "login_hardened_verified_phase_1",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "login_katha_vistaar_v30_1",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "login_katha_vistaar_v30_2",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "master_admin_dashboard_executive_hub",
+      "files": 2,
+      "domain": "reference/UX"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "master_admin_dashboard_executive_hub_phase_1",
+      "files": 2,
+      "domain": "reference/UX"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "master_admin_dashboard_global_command_center",
+      "files": 2,
+      "domain": "reference/UX"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "master_intelligence_dashboard_ecosystem_command",
+      "files": 2,
+      "domain": "ai/governance"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "messages_katha_vistaar_v30",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "no_notifications",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "no_transactions_found",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "notification_center_production_integrated_phase_1",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "notifications_katha_vistaar_v30",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "otp_verification_hardened_verified_1",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "otp_verification_hardened_verified_2",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "otp_verification_katha_vistaar_v30_1",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "otp_verification_katha_vistaar_v30_2",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "otp_verification_security_layer_phase_1",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "payment_intent_secure_checkout",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "plan_checkout_verification_phase_1",
+      "files": 2,
+      "domain": "reference/UX"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "privacy_content_katha_vistaar_v30",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "provenance_ledger_audit_trail",
+      "files": 2,
+      "domain": "ai/governance"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "public_profile_katha_vistaar_v30",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "public_profile_refined",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "rbac_permissions_configuration_v30_admin",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "reel_studio_katha_vistaar_v30",
+      "files": 2,
+      "domain": "creator/media"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "regional_demographics_deep_dive_v30_governance",
+      "files": 2,
+      "domain": "ai/governance"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "regional_performance_map_v30_governance",
+      "files": 2,
+      "domain": "ai/governance"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "register_hardened_verified_1",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "register_hardened_verified_2",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "register_hardened_verified_phase_1",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "register_katha_vistaar_v30_1",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "register_katha_vistaar_v30_2",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "royalty_ledger_katha_vistaar_v30",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "royalty_ledger_refined",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "search_discovery_katha_vistaar_v30",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "search_discovery_localized_v30",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "search_discovery_refined",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "security_audit_ledger_v30_governance_1",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "security_audit_ledger_v30_governance_2",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "select_interests_katha_vistaar_v30",
+      "files": 2,
+      "domain": "reference/UX"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "settings_katha_vistaar_v30",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "settings_localized_v30",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "settings_refined",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "story_editor_ai_architect_v30",
+      "files": 2,
+      "domain": "creator/media"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "story_editor_ai_refined",
+      "files": 2,
+      "domain": "creator/media"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "story_editor_final_audit_refined",
+      "files": 2,
+      "domain": "creator/media"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "story_editor_hardened_phase_2",
+      "files": 2,
+      "domain": "creator/media"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "story_editor_katha_vistaar_1",
+      "files": 2,
+      "domain": "creator/media"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "story_editor_katha_vistaar_2",
+      "files": 2,
+      "domain": "creator/media"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "story_editor_katha_vistaar_v30",
+      "files": 2,
+      "domain": "creator/media"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "subscription_coin_management_admin_console",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "subscription_management_admin_control_phase_1",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "subscription_plans_hardened_configuration_phase_1",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "subscription_plans_katha_vistaar_v30_1",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "subscription_plans_katha_vistaar_v30_2",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "system_security_audit_ledger_immutable_log_phase_1",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "the_design_system",
+      "files": 1,
+      "domain": "reference/UX"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "transaction_history_katha_vistaar_v30_1",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "transaction_history_katha_vistaar_v30_2",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "trending_leaderboard_katha_vistaar_v30",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "user_audit_identity_v30_admin",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "user_management_console_v30_admin",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "user_settings_account_security_phase_1",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "v30_ai_security_core_integrity_hud",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "v30_ai_security_penetration_test_lab",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "v30_application_monitoring_ai_system_health_hud",
+      "files": 2,
+      "domain": "ai/governance"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "v30_help_support_ai_state_aware_assistant",
+      "files": 2,
+      "domain": "ai/governance"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "v30_safety_policy_ai_content_governance",
+      "files": 2,
+      "domain": "ai/governance"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "version_history_time_machine_v31_phase_1_1",
+      "files": 2,
+      "domain": "creator/media"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "version_history_time_machine_v31_phase_1_2",
+      "files": 2,
+      "domain": "creator/media"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "walkthrough_create_katha_vistaar_v30",
+      "files": 2,
+      "domain": "reference/UX"
+    },
+    {
+      "folder": "01_REQUIRED_PROGRAM",
+      "artifact": "welcome_katha_vistaar_v30",
+      "files": 2,
+      "domain": "reference/UX"
+    },
+    {
+      "folder": "02_INCOMPLETE_REQUIRED_PROGRAM",
+      "artifact": "a_high_tech_futuristic_3d_holographic_trade_interface_for_a_guild_based",
+      "files": 1,
+      "domain": "reference/UX"
+    },
+    {
+      "folder": "02_INCOMPLETE_REQUIRED_PROGRAM",
+      "artifact": "ad_revenue_dashboard_desktop_v31_1",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "02_INCOMPLETE_REQUIRED_PROGRAM",
+      "artifact": "ad_revenue_dashboard_desktop_v31_2",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "02_INCOMPLETE_REQUIRED_PROGRAM",
+      "artifact": "ad_revenue_dashboard_desktop_v31_3",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "02_INCOMPLETE_REQUIRED_PROGRAM",
+      "artifact": "ad_revenue_dashboard_v31_phase_1_1",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "02_INCOMPLETE_REQUIRED_PROGRAM",
+      "artifact": "ad_revenue_dashboard_v31_phase_1_2",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "02_INCOMPLETE_REQUIRED_PROGRAM",
+      "artifact": "ai_ecosystem_stress_test_hud",
+      "files": 2,
+      "domain": "ai/governance"
+    },
+    {
+      "folder": "02_INCOMPLETE_REQUIRED_PROGRAM",
+      "artifact": "ai_orchestrator_mobile_log_optimization",
+      "files": 2,
+      "domain": "ai/governance"
+    },
+    {
+      "folder": "02_INCOMPLETE_REQUIRED_PROGRAM",
+      "artifact": "api_specification_v1.1_ai_comic_refined",
+      "files": 2,
+      "domain": "creator/media"
+    },
+    {
+      "folder": "02_INCOMPLETE_REQUIRED_PROGRAM",
+      "artifact": "api_specification_v1.2_ai_audio_refined",
+      "files": 2,
+      "domain": "creator/media"
+    },
+    {
+      "folder": "02_INCOMPLETE_REQUIRED_PROGRAM",
+      "artifact": "audio_retention_analytics",
+      "files": 2,
+      "domain": "creator/media"
+    },
+    {
+      "folder": "02_INCOMPLETE_REQUIRED_PROGRAM",
+      "artifact": "comic_panel_engine_1",
+      "files": 2,
+      "domain": "creator/media"
+    },
+    {
+      "folder": "02_INCOMPLETE_REQUIRED_PROGRAM",
+      "artifact": "comic_panel_engine_2",
+      "files": 2,
+      "domain": "creator/media"
+    },
+    {
+      "folder": "02_INCOMPLETE_REQUIRED_PROGRAM",
+      "artifact": "comic_panel_engine_ai_refined",
+      "files": 2,
+      "domain": "creator/media"
+    },
+    {
+      "folder": "02_INCOMPLETE_REQUIRED_PROGRAM",
+      "artifact": "comic_panel_engine_desktop_v31",
+      "files": 2,
+      "domain": "creator/media"
+    },
+    {
+      "folder": "02_INCOMPLETE_REQUIRED_PROGRAM",
+      "artifact": "comic_panel_engine_final_audit_refined",
+      "files": 2,
+      "domain": "creator/media"
+    },
+    {
+      "folder": "02_INCOMPLETE_REQUIRED_PROGRAM",
+      "artifact": "comic_panel_engine_hardened_phase_2",
+      "files": 2,
+      "domain": "creator/media"
+    },
+    {
+      "folder": "02_INCOMPLETE_REQUIRED_PROGRAM",
+      "artifact": "event_calendar_season_pass_logistics_command_v32",
+      "files": 2,
+      "domain": "reference/UX"
+    },
+    {
+      "folder": "02_INCOMPLETE_REQUIRED_PROGRAM",
+      "artifact": "file_000000006a4082089ef4ffe3775f26ce.png",
+      "files": 1,
+      "domain": "reference/UX"
+    },
+    {
+      "folder": "02_INCOMPLETE_REQUIRED_PROGRAM",
+      "artifact": "fm_audio_studio_1",
+      "files": 2,
+      "domain": "creator/media"
+    },
+    {
+      "folder": "02_INCOMPLETE_REQUIRED_PROGRAM",
+      "artifact": "fm_audio_studio_2",
+      "files": 2,
+      "domain": "creator/media"
+    },
+    {
+      "folder": "02_INCOMPLETE_REQUIRED_PROGRAM",
+      "artifact": "fm_audio_studio_ai_refined",
+      "files": 2,
+      "domain": "creator/media"
+    },
+    {
+      "folder": "02_INCOMPLETE_REQUIRED_PROGRAM",
+      "artifact": "fm_audio_studio_desktop_v31",
+      "files": 2,
+      "domain": "creator/media"
+    },
+    {
+      "folder": "02_INCOMPLETE_REQUIRED_PROGRAM",
+      "artifact": "fm_audio_studio_final_audit_refined",
+      "files": 2,
+      "domain": "creator/media"
+    },
+    {
+      "folder": "02_INCOMPLETE_REQUIRED_PROGRAM",
+      "artifact": "fm_audio_studio_hardened_phase_2",
+      "files": 2,
+      "domain": "creator/media"
+    },
+    {
+      "folder": "02_INCOMPLETE_REQUIRED_PROGRAM",
+      "artifact": "guild_application_join_nebula_v32",
+      "files": 2,
+      "domain": "reference/UX"
+    },
+    {
+      "folder": "02_INCOMPLETE_REQUIRED_PROGRAM",
+      "artifact": "guild_command_recruitment_hub_desktop_v32",
+      "files": 2,
+      "domain": "reference/UX"
+    },
+    {
+      "folder": "02_INCOMPLETE_REQUIRED_PROGRAM",
+      "artifact": "guild_explorer_collective_discovery_v32",
+      "files": 2,
+      "domain": "reference/UX"
+    },
+    {
+      "folder": "02_INCOMPLETE_REQUIRED_PROGRAM",
+      "artifact": "guild_explorer_discovery_command",
+      "files": 2,
+      "domain": "reference/UX"
+    },
+    {
+      "folder": "02_INCOMPLETE_REQUIRED_PROGRAM",
+      "artifact": "guild_explorer_v32",
+      "files": 2,
+      "domain": "reference/UX"
+    },
+    {
+      "folder": "02_INCOMPLETE_REQUIRED_PROGRAM",
+      "artifact": "guild_ledger_immutable_audit_trail_v32",
+      "files": 2,
+      "domain": "reference/UX"
+    },
+    {
+      "folder": "02_INCOMPLETE_REQUIRED_PROGRAM",
+      "artifact": "guild_profile_nebula_collective",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "02_INCOMPLETE_REQUIRED_PROGRAM",
+      "artifact": "guild_profile_nebula_collective_v32",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "02_INCOMPLETE_REQUIRED_PROGRAM",
+      "artifact": "guild_profile_nebula_elite_v32",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "02_INCOMPLETE_REQUIRED_PROGRAM",
+      "artifact": "guild_recruitment_management_v32",
+      "files": 2,
+      "domain": "reference/UX"
+    },
+    {
+      "folder": "02_INCOMPLETE_REQUIRED_PROGRAM",
+      "artifact": "guild_tournament_hub_the_lore_wars_v32",
+      "files": 2,
+      "domain": "reference/UX"
+    },
+    {
+      "folder": "02_INCOMPLETE_REQUIRED_PROGRAM",
+      "artifact": "guild_treasury_financial_command_v32_1",
+      "files": 2,
+      "domain": "reference/UX"
+    },
+    {
+      "folder": "02_INCOMPLETE_REQUIRED_PROGRAM",
+      "artifact": "guild_treasury_financial_command_v32_2",
+      "files": 2,
+      "domain": "reference/UX"
+    },
+    {
+      "folder": "02_INCOMPLETE_REQUIRED_PROGRAM",
+      "artifact": "katha_vistaar_command_1",
+      "files": 1,
+      "domain": "reference/UX"
+    },
+    {
+      "folder": "02_INCOMPLETE_REQUIRED_PROGRAM",
+      "artifact": "katha_vistaar_command_2",
+      "files": 1,
+      "domain": "reference/UX"
+    },
+    {
+      "folder": "02_INCOMPLETE_REQUIRED_PROGRAM",
+      "artifact": "katha_vistaar_mobile_command",
+      "files": 1,
+      "domain": "reference/UX"
+    },
+    {
+      "folder": "02_INCOMPLETE_REQUIRED_PROGRAM",
+      "artifact": "katha_vistaar_mobile_v33",
+      "files": 1,
+      "domain": "reference/UX"
+    },
+    {
+      "folder": "02_INCOMPLETE_REQUIRED_PROGRAM",
+      "artifact": "lore_raid_strategic_command_center_v32_1",
+      "files": 2,
+      "domain": "reference/UX"
+    },
+    {
+      "folder": "02_INCOMPLETE_REQUIRED_PROGRAM",
+      "artifact": "lore_raid_strategic_command_center_v32_2",
+      "files": 2,
+      "domain": "reference/UX"
+    },
+    {
+      "folder": "02_INCOMPLETE_REQUIRED_PROGRAM",
+      "artifact": "lore_raid_strategic_command_center_v32_3",
+      "files": 2,
+      "domain": "reference/UX"
+    },
+    {
+      "folder": "02_INCOMPLETE_REQUIRED_PROGRAM",
+      "artifact": "lore_wars_tournament_hub_global_command_v32_1",
+      "files": 2,
+      "domain": "reference/UX"
+    },
+    {
+      "folder": "02_INCOMPLETE_REQUIRED_PROGRAM",
+      "artifact": "lore_wars_tournament_hub_global_command_v32_2",
+      "files": 2,
+      "domain": "reference/UX"
+    },
+    {
+      "folder": "02_INCOMPLETE_REQUIRED_PROGRAM",
+      "artifact": "member_roster_operational_command",
+      "files": 2,
+      "domain": "reference/UX"
+    },
+    {
+      "folder": "02_INCOMPLETE_REQUIRED_PROGRAM",
+      "artifact": "member_roster_operational_command_v32",
+      "files": 2,
+      "domain": "reference/UX"
+    },
+    {
+      "folder": "02_INCOMPLETE_REQUIRED_PROGRAM",
+      "artifact": "mobile_command_center",
+      "files": 1,
+      "domain": "reference/UX"
+    },
+    {
+      "folder": "02_INCOMPLETE_REQUIRED_PROGRAM",
+      "artifact": "recruitment_queue_vetting_command",
+      "files": 2,
+      "domain": "reference/UX"
+    },
+    {
+      "folder": "02_INCOMPLETE_REQUIRED_PROGRAM",
+      "artifact": "recruitment_queue_vetting_command_v32",
+      "files": 2,
+      "domain": "reference/UX"
+    },
+    {
+      "folder": "02_INCOMPLETE_REQUIRED_PROGRAM",
+      "artifact": "season_pass_nebula_dawn_v32_rewards",
+      "files": 2,
+      "domain": "reference/UX"
+    },
+    {
+      "folder": "02_INCOMPLETE_REQUIRED_PROGRAM",
+      "artifact": "story_engagement_heatmaps",
+      "files": 2,
+      "domain": "creator/media"
+    },
+    {
+      "folder": "02_INCOMPLETE_REQUIRED_PROGRAM",
+      "artifact": "tactical_recruitment_hud_mobile_v32",
+      "files": 2,
+      "domain": "reference/UX"
+    },
+    {
+      "folder": "02_INCOMPLETE_REQUIRED_PROGRAM",
+      "artifact": "tournament_brackets_heat_orchestration_v32",
+      "files": 2,
+      "domain": "reference/UX"
+    },
+    {
+      "folder": "02_INCOMPLETE_REQUIRED_PROGRAM",
+      "artifact": "transaction_verification_success",
+      "files": 2,
+      "domain": "user/admin/monetization/security"
+    },
+    {
+      "folder": "02_INCOMPLETE_REQUIRED_PROGRAM",
+      "artifact": "victory_rewards_distribution_command_v32",
+      "files": 2,
+      "domain": "reference/UX"
+    }
+  ]
+}

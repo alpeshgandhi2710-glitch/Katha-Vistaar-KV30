@@ -1,0 +1,16 @@
+const fs=require('fs'),path=require('path'),assert=require('assert');
+const root=path.resolve(__dirname,'..');
+const cfg=JSON.parse(fs.readFileSync(path.join(root,'config/aarohan-reference-reconciliation-v30.json'),'utf8'));
+assert.equal(cfg.dependency,'none');
+assert.ok(cfg.adopted.paymentRecovery.includes('accepted-vs-settled separation'));
+assert.ok(cfg.adopted.paymentRecovery.includes('atomic reversal/refund with asset-lot provenance'));
+assert.ok(cfg.adopted.rag.length>0 && cfg.adopted.modelRegistry.length>0 && cfg.adopted.security.length>0);
+assert.ok(cfg.explicitly_not_adopted_as_production_evidence.includes('AAROHAN benchmark numeric results'));
+const pm=fs.readFileSync(path.join(root,'services/payment-settlement-manager.js'),'utf8');
+assert.equal((pm.match(/function recoveryKey\(/g)||[]).length,1);
+const m=require(path.join(root,'services/payment-settlement-manager.js'));
+assert.equal(m.classifyProviderResult({status:'accepted',debited:false}).state,'reconciliation_required');
+assert.equal(m.classifyProviderResult({status:'settled',debited:true}).state,'settled');
+assert.equal(m.classifyFulfillmentSettlement({status:'accepted',debited:false}).canFulfill,false);
+assert.equal(m.classifyFulfillmentSettlement({status:'settled',debited:true}).canFulfill,true);
+console.log('REF-8.3.155.9.2.12 AAROHAN reference reconciliation PASS');

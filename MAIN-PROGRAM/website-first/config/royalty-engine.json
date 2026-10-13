@@ -1,0 +1,26 @@
+{
+  "version": "30.0.0",
+  "sourceOfTruth": "managed-monetization.json#/royalty",
+  "calculation": [
+    "gross_customer_payment",
+    "applicable_tax",
+    "store_or_payment_fee",
+    "refunds_chargebacks",
+    "net_distributable_revenue",
+    "creator_allocation"
+  ],
+  "streams": [
+    "author_subscription",
+    "paid_unlock",
+    "platform_premium",
+    "eligible_ads",
+    "stickers",
+    "platform_subscription"
+  ],
+  "no_retroactive_reduction": true,
+  "transaction_id_required": true,
+  "reconciliation": true,
+  "platform_subscription_attribution_source": "managed-monetization.json#/royalty/platformSubscriptionAttribution",
+  "platform_subscription_formula_status": "approval_required",
+  "platform_subscription_formula_source": "managed-monetization.json#/royalty/platformSubscriptionAttribution"
+}

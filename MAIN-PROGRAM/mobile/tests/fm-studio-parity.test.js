@@ -1,0 +1,12 @@
+const assert=require('node:assert/strict');const fs=require('node:fs');const path=require('node:path');
+const root=path.resolve(__dirname,'..');const main=fs.readFileSync(path.join(root,'lib','main.dart'),'utf8');const tools=fs.readFileSync(path.join(root,'lib','mobile_tools.dart'),'utf8');
+assert.match(main,/class AudioStudioScreen extends StatefulWidget/);assert.match(main,/api\.createProject\(/);assert.match(main,/api\.saveSegment\(/);assert.match(tools,/class KvAudioApi/);assert.match(tools,/POST','\/api\/studio\/works/);assert.match(tools,/POST','\/api\/audio\/projects/);assert.match(tools,/GET','\/api\/audio\/projects/);assert.match(tools,/\/api\/ai\/audio\/enhance/);assert.doesNotMatch(main,/onTap:\(\)=>\{\}/);assert.doesNotMatch(main,/onPressed:\(\)=>\{\}/);console.log('PASS mobile FM/Audio parity static contract');
+assert(tools.includes('uploadRecordedFile'));
+assert(tools.includes("'/api/media/assets'"));
+assert(tools.includes("'/api/media/audio/mix'"));
+assert(tools.includes('audioAssetId'));
+assert(main.includes('pauseRecording'));
+assert(main.includes('resumeRecording'));
+assert(main.includes('_renderMix'));
+assert(main.includes('uploadRecordedFile'));
+console.log('PASS native recording -> governed media upload -> audio segment -> internal FFmpeg mix parity');

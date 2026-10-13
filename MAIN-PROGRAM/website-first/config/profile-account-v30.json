@@ -1,0 +1,8 @@
+{
+  "version": "30.0.0",
+  "profile": true,
+  "security": true,
+  "contactVerification": true,
+  "subscriptionEntitlements": true,
+  "multipleLoginPolicy": "master_admin_only"
+}

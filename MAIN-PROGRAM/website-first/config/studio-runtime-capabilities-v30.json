@@ -1,0 +1,126 @@
+{
+  "version": "REF-8.3.155.9.2.15",
+  "dependencyBoundary": "Stitch ZIP is reference-only; no runtime/build/test dependency.",
+  "acceleration": {
+    "webgpu": {
+      "detection": "browser navigator.gpu + requestAdapter",
+      "productionClaim": "only after runtime probe passes"
+    },
+    "webcodecs": {
+      "detection": "VideoEncoder/VideoDecoder + isConfigSupported",
+      "productionClaim": "only after codec support probe passes"
+    },
+    "wasm": {
+      "detection": "WebAssembly availability + worker smoke test",
+      "productionClaim": "WASM engine is not claimed until an actual engine/module is present"
+    },
+    "serverFallback": "internal ffmpeg remains authoritative server render fallback"
+  },
+  "hardwareTelemetry": {
+    "browserSignals": [
+      "hardwareConcurrency",
+      "deviceMemory when available",
+      "WebGPU adapter availability"
+    ],
+    "serverSignals": [
+      "cpuCount",
+      "memoryTotal",
+      "platform",
+      "ffmpegAvailable",
+      "ghostscriptAvailable"
+    ],
+    "noFakeTelemetry": true
+  },
+  "tts": {
+    "internalFirst": true,
+    "neuralStatusMustUseActualModelAndRuntime": true,
+    "currentLocalNeuralModelConfigured": false,
+    "espeakFallbackAllowed": true,
+    "externalProvidersMasterAdminControlled": true
+  },
+  "modelWeights": {
+    "internalLLMArtifactDeclaredInConfig": true,
+    "weightsExternalToAppZip": true,
+    "loadedRuntimeMustBeVerified": true,
+    "noStaticClaim": true
+  },
+  "print": {
+    "comicPdfx4": "print-pipeline capability only; actual PDF/X-4 certification requires runtime output validation",
+    "dpiRange": [
+      72,
+      1200
+    ],
+    "presets": [
+      "screen",
+      "pdf_x4",
+      "png",
+      "print_master"
+    ]
+  },
+  "advancedProductionBoundary": {
+    "stitchReconciled": true,
+    "dependency": "none",
+    "renderTargets": {
+      "reelVertical": "2160x3840@60fps",
+      "reelLandscape": "3840x2160@60fps",
+      "codecTarget": "H.264/AAC in MP4",
+      "note": "Stitch evidence used as capability requirement/reference; actual renderer acceptance requires current runtime evidence."
+    },
+    "browserAcceleration": {
+      "webgpu": "probe adapter and device capability; never infer renderer readiness from API existence",
+      "webcodecs": "probe isConfigSupported for target codec configuration",
+      "wasm": "probe WebAssembly execution; engine readiness requires actual KV30 module"
+    },
+    "audioProduction": {
+      "sampleRatesHz": [
+        44100,
+        48000,
+        96000
+      ],
+      "bitDepths": [
+        16,
+        24,
+        32
+      ],
+      "loudnessWorkflow": "target and measured integrated loudness",
+      "truePeakWorkflow": "target and measured true peak",
+      "sidechainDucking": "supported as project metadata; actual DSP engine evidence required"
+    },
+    "comicPrint": {
+      "presets": [
+        "screen",
+        "png",
+        "pdf_x4",
+        "print_master"
+      ],
+      "dpiRange": [
+        72,
+        1200
+      ],
+      "productionChecks": [
+        "page-size",
+        "bleed-safe-area",
+        "font/text completeness",
+        "image-resolution",
+        "PDF structural validation"
+      ],
+      "rip": "Ghostscript availability is detected; RIP certification requires validated output and print-profile evidence"
+    },
+    "telemetry": {
+      "noFabrication": true,
+      "historicalHardwareLogsAreNotCurrentRuntimeProof": true
+    }
+  },
+  "runtimeAcceptance": {
+    "referenceZipDependency": false,
+    "fourK60": "actual internal FFmpeg fallback acceptance test",
+    "nvdec": "actual NVIDIA decoder runtime required; capability listing alone is insufficient",
+    "webgpu": "browser adapter/device probe required",
+    "webcodecs": "browser isConfigSupported probe required",
+    "wasm": "actual KV30 WASM engine/module required",
+    "pdfx4": "generated output plus structural/profile validation required",
+    "ctpRip": "real downstream RIP/plate evidence required",
+    "hardwareTelemetry": "actual host metrics only",
+    "neuralModel": "installed model plus successful KV30 inference required"
+  }
+}

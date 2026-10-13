@@ -1,0 +1,14 @@
+'use strict';
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const path=require('node:path');
+const root=path.resolve(__dirname,'..');
+const cfg=JSON.parse(fs.readFileSync(path.join(root,'config','languages.json'),'utf8'));
+const app=fs.readFileSync(path.join(root,'public','app.js'),'utf8');
+const nonEnglish=cfg.languages;
+assert.equal(nonEnglish.length,22);
+assert.equal(nonEnglish.filter(x=>x.enabled===true).length,0);
+assert.equal(nonEnglish.filter(x=>x.scheduled===true).length,22);
+assert.match(app,/if\(!enabled\)return localeValue\('en',key\)\?\?key;/);
+assert.match(app,/if\(v==null\|\|String\(v\)\.trim\(\)===''\|\|String\(v\)\.trim\(\)===`\[\$\{key\}\]`\)v=localeValue\('en',key\);/);
+console.log('R38 UI fallback boundary PASS — 22 non-English locales use governed English fallback for missing/empty/placeholder values and unavailable locale selection.');

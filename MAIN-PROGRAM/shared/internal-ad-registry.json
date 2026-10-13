@@ -1,0 +1,15 @@
+{
+  "version": "KV30-P2-30W",
+  "externalNetworkOptional": true,
+  "fallback": "internal_campaigns",
+  "campaigns": [
+    "kv-app-features",
+    "kv-author",
+    "kv-training"
+  ],
+  "masterAdminControls": [
+    "enable_internal_ads",
+    "enable_external_ads",
+    "grant_ad_preview_permission"
+  ]
+}

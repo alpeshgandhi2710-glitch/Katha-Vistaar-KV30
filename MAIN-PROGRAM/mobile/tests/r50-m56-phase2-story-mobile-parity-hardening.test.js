@@ -1,0 +1,10 @@
+const fs=require('fs'),path=require('path'),assert=require('assert');
+const root=path.resolve(__dirname,'..');
+const story=fs.readFileSync(path.join(root,'lib/story_studio.dart'),'utf8');
+const api=story.slice(0,story.indexOf('class StoryStudioEditor'));
+for(const needle of ["Future<Map<String, dynamic>> getReview(KvStoryDraft d)","Future<Map<String, dynamic>> publishingChecklist(KvStoryDraft d)","Future<Map<String, dynamic>> saveTranslationDraft(KvStoryDraft d","Future<Map<String, dynamic>> saveCharacterMatrix(KvStoryDraft d","Future<Map<String, dynamic>> saveContinuity(KvStoryDraft d","Future<Map<String, dynamic>> runReviewFindingUpdate(KvStoryDraft d","Future<Map<String, dynamic>> storyAiAssist(KvStoryDraft d, {"]) assert(api.includes(needle),needle);
+assert(!api.match(/\bdraft\.serverContentId\b/));
+assert(!api.match(/\bdraft\.language\b/));
+assert(story.includes("'acts': acts, 'scenes': scenes"));
+assert(story.includes("if (d.serverContentId == null || d.dirty) await save(d);"));
+console.log(JSON.stringify({status:'PASS',apiDraftScoped:true,noUndefinedApiDraftReferences:true,chapterStructureMapping:true,publishPersistsDirtyDraft:true},null,2));

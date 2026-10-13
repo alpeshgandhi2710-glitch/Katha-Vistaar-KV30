@@ -1,0 +1,66 @@
+{
+  "version": "REF-8.3.155.9.2.28",
+  "name": "KV30 Smart Premium Experience Contract",
+  "principles": [
+    "Internal-first smart experience; external AI is never required for core creation.",
+    "One account may act as reader/listener/viewer and author/creator without separate accounts.",
+    "23-language contract applies to UI, content, creator tools and AI requests.",
+    "Creator-facing AI proposes and assists; it does not silently publish or mutate approved work.",
+    "Reader AI assists on request and does not interrupt ordinary reading with unsolicited correction.",
+    "Emotion and intent are preserved as structured creation metadata wherever the runtime supports it.",
+    "Premium visual presentation must remain functional, responsive, accessible and localized."
+  ],
+  "smartHub": {
+    "formats": [
+      "story",
+      "comic",
+      "audio",
+      "reel"
+    ],
+    "modes": [
+      "manual",
+      "ai-assisted",
+      "ai-generated"
+    ],
+    "readerActions": [
+      "read",
+      "listen",
+      "watch",
+      "translate",
+      "summarize",
+      "explain"
+    ],
+    "creatorActions": [
+      "idea",
+      "outline",
+      "grammar",
+      "character",
+      "storyboard",
+      "dialogue",
+      "audio-pacing",
+      "reel-plan",
+      "translate",
+      "cross-format-plan",
+      "cross-format-transform"
+    ],
+    "externalAIRequired": false,
+    "crossFormatTransform": {
+      "enabled": true,
+      "sourceFormats": [
+        "story",
+        "comic",
+        "audio",
+        "reel"
+      ],
+      "targetFormats": [
+        "story",
+        "comic",
+        "audio",
+        "reel"
+      ],
+      "requiresApproval": true,
+      "externalAIRequired": false,
+      "provenanceRequired": true
+    }
+  }
+}

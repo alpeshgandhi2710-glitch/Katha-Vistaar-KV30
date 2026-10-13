@@ -1,0 +1,29 @@
+{
+  "version": "KV30-TTS-TRAINING-ACCESS-CONTROL-v1",
+  "authority": "master_admin_only",
+  "externalModelDownload": {
+    "masterAdminControlled": true,
+    "enabledByDefault": false,
+    "requiresPinnedSource": true,
+    "requiresSha256": true,
+    "requiresLicenseReview": true,
+    "requiresExternalInternetGate": true
+  },
+  "trainingDataUpload": {
+    "masterAdminControlled": true,
+    "enabledByDefault": false,
+    "requiresConsent": true,
+    "requiresRightsConfirmation": true,
+    "requiresPrivacyReview": true,
+    "requiresExternalTtsGate": true
+  },
+  "localTraining": {
+    "enabled": true,
+    "networkRequired": false,
+    "automaticProductionPromotion": false
+  },
+  "audit": {
+    "recordDeniedAndAllowedDecisions": true,
+    "neverLogCredentialsOrTrainingText": true
+  }
+}

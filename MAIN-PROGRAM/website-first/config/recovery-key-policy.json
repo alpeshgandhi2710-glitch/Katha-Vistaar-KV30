@@ -1,0 +1,19 @@
+{
+  "private_key_generation": "owner_device_only",
+  "private_key_storage": "user_controlled_offline_storage",
+  "server_receives": "public_key_only",
+  "server_storage": false,
+  "backup_storage": false,
+  "backup_requires_private_key": false,
+  "restore_requires_private_key": true,
+  "recommended_storage": [
+    "encrypted_password_manager",
+    "encrypted_offline_USB",
+    "secure_physical_backup"
+  ],
+  "never_store_with": [
+    ".ksbackup",
+    "backup_encryption_secret"
+  ],
+  "loss_policy": "no_bypass; use alternate verified recovery factors if configured"
+}

@@ -1,0 +1,7 @@
+{
+  "release": "REF-9.2.57.18-R40",
+  "finding": "Reader Assist returns requested language in top-level creativeDirection.language and result.creativeDirection.language is not the response contract shape used by the endpoint.",
+  "consequence": "The first corrected evidence capture used the wrong extraction path for reader language; its 92/184 pass count must not be used as acceptance evidence.",
+  "modelExecution": "All 184 calls reported modelExecution.ok=false with reason local_model_runtime_failed; responses came from governed internal contract/knowledge fallback.",
+  "crossFormat": "23/23 passed with requested source/target languages, externalUsed=false, approvalRequired=true."
+}

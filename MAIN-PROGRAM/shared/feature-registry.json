@@ -1,0 +1,91 @@
+{
+  "version": "30.0.0-v30-P2-30O",
+  "features": {
+    "reader_customization": {
+      "enabled": true
+    },
+    "author_training_ai": {
+      "enabled": true
+    },
+    "external_ai": {
+      "enabled": true,
+      "gated": true
+    },
+    "malware_spam_protection": {
+      "enabled": true
+    },
+    "master_admin_supremacy": {
+      "enabled": true
+    },
+    "fallback_on_external_failure": {
+      "enabled": true
+    },
+    "competitions": {
+      "enabled": true
+    },
+    "advanced_search": {
+      "enabled": true
+    },
+    "work_type_taxonomy": {
+      "enabled": true
+    },
+    "format_first_navigation": {
+      "enabled": true
+    },
+    "profile_menu": {
+      "enabled": true
+    },
+    "phone_settings": {
+      "enabled": true
+    },
+    "ott_management": {
+      "enabled": true
+    },
+    "stickers": {
+      "enabled": true
+    },
+    "media_ai": {
+      "enabled": true
+    },
+    "admin_dashboards": {
+      "enabled": true
+    },
+    "service_layer_controls": {
+      "enabled": true
+    },
+    "reporting_ai": {
+      "enabled": true
+    },
+    "programmer_ai": {
+      "enabled": true,
+      "internal": true
+    },
+    "design_ai": {
+      "enabled": true,
+      "internal": true
+    },
+    "ai_management": {
+      "enabled": true,
+      "internal": true
+    },
+    "profile_identity_governance": {
+      "enabled": true
+    },
+    "critical_data_masking": {
+      "enabled": true
+    },
+    "voice_input": {
+      "enabled": true
+    },
+    "twenty_two_language_workflow": {
+      "enabled": true
+    },
+    "all_domain_master_intelligence_ai": {
+      "enabled": true,
+      "internal": true,
+      "policyBound": true,
+      "superior": "master_admin_ai_or_master_admin",
+      "criticalSecretAccess": false
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "version": "30.0.0",
+  "backupIncludes": [
+    "account_identity_metadata",
+    "roles_permissions",
+    "deactivation_state",
+    "language_preferences",
+    "royalty_status_masked",
+    "works_and_required_operational_data"
+  ],
+  "backupExcludes": [
+    "plaintext_password",
+    "password_hash",
+    "MFA_secret",
+    "OTP_secret",
+    "live_session_token",
+    "private_recovery_key",
+    "payment_secrets",
+    "bank_credentials"
+  ],
+  "recovery": "restore_account_state_then_issue_new_secure_session",
+  "audit": true
+}

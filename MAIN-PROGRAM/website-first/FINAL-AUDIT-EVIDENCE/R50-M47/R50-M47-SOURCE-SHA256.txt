@@ -1,0 +1,6 @@
+d0ea1070f2c57eb040e5b8cc87bc8eb2c875d30f5a2c3666cf450ab8e7c24420  src/server.js
+1ad879b0c94761c6ecbd53ecf4ca1e66b30b2e9c19c0616551185ddecee628ce  ../backend/src/services/story-studio.js
+509afee9c605a3c00a7a4daa944241dc4fab45ba3f517967f84201d3775a48f7  config/version.json
+70e887db19929cc7df43d6adf0d9593fe8c86c883a6b71b6e2a5a5343700dca5  config/release-registry-v30.json
+db482a97903b363414aeb0c1c88a215aaecc4e1ac166c8a9ae640fc691a27eb0  RELEASE-MANIFEST-v30.json
+809ac11e2790455d0218d38af038f3e1bc925ca952cbaf80760efce0e97dc236  tests/r50-m47-phase2-story-23-language-runtime.test.js

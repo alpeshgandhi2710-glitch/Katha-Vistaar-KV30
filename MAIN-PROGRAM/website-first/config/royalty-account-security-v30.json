@@ -1,0 +1,15 @@
+{
+  "version": "30.0.0",
+  "ownerCanViewFullDetails": true,
+  "ownerCanDirectEditAfterVerification": false,
+  "verifiedState": "LOCKED",
+  "changeFlow": [
+    "support_ticket",
+    "admin_or_master_unlock",
+    "reverify",
+    "relock"
+  ],
+  "adminView": "masked_by_default",
+  "masterView": "least_privilege_plus_step_up",
+  "auditEveryChange": true
+}

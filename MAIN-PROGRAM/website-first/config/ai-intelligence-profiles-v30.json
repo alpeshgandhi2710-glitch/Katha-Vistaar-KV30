@@ -1,0 +1,560 @@
+{
+  "version": "KV30-P2-30W-internal-intelligence-profiles-v2",
+  "default": {
+    "selfReview": true,
+    "maxReviewPasses": 1,
+    "memoryScopes": [
+      "project",
+      "character",
+      "knowledge"
+    ],
+    "output": "natural_language"
+  },
+  "ais": {
+    "ai_orchestrator": {
+      "goals": [
+        "understand the request",
+        "follow the domain constitution",
+        "use authorized context only",
+        "produce domain-correct useful output",
+        "self-check important claims",
+        "state uncertainty instead of inventing facts"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "selfReview": true,
+      "maxReviewPasses": 1,
+      "output": "natural_language"
+    },
+    "all_domain_master_intelligence_ai": {
+      "goals": [
+        "understand cross-domain request",
+        "select authorized specialists",
+        "compare outputs",
+        "surface risk and dependencies",
+        "return governed recommendation without self-authorizing"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "selfReview": true,
+      "maxReviewPasses": 1,
+      "output": "natural_language"
+    },
+    "master_admin_ai": {
+      "goals": [
+        "understand the request",
+        "follow the domain constitution",
+        "use authorized context only",
+        "produce domain-correct useful output",
+        "self-check important claims",
+        "state uncertainty instead of inventing facts"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "selfReview": false,
+      "maxReviewPasses": 1,
+      "output": "natural_language"
+    },
+    "designated_admin_ai": {
+      "goals": [
+        "understand the request",
+        "follow the domain constitution",
+        "use authorized context only",
+        "produce domain-correct useful output",
+        "self-check important claims",
+        "state uncertainty instead of inventing facts"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "selfReview": false,
+      "maxReviewPasses": 1,
+      "output": "natural_language"
+    },
+    "admin_ai": {
+      "goals": [
+        "understand the request",
+        "follow the domain constitution",
+        "use authorized context only",
+        "produce domain-correct useful output",
+        "self-check important claims",
+        "state uncertainty instead of inventing facts"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "selfReview": false,
+      "maxReviewPasses": 1,
+      "output": "natural_language"
+    },
+    "story_ai": {
+      "goals": [
+        "understand premise and intent",
+        "preserve canonical story facts",
+        "manage plot, pacing, causality and continuity",
+        "write natural language in the selected language",
+        "self-check character and timeline consistency"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge",
+        "user"
+      ],
+      "selfReview": true,
+      "maxReviewPasses": 1,
+      "output": "natural_language"
+    },
+    "character_ai": {
+      "goals": [
+        "extract canonical character facts",
+        "track goal, motivation, conflict and relationships",
+        "preserve personality continuity",
+        "flag unsupported changes",
+        "produce usable character development"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge",
+        "user"
+      ],
+      "selfReview": true,
+      "maxReviewPasses": 1,
+      "output": "natural_language"
+    },
+    "audio_ai": {
+      "goals": [
+        "understand the request",
+        "follow the domain constitution",
+        "use authorized context only",
+        "produce domain-correct useful output",
+        "self-check important claims",
+        "state uncertainty instead of inventing facts"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge",
+        "user"
+      ],
+      "selfReview": true,
+      "maxReviewPasses": 1,
+      "output": "natural_language"
+    },
+    "comic_ai": {
+      "goals": [
+        "understand the request",
+        "follow the domain constitution",
+        "use authorized context only",
+        "produce domain-correct useful output",
+        "self-check important claims",
+        "state uncertainty instead of inventing facts"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge",
+        "user"
+      ],
+      "selfReview": true,
+      "maxReviewPasses": 1,
+      "output": "natural_language"
+    },
+    "visual_ai": {
+      "goals": [
+        "understand the request",
+        "follow the domain constitution",
+        "use authorized context only",
+        "produce domain-correct useful output",
+        "self-check important claims",
+        "state uncertainty instead of inventing facts"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge",
+        "user"
+      ],
+      "selfReview": true,
+      "maxReviewPasses": 1,
+      "output": "natural_language"
+    },
+    "quality_ai": {
+      "goals": [
+        "find contradictions and omissions",
+        "check task compliance",
+        "identify unsupported claims",
+        "check safety, rights and authority boundaries",
+        "give actionable corrections"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "selfReview": true,
+      "maxReviewPasses": 1,
+      "output": "natural_language"
+    },
+    "research_ai": {
+      "goals": [
+        "decompose research question",
+        "separate evidence from inference",
+        "require provenance for knowledge writes",
+        "identify conflicting evidence",
+        "never fabricate sources"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "selfReview": true,
+      "maxReviewPasses": 1,
+      "output": "natural_language"
+    },
+    "safety_policy_ai": {
+      "goals": [
+        "understand the request",
+        "follow the domain constitution",
+        "use authorized context only",
+        "produce domain-correct useful output",
+        "self-check important claims",
+        "state uncertainty instead of inventing facts"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "selfReview": false,
+      "maxReviewPasses": 1,
+      "output": "natural_language"
+    },
+    "programmer_ai": {
+      "goals": [
+        "reproduce the issue",
+        "trace UI to route/API/state/persistence",
+        "identify root cause",
+        "propose smallest correct fix",
+        "require automated regression before release"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "selfReview": true,
+      "maxReviewPasses": 1,
+      "output": "natural_language"
+    },
+    "design_ai": {
+      "goals": [
+        "follow Master Guideline",
+        "preserve mobile-first usability",
+        "check hierarchy, spacing, touch targets and accessibility",
+        "reuse approved patterns without copying reference code",
+        "give implementation-ready design direction"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "selfReview": true,
+      "maxReviewPasses": 1,
+      "output": "natural_language"
+    },
+    "creator_ai": {
+      "goals": [
+        "understand the request",
+        "follow the domain constitution",
+        "use authorized context only",
+        "produce domain-correct useful output",
+        "self-check important claims",
+        "state uncertainty instead of inventing facts"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge",
+        "user"
+      ],
+      "selfReview": true,
+      "maxReviewPasses": 1,
+      "output": "natural_language"
+    },
+    "training_ai": {
+      "goals": [
+        "understand the request",
+        "follow the domain constitution",
+        "use authorized context only",
+        "produce domain-correct useful output",
+        "self-check important claims",
+        "state uncertainty instead of inventing facts"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "selfReview": true,
+      "maxReviewPasses": 1,
+      "output": "natural_language"
+    },
+    "user_monitoring_ai": {
+      "goals": [
+        "understand the request",
+        "follow the domain constitution",
+        "use authorized context only",
+        "produce domain-correct useful output",
+        "self-check important claims",
+        "state uncertainty instead of inventing facts"
+      ],
+      "memoryScopes": [
+        "user",
+        "knowledge"
+      ],
+      "selfReview": true,
+      "maxReviewPasses": 1,
+      "output": "natural_language"
+    },
+    "monitoring_ai": {
+      "goals": [
+        "understand the request",
+        "follow the domain constitution",
+        "use authorized context only",
+        "produce domain-correct useful output",
+        "self-check important claims",
+        "state uncertainty instead of inventing facts"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "selfReview": true,
+      "maxReviewPasses": 1,
+      "output": "natural_language"
+    },
+    "damage_control_ai": {
+      "goals": [
+        "understand the request",
+        "follow the domain constitution",
+        "use authorized context only",
+        "produce domain-correct useful output",
+        "self-check important claims",
+        "state uncertainty instead of inventing facts"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "selfReview": true,
+      "maxReviewPasses": 1,
+      "output": "natural_language"
+    },
+    "account_management_ai": {
+      "goals": [
+        "understand the request",
+        "follow the domain constitution",
+        "use authorized context only",
+        "produce domain-correct useful output",
+        "self-check important claims",
+        "state uncertainty instead of inventing facts"
+      ],
+      "memoryScopes": [
+        "user",
+        "knowledge"
+      ],
+      "selfReview": true,
+      "maxReviewPasses": 1,
+      "output": "natural_language"
+    },
+    "security_ai": {
+      "goals": [
+        "understand the request",
+        "follow the domain constitution",
+        "use authorized context only",
+        "produce domain-correct useful output",
+        "self-check important claims",
+        "state uncertainty instead of inventing facts"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "selfReview": false,
+      "maxReviewPasses": 1,
+      "output": "natural_language"
+    },
+    "anti_spam_malware_ai": {
+      "goals": [
+        "understand the request",
+        "follow the domain constitution",
+        "use authorized context only",
+        "produce domain-correct useful output",
+        "self-check important claims",
+        "state uncertainty instead of inventing facts"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "selfReview": true,
+      "maxReviewPasses": 1,
+      "output": "natural_language"
+    },
+    "help_support_ai": {
+      "goals": [
+        "understand the request",
+        "follow the domain constitution",
+        "use authorized context only",
+        "produce domain-correct useful output",
+        "self-check important claims",
+        "state uncertainty instead of inventing facts"
+      ],
+      "memoryScopes": [
+        "user",
+        "knowledge"
+      ],
+      "selfReview": true,
+      "maxReviewPasses": 1,
+      "output": "natural_language"
+    },
+    "accounting_ai": {
+      "goals": [
+        "understand the request",
+        "follow the domain constitution",
+        "use authorized context only",
+        "produce domain-correct useful output",
+        "self-check important claims",
+        "state uncertainty instead of inventing facts"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "selfReview": true,
+      "maxReviewPasses": 1,
+      "output": "natural_language"
+    },
+    "engagement_ai": {
+      "goals": [
+        "understand the request",
+        "follow the domain constitution",
+        "use authorized context only",
+        "produce domain-correct useful output",
+        "self-check important claims",
+        "state uncertainty instead of inventing facts"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "selfReview": true,
+      "maxReviewPasses": 1,
+      "output": "natural_language"
+    },
+    "analytics_ai": {
+      "goals": [
+        "understand the request",
+        "follow the domain constitution",
+        "use authorized context only",
+        "produce domain-correct useful output",
+        "self-check important claims",
+        "state uncertainty instead of inventing facts"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "selfReview": true,
+      "maxReviewPasses": 1,
+      "output": "natural_language"
+    },
+    "reel_ai": {
+      "goals": [
+        "understand the request",
+        "follow the domain constitution",
+        "use authorized context only",
+        "produce domain-correct useful output",
+        "self-check important claims",
+        "state uncertainty instead of inventing facts"
+      ],
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge",
+        "user"
+      ],
+      "selfReview": true,
+      "maxReviewPasses": 1,
+      "output": "natural_language"
+    },
+    "writing_ai": {
+      "goals": [
+        "understand author intent",
+        "draft and refine prose",
+        "preserve story continuity",
+        "write naturally in selected language"
+      ],
+      "memoryScopes": [
+        "project",
+        "knowledge",
+        "user"
+      ],
+      "selfReview": true,
+      "maxReviewPasses": 1,
+      "output": "natural_language"
+    },
+    "media_security_ai": {
+      "goals": [
+        "scan and assess media security risk",
+        "protect quarantined assets",
+        "identify rights and malware risk"
+      ],
+      "memoryScopes": [
+        "knowledge",
+        "asset_provenance"
+      ],
+      "selfReview": true,
+      "maxReviewPasses": 1,
+      "output": "structured_advisory"
+    },
+    "cyber_defense_ai": {
+      "goals": [
+        "detect and analyse cyber threats",
+        "provide defensive recommendations",
+        "escalate critical security risk"
+      ],
+      "memoryScopes": [
+        "knowledge",
+        "security_incidents"
+      ],
+      "selfReview": true,
+      "maxReviewPasses": 1,
+      "output": "structured_advisory"
+    }
+  }
+}

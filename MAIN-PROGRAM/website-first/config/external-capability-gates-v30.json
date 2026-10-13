@@ -1,0 +1,56 @@
+{
+  "version": "KV30-COMIC-LORA-EXTERNAL-GATES-1",
+  "purpose": "Dedicated external Comic LoRA character-lock gate plane. Existing canonical gate configurations are not modified.",
+  "service": "comic_lora",
+  "internalLayer": "always_on",
+  "externalLayer": "master_admin_controlled",
+  "externalDefaultEnabled": false,
+  "failClosed": true,
+  "masterAdminOnly": true,
+  "gates": [
+    {
+      "gate": "service_gate_comic_lora",
+      "service": "comic_lora",
+      "function": "comic_lora_character_lock_generation",
+      "direction": "service_control",
+      "enabled": false,
+      "defaultEnabled": false,
+      "linkedSwitch": "comic_lora.externalLayer",
+      "firewallRequired": true
+    },
+    {
+      "gate": "gate_comic_lora_inbound",
+      "service": "comic_lora",
+      "function": "comic_lora_external_input_boundary",
+      "direction": "inbound",
+      "enabled": false,
+      "defaultEnabled": false,
+      "linkedSwitch": "service_gate_comic_lora",
+      "firewallRequired": true,
+      "requiresRightsApproval": true
+    },
+    {
+      "gate": "gate_comic_lora_rights",
+      "service": "comic_lora",
+      "function": "comic_lora_character_reference_rights",
+      "direction": "policy",
+      "enabled": false,
+      "defaultEnabled": false,
+      "linkedSwitch": "service_gate_comic_lora",
+      "firewallRequired": true,
+      "requiresRightsApproval": true,
+      "requiresDataPolicyApproval": true
+    },
+    {
+      "gate": "gate_comic_lora_outbound",
+      "service": "comic_lora",
+      "function": "comic_lora_external_output_boundary",
+      "direction": "outbound",
+      "enabled": false,
+      "defaultEnabled": false,
+      "linkedSwitch": "service_gate_comic_lora",
+      "firewallRequired": true,
+      "outputValidationRequired": true
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "version": "KV30-P2-language-runtime-governance-v1",
+  "purpose": "Shared 23-language runtime boundary for UI/API/Internal-AI/TTS. This is a runtime governance layer, not an additional external service gate.",
+  "requiredLanguageCount": 23,
+  "canonicalLanguages": "website-first/config/ai-language-support-v30.json",
+  "internalLayer": {
+    "enabled": true,
+    "authoritative": true,
+    "alwaysOn": true,
+    "aiRequired": true,
+    "ttsFirst": true
+  },
+  "externalLayer": {
+    "enabled": false,
+    "defaultEnabled": false,
+    "masterAdminControlled": true,
+    "advisoryOnly": true,
+    "failClosed": true
+  },
+  "twoLayerSwitch": {
+    "internal": "always_on",
+    "external": "master_admin_controlled"
+  },
+  "firewall": {
+    "requiredBeforeExternal": true,
+    "requiredChecks": [
+      "language-supported-or-explicitly-unverified",
+      "input-schema-validation",
+      "private-project-memory-boundary",
+      "cross-user-data-isolation",
+      "output-schema-and-safety-validation",
+      "audit-on-deny-or-failure",
+      "internal-fallback-preserved"
+    ]
+  },
+  "ttsRule": "Internal TTS/model coverage is used first. External TTS may be considered only when the requested language/voice has verified provider coverage and both the external service gate and provider slot are explicitly enabled by Master Admin.",
+  "aiRule": "All managed Internal AIs inherit the same 23-language contract. TTS coverage does not reduce AI language support; TTS capability is independently resolved per language.",
+  "memoryRule": "Language selection and TTS routing must never promote external output into sealed project/master memory automatically. Memory promotion remains separately gated.",
+  "indianLanguageCount": 22,
+  "futureLanguagesAllowed": true,
+  "futureLanguageRule": "Future languages use the same registry/evidence contract and do not require source-code enum changes.",
+  "fallbackRule": "Supported non-English values are used when usable; missing, empty, whitespace-only, or explicit [key] values fall back to the authoritative English catalog. Unsupported/unavailable locales fall back to English. The registry is dynamic and future languages do not require a hard-coded enum."
+}

@@ -1,0 +1,6 @@
+{
+  "version": "30.0.0",
+  "destinationPolicy": "verified_user_payment_receiving_details",
+  "lockedAfterVerification": true,
+  "destinations": {}
+}

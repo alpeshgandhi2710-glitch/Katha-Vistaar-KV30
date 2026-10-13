@@ -1,0 +1,14 @@
+{
+  "version": "30.0.0",
+  "publishing_follower_gate": 0,
+  "eligibility_persists_after_grant": true,
+  "revocation_only_for_defined_policy_violation": true,
+  "anti_abuse": [
+    "fake_followers",
+    "bots",
+    "follow_exchange",
+    "mass_accounts",
+    "self_fraud"
+  ],
+  "monetization_min_genuine_followers_source": "managed-monetization.json#/royalty/minGenuineFollowers"
+}

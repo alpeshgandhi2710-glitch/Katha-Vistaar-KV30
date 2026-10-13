@@ -1,0 +1,7 @@
+{
+  "version": "30.0.0",
+  "scheduled_encrypted_backups": true,
+  "offsite_storage_supported": true,
+  "restore_test_required": true,
+  "backup_contains_no_plaintext_secrets": true
+}

@@ -1,0 +1,10 @@
+const crypto=require('node:crypto');
+const VERIFIED_LOCKED_FIELDS=new Set(['mobile','email','pan','bankAccountNumber','ifsc','bankBranch','bankAddress','bankName']);
+const PRIVATE_FIELDS=new Set(['otp','password','passwordHash','resetToken']);
+function profileId(){return `KV-${crypto.randomUUID().slice(0,8).toUpperCase()}`;}
+function createProfile(data={}){return {profileId:profileId(),profileName:String(data.profileName||data.name||''),name:String(data.name||''),address:String(data.address||''),email:data.email||null,mobile:data.mobile||null,dob:data.dob||null,gender:data.gender||null,photo:data.photo||null,pan:data.pan||null,bankAccountNumber:data.bankAccountNumber||null,ifsc:data.ifsc||null,bankBranch:data.bankBranch||null,bankAddress:data.bankAddress||null,bankName:data.bankName||null,verified:{},createdAt:new Date().toISOString(),updatedAt:new Date().toISOString()};}
+function mask(value,visible=2){if(value==null||value==='')return null;const s=String(value);return s.length<=visible?'•'.repeat(s.length):'•'.repeat(Math.max(0,s.length-visible))+s.slice(-visible);}
+function publicView(profile){const out={...profile};for(const k of VERIFIED_LOCKED_FIELDS)if(out[k])out[k]=mask(out[k]);for(const k of PRIVATE_FIELDS)delete out[k];return out;}
+function markVerified(profile,field,verified=true){if(!VERIFIED_LOCKED_FIELDS.has(field))throw new Error('field_not_verification_locked');profile.verified[field]=Boolean(verified);profile.updatedAt=new Date().toISOString();return profile;}
+function updateProfile(profile,changes,{actorRole='user',ticketApproved=false}={}){for(const [k,v] of Object.entries(changes||{})){if(VERIFIED_LOCKED_FIELDS.has(k)&&profile.verified[k]&&!(ticketApproved&&(actorRole==='admin'||actorRole==='master_admin')))throw new Error(`verified_field_change_requires_authorized_ticket:${k}`);if(PRIVATE_FIELDS.has(k))throw new Error(`sensitive_field_not_directly_writable:${k}`);profile[k]=v;}profile.updatedAt=new Date().toISOString();return profile;}
+module.exports={VERIFIED_LOCKED_FIELDS,PRIVATE_FIELDS,createProfile,publicView,markVerified,updateProfile,mask};

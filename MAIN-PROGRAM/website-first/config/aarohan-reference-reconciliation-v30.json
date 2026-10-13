@@ -1,0 +1,65 @@
+{
+  "version": "REF-8.3.155.9.2.12",
+  "dependency": "none",
+  "source": "AAROHAN reference ZIP; semantics only",
+  "evidenceRule": "current KV30 runtime/source/tests are authoritative",
+  "adopted": {
+    "paymentRecovery": [
+      "durable pre-commit payment intent",
+      "deterministic idempotency",
+      "accepted-vs-settled separation",
+      "debit-confirmed recovery/reconciliation",
+      "automatic fulfillment only after authoritative settlement",
+      "atomic reversal/refund with asset-lot provenance",
+      "duplicate recovery/refund protection"
+    ],
+    "multilingual": [
+      "benchmark methodology as evaluation input",
+      "language/script-aware tokenization evaluation"
+    ],
+    "rag": [
+      "scoped persistent knowledge retrieval with approval and provenance boundaries"
+    ],
+    "modelRegistry": [
+      "versioned model identity and artifact provenance; loaded-runtime state must be verified"
+    ],
+    "tts": [
+      "voice/language capability matrix; neural runtime must be separately verified"
+    ],
+    "apiSdk": [
+      "contract-first integration boundaries; SDK remains optional and dependency-free"
+    ],
+    "security": [
+      "adversarial prompt-injection cases as security-test categories"
+    ],
+    "artifactIntegrity": [
+      "hash/manifest verification as release-integrity controls; signatures require real cryptographic verification"
+    ],
+    "complianceArchive": [
+      "immutable/WORM retention as a governance design concept; no certification claim"
+    ],
+    "deploymentSealing": [
+      "preflight/seal concepts as release controls; no AAROHAN deployment dependency"
+    ]
+  },
+  "explicitly_not_adopted_as_production_evidence": [
+    "AAROHAN benchmark numeric results",
+    "historical hardware/kernel measurements",
+    "neural model weights or Qwen/Mistral superiority claims",
+    "AAROHAN WORM certification",
+    "AAROHAN Ed25519/Merkle receipt claims",
+    "air-gap certification",
+    "SDK/backend runtime binaries",
+    "deployment/systemd scripts",
+    "AAROHAN test PASS totals"
+  ],
+  "currentKv30Mapping": {
+    "paymentRecovery": "website-first/config/payment-recovery-protocol-v30.json + services/payment-settlement-manager.js + server persistence/recovery maps",
+    "rag": "backend/src/services/ai-memory-rag.js",
+    "tts": "08-INTERNAL-AI-INTELLIGENCE-KV30-P2-30W/ai-tts-runtime.js and runtime config",
+    "aiEvaluation": "website-first/config/ai-multilingual-benchmark-v30.json and existing evaluation suites",
+    "security": "backend/src/services/security-defense-ai.js and security test suites",
+    "releaseIntegrity": "existing release manifests, SHA-256 evidence and master project control"
+  },
+  "remainingVerification": "Live provider settlement/refund, crash/kill recovery, real model/TTS runtime, cryptographic verification and production deployment evidence remain open until independently reproduced."
+}

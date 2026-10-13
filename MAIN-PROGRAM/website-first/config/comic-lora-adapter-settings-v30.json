@@ -1,0 +1,59 @@
+{
+  "version": "KV30-COMIC-LORA-ADAPTER-SETTINGS-1",
+  "serviceId": "comic_lora",
+  "primaryGate": "service_gate_comic_lora",
+  "adapterId": "comic_lora_comfyui_adapter",
+  "adapterModule": "website-first/services/comic-lora-provider-adapter.js",
+  "provider": "comfyui",
+  "connection": {
+    "endpointEnv": "KV_COMIC_LORA_ENDPOINT",
+    "credentialEnv": "KV_COMIC_LORA_API_KEY",
+    "healthPath": "/system_stats",
+    "promptPath": "/prompt",
+    "historyPath": "/history/{promptId}",
+    "viewPath": "/view"
+  },
+  "firewall": {
+    "inboundGate": "gate_comic_lora_inbound",
+    "rightsGate": "gate_comic_lora_rights",
+    "outboundGate": "gate_comic_lora_outbound",
+    "failClosed": true,
+    "internalFallback": "internal_character_comic_continuity"
+  },
+  "twoLayer": {
+    "internal": "always_on",
+    "external": "master_admin_controlled",
+    "externalDefaultEnabled": false,
+    "externalFailureFallback": "internal_character_comic_continuity"
+  },
+  "workflow": {
+    "requiredLoRA": true,
+    "acceptedLoRANodes": [
+      "LoraLoader",
+      "LoraLoaderModelOnly",
+      "LoraLoaderStacked"
+    ],
+    "maxWorkflowBytes": 524288,
+    "maxPromptChars": 12000,
+    "maxCharacterIdChars": 160,
+    "maxLoRANameChars": 240
+  },
+  "persistence": {
+    "settingsPersistedIn": "website-first/config/comic-lora-adapter-settings-v30.json",
+    "runtimeSwitchState": "website-first/data/external-service-state-v30.json",
+    "secrets": "environment_only",
+    "neverPersistCredentials": true
+  },
+  "asset": {
+    "classification": "PASS-ASSET",
+    "assetContract": "website-first/config/comic-lora-asset-contract-v30.json",
+    "weightsBundled": false
+  },
+  "masterAdmin": {
+    "canConfigure": true,
+    "canEnableDisable": true,
+    "canSelectProvider": true,
+    "canSetEndpointViaEnvironment": true,
+    "canApproveAsset": true
+  }
+}

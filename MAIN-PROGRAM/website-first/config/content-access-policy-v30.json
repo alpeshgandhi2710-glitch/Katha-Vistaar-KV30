@@ -1,0 +1,61 @@
+{
+  "version": "30.0.0",
+  "login": {
+    "browse": true,
+    "read": true,
+    "write": true,
+    "readRequiresLogin": true,
+    "writeRequiresLogin": true
+  },
+  "stories": {
+    "novel": {
+      "freeParts": 15,
+      "dailyProgressHours": 24,
+      "coinUnlockCost": 5,
+      "rewardedAdUnlock": true,
+      "part16Plus": "locked unless app subscription, author subscription, 5-coin unlock, rewarded-ad unlock, or sequential 24h progression",
+      "dailyProgress": "next part becomes eligible 24h after previous part is marked read",
+      "readPartsRemainUnlocked": true
+    },
+    "nonSerial": {
+      "freeAfterLogin": true
+    }
+  },
+  "comic": {
+    "loginRequired": true,
+    "noAppFreeParts": 10,
+    "appFreeParts": 15,
+    "afterFree": "format subscription required"
+  },
+  "fm": {
+    "loginRequired": true,
+    "noAppFreeParts": 10,
+    "appFreeParts": 15,
+    "afterFree": "format subscription required"
+  },
+  "reels": {
+    "loginRequired": true,
+    "noAppFreeParts": 5,
+    "appFreeParts": 15,
+    "afterFree": "format subscription required"
+  },
+  "engagement": {
+    "likes": true,
+    "comments": true,
+    "ratings": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "coins": true,
+    "stickers": true
+  },
+  "viewerNavigation": {
+    "nextPart": true,
+    "previousPart": true,
+    "storyPage": true,
+    "markRead": true
+  }
+}

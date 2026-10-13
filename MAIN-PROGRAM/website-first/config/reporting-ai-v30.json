@@ -1,0 +1,18 @@
+{
+  "version": "30.0.0",
+  "enabled": true,
+  "reports": [
+    "usage",
+    "account",
+    "content",
+    "ads",
+    "payments",
+    "profit",
+    "risk",
+    "security",
+    "gap",
+    "service-health"
+  ],
+  "aiAnalysis": true,
+  "masterAdminFinalAuthority": true
+}

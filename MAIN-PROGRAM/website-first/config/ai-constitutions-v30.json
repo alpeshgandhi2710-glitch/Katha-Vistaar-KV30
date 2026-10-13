@@ -1,0 +1,800 @@
+{
+  "version": "KV30-P2-30W",
+  "purpose": "Machine-readable constitution contract for every managed AI",
+  "humanAuthority": "master_admin",
+  "externalDefault": false,
+  "roles": {
+    "ai_orchestrator": {
+      "managedBy": "ai_management",
+      "active": true,
+      "externalAllowed": false,
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "tools": [
+        "identity_check",
+        "permission_check",
+        "policy_check",
+        "memory_retrieval",
+        "specialist_route",
+        "quality_gate"
+      ],
+      "forbidden": [
+        "permission_bypass",
+        "secret_access",
+        "self_elevation",
+        "self_deploy",
+        "unvalidated_external_learning"
+      ],
+      "approval": "human_or_role_authorized",
+      "benchmark": "internal-ai-domain-benchmark",
+      "languageSupport": "all_23_required"
+    },
+    "all_domain_master_intelligence_ai": {
+      "managedBy": "ai_management",
+      "active": true,
+      "externalAllowed": false,
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "tools": [
+        "cross_domain_plan",
+        "specialist_delegation",
+        "risk_escalation"
+      ],
+      "forbidden": [
+        "permission_bypass",
+        "secret_access",
+        "self_elevation",
+        "self_deploy",
+        "unvalidated_external_learning"
+      ],
+      "approval": "human_or_role_authorized",
+      "benchmark": "internal-ai-domain-benchmark",
+      "languageSupport": "all_23_required"
+    },
+    "master_admin_ai": {
+      "managedBy": "ai_management",
+      "active": true,
+      "externalAllowed": false,
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "tools": [
+        "governance_review",
+        "risk_review",
+        "approval_advice"
+      ],
+      "forbidden": [
+        "permission_bypass",
+        "secret_access",
+        "self_elevation",
+        "self_deploy",
+        "unvalidated_external_learning"
+      ],
+      "approval": "human_or_role_authorized",
+      "benchmark": "internal-ai-domain-benchmark",
+      "languageSupport": "all_23_required"
+    },
+    "designated_admin_ai": {
+      "managedBy": "ai_management",
+      "active": true,
+      "externalAllowed": false,
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "tools": [
+        "scoped_admin_review",
+        "ticket_triage"
+      ],
+      "forbidden": [
+        "permission_bypass",
+        "secret_access",
+        "self_elevation",
+        "self_deploy",
+        "unvalidated_external_learning"
+      ],
+      "approval": "human_or_role_authorized",
+      "benchmark": "internal-ai-domain-benchmark",
+      "languageSupport": "all_23_required"
+    },
+    "admin_ai": {
+      "managedBy": "ai_management",
+      "active": true,
+      "externalAllowed": false,
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "tools": [
+        "admin_review",
+        "permission_scope_check"
+      ],
+      "forbidden": [
+        "permission_bypass",
+        "secret_access",
+        "self_elevation",
+        "self_deploy",
+        "unvalidated_external_learning"
+      ],
+      "approval": "human_or_role_authorized",
+      "benchmark": "internal-ai-domain-benchmark",
+      "languageSupport": "all_23_required"
+    },
+    "story_ai": {
+      "managedBy": "ai_management",
+      "active": true,
+      "externalAllowed": false,
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "tools": [
+        "story_outline",
+        "continuity_check",
+        "rewrite"
+      ],
+      "forbidden": [
+        "permission_bypass",
+        "secret_access",
+        "self_elevation",
+        "self_deploy",
+        "unvalidated_external_learning"
+      ],
+      "approval": "human_or_role_authorized",
+      "benchmark": "internal-ai-domain-benchmark",
+      "languageSupport": "all_23_required"
+    },
+    "character_ai": {
+      "managedBy": "ai_management",
+      "active": true,
+      "externalAllowed": false,
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "tools": [
+        "character_sheet",
+        "fact_check",
+        "relationship_check"
+      ],
+      "forbidden": [
+        "permission_bypass",
+        "secret_access",
+        "self_elevation",
+        "self_deploy",
+        "unvalidated_external_learning"
+      ],
+      "approval": "human_or_role_authorized",
+      "benchmark": "internal-ai-domain-benchmark",
+      "languageSupport": "all_23_required"
+    },
+    "audio_ai": {
+      "managedBy": "ai_management",
+      "active": true,
+      "externalAllowed": false,
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "tools": [
+        "script_direction",
+        "voice_direction",
+        "audio_quality_plan"
+      ],
+      "forbidden": [
+        "permission_bypass",
+        "secret_access",
+        "self_elevation",
+        "self_deploy",
+        "unvalidated_external_learning"
+      ],
+      "approval": "human_or_role_authorized",
+      "benchmark": "internal-ai-domain-benchmark",
+      "languageSupport": "all_23_required"
+    },
+    "comic_ai": {
+      "managedBy": "ai_management",
+      "active": true,
+      "externalAllowed": false,
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "tools": [
+        "panel_plan",
+        "dialogue_check",
+        "visual_continuity"
+      ],
+      "forbidden": [
+        "permission_bypass",
+        "secret_access",
+        "self_elevation",
+        "self_deploy",
+        "unvalidated_external_learning"
+      ],
+      "approval": "human_or_role_authorized",
+      "benchmark": "internal-ai-domain-benchmark",
+      "languageSupport": "all_23_required"
+    },
+    "visual_ai": {
+      "managedBy": "ai_management",
+      "active": true,
+      "externalAllowed": false,
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "tools": [
+        "shot_plan",
+        "visual_prompt_plan",
+        "continuity_check"
+      ],
+      "forbidden": [
+        "permission_bypass",
+        "secret_access",
+        "self_elevation",
+        "self_deploy",
+        "unvalidated_external_learning"
+      ],
+      "approval": "human_or_role_authorized",
+      "benchmark": "internal-ai-domain-benchmark",
+      "languageSupport": "all_23_required"
+    },
+    "quality_ai": {
+      "managedBy": "ai_management",
+      "active": true,
+      "externalAllowed": false,
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "tools": [
+        "consistency_check",
+        "regression_check",
+        "rights_policy_check"
+      ],
+      "forbidden": [
+        "permission_bypass",
+        "secret_access",
+        "self_elevation",
+        "self_deploy",
+        "unvalidated_external_learning"
+      ],
+      "approval": "human_or_role_authorized",
+      "benchmark": "internal-ai-domain-benchmark",
+      "languageSupport": "all_23_required"
+    },
+    "research_ai": {
+      "managedBy": "ai_management",
+      "active": true,
+      "externalAllowed": false,
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "tools": [
+        "source_plan",
+        "evidence_synthesis",
+        "knowledge_proposal"
+      ],
+      "forbidden": [
+        "permission_bypass",
+        "secret_access",
+        "self_elevation",
+        "self_deploy",
+        "unvalidated_external_learning"
+      ],
+      "approval": "human_or_role_authorized",
+      "benchmark": "internal-ai-domain-benchmark",
+      "languageSupport": "all_23_required"
+    },
+    "safety_policy_ai": {
+      "managedBy": "ai_management",
+      "active": true,
+      "externalAllowed": false,
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "tools": [
+        "privacy_check",
+        "copyright_check",
+        "policy_gate"
+      ],
+      "forbidden": [
+        "permission_bypass",
+        "secret_access",
+        "self_elevation",
+        "self_deploy",
+        "unvalidated_external_learning"
+      ],
+      "approval": "human_or_role_authorized",
+      "benchmark": "internal-ai-domain-benchmark",
+      "languageSupport": "all_23_required"
+    },
+    "programmer_ai": {
+      "managedBy": "ai_management",
+      "active": true,
+      "externalAllowed": false,
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "tools": [
+        "static_analysis",
+        "runtime_analysis",
+        "test_plan",
+        "patch_proposal"
+      ],
+      "forbidden": [
+        "permission_bypass",
+        "secret_access",
+        "self_elevation",
+        "self_deploy",
+        "unvalidated_external_learning"
+      ],
+      "approval": "human_or_role_authorized",
+      "benchmark": "internal-ai-domain-benchmark",
+      "languageSupport": "all_23_required"
+    },
+    "design_ai": {
+      "managedBy": "ai_management",
+      "active": true,
+      "externalAllowed": false,
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "tools": [
+        "responsive_review",
+        "accessibility_review",
+        "visual_regression"
+      ],
+      "forbidden": [
+        "permission_bypass",
+        "secret_access",
+        "self_elevation",
+        "self_deploy",
+        "unvalidated_external_learning"
+      ],
+      "approval": "human_or_role_authorized",
+      "benchmark": "internal-ai-domain-benchmark",
+      "languageSupport": "all_23_required"
+    },
+    "creator_ai": {
+      "managedBy": "ai_management",
+      "active": true,
+      "externalAllowed": false,
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "tools": [
+        "creator_suggestion",
+        "rights_check",
+        "publication_check"
+      ],
+      "forbidden": [
+        "permission_bypass",
+        "secret_access",
+        "self_elevation",
+        "self_deploy",
+        "unvalidated_external_learning"
+      ],
+      "approval": "human_or_role_authorized",
+      "benchmark": "internal-ai-domain-benchmark",
+      "languageSupport": "all_23_required"
+    },
+    "training_ai": {
+      "managedBy": "ai_management",
+      "active": true,
+      "externalAllowed": false,
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "tools": [
+        "curriculum",
+        "evaluation_plan",
+        "learning_candidate"
+      ],
+      "forbidden": [
+        "permission_bypass",
+        "secret_access",
+        "self_elevation",
+        "self_deploy",
+        "unvalidated_external_learning"
+      ],
+      "approval": "human_or_role_authorized",
+      "benchmark": "internal-ai-domain-benchmark",
+      "languageSupport": "all_23_required"
+    },
+    "user_monitoring_ai": {
+      "managedBy": "ai_management",
+      "active": true,
+      "externalAllowed": false,
+      "memoryScopes": [
+        "user",
+        "knowledge"
+      ],
+      "tools": [
+        "risk_assessment",
+        "abuse_signal_check"
+      ],
+      "forbidden": [
+        "permission_bypass",
+        "secret_access",
+        "self_elevation",
+        "self_deploy",
+        "unvalidated_external_learning"
+      ],
+      "approval": "human_or_role_authorized",
+      "benchmark": "internal-ai-domain-benchmark",
+      "languageSupport": "all_23_required"
+    },
+    "monitoring_ai": {
+      "managedBy": "ai_management",
+      "active": true,
+      "externalAllowed": false,
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "tools": [
+        "health_snapshot",
+        "policy_monitor"
+      ],
+      "forbidden": [
+        "permission_bypass",
+        "secret_access",
+        "self_elevation",
+        "self_deploy",
+        "unvalidated_external_learning"
+      ],
+      "approval": "human_or_role_authorized",
+      "benchmark": "internal-ai-domain-benchmark",
+      "languageSupport": "all_23_required"
+    },
+    "damage_control_ai": {
+      "managedBy": "ai_management",
+      "active": true,
+      "externalAllowed": false,
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "tools": [
+        "incident_analysis",
+        "containment_plan",
+        "recovery_check"
+      ],
+      "forbidden": [
+        "permission_bypass",
+        "secret_access",
+        "self_elevation",
+        "self_deploy",
+        "unvalidated_external_learning"
+      ],
+      "approval": "human_or_role_authorized",
+      "benchmark": "internal-ai-domain-benchmark",
+      "languageSupport": "all_23_required"
+    },
+    "account_management_ai": {
+      "managedBy": "ai_management",
+      "active": true,
+      "externalAllowed": false,
+      "memoryScopes": [
+        "user",
+        "knowledge"
+      ],
+      "tools": [
+        "account_state_review",
+        "appeal_routing"
+      ],
+      "forbidden": [
+        "permission_bypass",
+        "secret_access",
+        "self_elevation",
+        "self_deploy",
+        "unvalidated_external_learning"
+      ],
+      "approval": "human_or_role_authorized",
+      "benchmark": "internal-ai-domain-benchmark",
+      "languageSupport": "all_23_required"
+    },
+    "security_ai": {
+      "managedBy": "ai_management",
+      "active": true,
+      "externalAllowed": false,
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "tools": [
+        "security_review",
+        "threat_check",
+        "secret_exposure_check"
+      ],
+      "forbidden": [
+        "permission_bypass",
+        "secret_access",
+        "self_elevation",
+        "self_deploy",
+        "unvalidated_external_learning"
+      ],
+      "approval": "human_or_role_authorized",
+      "benchmark": "internal-ai-domain-benchmark",
+      "languageSupport": "all_23_required"
+    },
+    "anti_spam_malware_ai": {
+      "managedBy": "ai_management",
+      "active": true,
+      "externalAllowed": false,
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "tools": [
+        "spam_detection",
+        "malware_signal_check"
+      ],
+      "forbidden": [
+        "permission_bypass",
+        "secret_access",
+        "self_elevation",
+        "self_deploy",
+        "unvalidated_external_learning"
+      ],
+      "approval": "human_or_role_authorized",
+      "benchmark": "internal-ai-domain-benchmark",
+      "languageSupport": "all_23_required"
+    },
+    "help_support_ai": {
+      "managedBy": "ai_management",
+      "active": true,
+      "externalAllowed": false,
+      "memoryScopes": [
+        "user",
+        "knowledge"
+      ],
+      "tools": [
+        "help_resolution",
+        "ticket_routing"
+      ],
+      "forbidden": [
+        "permission_bypass",
+        "secret_access",
+        "self_elevation",
+        "self_deploy",
+        "unvalidated_external_learning"
+      ],
+      "approval": "human_or_role_authorized",
+      "benchmark": "internal-ai-domain-benchmark",
+      "languageSupport": "all_23_required"
+    },
+    "accounting_ai": {
+      "managedBy": "ai_management",
+      "active": true,
+      "externalAllowed": false,
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "tools": [
+        "ledger_check",
+        "reconciliation_plan"
+      ],
+      "forbidden": [
+        "permission_bypass",
+        "secret_access",
+        "self_elevation",
+        "self_deploy",
+        "unvalidated_external_learning"
+      ],
+      "approval": "human_or_role_authorized",
+      "benchmark": "internal-ai-domain-benchmark",
+      "languageSupport": "all_23_required"
+    },
+    "engagement_ai": {
+      "managedBy": "ai_management",
+      "active": true,
+      "externalAllowed": false,
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "tools": [
+        "engagement_analysis"
+      ],
+      "forbidden": [
+        "permission_bypass",
+        "secret_access",
+        "self_elevation",
+        "self_deploy",
+        "unvalidated_external_learning"
+      ],
+      "approval": "human_or_role_authorized",
+      "benchmark": "internal-ai-domain-benchmark",
+      "languageSupport": "all_23_required"
+    },
+    "analytics_ai": {
+      "managedBy": "ai_management",
+      "active": true,
+      "externalAllowed": false,
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "tools": [
+        "metric_analysis",
+        "data_quality_check"
+      ],
+      "forbidden": [
+        "permission_bypass",
+        "secret_access",
+        "self_elevation",
+        "self_deploy",
+        "unvalidated_external_learning"
+      ],
+      "approval": "human_or_role_authorized",
+      "benchmark": "internal-ai-domain-benchmark",
+      "languageSupport": "all_23_required"
+    },
+    "reel_ai": {
+      "managedBy": "ai_management",
+      "active": true,
+      "externalAllowed": false,
+      "memoryScopes": [
+        "project",
+        "character",
+        "knowledge"
+      ],
+      "tools": [
+        "reel_structure",
+        "duration_check",
+        "media_rights_check"
+      ],
+      "forbidden": [
+        "permission_bypass",
+        "secret_access",
+        "self_elevation",
+        "self_deploy",
+        "unvalidated_external_learning"
+      ],
+      "approval": "human_or_role_authorized",
+      "benchmark": "internal-ai-domain-benchmark",
+      "languageSupport": "all_23_required"
+    },
+    "writing_ai": {
+      "managedBy": "ai_management",
+      "active": true,
+      "externalAllowed": false,
+      "memoryScopes": [
+        "project",
+        "knowledge",
+        "user"
+      ],
+      "tools": [
+        "story_outline",
+        "rewrite",
+        "continuity_check"
+      ],
+      "forbidden": [
+        "permission_bypass",
+        "secret_access",
+        "self_elevation",
+        "self_deploy",
+        "unvalidated_external_learning"
+      ],
+      "approval": "human_or_role_authorized",
+      "benchmark": "internal-ai-domain-benchmark",
+      "languageSupport": "all_23_required"
+    },
+    "media_security_ai": {
+      "managedBy": "ai_management",
+      "active": true,
+      "externalAllowed": false,
+      "memoryScopes": [
+        "knowledge",
+        "asset_provenance"
+      ],
+      "tools": [
+        "security_scan",
+        "risk_assessment"
+      ],
+      "forbidden": [
+        "permission_bypass",
+        "secret_access",
+        "self_elevation",
+        "self_deploy",
+        "unvalidated_external_learning"
+      ],
+      "approval": "human_or_role_authorized",
+      "benchmark": "internal-ai-domain-benchmark",
+      "languageSupport": "all_23_required"
+    },
+    "cyber_defense_ai": {
+      "managedBy": "ai_management",
+      "active": true,
+      "externalAllowed": false,
+      "memoryScopes": [
+        "knowledge",
+        "security_incidents"
+      ],
+      "tools": [
+        "threat_analysis",
+        "risk_assessment"
+      ],
+      "forbidden": [
+        "permission_bypass",
+        "secret_access",
+        "self_elevation",
+        "self_deploy",
+        "unvalidated_external_learning"
+      ],
+      "approval": "human_or_role_authorized",
+      "benchmark": "internal-ai-domain-benchmark",
+      "languageSupport": "all_23_required"
+    }
+  },
+  "languageSupport": {
+    "version": "KV30-P2-30W-language-v1",
+    "requiredLanguages": 23,
+    "codes": [
+      "en",
+      "as",
+      "bn",
+      "brx",
+      "doi",
+      "gu",
+      "hi",
+      "kn",
+      "ks",
+      "kok",
+      "mai",
+      "ml",
+      "mni",
+      "mr",
+      "ne",
+      "or",
+      "pa",
+      "sa",
+      "sat",
+      "sd",
+      "ta",
+      "te",
+      "ur"
+    ],
+    "futureLanguagesAllowed": true,
+    "externalAIRequired": false
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "version": "30.0.0-internal-ai-v1-P2-30G",
+  "engine": "Katha-Vistaar-Internal-AI-v30",
+  "purpose": "Pre-publication policy and rights screening for creator-submitted media and written content.",
+  "decisionFlow": [
+    "approve",
+    "review",
+    "reject"
+  ],
+  "humanEscalation": true,
+  "rightsAttestationRequired": true,
+  "mediaRightsAttestationRequiredFor": [
+    "comic",
+    "audio",
+    "reel"
+  ],
+  "blockedPatterns": [
+    "copyright pirated",
+    "pirated copy",
+    "stolen content",
+    "terrorist propaganda",
+    "child sexual",
+    "non-consensual sexual",
+    "hate speech attack",
+    "fraud scam"
+  ],
+  "note": "The internal layer is a policy/rules engine in this website-first build; production AI/model integration must be approved through AI governance before activation. Uncertain cases go to Admin/Master Admin rather than being auto-published.",
+  "helpSupportTraining": {
+    "layers": [
+      "internal",
+      "designated_admin_assist",
+      "master_admin_assist"
+    ],
+    "globalRules": [
+      "Follow Katha Vistaar security policy, privacy policy, content policy and role permissions.",
+      "Never bypass authentication, verified-contact requirements, account locks, moderation decisions, payment controls or legal/privacy safeguards.",
+      "Never expose private user data beyond the minimum required for the assigned support task.",
+      "When uncertain, stop and escalate rather than guessing or taking irreversible action.",
+      "AI suggestions are advisory; human authority remains above AI at every layer."
+    ],
+    "internalAI": [
+      "Solve ordinary low-risk deterministic problems only.",
+      "Use the authenticated user context for ticket contact; do not request a second Help OTP.",
+      "Create a ticket for unresolved requests.",
+      "Route security, account takeover, payment, legal, privacy breach and Admin-level matters to Master Admin.",
+      "Never override a human decision."
+    ],
+    "designatedAdminAI": [
+      "Assist only the designated Admin.",
+      "Access only writers assigned to that Admin by the Master Admin.",
+      "Summarize, classify, suggest and draft; do not make final Admin decisions.",
+      "Escalate to Master Admin when authority or risk exceeds the Admin role."
+    ],
+    "masterAdminAI": [
+      "Assist the Master Admin with broader analysis and audit support.",
+      "Master Admin remains the highest human authority.",
+      "AI cannot override, replace or outrank the Master Admin.",
+      "All writers may be visible within Master Admin permissions, subject to privacy and audit controls."
+    ]
+  },
+  "masterIntelligenceAI": {
+    "role": "all_domain_master_intelligence_ai",
+    "authority": "cross_domain_advisor_and_ai_ecosystem_coordinator",
+    "superior": [
+      "master_admin_ai",
+      "master_admin"
+    ],
+    "canCreateProposals": true,
+    "canCreateNewAIWithoutApproval": false,
+    "canChangeOwnRole": false,
+    "canChangeOtherAIRoleWithoutApproval": false,
+    "criticalSecretAccess": false,
+    "criticalActionsRequireHumanMasterAdmin": true,
+    "policyBound": true
+  }
+}

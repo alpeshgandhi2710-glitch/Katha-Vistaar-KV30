@@ -1,0 +1,11 @@
+name: katha_vistaar
+version: 30.0.0+33
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+dependencies:
+  flutter:
+    sdk: flutter
+flutter:
+  assets:
+    - assets/locales/
+  uses-material-design: true

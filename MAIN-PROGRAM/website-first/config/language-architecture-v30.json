@@ -1,0 +1,33 @@
+{
+  "version": "30.0.0",
+  "layers": {
+    "appLanguage": "system_ui_and_setup",
+    "contentLanguages": "reading_list_discovery",
+    "writingLanguages": "author_creation",
+    "translationLanguages": "translation_preferences"
+  },
+  "independent": true,
+  "multiselectContent": true,
+  "scheduledLanguageCount": 22,
+  "uiFallbackLanguages": [
+    "en"
+  ],
+  "codeStandard": "Store ISO 639-1 where assigned; store ISO 639-3 for all 22 scheduled languages; do not pretend every language has a two-letter ISO 639-1 code.",
+  "canonicalLanguageCount": 23,
+  "indianLanguageCount": 22,
+  "futureLanguagesAllowed": true,
+  "languageRegistrySource": "config/languages.json + Master-Admin-governed overlay registry",
+  "fallbackSemantics": {
+    "selectedLanguageUnavailable": "use English UI bundle and expose fallback state",
+    "selectedLanguageEnabled": "use the selected language value when usable; otherwise fall back to the authoritative English catalog value for missing, empty, whitespace-only, or placeholder keys",
+    "newLanguageEnabled": "load its versioned locale bundle dynamically; no core-code language enum change required"
+  },
+  "noHardcodedUserFacingText": true,
+  "userFacingStringPolicy": "All UI labels, messages, statuses, placeholders, dialogs and feature text resolve through governed localization keys; source code literals are prohibited except technical identifiers, ARIA-required non-visible tokens and immutable brand/product names.",
+  "localeBundlePolicy": {
+    "pathPattern": "public/locales/{languageCode}.json",
+    "schema": "{version,languageCode,reviewStatus,translations}",
+    "nativeReviewRequired": true,
+    "masterAdminApprovalRequiredForEnablement": true
+  }
+}

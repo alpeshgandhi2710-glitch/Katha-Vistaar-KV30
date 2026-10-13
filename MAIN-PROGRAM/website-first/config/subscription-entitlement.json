@@ -1,0 +1,141 @@
+{
+  "version": "30.0.0",
+  "purchase_mode": "provider_gated_with_internal_test_path",
+  "rules": {
+    "logged_out": "public_discovery_only; login_required_for_consumption_and_creation",
+    "logged_in_no_subscription": "content_access_subject_to_format_policy; ads_where_policy_allows",
+    "app_subscription": "novel_all_authors_locked_parts; comic_fm_reel_15_counters; ad_free",
+    "author_subscription": "subscribed_author_locked_novel_parts; ads_may_apply",
+    "format_subscription": "all_eligible_content_for_that_format; ad_free_where_plan_says",
+    "creator_subscription": "creation_and_publication_entitlement_only; does_not_automatically_grant_reader_entitlement"
+  },
+  "plans": [
+    {
+      "id": "app_reader",
+      "label": "App Reader",
+      "type": "reader",
+      "contentScope": "platform",
+      "active": true,
+      "adFree": true,
+      "price": 0,
+      "priceStatus": "admin-configurable-test-placeholder",
+      "entitlementKey": "appReader",
+      "accessScope": "app",
+      "policySource": "managed-monetization.json"
+    },
+    {
+      "id": "comic_reader",
+      "label": "Comic Reader",
+      "type": "reader",
+      "contentScope": "comic",
+      "active": true,
+      "adFree": true,
+      "price": 0,
+      "priceStatus": "admin-configurable-test-placeholder",
+      "entitlementKey": "comicReader",
+      "accessScope": "comic",
+      "policySource": "managed-monetization.json"
+    },
+    {
+      "id": "fm_reader",
+      "label": "FM Reader",
+      "type": "reader",
+      "contentScope": "audio",
+      "active": true,
+      "adFree": true,
+      "price": 0,
+      "priceStatus": "admin-configurable-test-placeholder",
+      "entitlementKey": "audioReader",
+      "accessScope": "audio",
+      "policySource": "managed-monetization.json"
+    },
+    {
+      "id": "reel_reader",
+      "label": "Reel Reader",
+      "type": "reader",
+      "contentScope": "reel",
+      "active": true,
+      "adFree": true,
+      "price": 0,
+      "priceStatus": "admin-configurable-test-placeholder",
+      "entitlementKey": "reelReader",
+      "accessScope": "reel",
+      "policySource": "managed-monetization.json"
+    },
+    {
+      "id": "author_subscription",
+      "label": "Author Subscription",
+      "type": "author",
+      "contentScope": "selected_author",
+      "active": true,
+      "adFree": false,
+      "price": 0,
+      "priceStatus": "admin-configurable-test-placeholder",
+      "entitlementKey": "authorSubscription",
+      "accessScope": "author",
+      "policySource": "managed-monetization.json"
+    },
+    {
+      "id": "comic_creator",
+      "label": "Comic Creator",
+      "type": "creator",
+      "contentScope": "comic_creation",
+      "active": true,
+      "price": 0,
+      "priceStatus": "admin-configurable-test-placeholder",
+      "entitlementKey": "comicCreator",
+      "accessScope": "creator_comic",
+      "policySource": "managed-monetization.json"
+    },
+    {
+      "id": "fm_creator",
+      "label": "FM Creator",
+      "type": "creator",
+      "contentScope": "audio_creation",
+      "active": true,
+      "price": 0,
+      "priceStatus": "admin-configurable-test-placeholder",
+      "entitlementKey": "audioCreator",
+      "accessScope": "creator_audio",
+      "policySource": "managed-monetization.json"
+    },
+    {
+      "id": "reel_creator",
+      "label": "Reel Creator",
+      "type": "creator",
+      "contentScope": "reel_creation",
+      "active": true,
+      "price": 0,
+      "priceStatus": "admin-configurable-test-placeholder",
+      "entitlementKey": "reelCreator",
+      "accessScope": "creator_reel",
+      "policySource": "managed-monetization.json"
+    },
+    {
+      "id": "platform_subscription",
+      "label": "Katha Vistaar Platform Subscription",
+      "type": "platform",
+      "contentScope": "platform",
+      "active": true,
+      "adFree": true,
+      "price": 999,
+      "priceStatus": "admin-configurable",
+      "durationDays": 30,
+      "entitlementKey": "platformSubscription",
+      "accessScope": "platform",
+      "policySource": "managed-monetization.json"
+    }
+  ],
+  "authority": {
+    "masterAdmin": "all",
+    "designatedAdmin": "explicitly_granted_scope_only",
+    "adminCannotExceedMaster": "true",
+    "businessPlanSource": "managed-monetization.json",
+    "versionedActiveRecords": "subscriptionRecords.planSnapshot"
+  },
+  "complimentary": {
+    "enabled": true,
+    "grantBy": "master_admin_or_designated_admin_with_grant_permission",
+    "auditRequired": true
+  }
+}

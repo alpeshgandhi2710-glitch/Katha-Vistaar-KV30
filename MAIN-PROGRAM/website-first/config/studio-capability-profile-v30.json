@@ -1,0 +1,166 @@
+{
+  "version": "REF-8.3.155.9.2.14",
+  "source": "independent_reconciliation_of_stitch_reference",
+  "runtimeDependency": "none",
+  "story": {
+    "authoring": [
+      "outline",
+      "acts",
+      "scenes",
+      "characters",
+      "beats",
+      "voice_to_write",
+      "translation",
+      "preview",
+      "schedule",
+      "character_matrix",
+      "continuity_metadata",
+      "revision_history"
+    ],
+    "note": "Story-specific Stitch screen was not present; only common Creator Suite concepts were adopted."
+  },
+  "comic": {
+    "authoring": [
+      "pages",
+      "panels",
+      "panel_geometry",
+      "speech_bubbles",
+      "balloon_type",
+      "typography",
+      "shirorekha",
+      "kerning",
+      "layers",
+      "halftone_60l",
+      "sfx_glyphs",
+      "rough_layout",
+      "perspective_3pt",
+      "warp_mesh",
+      "bleed_safe",
+      "dpi",
+      "print_preset",
+      "png_export",
+      "vector_anchors",
+      "bezier_balloon_paths",
+      "indic_ligature",
+      "fontless_vector_export",
+      "gpen_inking",
+      "pressure_dynamics",
+      "non_photo_blue_rough",
+      "bleed_box",
+      "trim_box",
+      "preflight_audit"
+    ]
+  },
+  "audio": {
+    "authoring": [
+      "episodes",
+      "segments",
+      "multi_track",
+      "waveform",
+      "track_gain",
+      "track_pan",
+      "mute_solo_record",
+      "effects",
+      "eq",
+      "compressor",
+      "de_esser",
+      "sidechain_ducking",
+      "loudness_target",
+      "true_peak",
+      "sample_rate",
+      "bit_depth",
+      "stem_delivery",
+      "flac_delivery",
+      "hls_delivery",
+      "phoneme_locked_alignment",
+      "smpte_timecode",
+      "master_output_meter",
+      "auto_sidechain_ducking",
+      "take_history"
+    ]
+  },
+  "reel": {
+    "authoring": [
+      "scenes",
+      "shots",
+      "multi_track_timeline",
+      "trim",
+      "split",
+      "ripple_edit",
+      "fps_60",
+      "vertical_9_16",
+      "safe_zones",
+      "auto_frame",
+      "speed_ramp",
+      "optical_flow_metadata",
+      "keyframes",
+      "curve_easing",
+      "captions",
+      "smpte",
+      "preview",
+      "render_mp4",
+      "frame_accurate_playhead",
+      "smpte_timecode",
+      "motion_vector_metadata",
+      "auto_frame_tracking",
+      "shot_transition_metadata",
+      "timeline_snap",
+      "elastic_snap_easing"
+    ]
+  },
+  "commonPublishContract": {
+    "required": [
+      "title",
+      "rightsConfirmed",
+      "mediaRightsConfirmed",
+      "studioProjectValid",
+      "moderation"
+    ],
+    "humanApprovalRequired": true,
+    "externalProviderNotAuthoritative": true
+  },
+  "crossStudioSemantics": {
+    "sourceReferenceOnly": true,
+    "runtimeDependency": "none",
+    "story": {
+      "characterMatrix": true,
+      "continuity": true,
+      "revisionHistory": true
+    },
+    "comic": {
+      "vectorAnchors": true,
+      "bezierSpeechBalloons": true,
+      "indicLigature": true,
+      "fontlessVectorExport": true,
+      "gpenPressureRangeMm": [
+        0.12,
+        0.85
+      ],
+      "bleedBoxRequired": true,
+      "trimBoxRequired": true
+    },
+    "audio": {
+      "phonemeLockedAlignment": true,
+      "smpteTimecode": true,
+      "masterMeters": [
+        "integrated_loudness",
+        "true_peak"
+      ],
+      "sidechainDucking": true
+    },
+    "reel": {
+      "frameAccuratePlayhead": true,
+      "smpteTimecode": true,
+      "motionVectorMetadata": true,
+      "autoFrameTracking": true,
+      "timelineSnap": true,
+      "elasticSnapEasing": true
+    },
+    "print": {
+      "preflightRequired": true,
+      "fontlessVectorAllowed": true,
+      "pdfX4": "validation_required",
+      "ctp": "external_runtime_evidence_required"
+    }
+  }
+}

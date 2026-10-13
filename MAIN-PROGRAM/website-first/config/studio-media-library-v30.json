@@ -1,0 +1,97 @@
+{
+  "version": "REF-9.2.57.18-R18",
+  "enabled": true,
+  "internalFirst": true,
+  "uploadFormats": [
+    "image/*",
+    "audio/*",
+    "video/*"
+  ],
+  "naturalSounds": [
+    {
+      "id": "rain",
+      "category": "nature",
+      "label": "Rain / Water",
+      "supportedFormats": [
+        "audio",
+        "fm",
+        "reel"
+      ],
+      "requiresRights": true
+    },
+    {
+      "id": "wind",
+      "category": "nature",
+      "label": "Wind / Breeze",
+      "supportedFormats": [
+        "audio",
+        "fm",
+        "reel"
+      ],
+      "requiresRights": true
+    },
+    {
+      "id": "birds",
+      "category": "animals",
+      "label": "Birds",
+      "supportedFormats": [
+        "audio",
+        "fm",
+        "reel"
+      ],
+      "requiresRights": true
+    },
+    {
+      "id": "animals",
+      "category": "animals",
+      "label": "Animals",
+      "supportedFormats": [
+        "audio",
+        "fm",
+        "reel"
+      ],
+      "requiresRights": true
+    },
+    {
+      "id": "waterfall",
+      "category": "nature",
+      "label": "Waterfall / Flowing Water",
+      "supportedFormats": [
+        "audio",
+        "fm",
+        "reel"
+      ],
+      "requiresRights": true
+    },
+    {
+      "id": "background-music",
+      "category": "music",
+      "label": "Background Music",
+      "supportedFormats": [
+        "audio",
+        "fm",
+        "reel",
+        "comic"
+      ],
+      "requiresRights": true
+    }
+  ],
+  "rightsRule": "Only creator-owned, KV-cleared, or explicitly licensed assets may be published/exported.",
+  "directPublishFromUpload": false,
+  "externalNaturalSoundGate": {
+    "service": "natural_sounds",
+    "primaryGate": "service_gate_natural_sounds",
+    "alternateGates": [
+      "service_gate_natural_sounds_alt_01",
+      "service_gate_natural_sounds_alt_02",
+      "service_gate_natural_sounds_alt_03"
+    ],
+    "masterAdminControlled": true,
+    "billingModes": [
+      "public",
+      "free",
+      "paid"
+    ],
+    "internalFallback": "governed_internal_catalog"
+  }
+}

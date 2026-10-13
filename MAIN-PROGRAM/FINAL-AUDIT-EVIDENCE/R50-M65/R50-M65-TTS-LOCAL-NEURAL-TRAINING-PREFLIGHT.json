@@ -1,0 +1,21 @@
+{
+  "release": "REF-9.2.57.18-R50-M65-TTS-INTERNAL-LEARNING-2026-10-09",
+  "checkedAt": "2026-10-09",
+  "languages": 23,
+  "piperExecutable": false,
+  "piperTrainExecutable": false,
+  "pythonModules": {
+    "piper": false,
+    "piper_train": false,
+    "TTS": false,
+    "transformers": false,
+    "torch": true
+  },
+  "neuralOnnxModelsFound": 0,
+  "approvedTrainingCorpusFound": false,
+  "externalDownloadsAttempted": false,
+  "externalCorpusUpload": false,
+  "automaticProductionPromotion": false,
+  "neuralTrainingStatus": "BLOCKED_TOOLCHAIN_AND_APPROVED_CORPUS_ABSENT",
+  "sourceLifecycleStatus": "IMPLEMENTED_AND_TESTED"
+}

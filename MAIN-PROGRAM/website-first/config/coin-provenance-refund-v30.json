@@ -1,0 +1,29 @@
+{
+  "version": "REF-8.3.155.9.2.25",
+  "coin_lot_provenance": {
+    "required": true,
+    "root_source_transaction_id_required": true,
+    "paid_amount_inr_required": true,
+    "bonus_cash_basis_inr": 0,
+    "free_cash_basis_inr": 0,
+    "legacy_unattributed_cash_basis_inr": 0,
+    "transfer_preserves_root_provenance": true,
+    "consumption_fifo": true,
+    "refund_reversal_exactly_once": true
+  },
+  "coin_purchase_refund": {
+    "authoritative_confirmation_required": true,
+    "idempotency_required": true,
+    "remaining_descendant_lots_are_clawed_back": true,
+    "downstream_unlocks_revoked": true,
+    "downstream_sticker_assets_reversed": true,
+    "downstream_royalty_reversed": true,
+    "unrecoverable_lineage_requires_reconciliation": true,
+    "external_money_refund_is_separate_payment_recovery": true
+  },
+  "governance": {
+    "master_admin_controlled": true,
+    "delegated_admin_permission": "payments.manage",
+    "ai_can_change_policy": false
+  }
+}

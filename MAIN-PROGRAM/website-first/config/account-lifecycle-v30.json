@@ -1,0 +1,18 @@
+{
+  "version": "30.0.0",
+  "deactivationGraceDays": 30,
+  "user": {
+    "requestImmediatelyLocksLogin": true,
+    "reactivationDuringGraceRequiresApproval": true,
+    "afterGrace": "final_close_and_archive_minimum_required_data",
+    "newSignupAfterClosureIsNewAccount": true
+  },
+  "admin": {
+    "masterAdminCanEmergencyDisableImmediately": true,
+    "masterAdminCanTransferAdminRights": true,
+    "revokeAllSessionsOnRoleRemoval": true,
+    "formerAdminBecomesNormalUser": true,
+    "formerAdminCannotSelfElevate": true
+  },
+  "audit": true
+}

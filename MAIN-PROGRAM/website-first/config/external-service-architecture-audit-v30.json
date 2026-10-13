@@ -1,0 +1,30 @@
+{
+  "release": "REF-9.2.57.18-R22",
+  "status": "VERIFIED_CLOSED_FOR_PART4_SCOPE",
+  "coreServiceCount": 18,
+  "reservedServiceCount": 5,
+  "serviceRegistryCount": 24,
+  "nonAiServiceGateCount": 23,
+  "aiSpecialistGateCount": 77,
+  "providerSlotCount": 72,
+  "providerAlternateGateCount": 72,
+  "threeSlotsPerService": true,
+  "coreMatrixSource": "service-registry-v30 + external-provider-slots-v30 + external-gate-configuration-profile-v30",
+  "internalAlwaysOn": true,
+  "externalDefaultEnabled": false,
+  "masterAdminControlled": true,
+  "firewallRequired": true,
+  "failureOrder": [
+    "primary",
+    "secondary_slot_1",
+    "secondary_slot_2",
+    "secondary_slot_3",
+    "internal_fallback"
+  ],
+  "semanticFinding": "Current governed inventory contains 23 non-AI service gates + 77 AI-specialist primary gates = 100 canonical primary gates, plus 3 project-memory governance gates = 103 governed gate records. Provider alternates are a separate control plane: 24 service classes × 3 slots = 72 alternate provider gates. They are not added to the 103 governed gate-record total.",
+  "canonicalPrimaryGateCount": 100,
+  "gateCountingRule": "canonical_primary_gates = 23 non_ai + 77 ai_specialist = 100; project_memory_governance_gates = 3; total_governed_gate_records = 103; provider_alternate_gates = 24 service classes × 3 = 72 and remain separate.",
+  "projectMemoryGateCount": 3,
+  "totalGovernedGateRecords": 103,
+  "providerServiceClassCount": 24
+}

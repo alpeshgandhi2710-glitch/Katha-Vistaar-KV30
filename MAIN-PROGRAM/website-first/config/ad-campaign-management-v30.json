@@ -1,0 +1,33 @@
+{
+  "version": "30.0.0",
+  "roles": [
+    "Admin",
+    "Master Admin"
+  ],
+  "fields": [
+    "agency",
+    "campaign",
+    "creative",
+    "destination",
+    "startAt",
+    "endAt",
+    "frequencyCap",
+    "impressionLimit",
+    "targetLanguages",
+    "audience",
+    "status"
+  ],
+  "defaultAudience": "FREE_USERS",
+  "adminFreeAds": true,
+  "masterAdminFreeAds": true,
+  "paidUserAds": false,
+  "requiredControls": [
+    "approval",
+    "schedule",
+    "pause",
+    "end",
+    "preview",
+    "audit",
+    "performance"
+  ]
+}

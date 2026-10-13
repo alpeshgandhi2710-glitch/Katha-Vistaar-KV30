@@ -1,0 +1,45 @@
+{
+  "version": "KV30-FIN-CHARGES-1.0",
+  "status": "approved_policy_source_driven",
+  "currency": "INR",
+  "charges": {
+    "payment_processing": {
+      "enabled": false,
+      "rate": null,
+      "basis": null
+    },
+    "platform_fee": {
+      "enabled": false,
+      "rate": null,
+      "basis": null
+    },
+    "cess": {
+      "enabled": false,
+      "rate": null,
+      "basis": null
+    },
+    "tds_withholding": {
+      "enabled": false,
+      "rate": null,
+      "basis": "recipient_and_payment_nature_specific",
+      "ruleSource": "official_income_tax_source_snapshot"
+    },
+    "advance_recovery": {
+      "enabled": false,
+      "rate": null,
+      "basis": "approved_contract_or_authoritative_rule_only",
+      "ruleSource": "approved_policy_or_authoritative_source_snapshot"
+    }
+  },
+  "effectivePeriods": [],
+  "ruleVersion": null,
+  "activation": "master_admin_or_explicitly_authorized_admin_after_approved_source_snapshot",
+  "zeroRateAllowed": true,
+  "historicalSnapshotRequired": true,
+  "approval": {
+    "authority": "human_master_admin",
+    "record": "REF-8.3.155.9.2.48",
+    "productionActivationRequiresOfficialSourceSnapshot": true,
+    "inventedRateForbidden": true
+  }
+}

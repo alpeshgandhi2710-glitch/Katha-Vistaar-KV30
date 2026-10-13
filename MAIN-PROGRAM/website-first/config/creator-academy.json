@@ -1,0 +1,23 @@
+{
+  "version": "30.0.0",
+  "free_for_all_authors": true,
+  "modules": [
+    "writing",
+    "publishing",
+    "reader_retention",
+    "creator_business",
+    "copyright",
+    "royalty",
+    "audio",
+    "video",
+    "comic_webtoon",
+    "translation",
+    "coauthor_editor",
+    "ai_safe_creation"
+  ],
+  "live_sessions": true,
+  "recorded_library": true,
+  "certificates": true,
+  "badges": true,
+  "certificates_do_not_control_monetization": true
+}

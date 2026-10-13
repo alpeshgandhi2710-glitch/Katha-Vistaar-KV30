@@ -1,0 +1,60 @@
+{
+  "version": "REF-8.3.155.9",
+  "internalFirst": true,
+  "externalOnlyAfterInternalCapabilityFailure": true,
+  "languages": 23,
+  "capabilities": {
+    "read": [
+      "text",
+      "story",
+      "comic",
+      "audio",
+      "reel"
+    ],
+    "write": [
+      "story",
+      "script",
+      "dialogue",
+      "translation",
+      "metadata"
+    ],
+    "speak": [
+      "local_tts",
+      "external_tts_fallback"
+    ],
+    "audio": [
+      "fm",
+      "podcast",
+      "audiobook",
+      "audio_enhancement"
+    ],
+    "reel": [
+      "storyboard",
+      "timeline",
+      "captions",
+      "internal_ffmpeg_render",
+      "external_render_fallback"
+    ],
+    "learn": [
+      "memory",
+      "evaluation",
+      "learning_candidates",
+      "master_admin_approval"
+    ],
+    "help": [
+      "reader_assist",
+      "creator_assist",
+      "ticket_triage",
+      "safety_help"
+    ],
+    "security": [
+      "policy_check",
+      "media_security",
+      "risk_assessment",
+      "cyber_defense",
+      "audit"
+    ]
+  },
+  "providerFallbackRule": "internal -> internal contract fallback -> approved external fallback only when explicitly allowed and Master Admin policy permits",
+  "externalProviderSlots": 3
+}

@@ -1,0 +1,85 @@
+{
+  "version": "KV30-P2-30W-media-format-registry-v30",
+  "images": [
+    {
+      "extension": ".jpg",
+      "mime": "image/jpeg"
+    },
+    {
+      "extension": ".jpeg",
+      "mime": "image/jpeg"
+    },
+    {
+      "extension": ".png",
+      "mime": "image/png"
+    },
+    {
+      "extension": ".webp",
+      "mime": "image/webp"
+    },
+    {
+      "extension": ".gif",
+      "mime": "image/gif"
+    }
+  ],
+  "audio": [
+    {
+      "extension": ".mp3",
+      "mime": "audio/mpeg"
+    },
+    {
+      "extension": ".wav",
+      "mime": "audio/wav"
+    },
+    {
+      "extension": ".m4a",
+      "mime": "audio/mp4"
+    },
+    {
+      "extension": ".aac",
+      "mime": "audio/aac"
+    },
+    {
+      "extension": ".ogg",
+      "mime": "audio/ogg"
+    },
+    {
+      "extension": ".opus",
+      "mime": "audio/opus"
+    },
+    {
+      "extension": ".flac",
+      "mime": "audio/flac"
+    }
+  ],
+  "video": [
+    {
+      "extension": ".mp4",
+      "mime": "video/mp4"
+    },
+    {
+      "extension": ".webm",
+      "mime": "video/webm"
+    },
+    {
+      "extension": ".mov",
+      "mime": "video/quicktime"
+    },
+    {
+      "extension": ".mkv",
+      "mime": "video/x-matroska"
+    },
+    {
+      "extension": ".m4v",
+      "mime": "video/x-m4v"
+    }
+  ],
+  "documents": [
+    {
+      "extension": ".pdf",
+      "mime": "application/pdf"
+    }
+  ],
+  "notes": "Formats are accepted only when the actual runtime decoder/parser is available and file signature/processing validation passes.",
+  "release": "KV30-P2-30W"
+}

@@ -1,0 +1,2 @@
+const {spawn}=require("node:child_process"); const p=spawn(process.execPath,["src/server.js"],{stdio:"inherit"}); console.log("Katha Vistaar v30-FOUNDATION-HARDENED local website: http://127.0.0.1:8787");
+console.log("Mobile browser test: open http://127.0.0.1:8787/ on the same Android device."); p.on("exit",c=>process.exit(c||0));

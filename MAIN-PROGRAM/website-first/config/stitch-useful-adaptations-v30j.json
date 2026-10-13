@@ -1,0 +1,37 @@
+{
+  "release": "KV30-P2-30W",
+  "source": "Stitch ecosystem reference",
+  "policy": "Only useful, bounded features are adapted into v30; future complexity is not activated merely because a Stitch screen exists.",
+  "merged": [
+    "v32_ai_storyboard_engine",
+    "v32_ai_dialogue_architect",
+    "v32_audio_asset_library_as_internal_asset_library",
+    "v31_gifting_tips_as_internal_tip_ledger",
+    "v31_payout_verification_as_internal_readiness_status",
+    "regional_performance_map_v30_governance_as_privacy_safe_activity_analytics",
+    "v32_ai_social_assistant_as_approval_only_creator_assistant",
+    "v32_branching_narratives_story_architect_as_bounded_story_mapper",
+    "v32_events_calendar_stay_connected_as_internal_event_calendar",
+    "creator_tiers_benefits_v32_social_progression_as_bounded_policy_view",
+    "version_history_time_machine_v31_phase_1_as_owner_scoped_revision_history"
+  ],
+  "deferred": [
+    "guilds",
+    "DAO",
+    "blockchain_wallet",
+    "cross_chain",
+    "P2P_marketplace",
+    "tournaments",
+    "autonomous_agents",
+    "large_collaborative_workspace",
+    "voice_synthesis_engine_without_provider",
+    "advanced_ai_audio_mixer",
+    "full_interactive_reader_community_choice",
+    "full_social_studio_community_manager",
+    "guild_and_treasury_economy",
+    "dao_and_decentralized_assets",
+    "p2p_marketplace_and_wallet",
+    "autonomous_agent_runtime"
+  ],
+  "approval": "AI suggestions are proposal-only; creator/admin/master-admin approval remains required according to action risk."
+}

@@ -1,0 +1,17 @@
+'use strict';
+const assert=require('node:assert/strict');
+const fs=require('node:fs'),path=require('node:path');
+const root=path.resolve(__dirname,'..');
+const ui=fs.readFileSync(path.join(root,'public/app.js'),'utf8');
+const server=fs.readFileSync(path.join(root,'src/server.js'),'utf8');
+assert.ok(server.includes('coinGiftAmounts:Array.isArray(p.coinGiftAmounts)'));
+assert.ok(server.includes('coinUnlockCost:Number(accessPolicy.RULES.novel.coinUnlockCost||0)'));
+assert.ok(server.includes('rewardedAdUnlock:accessPolicy.RULES.novel.rewardedAdUnlock===true'));
+assert.ok(ui.includes('catalog?.policy?.coinGiftAmounts'));
+assert.ok(ui.includes('catalog?.policy?.stickers'));
+assert.ok(ui.includes('catalog?.policy?.contentAccess?.stories?.novel'));
+assert.ok(!ui.includes('Coin amount: 1, 5, 10 or 25'));
+assert.ok(!ui.includes('const costs={thanks:1,star:5,heart:10,fire:25}'));
+assert.ok(!ui.includes('isLockedAfter15=isNovel'));
+assert.ok(!ui.includes('Unlock for 5 Coins'));
+console.log('REF-8.3.155.9.2.43 UI business-value source audit PASS');

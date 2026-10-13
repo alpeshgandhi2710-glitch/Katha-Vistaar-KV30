@@ -1,0 +1,69 @@
+{
+  "version": "REF-8.3.155.9",
+  "internalFirst": true,
+  "languageCount": 23,
+  "internalProviders": [
+    "piper",
+    "espeak"
+  ],
+  "externalCandidates": [
+    {
+      "id": "sarvam_bulbul_v3",
+      "service": "tts",
+      "coverage": [
+        "en",
+        "hi",
+        "bn",
+        "ta",
+        "te",
+        "kn",
+        "ml",
+        "mr",
+        "gu",
+        "pa",
+        "or"
+      ],
+      "verifiedSource": "Sarvam Bulbul v3 documentation",
+      "gate": "service_gate_tts"
+    },
+    {
+      "id": "azure_speech",
+      "service": "tts",
+      "coverage": [
+        "as-IN",
+        "bn-IN",
+        "en-IN",
+        "gu-IN",
+        "hi-IN",
+        "kn-IN",
+        "ml-IN",
+        "mr-IN",
+        "or-IN",
+        "pa-IN",
+        "ta-IN",
+        "te-IN",
+        "ur-IN"
+      ],
+      "verifiedSource": "Microsoft Azure Speech language/voice catalog",
+      "gate": "service_gate_tts_alt_01",
+      "coverageVerification": "Azure catalog TTS locale verified; live endpoint/region/voice health check required before activation",
+      "unsupportedByVerifiedCatalog": [
+        "sa-IN",
+        "brx-IN",
+        "doi-IN",
+        "ks-IN",
+        "kok-IN",
+        "mai-IN",
+        "mni-IN",
+        "ne-IN"
+      ]
+    },
+    {
+      "id": "provider_slot_02",
+      "service": "tts",
+      "coverage": "deployment_verified_only",
+      "gate": "tts_provider_02_alt_02"
+    }
+  ],
+  "rule": "Try internal TTS first. If internal TTS cannot synthesize the requested language/voice, select a Master-Admin-enabled external provider slot whose language health check confirms support. Never assume provider language coverage."
+}

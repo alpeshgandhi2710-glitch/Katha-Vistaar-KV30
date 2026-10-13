@@ -1,0 +1,23 @@
+{
+  "version": "30.0.0",
+  "author_is_reader": true,
+  "open_publishing": true,
+  "growth_levels_do_not_change_rights": true,
+  "missions": [
+    "first_work",
+    "first_10_followers",
+    "first_100_followers",
+    "first_200_followers",
+    "first_subscriber",
+    "first_sticker",
+    "10_parts",
+    "50_parts",
+    "100_parts",
+    "comic",
+    "audio",
+    "translation",
+    "consistent_creator",
+    "reader_to_creator"
+  ],
+  "fair_discovery": true
+}

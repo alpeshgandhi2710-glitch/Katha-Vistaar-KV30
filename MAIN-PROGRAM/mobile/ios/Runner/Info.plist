@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"><dict>
+<key>CFBundleDisplayName</key><string>Katha Vistaar</string>
+<key>CFBundleIdentifier</key><string>com.kathavistaar.kv30</string>
+<key>CFBundleName</key><string>Katha Vistaar</string>
+<key>NSMicrophoneUsageDescription</key><string>Used only when you choose to record voice or FM audio.</string>
+<key>NSCameraUsageDescription</key><string>Used only when you choose to capture or scan media.</string>
+<key>NSPhotoLibraryUsageDescription</key><string>Used only when you choose media from your photo library.</string>
+<key>NSPhotoLibraryAddUsageDescription</key><string>Used only when you choose to save exported media.</string>
+<key>NSLocationWhenInUseUsageDescription</key><string>Used only when a feature you start requires your location.</string>
+<key>NSBluetoothAlwaysUsageDescription</key><string>Used only when you start a nearby-device feature.</string>
+</dict></plist>

@@ -1,0 +1,24 @@
+const fs=require('fs'); const path=require('path'); const assert=require('assert');
+const root=path.resolve(__dirname,'..');
+const native=fs.readFileSync(path.join(root,'lib/native_capabilities.dart'),'utf8');
+const android=fs.readFileSync(path.join(root,'native-config/android/permissions.xml'),'utf8');
+const ios=fs.readFileSync(path.join(root,'native-config/ios/Info.plist.permission-usage.xml'),'utf8');
+const contract=fs.readFileSync(path.join(root,'native-config/ANDROID-IOS-NATIVE-HOST-CONTRACT.md'),'utf8');
+assert(native.includes("MethodChannel(channelName)"));
+assert(native.includes("invokeMethod<bool>('request'"));
+assert(native.includes("invokeMethod<String>('status'"));
+assert(native.includes('MissingPluginException'));
+assert(android.includes('android.permission.INTERNET'));
+assert(android.includes('android.permission.RECORD_AUDIO'));
+assert(!android.includes('READ_EXTERNAL_STORAGE'));
+assert(!android.includes('WRITE_EXTERNAL_STORAGE'));
+assert(ios.includes('NSMicrophoneUsageDescription'));
+assert(ios.includes('NSCameraUsageDescription'));
+assert(contract.includes('kv30/native_permissions'));
+assert(contract.includes('Never request all permissions at startup'));
+console.log('PASS native Android/iOS host bridge + least-privilege permission contract');
+
+const caps=fs.readFileSync(path.join(root,'lib','native_capabilities.dart'),'utf8');
+assert(caps.includes("kv30/native_fm"));
+for(const m of ['startRecording','pauseRecording','resumeRecording','stopRecording','renderMix']) assert(caps.includes("'"+m+"'"),m);
+console.log('native-fm-channel-contract: PASS');

@@ -1,0 +1,8 @@
+{
+  "version": "30.0.0",
+  "ai_moderation": true,
+  "human_review": true,
+  "appeal": true,
+  "external_links_blocking": true,
+  "spam_rate_limits": true
+}

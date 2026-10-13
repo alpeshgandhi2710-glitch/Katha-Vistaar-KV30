@@ -1,0 +1,98 @@
+{
+  "version": "30.0.0",
+  "internalLayer": {
+    "alwaysOn": true
+  },
+  "externalLayer": {
+    "masterAdminControlled": true,
+    "defaultEnabled": false
+  },
+  "types": [
+    "video",
+    "audio",
+    "text",
+    "banner",
+    "native",
+    "rewarded"
+  ],
+  "placements": [
+    "home",
+    "discover",
+    "search",
+    "story",
+    "comic",
+    "fm",
+    "reel",
+    "library",
+    "profile",
+    "rewarded"
+  ],
+  "freeAds": {
+    "enabled": true,
+    "frequencyCap": true,
+    "nonIntrusive": true,
+    "rewardedUnlockOptional": true,
+    "categoryControls": true,
+    "reportAd": true
+  },
+  "subscriptionMatrix": {
+    "loggedOut": true,
+    "loggedInFree": true,
+    "appReader": false,
+    "formatReader": false,
+    "authorSubscription": true,
+    "creatorSubscription": false
+  },
+  "adminControls": [
+    "create",
+    "edit",
+    "remove",
+    "schedule",
+    "language",
+    "placement",
+    "frequency",
+    "targeting",
+    "provider",
+    "package",
+    "offer",
+    "reporting"
+  ],
+  "externalProviderDataImport": true,
+  "productionProviderRequired": true,
+  "assetManagement": {
+    "enabled": true,
+    "permission": "ads.manage",
+    "masterAdminCanManage": true,
+    "designatedAdminsCanManage": true,
+    "types": {
+      "photo": [
+        "image/png",
+        "image/jpeg",
+        "image/webp"
+      ],
+      "video": [
+        "video/mp4",
+        "video/webm"
+      ],
+      "audio": [
+        "audio/mpeg",
+        "audio/wav",
+        "audio/mp4"
+      ],
+      "faq": [
+        "application/json"
+      ]
+    },
+    "faqSchema": {
+      "items": "array",
+      "itemFields": [
+        "question",
+        "answer"
+      ],
+      "maxItems": 50
+    },
+    "scanBeforePersist": true,
+    "internalStorageFallback": true,
+    "externalProviderIndependent": true
+  }
+}

@@ -1,0 +1,1 @@
+const rank={user:1,admin:2,master_admin:3}; function requireRole(role){return (req,res,next)=>{if((rank[req.user?.role]||0)<rank[role])return res.status(403).json({error:"insufficient_authority"});next()}} module.exports={rank,requireRole};

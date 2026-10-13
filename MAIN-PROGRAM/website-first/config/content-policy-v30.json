@@ -1,0 +1,7 @@
+{
+  "version": "30.0.0-policy-v1",
+  "appliesTo": ["story", "comic", "audio", "reel"],
+  "violations": "Any confirmed policy or rights violation triggers notice, content deletion and violation counting.",
+  "accountRule": {"lockAfterViolations": 3, "appealRequired": true, "finalDecisionBy": ["admin", "master_admin"]},
+  "publicationRule": {"comic": "internal_ai_then_admin_if_uncertain", "audio": "internal_ai_then_admin_if_uncertain", "reel": "internal_ai_then_admin_if_uncertain", "story": "common_policy_flow"}
+}

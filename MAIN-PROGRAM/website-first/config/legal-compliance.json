@@ -1,0 +1,46 @@
+{
+  "version": "30.0.0",
+  "privacy": [
+    "notice",
+    "consent",
+    "purpose_limitation",
+    "access",
+    "correction",
+    "export",
+    "deletion",
+    "retention",
+    "grievance",
+    "processor_controls",
+    "incident_response"
+  ],
+  "content_complaints": [
+    "copyright",
+    "privacy",
+    "impersonation",
+    "harmful_content",
+    "illegal_content",
+    "ai_content",
+    "harassment",
+    "child_safety"
+  ],
+  "workflow": [
+    "complaint_id",
+    "acknowledge",
+    "review",
+    "decision",
+    "reason",
+    "appeal",
+    "closure"
+  ],
+  "legal_review_required_before_launch": true,
+  "india": {
+    "dpdpAct2023": "Design against notice, purpose limitation, access/correction/erasure mechanisms, security safeguards and breach response; final legal mapping required before production.",
+    "dpdpRules2025": "Track notified 2025 rules and their staged commencement dates; implement controls according to the applicable effective date.",
+    "itIntermediaryRules2021": "Maintain grievance/contact, content governance, moderation/appeal and record processes as applicable to the service classification.",
+    "consumerProtectionEcommerceRules2020": "Maintain transparent paid-feature, refund, subscription, advertising and grievance information as applicable.",
+    "trademark": "Professional trademark clearance for Katha Vistaar and logo before public launch.",
+    "taxAndRoyalty": "CA/tax counsel review for GST, TDS, royalty accounting and payout reporting before production.",
+    "children": "Age/child-safety controls and parental/consent requirements to be legally mapped before launch where applicable."
+  },
+  "externalLegalGateRequired": true
+}

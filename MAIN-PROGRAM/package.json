@@ -1,0 +1,14 @@
+{
+  "name": "kv30-governed-main-program",
+  "private": true,
+  "version": "30.0.0",
+  "description": "Authoritative cross-platform regression and release-evidence gate for KV30",
+  "scripts": {
+    "test": "node scripts/run-governed-regression.js",
+    "test:governed": "node scripts/run-governed-regression.js",
+    "test:website-only": "node website-first/scripts/run-all-tests.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

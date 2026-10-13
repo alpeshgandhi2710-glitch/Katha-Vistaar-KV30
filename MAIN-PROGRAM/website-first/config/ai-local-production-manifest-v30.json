@@ -1,0 +1,41 @@
+{
+  "version": "KV30-P2-30W-local-production-manifest-v1",
+  "purpose": "Evidence-gated activation manifest for the real local LLM runtime",
+  "target": {
+    "model": "Qwen/Qwen3-32B-GGUF:Q4_K_M",
+    "runtimeAdapters": [
+      "ollama",
+      "llama.cpp",
+      "vllm-openai-compatible"
+    ],
+    "canonicalRuntimeModel": "qwen3:32b",
+    "runtimePreference": "llama.cpp-openai-compatible",
+    "artifact": {
+      "repo": "Qwen/Qwen3-32B-GGUF",
+      "file": "Qwen3-32B-Q4_K_M.gguf",
+      "quantization": "Q4_K_M",
+      "sha256": "efd971561896866f0e910cce52761ca77b1b138090c7f15fe284676d57d1f689",
+      "approxSize": "19.8 GB"
+    }
+  },
+  "activationRequirements": [
+    "supported runtime executable is installed",
+    "exact configured model is actually loaded/listed by the runtime",
+    "health endpoint responds successfully",
+    "test inference returns non-empty output",
+    "licensed model artifact provenance is recorded outside the application ZIP",
+    "runtime API must expose an approved model alias",
+    "real inference smoke test must return non-empty output through the KV30 adapter"
+  ],
+  "security": {
+    "cloudDependency": false,
+    "secretsExternalOnly": true,
+    "modelWeightsExternalToAppZip": true
+  },
+  "currentArtifactEvidence": {
+    "runtimeInstalled": false,
+    "modelWeightsBundled": false,
+    "modelLoaded": false
+  },
+  "statusRule": "Never report production-ready unless every activation requirement passes."
+}

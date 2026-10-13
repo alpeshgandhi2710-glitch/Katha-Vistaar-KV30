@@ -1,0 +1,33 @@
+{
+  "version": "KV30-P2-30W-content-learning-v1",
+  "enabled": true,
+  "mode": "retrieval_first",
+  "consentRequired": true,
+  "rightsConfirmationRequired": true,
+  "rawMediaAutoTraining": false,
+  "learningSeparation": "memory_and_staged_candidates_are_not_model_training",
+  "userIsolation": "owner_scoped",
+  "allowedDerivedSignals": [
+    "title",
+    "summary",
+    "user-authored-text",
+    "media-metadata",
+    "approved-transcript",
+    "approved-visual-description",
+    "approved-audio-transcript"
+  ],
+  "forbiddenAutoIngest": [
+    "secrets",
+    "credentials",
+    "private_keys",
+    "third_party_restricted_content"
+  ],
+  "promotion": [
+    "user_consent",
+    "evaluation",
+    "staging",
+    "master_admin_approval",
+    "versioned_release",
+    "rollback"
+  ]
+}

@@ -1,0 +1,17 @@
+775980b27284b8723c928f855214596e9453d995cfa6b3ae67b5c382a9dbd068  MAIN-PROGRAM/backend/src/services/ai-tts-runtime.js
+24094d624582d3a1eb28f6bbf4201342d6c82dab2b656be88a0e6bd46a63f6fe  MAIN-PROGRAM/backend/src/services/ai-tts-model-lifecycle.js
+86b538d1dd22a6c862c5077391bfbbb027a98dc69328d7a28ab2c0202e79d74c  MAIN-PROGRAM/backend/test/ai-tts-model-lifecycle.test.js
+9ef0ad9bd056d27d9951badf2eacdb5bef797d0a77703c370e36a266696333dd  MAIN-PROGRAM/website-first/config/ai-tts-runtime-v30.json
+0e431dcb398d871f986054d5a303b4dd5df5cecc60485c08d89feca82fea0e6e  MAIN-PROGRAM/website-first/config/tts-model-lifecycle-v30.json
+44d8b899c361df0f7000729c40de57b377f25f4423d947686fb092ae9f97e1d7  MAIN-PROGRAM/website-first/config/ai-learning-loop-v30.json
+9ca35c847feae190163a651927f280873e0dab596969aa48b7a77fbbe0a9546a  MAIN-PROGRAM/website-first/public/app.js
+475f08fe8268e2e5f51c3b5e8583f371e12e58038805be34ff62d858412b8e1f  MAIN-PROGRAM/website-first/src/server.js
+77eed77a0789785d8444614c8ba84d7686c8ca6371dbce2d73e57c8ac8067f0d  MAIN-PROGRAM/website-first/RELEASE-MANIFEST-v30.json
+2f05b350a3139908d6fe3e7b75ac2d8af95eb9fda0c3c10aa7b2011c62c245ca  MAIN-PROGRAM/website-first/config/version.json
+b909d2ec45f79dcef389d46c0813e443f26d7dfe278bf00673a3f32e3ae1d3bb  MAIN-PROGRAM/website-first/config/release-registry-v30.json
+66b29c85d1b367ec4754817e5f1a72b7bde83ca1b70808e510a588a936c08d82  MAIN-PROGRAM/website-first/tests/r50-m40-source-reconciliation-runtime-boundary.test.js
+e68260f0147a6c6b0672bf2018a1c89951f53e4c42ed87f5e98ea870b37b2799  MAIN-PROGRAM/website-first/tests/r50-m41-phase1-financial-rule-hardening.test.js
+e516556e38264f4dc6ab25021250288922b36ae2561de4086a2f962b9e8e90dd  MAIN-PROGRAM/website-first/tests/ref-8.3.155.9.2.52-release-metadata-consistency.test.js
+8f9e8ddef18a06d6f10188fc23542e3d4d7a8d33e1eec95a2ae17401704d1afb  MAIN-PROGRAM/website-first/tests/r50-m64-tts-friendly-message-and-internal-learning-boundary.test.cjs
+bcd12cd8234fd482100ddd35e51690fc2f77d438db2eddbaebf6a11884d7bffe  MAIN-PROGRAM/FINAL-AUDIT-EVIDENCE/R50-M65/R50-M65-TTS-INTERNAL-LEARNING-AND-LOCALIZATION-IMPLEMENTATION-2026-10-09.md
+2d5c077ca2460e5cc28c25ef5755dcaf8f0d8cd01d8aa8c9ec2ca010a1257ab3  MAIN-PROGRAM/FINAL-AUDIT-EVIDENCE/R50-M65/R50-M65-TTS-LOCAL-NEURAL-TRAINING-PREFLIGHT.json

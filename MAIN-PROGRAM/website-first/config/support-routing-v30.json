@@ -1,0 +1,79 @@
+{
+  "version": "30.0.0",
+  "defaultQueue": "admin",
+  "masterQueue": "master_admin",
+  "designatedAdminId": "designated-support-admin",
+  "masterAdminId": "master-admin",
+  "aiAutoResolveLimit": "bounded-policy-rules-only",
+  "humanEscalation": true,
+  "policy": "Public Help AI may create bounded support tickets without login for login/registration/OTP/access problems when the user supplies a contact identifier (mobile/email). The supplied contact is treated as claimed, not verified; ticket tracking and public comments require the ticket number plus the same contact identifier. Authenticated users continue to create full support tickets using the verified contact associated with their session. No separate Help OTP is required. Internal AI is first-line and bounded by security, privacy and policy controls. Unresolved ordinary cases go to the designated Admin; critical/security/legal/payment/privacy/account-takeover or Admin-level cases go to Master Admin. Designated Admin AI assists but cannot outrank the Admin. Master Admin AI assists but cannot outrank the Master Admin. Account block/deactivation/deletion/reactivation/unblock decisions are controlled by explicit Master-Admin-granted rights; Human Master Admin retains full authority and can perform all account-state actions as required; Public Help AI cannot reopen an account or bypass authentication/security controls. Password-attempt locks remain separate from blocked/deactivated/deleted states.",
+  "loginRequiredForUserTicket": false,
+  "helpContactPolicy": "Use the verified mobile/email associated with the current authenticated session. Do not request or repeat a second OTP for Help.",
+  "aiLayers": {
+    "internal": {
+      "name": "Internal AI Help",
+      "role": "User-facing first-line support",
+      "userPolicy": "Resolve only ordinary, deterministic, low-risk help issues. Stay within Katha Vistaar policy, security controls and this role. Never bypass authentication, verification, privacy, payment, legal, moderation or account-security controls. Create a ticket for unresolved requests; route critical/security cases to Master Admin.",
+      "writerScope": "Only writers explicitly assigned to the Internal AI by support routing.",
+      "canEscalateTo": [
+        "admin",
+        "master_admin"
+      ],
+      "canOverride": [
+        "none"
+      ]
+    },
+    "designated_admin_assist": {
+      "name": "Designated Admin AI Assistant",
+      "role": "AI assistant for the designated Admin",
+      "adminPolicy": "Assist the designated Admin with triage, evidence summaries, policy lookup, suggested next steps and safe ticket drafting. Never make the final Admin decision, never override Master Admin authority, and never access writers outside the Admin assignment.",
+      "writerScope": "Only writers assigned to the designated Admin by the Master Admin.",
+      "canEscalateTo": [
+        "master_admin"
+      ],
+      "canOverride": [
+        "none"
+      ]
+    },
+    "master_admin_assist": {
+      "name": "Master Admin AI Assistant",
+      "role": "AI assistant for the Master Admin",
+      "adminPolicy": "Assist the Master Admin with complete support triage, cross-ticket context, policy analysis, audit summaries and recommended actions. The Master Admin remains the highest human authority. AI cannot override, replace or outrank the Master Admin.",
+      "writerScope": "All writers are visible to Master Admin; AI may assist only within the Master Admin permissions.",
+      "canEscalateTo": [
+        "master_admin"
+      ],
+      "canOverride": [
+        "none"
+      ]
+    }
+  },
+  "writerAccess": {
+    "masterAdmin": "all",
+    "designatedAdmin": "only writers explicitly assigned by Master Admin",
+    "internalAI": "only writers explicitly assigned by Master Admin/support routing"
+  },
+  "publicHelp": {
+    "enabled": true,
+    "topics": [
+      "account creation",
+      "OTP verification failure",
+      "OTP not received",
+      "forgot password",
+      "locked account",
+      "blocked account",
+      "deactivated account",
+      "deleted account",
+      "ticket tracking"
+    ],
+    "ticketTracking": "ticket number plus same contact identifier",
+    "screenshotAttachments": true,
+    "ticketCreation": "enabled_for_login_registration_otp_access_problems_with_claimed_mobile_or_email",
+    "ticketComments": "ticket number plus same contact identifier; closed tickets cannot be commented on"
+  },
+  "authorityHierarchy": {
+    "humanMasterAdmin": "highest_human_authority",
+    "masterAdminAI": "below_human_master_admin_and_cannot_override_human_roles",
+    "designatedAdmin": "only_explicit_master_admin_grants"
+  }
+}

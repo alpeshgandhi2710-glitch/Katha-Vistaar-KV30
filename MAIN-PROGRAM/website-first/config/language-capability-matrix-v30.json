@@ -1,0 +1,30 @@
+{
+  "version": "REF-9.2.57.15",
+  "requiredLanguageCount": 23,
+  "principle": "Registry presence is not capability proof. Each language requires UI, API, Internal AI, TTS and deterministic-test evidence before future-language enablement.",
+  "languages": [
+    {"code":"en","ui":true,"api":true,"ai":true,"tts":"verification-required"},
+    {"code":"as","ui":true,"api":true,"ai":true,"tts":"verification-required"},
+    {"code":"bn","ui":true,"api":true,"ai":true,"tts":"verification-required"},
+    {"code":"brx","ui":true,"api":true,"ai":true,"tts":"verification-required"},
+    {"code":"doi","ui":true,"api":true,"ai":true,"tts":"verification-required"},
+    {"code":"gu","ui":true,"api":true,"ai":true,"tts":"verification-required"},
+    {"code":"hi","ui":true,"api":true,"ai":true,"tts":"verification-required"},
+    {"code":"kn","ui":true,"api":true,"ai":true,"tts":"verification-required"},
+    {"code":"ks","ui":true,"api":true,"ai":true,"tts":"verification-required"},
+    {"code":"kok","ui":true,"api":true,"ai":true,"tts":"verification-required"},
+    {"code":"mai","ui":true,"api":true,"ai":true,"tts":"verification-required"},
+    {"code":"ml","ui":true,"api":true,"ai":true,"tts":"verification-required"},
+    {"code":"mni","ui":true,"api":true,"ai":true,"tts":"verification-required"},
+    {"code":"mr","ui":true,"api":true,"ai":true,"tts":"verification-required"},
+    {"code":"ne","ui":true,"api":true,"ai":true,"tts":"verification-required"},
+    {"code":"or","ui":true,"api":true,"ai":true,"tts":"verification-required"},
+    {"code":"pa","ui":true,"api":true,"ai":true,"tts":"verification-required"},
+    {"code":"sa","ui":true,"api":true,"ai":true,"tts":"verification-required"},
+    {"code":"sat","ui":true,"api":true,"ai":true,"tts":"verification-required"},
+    {"code":"sd","ui":true,"api":true,"ai":true,"tts":"verification-required"},
+    {"code":"ta","ui":true,"api":true,"ai":true,"tts":"verification-required"},
+    {"code":"te","ui":true,"api":true,"ai":true,"tts":"verification-required"},
+    {"code":"ur","ui":true,"api":true,"ai":true,"tts":"verification-required"}
+  ]
+}

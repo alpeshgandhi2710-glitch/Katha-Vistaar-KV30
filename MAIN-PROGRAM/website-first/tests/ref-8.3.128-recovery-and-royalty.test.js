@@ -1,0 +1,9 @@
+'use strict';
+const assert=require('node:assert/strict');const test=require('node:test');
+const p=require('../services/payment-settlement-manager');
+const {createRoyaltyEngine}=require('../core/royalty-engine');
+const fs=require('node:fs'),path=require('node:path');
+test('accepted provider result is reconciliation-required, not settled',()=>{const x=p.classifyProviderResult({status:'accepted',debited:true});assert.equal(x.state,'reconciliation_required');assert.equal(x.authoritative,false)});
+test('confirmed failed debit enters recovery state and duplicate recovery is guarded',()=>{const r=p.createRecovery({direction:'external',referenceId:'X'});r.state=p.classifyProviderResult({status:'failed',debited:true}).state;assert.equal(r.state,'debit_confirmed');assert.equal(p.canRecover(r),true);p.markRecovery(r,'recovery_succeeded');assert.equal(r.terminal,true);assert.equal(p.canRecover(r),false)});
+test('royalty record is idempotent by transaction id',()=>{const events=new Map(),ledger=new Map();const e=createRoyaltyEngine(path.resolve(__dirname,'..'),{events,ledger,gstConfig:{version:'test-fixture',kind:'royalty_payout',status:'approved',defaultRate:0,stateOverrides:{},stateCodeAliases:{MH:'MAHARASHTRA',GJ:'GUJARAT'},zeroRateAllowed:true}});const a=e.record({transactionId:'T1',creatorId:'U1',gross:100,creatorFollowers:250,stream:'stickers'});const b=e.record({transactionId:'T1',creatorId:'U1',gross:100,creatorFollowers:250,stream:'stickers'});assert.equal(a.allocation,45);assert.equal(b.replayed,true);assert.equal(events.size,1);assert.equal(ledger.size,1)});
+test('release contains no active AAROHAN service dependency',()=>{const root=path.resolve(__dirname,'..','..');const files=['src/server.js','public/app.js'];for(const f of files){const t=fs.readFileSync(path.join(root,'website-first',f),'utf8').toLowerCase();assert.equal(t.includes('aarohan'),false,f)}});

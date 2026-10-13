@@ -1,0 +1,7 @@
+R50-M61 acceptance classification
+INTERNAL_VERIFIED: PASS
+SOURCE_REGRESSION: PASS
+NATIVE_PERMISSION_SOURCE_CONTRACT: PASS
+PASS-ASSET: unchanged from governed parent; physical/native binary execution remains separately classified
+PASS-HUMAN: unchanged from governed parent
+PASS-EXTERNAL: unchanged; no external runtime service required for the verified changes

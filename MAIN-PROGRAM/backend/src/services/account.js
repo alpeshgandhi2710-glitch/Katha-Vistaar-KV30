@@ -1,0 +1,1 @@
+const db=require("../db/store"); function createUser(id,data={}){if(db.users.has(id))throw Error("user_exists");const u={id,...data,status:"active"};db.users.set(id,u);return u} function deactivate(id){const u=db.users.get(id);if(!u)throw Error("not_found");u.status="deactivation_pending";u.deactivationRequestedAt=Date.now();return u} module.exports={createUser,deactivate};

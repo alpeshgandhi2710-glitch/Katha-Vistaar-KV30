@@ -1,0 +1,22 @@
+{
+  "version": "KV30-P2-30W-ai-management-v5",
+  "managedBy": "ai_management",
+  "allAIsMustBeRegistered": true,
+  "externalDefault": "disabled",
+  "criticalAuthority": "human_master_admin",
+  "communicationScopeRequired": true,
+  "registrySource": "backend/src/services/ai-management.js",
+  "internalCapabilityContract": "website-first/config/ai-constitutions-v30.json",
+  "benchmarkContract": "website-first/config/ai-domain-benchmarks-v30.json",
+  "internalInference": "backend/src/services/ai-internal-inference.js",
+  "systemAudit": "backend/src/services/ai-system-audit.js",
+  "internalIntelligenceEngine": "backend/src/services/ai-intelligence-engine.js",
+  "intelligenceProfiles": "website-first/config/ai-intelligence-profiles-v30.json",
+  "externalProviderRegistry": "website-first/config/external-ai-provider-registry-v30.json",
+  "localModelQualityGate": "scripts/run-internal-ai-intelligence-benchmark.js",
+  "release": "KV30-P2-30W",
+  "internalUserContentLearning": "backend/src/services/ai-user-content-learning.js",
+  "humanCreativeStyle": "website-first/config/ai-human-creative-style-v30.json",
+  "userContentLearningConfig": "website-first/config/ai-user-content-learning-v30.json",
+  "securityDefenseAI": "backend/src/services/security-defense-ai.js"
+}

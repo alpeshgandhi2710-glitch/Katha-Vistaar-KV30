@@ -1,0 +1,522 @@
+{
+  "version": "30.0.0",
+  "services": {
+    "email": {
+      "enabled": false,
+      "health_check_passed": false,
+      "provider": "generic-http",
+      "label": "Email notifications",
+      "requiredFor": [
+        "email_notifications",
+        "ticket_email_updates"
+      ],
+      "providerEnv": [
+        "KV_EMAIL_PROVIDER",
+        "KV_EMAIL_API_KEY"
+      ],
+      "fallback": "in_app_only",
+      "defaultEnabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "endpointEnv": "KV_EMAIL_ENDPOINT",
+      "healthEnv": "KV_EMAIL_HEALTH_URL",
+      "externalEnabled": false,
+      "firewallRequired": true,
+      "externalGate": "service_gate_email",
+      "internalTransport": "internal_queue",
+      "internalConfigRef": "config/internal-communications-v30.json",
+      "externalTransport": "master_admin_two_switch",
+      "externalDefaultEnabled": false
+    },
+    "sms": {
+      "enabled": false,
+      "health_check_passed": false,
+      "provider": "generic-http",
+      "label": "SMS notifications / OTP",
+      "requiredFor": [
+        "sms_notifications",
+        "non_login_help_verification"
+      ],
+      "providerEnv": [
+        "KV_SMS_PROVIDER",
+        "KV_SMS_API_KEY"
+      ],
+      "fallback": "in_app_only",
+      "defaultEnabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "endpointEnv": "KV_SMS_ENDPOINT",
+      "healthEnv": "KV_SMS_HEALTH_URL",
+      "externalEnabled": false,
+      "firewallRequired": true,
+      "externalGate": "service_gate_sms",
+      "internalTransport": "internal_queue",
+      "internalConfigRef": "config/internal-communications-v30.json",
+      "externalTransport": "master_admin_two_switch",
+      "externalDefaultEnabled": false
+    },
+    "voice_otp": {
+      "enabled": false,
+      "health_check_passed": false,
+      "provider": "generic-http",
+      "defaultEnabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "externalEnabled": false,
+      "firewallRequired": true,
+      "externalGate": "service_gate_voice_otp"
+    },
+    "push": {
+      "enabled": false,
+      "health_check_passed": false,
+      "provider": "generic-http",
+      "label": "Push notifications",
+      "requiredFor": [
+        "push_notifications"
+      ],
+      "providerEnv": [
+        "KV_PUSH_PROVIDER",
+        "KV_PUSH_API_KEY"
+      ],
+      "fallback": "in_app_only",
+      "defaultEnabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "endpointEnv": "KV_PUSH_ENDPOINT",
+      "healthEnv": "KV_PUSH_HEALTH_URL",
+      "externalEnabled": false,
+      "firewallRequired": true,
+      "externalGate": "service_gate_push"
+    },
+    "storage": {
+      "enabled": false,
+      "health_check_passed": false,
+      "provider": "generic-http",
+      "defaultEnabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "externalEnabled": false,
+      "firewallRequired": true,
+      "externalGate": "service_gate_storage"
+    },
+    "ai_moderation": {
+      "enabled": false,
+      "health_check_passed": false,
+      "provider": "generic-http",
+      "label": "External AI moderation",
+      "requiredFor": [
+        "advanced_ai_moderation"
+      ],
+      "providerEnv": [
+        "KV_MODERATION_PROVIDER",
+        "KV_MODERATION_API_KEY"
+      ],
+      "fallback": "internal_moderation",
+      "defaultEnabled": false,
+      "requiresLicenseGate": true,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "endpointEnv": "KV_AI_MODERATION_ENDPOINT",
+      "healthEnv": "KV_AI_MODERATION_HEALTH_URL",
+      "externalEnabled": false,
+      "firewallRequired": true,
+      "externalGate": "service_gate_ai_moderation"
+    },
+    "payments": {
+      "enabled": false,
+      "health_check_passed": false,
+      "provider": "generic-http",
+      "label": "Payment gateway",
+      "requiredFor": [
+        "payments",
+        "premium_subscription"
+      ],
+      "providerEnv": [
+        "KV_PAYMENT_PROVIDER",
+        "KV_PAYMENT_KEY_ID",
+        "KV_PAYMENT_SECRET"
+      ],
+      "fallback": "feature_unavailable",
+      "defaultEnabled": false,
+      "requiresLicenseGate": true,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "endpointEnv": "KV_PAYMENTS_ENDPOINT",
+      "healthEnv": "KV_PAYMENTS_HEALTH_URL",
+      "externalEnabled": false,
+      "firewallRequired": true,
+      "externalGate": "service_gate_payments"
+    },
+    "payouts": {
+      "enabled": false,
+      "health_check_passed": false,
+      "provider": "generic-http",
+      "label": "Bank payout / royalty settlement",
+      "requiredFor": [
+        "royalty_payouts"
+      ],
+      "providerEnv": [
+        "KV_PAYOUT_PROVIDER",
+        "KV_PAYOUT_API_KEY"
+      ],
+      "fallback": "ledger_only",
+      "defaultEnabled": false,
+      "requiresLicenseGate": true,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "endpointEnv": "KV_PAYOUTS_ENDPOINT",
+      "healthEnv": "KV_PAYOUTS_HEALTH_URL",
+      "externalEnabled": false,
+      "firewallRequired": true,
+      "externalGate": "service_gate_payouts"
+    },
+    "google_play": {
+      "enabled": false,
+      "health_check_passed": false,
+      "provider": "generic-http",
+      "defaultEnabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "externalEnabled": false,
+      "firewallRequired": true,
+      "externalGate": "service_gate_google_play"
+    },
+    "apple_store": {
+      "enabled": false,
+      "health_check_passed": false,
+      "provider": "generic-http",
+      "defaultEnabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "externalEnabled": false,
+      "firewallRequired": true,
+      "externalGate": "service_gate_apple_store"
+    },
+    "ads": {
+      "enabled": false,
+      "health_check_passed": false,
+      "provider": "generic-http",
+      "label": "Ad network",
+      "requiredFor": [
+        "ad_network"
+      ],
+      "providerEnv": [
+        "KV_AD_PROVIDER",
+        "KV_AD_API_KEY"
+      ],
+      "fallback": "no_ads",
+      "defaultEnabled": false,
+      "requiresLicenseGate": true,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "endpointEnv": "KV_ADS_ENDPOINT",
+      "healthEnv": "KV_ADS_HEALTH_URL",
+      "externalEnabled": false,
+      "firewallRequired": true,
+      "externalGate": "service_gate_ads"
+    },
+    "stt": {
+      "enabled": false,
+      "health_check_passed": false,
+      "provider": "generic-http",
+      "label": "Speech-to-text",
+      "requiredFor": [
+        "voice_ai_input"
+      ],
+      "providerEnv": [
+        "KV_STT_PROVIDER",
+        "KV_STT_API_KEY"
+      ],
+      "fallback": "text_input",
+      "defaultEnabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "endpointEnv": "KV_STT_ENDPOINT",
+      "healthEnv": "KV_STT_HEALTH_URL",
+      "externalEnabled": false,
+      "firewallRequired": true,
+      "externalGate": "service_gate_stt"
+    },
+    "tts": {
+      "enabled": false,
+      "health_check_passed": false,
+      "provider": "generic-http",
+      "label": "Text-to-speech",
+      "requiredFor": [
+        "voice_ai_output"
+      ],
+      "providerEnv": [
+        "KV_TTS_PROVIDER",
+        "KV_TTS_API_KEY"
+      ],
+      "fallback": "text_output",
+      "defaultEnabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "endpointEnv": "KV_TTS_ENDPOINT",
+      "healthEnv": "KV_TTS_HEALTH_URL",
+      "externalEnabled": false,
+      "firewallRequired": true,
+      "externalGate": "service_gate_tts"
+    },
+    "whatsapp": {
+      "label": "WhatsApp notifications",
+      "requiredFor": [
+        "whatsapp_ticket_updates"
+      ],
+      "providerEnv": [
+        "KV_WHATSAPP_PROVIDER",
+        "KV_WHATSAPP_API_KEY"
+      ],
+      "fallback": "email_or_in_app",
+      "defaultEnabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "endpointEnv": "KV_WHATSAPP_ENDPOINT",
+      "healthEnv": "KV_WHATSAPP_HEALTH_URL",
+      "externalEnabled": false,
+      "firewallRequired": true,
+      "externalGate": "service_gate_whatsapp"
+    },
+    "external_ai": {
+      "label": "Approved external AI",
+      "requiredFor": [
+        "external_ai_assist"
+      ],
+      "providerEnv": [
+        "KV_AI_PROVIDER",
+        "KV_AI_API_KEY"
+      ],
+      "fallback": "internal_ai",
+      "defaultEnabled": false,
+      "requiresLicenseGate": true,
+      "requiresDataPolicyGate": true,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "endpointEnv": "KV_EXTERNAL_AI_ENDPOINT",
+      "healthEnv": "KV_EXTERNAL_AI_HEALTH_URL",
+      "providerSelection": "master_admin_defined",
+      "providerBillingModes": [
+        "paid",
+        "free",
+        "public"
+      ],
+      "providerTypeSelection": "master_admin_defined",
+      "taskRouting": "master_admin_defined",
+      "budgetAndQuota": "master_admin_defined",
+      "emergencyDisable": "master_admin_only",
+      "externalEnabled": false,
+      "firewallRequired": true,
+      "externalGate": "gate_75"
+    },
+    "object_storage": {
+      "label": "Production object storage",
+      "requiredFor": [
+        "large_file_storage",
+        "backups"
+      ],
+      "providerEnv": [
+        "KV_STORAGE_PROVIDER",
+        "KV_STORAGE_BUCKET",
+        "KV_STORAGE_KEY"
+      ],
+      "fallback": "local_storage_with_limits",
+      "defaultEnabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "endpointEnv": "KV_OBJECT_STORAGE_ENDPOINT",
+      "healthEnv": "KV_OBJECT_STORAGE_HEALTH_URL",
+      "externalEnabled": false,
+      "firewallRequired": true,
+      "externalGate": "service_gate_object_storage"
+    },
+    "cdn": {
+      "label": "CDN",
+      "requiredFor": [
+        "cdn_delivery"
+      ],
+      "providerEnv": [
+        "KV_CDN_PROVIDER",
+        "KV_CDN_API_KEY"
+      ],
+      "fallback": "origin_delivery",
+      "defaultEnabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "endpointEnv": "KV_CDN_ENDPOINT",
+      "healthEnv": "KV_CDN_HEALTH_URL",
+      "externalEnabled": false,
+      "firewallRequired": true,
+      "externalGate": "service_gate_cdn"
+    },
+    "virus_scanner": {
+      "label": "External malware scanner",
+      "requiredFor": [
+        "advanced_file_scanning"
+      ],
+      "providerEnv": [
+        "KV_VIRUS_SCANNER_PROVIDER",
+        "KV_VIRUS_SCANNER_API_KEY"
+      ],
+      "fallback": "local_extension_size_signature_checks",
+      "defaultEnabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "endpointEnv": "KV_VIRUS_SCANNER_ENDPOINT",
+      "healthEnv": "KV_VIRUS_SCANNER_HEALTH_URL",
+      "externalEnabled": false,
+      "firewallRequired": true,
+      "externalGate": "service_gate_virus_scanner"
+    },
+    "internet_access": {
+      "label": "Controlled Internet access",
+      "requiredFor": [
+        "research_web_access"
+      ],
+      "providerEnv": [
+        "KV_INTERNET_PROVIDER",
+        "KV_INTERNET_API_KEY"
+      ],
+      "fallback": "internal_knowledge_only",
+      "defaultEnabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "endpointEnv": "KV_INTERNET_ENDPOINT",
+      "healthEnv": "KV_INTERNET_HEALTH_URL",
+      "externalEnabled": false,
+      "firewallRequired": true,
+      "externalGate": "service_gate_reserved_01"
+    },
+    "network_server": {
+      "label": "External network / server connectivity",
+      "requiredFor": [
+        "network_server_access"
+      ],
+      "providerEnv": [
+        "KV_NETWORK_PROVIDER",
+        "KV_NETWORK_API_KEY"
+      ],
+      "fallback": "local_server_only",
+      "defaultEnabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "endpointEnv": "KV_NETWORK_ENDPOINT",
+      "healthEnv": "KV_NETWORK_HEALTH_URL",
+      "externalEnabled": false,
+      "firewallRequired": true,
+      "externalGate": "service_gate_reserved_02"
+    },
+    "reel_media": {
+      "label": "External reel/video media processing",
+      "requiredFor": [
+        "reel_rendering"
+      ],
+      "providerEnv": [
+        "KV_REEL_MEDIA_PROVIDER",
+        "KV_REEL_MEDIA_API_KEY"
+      ],
+      "fallback": "internal_ffmpeg_render",
+      "defaultEnabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "endpointEnv": "KV_REEL_MEDIA_ENDPOINT",
+      "healthEnv": "KV_REEL_MEDIA_HEALTH_URL",
+      "externalEnabled": false,
+      "firewallRequired": true,
+      "externalGate": "service_gate_reserved_03"
+    },
+    "audio_processing": {
+      "label": "External audio processing",
+      "requiredFor": [
+        "advanced_audio_processing"
+      ],
+      "providerEnv": [
+        "KV_AUDIO_PROVIDER",
+        "KV_AUDIO_API_KEY"
+      ],
+      "fallback": "internal_ffmpeg_audio",
+      "defaultEnabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "endpointEnv": "KV_AUDIO_ENDPOINT",
+      "healthEnv": "KV_AUDIO_HEALTH_URL",
+      "externalEnabled": false,
+      "firewallRequired": true,
+      "externalGate": "service_gate_reserved_04"
+    },
+    "translation": {
+      "label": "External translation provider",
+      "requiredFor": [
+        "translation_fallback"
+      ],
+      "providerEnv": [
+        "KV_TRANSLATION_PROVIDER",
+        "KV_TRANSLATION_API_KEY"
+      ],
+      "fallback": "internal_ai_translation",
+      "defaultEnabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "endpointEnv": "KV_TRANSLATION_ENDPOINT",
+      "healthEnv": "KV_TRANSLATION_HEALTH_URL",
+      "externalEnabled": false,
+      "firewallRequired": true,
+      "externalGate": "service_gate_reserved_05"
+    },
+    "natural_sounds": {
+      "enabled": false,
+      "health_check_passed": false,
+      "provider": "master_admin_defined",
+      "label": "Natural sounds & background music",
+      "requiredFor": [
+        "natural_sound_library",
+        "creator_background_audio"
+      ],
+      "providerEnv": [
+        "KV_NATURAL_SOUNDS_PROVIDER",
+        "KV_NATURAL_SOUNDS_API_KEY"
+      ],
+      "fallback": "internal_catalog",
+      "defaultEnabled": false,
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "endpointEnv": "KV_NATURAL_SOUNDS_ENDPOINT",
+      "healthEnv": "KV_NATURAL_SOUNDS_HEALTH_URL",
+      "externalEnabled": false,
+      "firewallRequired": true,
+      "externalGate": "service_gate_natural_sounds"
+    }
+  },
+  "principle": "Two-layer graceful degradation: the internal program layer remains on and is the authoritative fallback. The external provider layer is off by default and can only be enabled by Master Admin after credentials, endpoint, health check, and applicable licence/data-policy gates pass. If an external provider is absent, disabled, unreachable, or fails, the application remains operational on the internal layer.",
+  "masterAdminOnly": true,
+  "architecture": {
+    "internalLayer": {
+      "enabled": true,
+      "authority": "program",
+      "purpose": "always-on local fallback and core feature execution",
+      "mustNeverDependOnExternalProvider": true
+    },
+    "externalLayer": {
+      "enabled": false,
+      "authority": "master_admin",
+      "purpose": "optional provider integration",
+      "enableCondition": "provider credentials + endpoint + health check + licence/data-policy gates where required",
+      "disableBehavior": "immediate internal fallback without application crash"
+    },
+    "providerContract": {
+      "transport": "HTTPS",
+      "healthEndpoint": "GET /health",
+      "auth": "Authorization: Bearer <API key>",
+      "sendContract": "provider-specific adapter or generic JSON adapter",
+      "failClosed": true
+    }
+  },
+  "twoLayerContract": {
+    "internalLayer": "always_on",
+    "externalLayer": "master_admin_controlled",
+    "externalEnabledDefault": false,
+    "failClosed": true,
+    "masterAdminOnlyToggle": true,
+    "firewallRequiredBeforeExternalCall": true
+  }
+}

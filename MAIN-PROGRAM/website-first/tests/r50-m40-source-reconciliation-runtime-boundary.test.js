@@ -1,0 +1,28 @@
+'use strict';
+const test=require('node:test');
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const path=require('node:path');
+const root=path.join(__dirname,'..');
+test('active release identity, 23-language UI scope, and runtime-package boundary are canonical',()=>{
+  const v=JSON.parse(fs.readFileSync(path.join(root,'config/version.json'),'utf8'));
+  const r=JSON.parse(fs.readFileSync(path.join(root,'config/release-registry-v30.json'),'utf8'));
+  const m=JSON.parse(fs.readFileSync(path.join(root,'RELEASE-MANIFEST-v30.json'),'utf8'));
+  const langs=require(path.join(root,'src/server')).languages;
+  assert.match(v.release_ref,/^REF-9\.2\.57\.18-R50-M(?:4[0-9]|5[0-9]|6[0-9]|7[0-9])-/);
+  assert.equal(v.release_ref,v.current_release_ref);
+  assert.equal(r.release_ref,v.release_ref);
+  assert.equal(r.current_release_ref,v.release_ref);
+  assert.equal(m.release,v.release_ref);
+  assert.equal(m.phase,v.currentContinuation);
+  assert.equal(v.currentContinuation,v.release_ref.match(/R50-M(\d+)/)?.[0]);
+  assert.equal(r.currentContinuation,v.currentContinuation);
+  assert.equal(langs.languages.length,22);
+  assert.equal(langs.languages.filter(x=>x.scheduled).length,22);
+  assert.ok(langs.uiFallbackLanguages.some(x=>x.code==='en'));
+  assert.equal(langs.languages.some(x=>x.code==='en'),false);
+  assert.equal(22+1,23);
+  const gate=fs.readFileSync(path.join(root,'scripts/verify-governed-release-package.js'),'utf8');
+  assert.ok(gate.includes('MAIN-PROGRAM\\/website-first\\/data\\/'),'governed package gate must reject generated website runtime data');
+  assert.ok(gate.includes('katha-vistaar\\.sqlite'),'governed package gate must reject SQLite runtime state');
+});

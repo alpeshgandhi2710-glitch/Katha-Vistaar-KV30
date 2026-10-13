@@ -1,0 +1,1 @@
+const VERSION="KV30-P2-30W"; const APP_NAME="Katha Vistaar"; module.exports={VERSION,APP_NAME};

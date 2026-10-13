@@ -1,0 +1,13 @@
+'use strict';
+const assert=require('node:assert/strict');
+const engine=require('../core/entitlement-engine');
+const future=new Date(Date.now()+86400000).toISOString();
+const fixture={version:'test-fixture',status:'approved_test_only',bundles:[{bundleId:'bundle-1',active:true,contentIds:['c1','c2']}]};
+const user={subscriptions:{},subscriptionRecords:{bundle_plan:{planId:'bundle_plan',status:'active',expiresAt:future,planSnapshot:{id:'bundle_plan',type:'bundle',contentIds:['c1','c3'],bundleId:'bundle-1',accessScope:'bundle:bundle-1',entitlementKey:'bundle_plan',adFree:true}}}};
+assert.equal(engine.hasContentEntitlement(user,{id:'c1'},Date.now(),fixture),true,'valid bundleId membership must grant');
+assert.equal(engine.hasContentEntitlement(user,{id:'c3'},Date.now(),fixture),false,'bundleId membership must be authoritative; contentIds alone must not grant');
+const invalid={...user,subscriptionRecords:{bundle_plan:{...user.subscriptionRecords.bundle_plan,planSnapshot:{...user.subscriptionRecords.bundle_plan.planSnapshot,bundleId:'invalid-bundle',contentIds:['c1']}}}};
+assert.equal(engine.hasContentEntitlement(invalid,{id:'c1'},Date.now(),fixture),false,'invalid bundleId must deny without contentIds fallback');
+const direct={subscriptions:{},subscriptionRecords:{direct_plan:{planId:'direct_plan',status:'active',expiresAt:future,planSnapshot:{id:'direct_plan',type:'reader',contentIds:['c9'],bundleId:null,entitlementKey:'direct_plan',accessScope:'content',adFree:true}}}};
+assert.equal(engine.hasContentEntitlement(direct,{id:'c9'}),true,'direct contentIds premium entitlement must remain supported');
+console.log('PASS bundle-id authoritative resolution 4/4');

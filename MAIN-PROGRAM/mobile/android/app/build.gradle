@@ -1,0 +1,29 @@
+plugins { id 'com.android.application'; id 'org.jetbrains.kotlin.android'; id 'dev.flutter.flutter-gradle-plugin' }
+
+android {
+    namespace 'com.kathavistaar.kv30'
+    compileSdk 35
+    defaultConfig {
+        applicationId 'com.kathavistaar.kv30'
+        minSdk 23
+        targetSdk 35
+        versionCode 33
+        versionName '30.0.0'
+    }
+    flavorDimensions += 'environment'
+    productFlavors {
+        development {
+            dimension 'environment'
+            applicationId 'com.kathavistaar.kv30.dev'
+            resValue 'string', 'app_name', 'Katha Vistaar Dev'
+        }
+        production {
+            dimension 'environment'
+            applicationId 'com.kathavistaar.kv30'
+            resValue 'string', 'app_name', 'Katha Vistaar'
+        }
+    }
+}
+dependencies { implementation 'androidx.core:core-ktx:1.15.0' }
+
+flutter { source '../..' }

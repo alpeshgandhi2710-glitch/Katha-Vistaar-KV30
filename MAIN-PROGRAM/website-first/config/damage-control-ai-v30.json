@@ -1,0 +1,14 @@
+{
+  "version": "KV30-P2-30W-damage-control",
+  "enabled": true,
+  "ticketRequired": true,
+  "approvalForUserAction": true,
+  "severity": [
+    "low",
+    "medium",
+    "high",
+    "critical"
+  ],
+  "masterAdminFinalAuthority": true,
+  "confidentialDataExcluded": true
+}

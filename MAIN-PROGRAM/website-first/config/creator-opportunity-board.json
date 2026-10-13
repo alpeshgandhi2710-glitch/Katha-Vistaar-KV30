@@ -1,0 +1,19 @@
+{
+  "version": "30.0.0",
+  "opportunities": [
+    "audio",
+    "video",
+    "comic",
+    "webtoon",
+    "translation",
+    "short_form",
+    "screen_adaptation"
+  ],
+  "author_actions": [
+    "accept",
+    "decline",
+    "request_terms",
+    "negotiate"
+  ],
+  "explicit_contract_required": true
+}

@@ -1,0 +1,6 @@
+841264d9662eca74c02166b9b42fdc051637fe6d8631c0c0591773025fdaa5d5  /mnt/data/m48work/MAIN-PROGRAM/website-first/src/server.js
+1ad879b0c94761c6ecbd53ecf4ca1e66b30b2e9c19c0616551185ddecee628ce  /mnt/data/m48work/MAIN-PROGRAM/backend/src/services/story-studio.js
+ad498eee62400885eae085430aecd415f2de736dceec49f40a434d5ea37bd524  /mnt/data/m48work/MAIN-PROGRAM/website-first/config/version.json
+f1981bf01f339a60ad9dfb9cc6bb690705e399b61dd790f561335add74791747  /mnt/data/m48work/MAIN-PROGRAM/website-first/config/release-registry-v30.json
+922d2feb620f853356173b6ff4f1650aac3bd801d545c20b6c1d3ecfbfc5111d  /mnt/data/m48work/MAIN-PROGRAM/website-first/RELEASE-MANIFEST-v30.json
+fe8af232a760e42343d8d621b3ee8553e084d6caf04dd3c6092277548fab3590  /mnt/data/m48work/MAIN-PROGRAM/website-first/tests/r50-m48-phase2-story-publish-gate.test.js

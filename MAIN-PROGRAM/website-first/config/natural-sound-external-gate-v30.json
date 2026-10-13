@@ -1,0 +1,52 @@
+{
+  "version": "REF-9.2.57.18-R18",
+  "serviceId": "natural_sounds",
+  "internalFirst": true,
+  "externalDefaultEnabled": false,
+  "masterAdminControlled": true,
+  "twoLayerSwitch": {
+    "internal": "always_on",
+    "external": "master_admin_controlled"
+  },
+  "firewall": {
+    "inbound": true,
+    "outbound": true,
+    "failClosed": true,
+    "credentialRedaction": true,
+    "requestTimeoutMs": 12000,
+    "rightsBoundary": "only_KV_cleared_or_licensed_assets"
+  },
+  "adapter": "website-first/services/natural-sound-provider-adapter.js",
+  "providerBillingModes": [
+    "public",
+    "free",
+    "paid"
+  ],
+  "catalog": [
+    {
+      "id": "rain",
+      "label": "Rain"
+    },
+    {
+      "id": "wind",
+      "label": "Wind"
+    },
+    {
+      "id": "birds",
+      "label": "Birds"
+    },
+    {
+      "id": "animals",
+      "label": "Animals"
+    },
+    {
+      "id": "waterfall",
+      "label": "Waterfall"
+    },
+    {
+      "id": "background-music",
+      "label": "Background Music"
+    }
+  ],
+  "rightsRule": "External assets may be imported only when provider licence/usage terms permit KV use; paid/public/free classification is recorded per provider slot."
+}

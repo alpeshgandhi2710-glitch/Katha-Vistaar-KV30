@@ -1,0 +1,13 @@
+{
+  "name": "katha-vistaar-backend",
+  "version": "KV30-P2-30W",
+  "private": true,
+  "scripts": {
+    "start": "node ../website-first/src/server.js",
+    "test": "node --test",
+    "check": "node --check ../website-first/src/server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

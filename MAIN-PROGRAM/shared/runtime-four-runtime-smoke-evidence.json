@@ -1,0 +1,33 @@
+{
+  "ref": "REF-9.2.57.7",
+  "verifiedAtUtc": "2026-09-23T05:26:55.467305+00:00",
+  "runtimeSmoke": [
+    {
+      "port": 8787,
+      "env": "development",
+      "health": 200,
+      "testHookClearData": 200,
+      "masterAdminLogin": 200
+    },
+    {
+      "port": 8788,
+      "env": "development",
+      "health": 200,
+      "testHookClearData": 200,
+      "masterAdminLogin": 200
+    },
+    {
+      "port": 9797,
+      "env": "production",
+      "health": 200,
+      "testHookClearData": 404
+    },
+    {
+      "port": 9798,
+      "env": "production",
+      "health": 200,
+      "testHookClearData": 404
+    }
+  ],
+  "note": "Local four-runtime smoke of the current candidate code. This is fresh execution evidence, not external production deployment evidence."
+}

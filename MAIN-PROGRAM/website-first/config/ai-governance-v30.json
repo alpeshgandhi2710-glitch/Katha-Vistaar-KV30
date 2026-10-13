@@ -1,0 +1,78 @@
+{
+  "version": "KV30-P2-30W-ai-governance",
+  "masterAdminSupremacy": true,
+  "authority": [
+    "Master Admin",
+    "Designated Admin",
+    "Specialist AI"
+  ],
+  "escalation": {
+    "low": "AI",
+    "medium": "Designated Admin",
+    "high": "Master Admin",
+    "critical": "Master Admin"
+  },
+  "agents": [
+    "security",
+    "malware",
+    "spam_abuse",
+    "phishing",
+    "file_security",
+    "bot_detection",
+    "account_abuse",
+    "network_api_security",
+    "threat_intelligence",
+    "incident_response",
+    "engineering_debug",
+    "author_training",
+    "content_quality",
+    "moderation",
+    "finance",
+    "analytics",
+    "support",
+    "promotion",
+    "compliance",
+    "audit"
+  ],
+  "controls": [
+    "least_privilege",
+    "shared_context_protocol",
+    "policy_check",
+    "license_check",
+    "audit",
+    "rollback",
+    "human_approval_for_high_risk",
+    "no_retaliatory_hacking",
+    "no_uncontrolled_self_retraining"
+  ],
+  "externalAI": {
+    "allowed": true,
+    "providers": [
+      "OpenAI",
+      "Google Gemini",
+      "Meta AI",
+      "other approved provider"
+    ],
+    "restrictedDataDefault": "DO_NOT_SEND",
+    "approvalRequired": true
+  },
+  "approvalMatrix": {
+    "low_risk": "designated_admin_or_master_admin",
+    "high_risk": "designated_admin_or_master_admin",
+    "critical": "master_admin_only",
+    "production_code": "designated_admin_or_master_admin_with_scope;_critical_master_admin_only",
+    "security_policy": "master_admin_only",
+    "master_recovery": "master_admin_only",
+    "secrets_and_product_keys": "master_admin_only"
+  },
+  "aiRules": [
+    "AI may propose, analyze, test and draft; AI may not independently apply production changes.",
+    "Designated Admin is final authority only within explicitly assigned permissions.",
+    "Master Admin is the highest human authority and has full rights.",
+    "AI cannot elevate its role or act above its assigned Admin/Master Admin.",
+    "Master keys, product keys, recovery keys, credentials and critical secrets must never be disclosed to non-authorized parties or AI.",
+    "External AI receives only minimum approved data; restricted data is denied by default.",
+    "Approved knowledge may refresh continuously; production code, permissions and critical policy cannot self-modify."
+  ],
+  "humanAuthorityRule": "Human Master Admin is the highest authority. Master Admin AI remains below Human Master Admin and cannot override or elevate a Designated Admin. Any AI action on behalf of an Admin requires that Admin to possess the explicit Master-Admin-granted right."
+}

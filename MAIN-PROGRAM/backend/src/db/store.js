@@ -1,0 +1,1 @@
+module.exports={users:new Map(),works:new Map(),sessions:new Map(),reports:[],audit:[],policies:new Map(),providers:new Map(),coins:new Map()};

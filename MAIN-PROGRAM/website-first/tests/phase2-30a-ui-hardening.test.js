@@ -1,0 +1,4 @@
+const test=require('node:test');const assert=require('node:assert/strict');const fs=require('node:fs');const path=require('node:path');
+const ROOT=path.resolve(__dirname,'..');const js=fs.readFileSync(path.join(ROOT,'public/app.js'),'utf8');const html=fs.readFileSync(path.join(ROOT,'public/index.html'),'utf8');
+test('P2-30B UI hardening removes native browser dialogs from active UI',()=>{assert.doesNotMatch(js,/\b(?:window\.)?(?:alert|prompt|confirm)\s*\(/);assert.match(js,/function uiPrompt\(/);assert.match(js,/function uiConfirm\(/);});
+test('P2-30B premium navigation uses consistent SVG icons and author links',()=>{assert.match(html,/class="kv-svg-icon"/);assert.match(js,/function kvIcon\(/);assert.match(js,/class="author-link"/);assert.match(js,/openPublicProfile\(a\.dataset\.publicProfile\)/);});

@@ -1,0 +1,11 @@
+{
+  "uploads": true,
+  "metadata": true,
+  "validation": true,
+  "audio": true,
+  "video": true,
+  "processing_jobs": true,
+  "stt_adapter": true,
+  "tts_adapter": true,
+  "external_provider_optional": true
+}

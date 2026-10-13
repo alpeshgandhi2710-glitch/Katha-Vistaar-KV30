@@ -1,0 +1,29 @@
+{
+  "version": "30.0.0",
+  "story_novel": {
+    "free_parts": 15,
+    "locked_from_part": 16,
+    "coin_unlock_cost": 5,
+    "rewarded_ad_unlock": true,
+    "daily_unlock_hours": 24,
+    "progression": "read_part_then_wait_24h_for_next",
+    "read_parts_remain_unlocked": true,
+    "author_subscription": "all_locked_parts_of_subscribed_author",
+    "app_subscription": "all_locked_parts_all_authors",
+    "non_serial_story": "always_readable_after_login"
+  },
+  "comic": {
+    "free_parts": 10,
+    "subscription_required_from_part": 11
+  },
+  "fm_audio": {
+    "free_parts": 10,
+    "subscription_required_from_part": 11
+  },
+  "reel": {
+    "login_required": true,
+    "reader_subscription_not_required": true,
+    "creator_subscription_required": true
+  },
+  "sourceOfTruth": "content-access-policy-v30.json"
+}

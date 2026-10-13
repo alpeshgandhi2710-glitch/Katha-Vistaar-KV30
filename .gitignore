@@ -1,0 +1,37 @@
+# KV30 local secrets and environment
+.env
+.env.*
+!.env.example
+!**/local.env.example
+**/local.env
+**/secrets*.json
+**/*SECRET*.json
+**/*secret*.json
+**/*credentials*
+**/*private-key*
+**/*.pem
+**/*.p12
+**/*.pfx
+**/*.keystore
+**/*.jks
+**/local.properties
+
+# Dependencies and generated outputs
+node_modules/
+**/node_modules/
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+build/
+**/build/
+.native-build-artifacts/
+coverage/
+dist/
+.DS_Store
+Thumbs.db
+
+# IDE / local state
+.vscode/
+.idea/
+*.log

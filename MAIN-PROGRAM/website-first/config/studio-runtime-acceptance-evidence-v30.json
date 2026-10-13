@@ -1,0 +1,27 @@
+{
+  "version": "REF-8.3.155.9.2.15",
+  "referenceDependency": false,
+  "hostProbe": {
+    "ffmpeg": true,
+    "ffprobe": true,
+    "ghostscript": true,
+    "h264Encoder": "libx264 verified",
+    "aacEncoder": true,
+    "loudnorm": true,
+    "nvencCompiled": true,
+    "nvencRuntime": false,
+    "nvencFailure": "Cannot load libcuda.so.1",
+    "nvdecRuntime": false,
+    "hardwareTelemetry": "actual host metrics exposed by runtime endpoint"
+  },
+  "renderAcceptance": {
+    "vertical": "2160x3840@60",
+    "status": "VERIFIED for internal FFmpeg fallback using 1-second deterministic H.264/AAC encode + ffprobe"
+  },
+  "webgpu": "NOT VERIFIED; browser/device probe required",
+  "webcodecs": "NOT VERIFIED; browser codec support probe required",
+  "wasm": "NOT VERIFIED; actual KV30 WASM engine/module required",
+  "pdfx4": "NOT CERTIFIED; Ghostscript available but output/profile validation required",
+  "ctpRip": "NOT VERIFIED; downstream RIP/plate evidence required",
+  "neuralModel": "NOT VERIFIED; local model runtime not installed/loaded"
+}

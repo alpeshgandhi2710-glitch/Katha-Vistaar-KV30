@@ -1,0 +1,128 @@
+{
+  "version": "KV30-P2-30W-internal-first-ai-experience",
+  "internalFirst": true,
+  "externalAI": {
+    "allowed": true,
+    "paidOrFree": true,
+    "masterAdminControlled": true,
+    "defaultMode": "fallback_or_special_capability",
+    "restrictedDataDefault": "DO_NOT_SEND"
+  },
+  "userContexts": {
+    "public": {
+      "icons": [
+        "help_ai"
+      ],
+      "rule": "Only public-safe AI help is visible."
+    },
+    "reader": {
+      "icons": [
+        "summary",
+        "explain",
+        "keypoints",
+        "listen",
+        "safety_help"
+      ],
+      "rule": "Show reader-useful AI only inside the active reading experience."
+    },
+    "creator": {
+      "icons": [
+        "suggest",
+        "check",
+        "create",
+        "voice",
+        "character",
+        "story-map",
+        "format-specific",
+        "content-safety"
+      ],
+      "rule": "Show creator AI only inside creation/editing context and only for the selected format."
+    },
+    "admin": {
+      "icons": [
+        "ai-workbench",
+        "governance",
+        "performance",
+        "incidents",
+        "user-monitoring",
+        "damage-control",
+        "account-management"
+      ],
+      "rule": "Show safety, ticket triage, damage and account AI only inside authorized Admin tools."
+    },
+    "master_admin": {
+      "icons": [
+        "provider-routing",
+        "external-policy",
+        "learning",
+        "rollback",
+        "governance",
+        "user-monitoring",
+        "damage-control",
+        "account-management"
+      ],
+      "rule": "Show full AI governance and incident controls only inside Master Admin tools."
+    }
+  },
+  "media": {
+    "internalPlanning": true,
+    "internalMemory": true,
+    "internalGenerationPreferred": true,
+    "externalGenerationFallback": true,
+    "assetProvenanceRequired": true
+  },
+  "rules": [
+    "AI feature must have a real product action, not a decorative icon.",
+    "AI icons must be context-aware and role-aware.",
+    "AI suggestions cannot silently publish or change user work.",
+    "External AI is never required for ordinary reader/creator assistance when internal capability is sufficient."
+  ],
+  "specialistPlacement": {
+    "user_monitoring_ai": [
+      "help",
+      "notifications",
+      "admin-dashboard"
+    ],
+    "damage_control_ai": [
+      "help",
+      "admin-dashboard",
+      "security-audit"
+    ],
+    "account_management_ai": [
+      "settings",
+      "help",
+      "admin-dashboard"
+    ],
+    "ai_to_ai": [
+      "admin-ai-workbench"
+    ]
+  },
+  "basicAuthorizationRule": "Human Master Admin is highest. Master Admin AI is below Human Master Admin, may coordinate/advise above ordinary AI, but cannot override a Designated Admin role or execute an Admin action without the requesting Admin having the explicit Master-Admin-granted right. Critical/high-governance actions require the applicable human approval.",
+  "accountHelpAI": {
+    "enabled": true,
+    "loginRequiredForConfidentialAccountHelp": true,
+    "preLoginVisible": true,
+    "confidentialDataMinimized": true,
+    "ticketSystem": "separate_secure_account_help"
+  },
+  "reportAI": {
+    "enabled": true,
+    "criticalInfoVisibility": "master_admin_or_explicitly_authorized_role_only",
+    "improvementFlow": [
+      "report_ai_suggestion",
+      "master_admin_approval",
+      "master_ai_risk_assessment",
+      "master_admin_review",
+      "programmer_ai_and_design_ai_authorized_work",
+      "result_to_master_admin",
+      "final_master_admin_approval",
+      "apply"
+    ]
+  },
+  "masterAdminAIHierarchy": {
+    "humanMasterAdmin": "highest",
+    "masterAdminAI": "below_human_master_admin",
+    "designatedAdmin": "human_manager_with_explicit_grants",
+    "rule": "AI cannot create, remove or expand Admin authority."
+  }
+}

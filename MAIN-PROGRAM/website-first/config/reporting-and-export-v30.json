@@ -1,0 +1,45 @@
+{
+  "version": "30.0.0",
+  "userReports": [
+    "readingProgress",
+    "readingHours",
+    "rank",
+    "followers",
+    "following",
+    "bookmarks",
+    "completion"
+  ],
+  "authorReports": [
+    "works",
+    "novels",
+    "shortStories",
+    "articles",
+    "comics",
+    "categoryCounts",
+    "languageCounts",
+    "uniqueReaders",
+    "followers",
+    "engagement",
+    "revenue"
+  ],
+  "adminReports": [
+    "totalUsers",
+    "activeUsers",
+    "engagement",
+    "userHours",
+    "followers",
+    "works",
+    "contentType",
+    "category",
+    "language",
+    "workReaders",
+    "finance",
+    "profitLoss"
+  ],
+  "exports": [
+    "PDF",
+    "XLS",
+    "CSV"
+  ],
+  "permissionModel": "MasterAdminAssignedScope"
+}

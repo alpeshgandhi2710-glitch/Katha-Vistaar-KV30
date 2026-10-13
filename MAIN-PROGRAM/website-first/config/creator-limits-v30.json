@@ -1,0 +1,39 @@
+{
+  "version": "KV30-P2-30W-creator-limits-v30",
+  "governance": "master_admin_configurable",
+  "defaults": {
+    "story_words_per_part": 15000,
+    "reel_duration_seconds": 180,
+    "video_upload_duration_seconds": 300,
+    "photos_per_part": 20,
+    "photos_per_batch": 10,
+    "comic_generated_images_per_part": 20,
+    "pdf_upload_bytes": 419430400,
+    "audio_upload_duration_seconds": 600,
+    "audio_generation_duration_seconds": 600
+  },
+  "safetyCeilings": {
+    "story_words_per_part": 100000,
+    "reel_duration_seconds": 900,
+    "video_upload_duration_seconds": 1800,
+    "photos_per_part": 100,
+    "photos_per_batch": 25,
+    "comic_generated_images_per_part": 100,
+    "pdf_upload_bytes": 1073741824,
+    "audio_upload_duration_seconds": 3600,
+    "audio_generation_duration_seconds": 3600
+  },
+  "units": {
+    "story_words_per_part": "words",
+    "reel_duration_seconds": "seconds",
+    "video_upload_duration_seconds": "seconds",
+    "photos_per_part": "items",
+    "photos_per_batch": "items",
+    "comic_generated_images_per_part": "items",
+    "pdf_upload_bytes": "bytes",
+    "audio_upload_duration_seconds": "seconds",
+    "audio_generation_duration_seconds": "seconds"
+  },
+  "changePolicy": "Master Admin only; every change audited; current value may be lowered/raised within safety ceiling; no source-code change required.",
+  "release": "KV30-P2-30W"
+}

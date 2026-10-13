@@ -1,0 +1,8 @@
+{
+  "version": "30.0.0",
+  "data_export": true,
+  "deletion_request": true,
+  "policy_versioning": true,
+  "consent_tracking": true,
+  "audit_log": true
+}

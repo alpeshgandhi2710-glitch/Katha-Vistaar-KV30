@@ -1,0 +1,256 @@
+{
+  "version": "KV30-P2-30W-internal-ai-gates-v1",
+  "principle": "Every managed Internal AI invocation passes an always-on internal governance firewall. External gates remain a separate boundary.",
+  "internalAlwaysOn": true,
+  "externalDependency": false,
+  "gates": [
+    {
+      "gate": "internal_ai_gate_01",
+      "aiId": "ai_orchestrator",
+      "enabled": true,
+      "mode": "internal_only",
+      "masterAdminControlled": true,
+      "failClosed": true
+    },
+    {
+      "gate": "internal_ai_gate_02",
+      "aiId": "all_domain_master_intelligence_ai",
+      "enabled": true,
+      "mode": "internal_only",
+      "masterAdminControlled": true,
+      "failClosed": true
+    },
+    {
+      "gate": "internal_ai_gate_03",
+      "aiId": "master_admin_ai",
+      "enabled": true,
+      "mode": "internal_only",
+      "masterAdminControlled": true,
+      "failClosed": true
+    },
+    {
+      "gate": "internal_ai_gate_04",
+      "aiId": "designated_admin_ai",
+      "enabled": true,
+      "mode": "internal_only",
+      "masterAdminControlled": true,
+      "failClosed": true
+    },
+    {
+      "gate": "internal_ai_gate_05",
+      "aiId": "admin_ai",
+      "enabled": true,
+      "mode": "internal_only",
+      "masterAdminControlled": true,
+      "failClosed": true
+    },
+    {
+      "gate": "internal_ai_gate_06",
+      "aiId": "story_ai",
+      "enabled": true,
+      "mode": "internal_only",
+      "masterAdminControlled": true,
+      "failClosed": true
+    },
+    {
+      "gate": "internal_ai_gate_07",
+      "aiId": "character_ai",
+      "enabled": true,
+      "mode": "internal_only",
+      "masterAdminControlled": true,
+      "failClosed": true
+    },
+    {
+      "gate": "internal_ai_gate_08",
+      "aiId": "audio_ai",
+      "enabled": true,
+      "mode": "internal_only",
+      "masterAdminControlled": true,
+      "failClosed": true
+    },
+    {
+      "gate": "internal_ai_gate_09",
+      "aiId": "comic_ai",
+      "enabled": true,
+      "mode": "internal_only",
+      "masterAdminControlled": true,
+      "failClosed": true
+    },
+    {
+      "gate": "internal_ai_gate_10",
+      "aiId": "visual_ai",
+      "enabled": true,
+      "mode": "internal_only",
+      "masterAdminControlled": true,
+      "failClosed": true
+    },
+    {
+      "gate": "internal_ai_gate_11",
+      "aiId": "quality_ai",
+      "enabled": true,
+      "mode": "internal_only",
+      "masterAdminControlled": true,
+      "failClosed": true
+    },
+    {
+      "gate": "internal_ai_gate_12",
+      "aiId": "research_ai",
+      "enabled": true,
+      "mode": "internal_only",
+      "masterAdminControlled": true,
+      "failClosed": true
+    },
+    {
+      "gate": "internal_ai_gate_13",
+      "aiId": "safety_policy_ai",
+      "enabled": true,
+      "mode": "internal_only",
+      "masterAdminControlled": true,
+      "failClosed": true
+    },
+    {
+      "gate": "internal_ai_gate_14",
+      "aiId": "programmer_ai",
+      "enabled": true,
+      "mode": "internal_only",
+      "masterAdminControlled": true,
+      "failClosed": true
+    },
+    {
+      "gate": "internal_ai_gate_15",
+      "aiId": "design_ai",
+      "enabled": true,
+      "mode": "internal_only",
+      "masterAdminControlled": true,
+      "failClosed": true
+    },
+    {
+      "gate": "internal_ai_gate_16",
+      "aiId": "creator_ai",
+      "enabled": true,
+      "mode": "internal_only",
+      "masterAdminControlled": true,
+      "failClosed": true
+    },
+    {
+      "gate": "internal_ai_gate_17",
+      "aiId": "training_ai",
+      "enabled": true,
+      "mode": "internal_only",
+      "masterAdminControlled": true,
+      "failClosed": true
+    },
+    {
+      "gate": "internal_ai_gate_18",
+      "aiId": "user_monitoring_ai",
+      "enabled": true,
+      "mode": "internal_only",
+      "masterAdminControlled": true,
+      "failClosed": true
+    },
+    {
+      "gate": "internal_ai_gate_19",
+      "aiId": "monitoring_ai",
+      "enabled": true,
+      "mode": "internal_only",
+      "masterAdminControlled": true,
+      "failClosed": true
+    },
+    {
+      "gate": "internal_ai_gate_20",
+      "aiId": "damage_control_ai",
+      "enabled": true,
+      "mode": "internal_only",
+      "masterAdminControlled": true,
+      "failClosed": true
+    },
+    {
+      "gate": "internal_ai_gate_21",
+      "aiId": "account_management_ai",
+      "enabled": true,
+      "mode": "internal_only",
+      "masterAdminControlled": true,
+      "failClosed": true
+    },
+    {
+      "gate": "internal_ai_gate_22",
+      "aiId": "security_ai",
+      "enabled": true,
+      "mode": "internal_only",
+      "masterAdminControlled": true,
+      "failClosed": true
+    },
+    {
+      "gate": "internal_ai_gate_23",
+      "aiId": "anti_spam_malware_ai",
+      "enabled": true,
+      "mode": "internal_only",
+      "masterAdminControlled": true,
+      "failClosed": true
+    },
+    {
+      "gate": "internal_ai_gate_24",
+      "aiId": "help_support_ai",
+      "enabled": true,
+      "mode": "internal_only",
+      "masterAdminControlled": true,
+      "failClosed": true
+    },
+    {
+      "gate": "internal_ai_gate_25",
+      "aiId": "accounting_ai",
+      "enabled": true,
+      "mode": "internal_only",
+      "masterAdminControlled": true,
+      "failClosed": true
+    },
+    {
+      "gate": "internal_ai_gate_26",
+      "aiId": "engagement_ai",
+      "enabled": true,
+      "mode": "internal_only",
+      "masterAdminControlled": true,
+      "failClosed": true
+    },
+    {
+      "gate": "internal_ai_gate_27",
+      "aiId": "analytics_ai",
+      "enabled": true,
+      "mode": "internal_only",
+      "masterAdminControlled": true,
+      "failClosed": true
+    },
+    {
+      "gate": "internal_ai_gate_28",
+      "aiId": "reel_ai",
+      "enabled": true,
+      "mode": "internal_only",
+      "masterAdminControlled": true,
+      "failClosed": true
+    },
+    {
+      "gate": "internal_ai_gate_29",
+      "aiId": "writing_ai",
+      "enabled": true,
+      "mode": "internal_only",
+      "masterAdminControlled": true,
+      "failClosed": true
+    },
+    {
+      "gate": "internal_ai_gate_30",
+      "aiId": "media_security_ai",
+      "enabled": true,
+      "mode": "internal_only",
+      "masterAdminControlled": true,
+      "failClosed": true
+    },
+    {
+      "gate": "internal_ai_gate_31",
+      "aiId": "cyber_defense_ai",
+      "enabled": true,
+      "mode": "internal_only",
+      "masterAdminControlled": true,
+      "failClosed": true
+    }
+  ]
+}

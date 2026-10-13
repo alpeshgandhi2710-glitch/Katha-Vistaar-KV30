@@ -1,0 +1,3 @@
+const fs=require('node:fs');const assert=require('node:assert/strict');const test=require('node:test');
+const path=require('node:path');const ROOT=path.join(__dirname,'..');const tools=fs.readFileSync(path.join(ROOT,'lib/mobile_tools.dart'),'utf8');const app=fs.readFileSync(path.join(ROOT,'lib/main.dart'),'utf8');
+test('mobile delegated Admin uses normal user session and governed dashboard/profile APIs',()=>{assert.match(tools,/class KvAdminApi/);assert.match(tools,/\/api\/admin\/profile/);assert.match(tools,/\/api\/admin\/dashboard/);assert.match(app,/class AdminDashboardScreen/);assert.match(app,/p\['role'\]=='admin'\|\|p\['role'\]=='master_admin'/);});

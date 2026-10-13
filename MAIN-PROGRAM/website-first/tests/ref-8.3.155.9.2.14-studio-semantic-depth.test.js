@@ -1,0 +1,16 @@
+const assert=require('assert');
+const fs=require('fs');
+const path=require('path');
+const server=require('../src/server');
+const profile=JSON.parse(fs.readFileSync(path.join(__dirname,'../config/studio-capability-profile-v30.json'),'utf8'));
+assert.strictEqual(profile.version,'REF-8.3.155.9.2.14');
+assert.strictEqual(profile.source,'independent_reconciliation_of_stitch_reference');
+assert.strictEqual(profile.crossStudioSemantics.runtimeDependency,'none');
+const story={outline:[],acts:[],scenes:[],characters:[],beats:[],characterMatrix:{},continuity:{},revisionHistory:[]};
+const comic={pages:[{bleedMm:3.2,preflight:{},layers:[],panels:[{x:0,y:0,w:100,h:100,layers:[],speechBubbles:[{text:'નમસ્તે',language:'gu',font:'Indic',kerning:0,vectorAnchors:[],bezierPaths:[],indicLigature:true}]}]}],dpi:1200,printPreset:'pdf_x4'};
+const audio={episodes:[{tracks:[],segments:[]}],sampleRate:'48000',bitDepth:'24',phonemeLocked:true,smpteTimecode:'00:00:00:00'};
+const reel={clips:[{duration:1,speed:1,keyframes:[{frame:0,easing:'elastic-snap',motionVector:{vx:0,vy:0}}],captions:[]}],fps:60,resolution:'2160x3840',aspectRatio:'9:16',safeZones:{},smpteTimecode:'00:00:00:00',timelineSnap:true};
+for(const [t,p] of [['story',story],['comic',comic],['audio',audio],['reel',reel]])assert.strictEqual(server.studioProjectValid(t,p),true,t);
+assert.strictEqual(server.studioProjectValid('reel',{clips:[{keyframes:[{frame:0,easing:'bad'}]}]}),false);
+assert.strictEqual(server.studioProjectValid('comic',{pages:[{panels:[{speechBubbles:[{kerning:'bad'}]}]}]}),false);
+console.log('REF-8.3.155.9.2.14 studio semantic depth PASS');

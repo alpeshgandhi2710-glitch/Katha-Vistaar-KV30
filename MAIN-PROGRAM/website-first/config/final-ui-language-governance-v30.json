@@ -1,0 +1,45 @@
+{
+  "ref": "REF-9.2.57.18-R32",
+  "status": "IMPLEMENTED_CONTINUATION",
+  "canonicalLanguages": [
+    "en",
+    "as",
+    "bn",
+    "brx",
+    "doi",
+    "gu",
+    "hi",
+    "kn",
+    "ks",
+    "kok",
+    "mai",
+    "ml",
+    "mni",
+    "mr",
+    "ne",
+    "or",
+    "pa",
+    "sa",
+    "sat",
+    "sd",
+    "ta",
+    "te",
+    "ur"
+  ],
+  "developmentProductionParity": true,
+  "rules": {
+    "userFacingText": "MUST_USE_GOVERNED_LOCALE_KEY",
+    "nonEnglishMissing": "FALLBACK_TO_ENGLISH",
+    "unavailableLocale": "FALLBACK_TO_ENGLISH",
+    "futureLanguages": "REGISTRY_DRIVEN_NO_HARDCODED_23_LIMIT",
+    "sharedUi": "ACCOUNT_DASHBOARD_ADMIN_MASTER_ADMIN_AND_STUDIO_SURFACES_USE_SHARED_UI_PRIMITIVES",
+    "webAndroidIos": "ONE_SEMANTIC_LOCALIZATION_KEY_CONTRACT"
+  },
+  "releaseGate": [
+    "no_hardcoded_user_facing_text",
+    "dev_prod_parity",
+    "all_23_locale_bundles_present",
+    "future_language_registry_support",
+    "enabled_locale_native_review_required_before_final_certification"
+  ]
+}

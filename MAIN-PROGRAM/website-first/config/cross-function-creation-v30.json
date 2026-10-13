@@ -1,0 +1,40 @@
+{
+  "version": "REF-9.2.57.18-R16",
+  "formats": [
+    "story",
+    "comic",
+    "audio",
+    "reel"
+  ],
+  "sharedCapabilities": [
+    "manual_create",
+    "ai_assisted",
+    "ai_generated",
+    "storyboard",
+    "timeline",
+    "captions",
+    "voice_to_write",
+    "ai_voice",
+    "translation",
+    "cross_language",
+    "cross_format",
+    "media_upload",
+    "creator_edit",
+    "creator_copy",
+    "watermarked_owner_export",
+    "provenance",
+    "revisions"
+  ],
+  "aiEntryPoints": {
+    "story": "story_ai",
+    "comic": "comic_ai",
+    "audio": "audio_ai",
+    "reel": "reel_ai"
+  },
+  "transformMatrix": "all_supported_directed_pairs",
+  "approvalRequired": true,
+  "publicationAutomatic": false,
+  "externalRequired": false,
+  "internalFirst": true,
+  "languageContract": "all_23"
+}

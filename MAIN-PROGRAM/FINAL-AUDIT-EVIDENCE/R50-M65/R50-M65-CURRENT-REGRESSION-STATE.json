@@ -1,0 +1,43 @@
+{
+  "release": "REF-9.2.57.18-R50-M65-TTS-INTERNAL-LEARNING-2026-10-09",
+  "generatedAt": "2026-10-09T11:18:19+05:30",
+  "website": {
+    "passed": 514,
+    "tests": 514,
+    "failed": 0,
+    "files": 211
+  },
+  "backend": {
+    "passed": 87,
+    "tests": 87,
+    "failed": 0,
+    "files": 21
+  },
+  "mobile": {
+    "passed": 25,
+    "tests": 25,
+    "failed": 0,
+    "files": 23
+  },
+  "desktopElectron": {
+    "passed": 3,
+    "tests": 3,
+    "failed": 0,
+    "files": 2
+  },
+  "staticAudit": {
+    "jsSyntaxChecked": 348,
+    "jsonFilesChecked": 295,
+    "activeJsImportFilesChecked": 322,
+    "unresolvedActiveRelativeImports": 0
+  },
+  "tts": {
+    "localizedMessageBundles": "23/23 PASS",
+    "sourceLifecycle": "PASS",
+    "piperAvailable": false,
+    "piperTrainAvailable": false,
+    "neuralOnnxModelsFound": 0,
+    "approvedCorpusAvailable": false,
+    "neuralTraining": "BLOCKED_TOOLCHAIN_AND_APPROVED_CORPUS_ABSENT"
+  }
+}

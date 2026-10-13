@@ -1,0 +1,277 @@
+{
+  "version": "30.0.0",
+  "registryPolicy": "master-admin-controlled-language-registry",
+  "uiDefault": "en",
+  "readingDefault": "en",
+  "fallback": "en",
+  "languages": [
+    {
+      "code": "as",
+      "name": "Assamese",
+      "nativeName": "অসমীয়া",
+      "iso639_1": "as",
+      "iso639_2": "asm",
+      "iso639_3": "asm",
+      "enabled": false,
+      "scheduled": true
+    },
+    {
+      "code": "bn",
+      "name": "Bengali",
+      "nativeName": "বাংলা",
+      "iso639_1": "bn",
+      "iso639_2": "ben",
+      "iso639_3": "ben",
+      "enabled": false,
+      "scheduled": true
+    },
+    {
+      "code": "brx",
+      "name": "Bodo",
+      "nativeName": "बड़ो",
+      "iso639_1": null,
+      "iso639_2": null,
+      "iso639_3": "brx",
+      "enabled": false,
+      "scheduled": true
+    },
+    {
+      "code": "doi",
+      "name": "Dogri",
+      "nativeName": "डोगरी",
+      "iso639_1": null,
+      "iso639_2": "doi",
+      "iso639_3": "doi",
+      "enabled": false,
+      "scheduled": true
+    },
+    {
+      "code": "gu",
+      "name": "Gujarati",
+      "nativeName": "ગુજરાતી",
+      "iso639_1": "gu",
+      "iso639_2": "guj",
+      "iso639_3": "guj",
+      "enabled": false,
+      "scheduled": true
+    },
+    {
+      "code": "hi",
+      "name": "Hindi",
+      "nativeName": "हिन्दी",
+      "iso639_1": "hi",
+      "iso639_2": "hin",
+      "iso639_3": "hin",
+      "enabled": false,
+      "scheduled": true
+    },
+    {
+      "code": "kn",
+      "name": "Kannada",
+      "nativeName": "ಕನ್ನಡ",
+      "iso639_1": "kn",
+      "iso639_2": "kan",
+      "iso639_3": "kan",
+      "enabled": false,
+      "scheduled": true
+    },
+    {
+      "code": "ks",
+      "name": "Kashmiri",
+      "nativeName": "कॉशुर / کٲشُر",
+      "iso639_1": "ks",
+      "iso639_2": "kas",
+      "iso639_3": "kas",
+      "enabled": false,
+      "scheduled": true
+    },
+    {
+      "code": "kok",
+      "name": "Konkani",
+      "nativeName": "कोंकणी",
+      "iso639_1": null,
+      "iso639_2": "kok",
+      "iso639_3": "kok",
+      "enabled": false,
+      "scheduled": true
+    },
+    {
+      "code": "mai",
+      "name": "Maithili",
+      "nativeName": "मैथिली",
+      "iso639_1": null,
+      "iso639_2": "mai",
+      "iso639_3": "mai",
+      "enabled": false,
+      "scheduled": true
+    },
+    {
+      "code": "ml",
+      "name": "Malayalam",
+      "nativeName": "മലയാളം",
+      "iso639_1": "ml",
+      "iso639_2": "mal",
+      "iso639_3": "mal",
+      "enabled": false,
+      "scheduled": true
+    },
+    {
+      "code": "mni",
+      "name": "Manipuri",
+      "nativeName": "মৈতৈলোন",
+      "iso639_1": null,
+      "iso639_2": "mni",
+      "iso639_3": "mni",
+      "enabled": false,
+      "scheduled": true
+    },
+    {
+      "code": "mr",
+      "name": "Marathi",
+      "nativeName": "मराठी",
+      "iso639_1": "mr",
+      "iso639_2": "mar",
+      "iso639_3": "mar",
+      "enabled": false,
+      "scheduled": true
+    },
+    {
+      "code": "ne",
+      "name": "Nepali",
+      "nativeName": "नेपाली",
+      "iso639_1": "ne",
+      "iso639_2": "nep",
+      "iso639_3": "nep",
+      "enabled": false,
+      "scheduled": true
+    },
+    {
+      "code": "or",
+      "name": "Odia",
+      "nativeName": "ଓଡ଼ିଆ",
+      "iso639_1": "or",
+      "iso639_2": "ori",
+      "iso639_3": "ori",
+      "enabled": false,
+      "scheduled": true
+    },
+    {
+      "code": "pa",
+      "name": "Punjabi",
+      "nativeName": "ਪੰਜਾਬੀ",
+      "iso639_1": "pa",
+      "iso639_2": "pan",
+      "iso639_3": "pan",
+      "enabled": false,
+      "scheduled": true
+    },
+    {
+      "code": "sa",
+      "name": "Sanskrit",
+      "nativeName": "संस्कृतम्",
+      "iso639_1": "sa",
+      "iso639_2": "san",
+      "iso639_3": "san",
+      "enabled": false,
+      "scheduled": true
+    },
+    {
+      "code": "sat",
+      "name": "Santali",
+      "nativeName": "ᱥᱟᱱᱛᱟᱲᱤ",
+      "iso639_1": null,
+      "iso639_2": "sat",
+      "iso639_3": "sat",
+      "enabled": false,
+      "scheduled": true
+    },
+    {
+      "code": "sd",
+      "name": "Sindhi",
+      "nativeName": "सिन्धी",
+      "iso639_1": "sd",
+      "iso639_2": "snd",
+      "iso639_3": "snd",
+      "enabled": false,
+      "scheduled": true
+    },
+    {
+      "code": "ta",
+      "name": "Tamil",
+      "nativeName": "தமிழ்",
+      "iso639_1": "ta",
+      "iso639_2": "tam",
+      "iso639_3": "tam",
+      "enabled": false,
+      "scheduled": true
+    },
+    {
+      "code": "te",
+      "name": "Telugu",
+      "nativeName": "తెలుగు",
+      "iso639_1": "te",
+      "iso639_2": "tel",
+      "iso639_3": "tel",
+      "enabled": false,
+      "scheduled": true
+    },
+    {
+      "code": "ur",
+      "name": "Urdu",
+      "nativeName": "اردو",
+      "iso639_1": "ur",
+      "iso639_2": "urd",
+      "iso639_3": "urd",
+      "enabled": false,
+      "scheduled": true
+    }
+  ],
+  "scheduledLanguageCount": 22,
+  "uiFallbackLanguages": [
+    {
+      "code": "en",
+      "name": "English",
+      "nativeName": "English",
+      "iso639_1": "en",
+      "iso639_2": "eng",
+      "iso639_3": "eng",
+      "enabled": true,
+      "scheduled": false,
+      "isEnglish": true,
+      "source": "canonical"
+    }
+  ],
+  "canonicalLanguages": [
+    "en",
+    "as",
+    "bn",
+    "brx",
+    "doi",
+    "gu",
+    "hi",
+    "kn",
+    "ks",
+    "kok",
+    "mai",
+    "ml",
+    "mni",
+    "mr",
+    "ne",
+    "or",
+    "pa",
+    "sa",
+    "sat",
+    "sd",
+    "ta",
+    "te",
+    "ur"
+  ],
+  "canonicalLanguageCount": 23,
+  "indianLanguageCount": 22,
+  "futureLanguagesAllowed": true,
+  "futureLanguageRule": "New languages are staged and remain disabled until UI translation bundle, API language propagation, Internal-AI, TTS, governance and deterministic-test evidence are approved by Master Admin.",
+  "fallbackPolicy": "ENGLISH_CATALOG_FALLBACK_FOR_MISSING_EMPTY_PLACEHOLDER_OR_UNAVAILABLE_VALUES; REGISTRY_DRIVEN_NO_HARDCODED_LANGUAGE_LIMIT",
+  "fallbackLanguageCode": "en",
+  "translationBundlePolicy": "VERSIONED_LOCALE_BUNDLE_PER_ENABLED_LANGUAGE; ADDING_A_LANGUAGE_DOES_NOT_REQUIRE_CHANGING_THE_CORE_LANGUAGE_ENUM",
+  "uiLanguageCount": 23
+}

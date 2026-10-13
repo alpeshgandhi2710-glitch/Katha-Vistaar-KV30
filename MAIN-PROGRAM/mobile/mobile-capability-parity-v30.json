@@ -1,0 +1,399 @@
+{
+  "version": "R50-M17-native-fm-cross-platform-continuation-v1",
+  "status": "R50-M17_NATIVE_FM_PERMISSION_HARDENING_APPLIED",
+  "rule": "Website, Android and iPhone must expose the same governed KV30 capabilities; platform UI may differ but business rules, AI governance, localization, payment contracts, rights, persistence and publish gates must remain equivalent.",
+  "platforms": [
+    "website",
+    "desktop_laptop_pwa",
+    "android",
+    "iphone"
+  ],
+  "formats": [
+    "story",
+    "comic",
+    "audio",
+    "reel"
+  ],
+  "parityDomains": [
+    "reader",
+    "creator",
+    "internal_ai",
+    "payment",
+    "profile",
+    "notifications",
+    "help",
+    "localization",
+    "security",
+    "publishing",
+    "rights",
+    "analytics"
+  ],
+  "phaseM1": {
+    "mobileShell": true,
+    "23LanguageRegistry": true,
+    "readerHub": true,
+    "storyStudioEntry": true,
+    "comicStudioEntry": true,
+    "fmStudioEntry": true,
+    "reelStudioEntry": true,
+    "paymentEntry": true,
+    "profileSettingsEntry": true,
+    "notificationEntry": true,
+    "governedFallback": true
+  },
+  "remainingImplementation": [
+    "complete Android and iPhone native build/device integration",
+    "run cross-platform end-to-end device matrix across website/PWA/Android/iPhone",
+    "complete native device-specific permissions, media, notifications and store packaging verification",
+    "physical-device FM audio driver, latency and render performance verification"
+  ],
+  "externalRule": "External providers are adapters only; provider credentials/availability do not block internal implementation or automated parity tests.",
+  "humanRule": "Human acceptance remains a separate launch acceptance evidence class and is not used as a substitute for automated development verification.",
+  "phaseM2": {
+    "readerHub": true,
+    "formatEntryRouting": true,
+    "readerDetail": true,
+    "progressState": true,
+    "bookmarkState": true,
+    "resetProgress": true,
+    "crossFormatReaderEntry": true
+  },
+  "phaseM3": {
+    "audioStudioScreen": true,
+    "audioProjectCreationApi": true,
+    "audioSegmentLoadApi": true,
+    "audioSegmentSaveApi": true,
+    "audioSegmentPersistence": true,
+    "audioEnhancementPlanApi": true,
+    "governedApiBaseUrl": true,
+    "publishGateAdvisory": true,
+    "nativeDeviceBuildVerified": false
+  },
+  "phaseM10": {
+    "deepAudit": true,
+    "mobileAuthenticationSession": true,
+    "mobileLoginSessionToken": true,
+    "mobileLogoutInvalidation": true,
+    "readerBackendPersistence": true,
+    "storyApiUsesAuthenticatedSession": true,
+    "comicApiUsesAuthenticatedSession": true,
+    "audioApiUsesAuthenticatedSession": true,
+    "reelApiUsesAuthenticatedSession": true,
+    "websiteBackendRegression": "80/80 PASS",
+    "websiteRegression": "425/425 PASS",
+    "mobileStaticRegression": "7/7 PASS",
+    "flutterNativeBuildVerified": false,
+    "remaining": "native Android/iPhone device build and end-to-end UI/device matrix"
+  },
+  "deepAuditFindingsClosed": [
+    "Mobile studio APIs had no real login/session acquisition path; added governed mobile login session token flow.",
+    "Mobile logout did not invalidate bearer sessions; logout now invalidates the active session token.",
+    "Reader progress/bookmark state was local-only; added governed /api/reader/state persistence and mobile client integration.",
+    "Story/Comic/FM/Reel API clients now consume the authenticated mobile session and shared API base configuration.",
+    "Mobile Profile now reads follower/following identity state from the governed backend instead of static local values, so the same account state is visible across clients.",
+    "Mobile Payment screen now reads live Coins and Subscription state from governed backend APIs instead of local placeholder save controls.",
+    "Website is installable as a desktop/laptop PWA using the same website backend and source-of-truth contracts.",
+    "Mobile social/account synchronization now uses the same authenticated backend source for profile/followers/following, comments, likes, messages and subscriptions; no separate mobile truth is introduced.",
+    "Delegated Admin governance is normal-user-first: every delegated Admin begins as an ordinary user login; only Master Admin may promote that existing user login to delegated Admin.",
+    "Revoking delegated Admin rights converts the same login back to a normal user login and invalidates delegated-admin dashboard access.",
+    "Delegated Admin dashboard/profile are available through the same authenticated user session; granted rights are enforced by Master-Admin RBAC.",
+    "Master Admin has a governed profile endpoint and full rights marker while remaining outside the normal users map."
+  ],
+  "desktopLaptop": {
+    "sharedWebRuntime": true,
+    "installablePwa": true,
+    "sameBackendContracts": true,
+    "sameIdentitySessionModel": true,
+    "sameFollowerSourceOfTruth": true,
+    "samePaymentEntitlementSourceOfTruth": true,
+    "samePublishingRightsSourceOfTruth": true
+  },
+  "phaseM11": {
+    "masterAdminAuthorityHardening": true,
+    "adminCannotCreateMasterAdminLogin": true,
+    "masterAdminCanCreateAdminLogin": false,
+    "masterAdminAllRights": true,
+    "mobileLiveProfileParity": true,
+    "mobileLiveCoinAndSubscriptionReadState": true,
+    "desktopInstallablePwa": true,
+    "websiteRegression": "426/426 PASS",
+    "backendRegression": "80/80 PASS",
+    "mobileStaticRegression": "7/7 PASS",
+    "serverSyntax": "PASS",
+    "nativeAndroidBuildVerified": false,
+    "nativeIphoneBuildVerified": false,
+    "crossPlatformSocialSourceOfTruth": true,
+    "profileFollowersFollowingLive": true,
+    "commentsLiveBackendSource": true,
+    "likesLiveBackendSource": true,
+    "messagesLiveBackendSource": true,
+    "subscriptionsLiveBackendSource": true,
+    "socialSyncUi": true,
+    "sharedSessionForSocialApis": true,
+    "masterAdminCanPromoteExistingUserToAdmin": true,
+    "delegatedAdminMustStartAsNormalUser": true,
+    "revokingAdminRightsReturnsToNormalUser": true,
+    "delegatedAdminUsesSameUserSession": true,
+    "delegatedAdminProfile": true,
+    "delegatedAdminDashboard": true,
+    "masterAdminProfile": true,
+    "damageOnlyBackupRecovery": true,
+    "developmentProductionSourceContractSame": true,
+    "developmentProductionSecretsSeparate": true,
+    "historical449CountVerifiedInCurrentTree": false,
+    "currentAuthoritativeWebsiteRunner": "426/426 PASS; 170 test files",
+    "crossPlatformAccountSourceOfTruthDomains": [
+      "profile",
+      "followers",
+      "following",
+      "likes",
+      "comments",
+      "messages",
+      "subscriptions",
+      "coins",
+      "reader_progress",
+      "bookmarks"
+    ]
+  },
+  "phaseM12": {
+    "deepCompletenessAudit": true,
+    "websiteRegression": "426/426 PASS",
+    "backendRegression": "80/80 PASS",
+    "mobileStaticParity": "9/9 PASS",
+    "historicalWebsite449Reconciled": true,
+    "historicalWebsite496Reconciled": true,
+    "subscriptionCatalogAndPurchaseContractWired": true,
+    "developmentProductionSeparationVerified": true,
+    "desktopLaptopRuntime": "website_pwa; native_desktop_not_claimed",
+    "masterAdminEmergencyRecoveryPackage": true,
+    "damageOnlyRecoveryUtility": true
+  },
+  "phaseM13": {
+    "crossPlatformCompletenessAudit": true,
+    "websiteExecutableRunner": "431/431 PASS",
+    "websiteTestFiles": 172,
+    "backendRegression": "80/80 PASS",
+    "mobileRegression": "10/10 PASS",
+    "mobileStudioPublishContract": true,
+    "mobileAudioPublishAction": true,
+    "mobileReelPublishAction": true,
+    "governedPublishContractReused": true,
+    "developmentProductionSeparation": true,
+    "masterControlV26Immutable": true,
+    "nativeAndroidIphoneBuildVerified": false,
+    "remainingNativeGates": [
+      "Android/iPhone native build/device E2E",
+      "device-specific permissions/media/notifications/store packaging verification",
+      "production FM waveform/recording/render native controls"
+    ]
+  },
+  "phaseM14": {
+    "websiteExecutableRunner": "431/431 PASS",
+    "websiteTestFiles": 172,
+    "backendRegression": "80/80 PASS",
+    "mobileRegression": "10/10 PASS",
+    "mobileAudioPublishAction": true,
+    "mobileAudioSegmentLoadAndPersistence": true,
+    "mobileSocialLikeUi": true,
+    "mobileSocialCommentUi": true,
+    "mobileSocialBackendSourceOfTruth": true,
+    "crossPlatformSubscriptionEntitlement": true,
+    "developmentProductionIsolation": true,
+    "nativeAndroidBuildVerified": false,
+    "nativeIphoneBuildVerified": false,
+    "remainingNativeGates": [
+      "Android/iPhone native build/device E2E",
+      "device-specific permissions/media/notifications/store packaging verification",
+      "production FM waveform/recording/render native controls"
+    ]
+  },
+  "currentAuthoritativeWebsiteRunner": "432/432 PASS; 173 test files",
+  "phaseM15": {
+    "paymentOtpStart": true,
+    "paymentOtpVerify": true,
+    "subscriptionPurchaseContract": true,
+    "coinPurchaseContract": true,
+    "mobilePaymentUsesBackendSourceOfTruth": true,
+    "mobilePaymentTests": "11/11 PASS",
+    "websiteTests": "431/431 PASS",
+    "backendTests": "80/80 PASS",
+    "nativeDeviceBuildVerified": false
+  },
+  "phaseM16": {
+    "permissionPolicy": true,
+    "automaticPermissions": [
+      "internet",
+      "secure_app_storage"
+    ],
+    "userApprovalPermissions": [
+      "notifications",
+      "camera",
+      "microphone",
+      "photos",
+      "files",
+      "location",
+      "nearbyDevices",
+      "contacts",
+      "calendar",
+      "phone",
+      "sms",
+      "biometric"
+    ],
+    "runtimePermissionLeastPrivilege": true,
+    "androidPermissionContract": true,
+    "iosPermissionUsageContract": true,
+    "fmRecorderStateMachine": true,
+    "fmWaveformModel": true,
+    "fmTrimModel": true,
+    "nativeDeviceBuildVerified": false,
+    "physicalDeviceE2EVerified": false,
+    "websiteRegression": "431/431 PASS",
+    "backendRegression": "80/80 PASS",
+    "mobileRegression": "12/12 PASS",
+    "remainingAssetGates": [
+      "physical Android/iPhone device build and E2E",
+      "device-specific audio driver/latency verification",
+      "store signing/submission environment verification"
+    ]
+  },
+  "phaseM17": {
+    "nativePermissionMethodChannel": true,
+    "nativePermissionStatusMethod": true,
+    "leastPrivilegeRuntimeRequest": true,
+    "microphoneRequestedAtRecordStart": true,
+    "waveformPainterContract": true,
+    "fmRecordPermissionFallback": true,
+    "androidNoBroadStoragePermission": true,
+    "iosPermissionUsageDescriptions": true,
+    "nativeHostContractDocumented": true,
+    "websiteRegression": "431/431 PASS",
+    "backendRegression": "80/80 PASS",
+    "mobileRegression": "13/13 PASS",
+    "nativeAndroidBuildVerified": false,
+    "nativeIphoneBuildVerified": false,
+    "physicalDeviceE2EVerified": false,
+    "remainingAssetGates": [
+      "physical Android/iPhone device build and E2E",
+      "device-specific audio driver/latency verification",
+      "store signing/submission environment verification"
+    ]
+  },
+  "phaseM18": {
+    "nativeFmExecutionChannel": true,
+    "nativeFmMethods": [
+      "startRecording",
+      "pauseRecording",
+      "resumeRecording",
+      "stopRecording",
+      "renderMix"
+    ],
+    "microphoneGateBeforeNativeRecording": true,
+    "nativeHostFallbackIsGraceful": true,
+    "websiteRegression": "431/431 PASS",
+    "backendRegression": "80/80 PASS (preserved current backend regression evidence; no backend source changes in M18)",
+    "mobileRegression": "13/13 PASS",
+    "nativeAndroidBuildVerified": false,
+    "nativeIphoneBuildVerified": false,
+    "physicalDeviceE2EVerified": false,
+    "remainingAssetGates": [
+      "physical Android/iPhone build and E2E",
+      "real microphone/audio driver latency and capture verification",
+      "store signing/submission environment verification"
+    ]
+  },
+  "phaseM19": {
+    "nativeFmCaptureToBackendPersistence": true,
+    "nativeRecordingLifecycle": [
+      "startRecording",
+      "pauseRecording",
+      "resumeRecording",
+      "stopRecording"
+    ],
+    "recordingUploadContract": "/api/media/assets",
+    "audioSegmentPersistenceContract": "/api/audio/projects",
+    "internalAudioMixContract": "/api/media/audio/mix",
+    "localPathNeverRemotePublishUrl": true,
+    "backendPublicationAuthority": true,
+    "website": "431/431 PASS",
+    "backend": "80/80 PASS",
+    "mobile": "13/13 PASS",
+    "serverSyntax": "PASS",
+    "nativeHostContract": "PASS",
+    "nativeFmContract": "PASS",
+    "physicalAndroidDevice": false,
+    "physicalIPhoneDevice": false,
+    "remainingAssetGates": [
+      "physical device microphone capture",
+      "audio driver latency/capture fidelity",
+      "store signing/submission"
+    ]
+  },
+  "phaseM20": {
+    "nativeFmCapturePersistenceHardening": true,
+    "nativeStopPathCompatibility": [
+      "localPath",
+      "filePath"
+    ],
+    "audioSegmentAssetOwnershipValidation": true,
+    "backendPublicationAuthority": true,
+    "websiteRegression": "432/432 PASS; 173 test files",
+    "backendRegression": "80/80 PASS",
+    "mobileRegression": "13/13 PASS (M19 baseline; no mobile source regression beyond path compatibility)",
+    "nativeAndroidBuildVerified": false,
+    "nativeIphoneBuildVerified": false,
+    "remainingAssetGates": [
+      "physical device microphone capture",
+      "audio driver latency/capture fidelity",
+      "store signing/submission"
+    ],
+    "serverSyntax": "PASS",
+    "focusedContract": "1/1 PASS"
+  },
+  "phases": {
+    "M21": {
+      "crossPlatformContentSocialPaymentAccountE2E": true,
+      "contentBackendSourceOfTruth": true,
+      "socialBackendSourceOfTruth": true,
+      "paymentBackendSourceOfTruth": true,
+      "accountBackendSourceOfTruth": true,
+      "consolidatedContractTest": "12/12 PASS",
+      "website": "432/432 PASS",
+      "backend": "80/80 PASS",
+      "mobile": "14/14 PASS",
+      "nativeAndroidIosPhysicalExecution": false,
+      "remainingAssetGates": [
+        "physical Android/iPhone build and native host execution",
+        "microphone/audio-driver verification",
+        "store signing/submission"
+      ]
+    }
+  },
+  "phaseM22": {
+    "deepGapRecheck": true,
+    "websiteRegression": "432/432 PASS; 173 test files",
+    "backendRegression": "80/80 PASS",
+    "mobileStaticRegression": "14/14 PASS",
+    "crossPlatformE2EContract": "12/12 PASS",
+    "fmCapturePersistenceRender": "PASS",
+    "audioAssetOwnershipEnforcement": true,
+    "localPathNeverPublishUrl": true,
+    "backendPublicationAuthority": true,
+    "additionalSourceSideGapsFound": false,
+    "nativeAndroidIphonePhysicalExecution": false,
+    "remainingAssetGates": [
+      "physical Android/iPhone build and native host execution",
+      "microphone/audio-driver verification",
+      "store signing/submission"
+    ]
+  },
+  "phaseM34": {
+    "publicHelpAi": true,
+    "anonymousLoginRegistrationOtpTicketCreation": true,
+    "anonymousTicketTrackingByTicketNumberAndClaimedContact": true,
+    "anonymousTicketCommentsByTicketNumberAndClaimedContact": true,
+    "authenticatedHelpTicketCreation": true,
+    "authenticatedHelpTicketComments": true,
+    "loginScreenPublicHelpEntry": true,
+    "flutterNativeBuildVerified": false
+  }
+}

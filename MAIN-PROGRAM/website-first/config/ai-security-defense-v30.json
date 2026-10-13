@@ -1,0 +1,36 @@
+{
+  "version": "KV30-P2-30W",
+  "mode": "internal_first",
+  "failClosed": true,
+  "priority": "highest",
+  "domains": [
+    "authentication",
+    "authorization",
+    "session_abuse",
+    "harassment",
+    "stalking",
+    "credible_threats",
+    "spam",
+    "phishing",
+    "malware",
+    "credential_lures",
+    "secret_exposure",
+    "link_abuse",
+    "velocity_abuse",
+    "duplicate_content",
+    "report_clusters",
+    "account_takeover_signals",
+    "media_preflight"
+  ],
+  "actions": {
+    "low": "allow_with_monitoring",
+    "medium": "soft_block_and_review",
+    "high": "rate_limit_and_review",
+    "critical": "quarantine_and_escalate_master_admin"
+  },
+  "criticalAuthority": "human_master_admin",
+  "rawSecretsNeverReturned": true,
+  "privacy": "minimum_necessary",
+  "externalAI": "disabled_by_default",
+  "noAutonomousCriticalChanges": true
+}

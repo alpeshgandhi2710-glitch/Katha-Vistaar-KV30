@@ -1,0 +1,15 @@
+{
+  "version": "30.0.0",
+  "normal_install_hides_master_setup": true,
+  "emergency_utility_external": true,
+  "flow": [
+    "backup_key_authentication",
+    "verify_existing_install",
+    "recover_master_state",
+    "create_new_master_password",
+    "configure_mfa_recovery",
+    "audit_log",
+    "disable_or_remove_recovery_utility"
+  ],
+  "no_master_bootstrap_on_reinstall": true
+}

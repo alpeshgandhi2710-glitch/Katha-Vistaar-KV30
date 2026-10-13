@@ -1,0 +1,14 @@
+const fs=require('fs');const path=require('path');const assert=require('assert');
+const ROOT=path.join(__dirname,'..');
+const server=fs.readFileSync(path.join(ROOT,'src','server.js'),'utf8');
+const app=fs.readFileSync(path.join(ROOT,'public','app.js'),'utf8');
+const policy=JSON.parse(fs.readFileSync(path.join(ROOT,'config','ad-governance.json'),'utf8'));
+const matrix=JSON.parse(fs.readFileSync(path.join(ROOT,'config','external-service-two-switch-matrix-v30.json'),'utf8'));
+const ads=matrix.services.find(x=>x.serviceId==='ads');
+assert(server.includes("/api/admin/monetization/ad-assets"));
+for(const m of ['image/png','image/jpeg','image/webp','video/mp4','video/webm','application/json'])assert(server.includes(m),`missing ad MIME ${m}`);
+assert(server.includes("kind==='faq'"));assert(server.includes("/api/admin/services/toggle"));assert(ads&&ads.serviceId==='ads');
+assert(app.includes('ui_internal_ads'));assert(app.includes('final_internal_ads'));assert(ads.externalDefaultEnabled===false&&ads.firewallRequired===true);
+assert(policy.assetManagement&&policy.assetManagement.types.photo&&policy.assetManagement.types.video&&policy.assetManagement.types.faq);
+assert(ads&&ads.masterAdminControlled===true&&ads.internalAlwaysOn===true&&ads.externalDefaultEnabled===false&&ads.firewallRequired===true);
+console.log('R38 ad assets + two-layer switch governance PASS');

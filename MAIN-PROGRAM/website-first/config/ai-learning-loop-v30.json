@@ -1,0 +1,49 @@
+{
+  "version": "REF-9.2.57.18-R16",
+  "enabled": true,
+  "internalFirst": true,
+  "observe": [
+    "approved_text",
+    "approved_transcript",
+    "approved_visual_description",
+    "approved_audio_transcript",
+    "creator_correction",
+    "creator_feedback",
+    "language_usage"
+  ],
+  "filter": [
+    "rights",
+    "consent",
+    "safety",
+    "evaluation",
+    "language_quality",
+    "privacy",
+    "owner_scope"
+  ],
+  "memory": "project_and_governed_learning_candidate",
+  "productionModelUpdate": "never_automatic",
+  "promotion": [
+    "evaluation",
+    "staging",
+    "master_admin_approval",
+    "versioned_release",
+    "rollback"
+  ],
+  "externalServiceRequired": false,
+  "ttsGapLearning": "Collect only consented, rights-confirmed, privacy-filtered language samples; stage language-specific neural TTS candidates locally; do not claim speech generation until a real model/runtime exists.",
+  "ttsModelLifecycle": {
+    "module": "backend/src/services/ai-tts-model-lifecycle.js",
+    "datasetConsentRequired": true,
+    "rightsConfirmationRequired": true,
+    "minimumUtterances": 100,
+    "minimumAudioSeconds": 1800,
+    "externalDataTransfer": false,
+    "localTrainingOnly": true,
+    "modelEvaluationRequired": true,
+    "masterAdminPromotionRequired": true,
+    "versionedModels": true,
+    "rollbackRequired": true,
+    "automaticProductionPromotion": false,
+    "unavailableTrainerMustBeReported": true
+  }
+}

@@ -1,0 +1,6 @@
+9f2f7a727af248ff29dc5c7828e91654dad5cb1563d717a324c19f4454e18364  /mnt/data/m43_verify/MAIN-PROGRAM/website-first/src/server.js
+262818109568b016e320f78b7c0b2e0bddcdc25a33728ae16a8d7848f59afd2f  /mnt/data/m43_verify/MAIN-PROGRAM/website-first/../backend/src/services/story-studio.js
+f7722e1b82ab23a5ff45297b218c9d759b439c8afd13a4b60d6d0bb30df92a2a  /mnt/data/m43_verify/MAIN-PROGRAM/website-first/config/version.json
+4c6babd16754f29b7fd42de0c0ed2059bc221e76a4719117758e88ec3b227c6f  /mnt/data/m43_verify/MAIN-PROGRAM/website-first/config/release-registry-v30.json
+cd4023977c704e288e4275fd43a7a11f23e3b2d668be19a4eb901b66f7cbc6e3  /mnt/data/m43_verify/MAIN-PROGRAM/website-first/RELEASE-MANIFEST-v30.json
+bde9463e2a6918ceb4708f4a7aef581c98918b57385939baa738f54a447c7151  /mnt/data/m43_verify/MAIN-PROGRAM/website-first/tests/r50-m46-phase2-story-media-publishing.test.js

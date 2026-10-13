@@ -1,0 +1,15 @@
+{
+  "name": "katha-vistaar-website-first",
+  "version": "KV30-P2-30W",
+  "private": true,
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node ../scripts/run-governed-regression.js",
+    "check": "node --check src/server.js",
+    "test:unit": "KV_TEST_ADMIN_RIGHTS=true KV_ADMIN_ID=delegated-1 node scripts/run-all-tests.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

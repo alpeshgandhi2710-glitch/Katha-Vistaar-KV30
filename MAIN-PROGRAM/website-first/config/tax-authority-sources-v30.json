@@ -1,0 +1,69 @@
+{
+  "version": "30.0.0",
+  "status": "reference_and_ingest_only",
+  "jurisdiction": "IN",
+  "sources": [
+    {
+      "id": "CBIC_GST_HOME",
+      "authority": "CBIC",
+      "purpose": "GST legislation, rates and official notices",
+      "url": "https://cbic-gst.gov.in/",
+      "active": true
+    },
+    {
+      "id": "CBIC_GST_RATES",
+      "authority": "CBIC",
+      "purpose": "Official GST goods/services rate reference",
+      "url": "https://cbic-gst.gov.in/gst-goods-services-rates.html",
+      "active": true
+    },
+    {
+      "id": "GST_PORTAL_HSN_SAC",
+      "authority": "GST Portal",
+      "purpose": "HSN/SAC tax-rate lookup and directory",
+      "url": "https://tutorial.gst.gov.in/userguide/taxpayersdashboard/Search_HSN_SAC_Tax_Rates_manual.htm",
+      "active": true
+    },
+    {
+      "id": "CBIC_INVOICE_RULES",
+      "authority": "CBIC",
+      "purpose": "Tax invoice fields, tax components and place-of-supply reporting",
+      "url": "https://cbic-gst.gov.in/gst-invoice-rules.html",
+      "active": true
+    },
+    {
+      "id": "GST_EINVOICE_VALIDATION",
+      "authority": "GST e-Invoice Portal",
+      "purpose": "Authoritative validation/schema reference for tax calculation fields",
+      "url": "https://einvoice6.gst.gov.in/content/validation-rules-for-e-invoicing-that-must-be-take-care-to-avoid-errors/",
+      "active": true
+    }
+  ],
+  "ingestion": {
+    "runtimeFetch": false,
+    "mode": "manual_or_approved_source_import",
+    "requiredSnapshotFields": [
+      "sourceId",
+      "sourceUrl",
+      "publicationDate",
+      "effectiveFrom",
+      "effectiveTo",
+      "ruleVersion",
+      "sourceDocumentReference",
+      "sourceChecksum",
+      "importedAt",
+      "importedBy",
+      "approvedAt",
+      "approvedBy"
+    ],
+    "activation": "approval_required",
+    "historicalReplayRequired": true,
+    "unknownOrMissingRule": "fail_closed"
+  },
+  "classification": {
+    "customerTax": "source_from_government_rate_and_notification_data",
+    "royaltyPayoutTax": "separate_approved_rule_required",
+    "tdsWithholding": "separate_approved_rule_required",
+    "otherCharges": "separate_approved_rule_required"
+  }
+}

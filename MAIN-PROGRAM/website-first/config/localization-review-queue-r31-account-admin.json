@@ -1,0 +1,12 @@
+{
+  "ref":"REF-9.2.57.18-R31",
+  "scope":"account-admin-master-admin-ui",
+  "languages":["en","as","bn","brx","doi","gu","hi","kn","ks","kok","mai","ml","mni","mr","ne","or","pa","sa","sat","sd","ta","te","ur"],
+  "items":20,
+  "nonEnglishReviewItems":440,
+  "status":"OPEN_FOR_NATIVE_REVIEW",
+  "rule":"Missing/unreviewed non-English values must never silently become English in enabled locales; xStrict surfaces [key].",
+  "keys":["readerDashboard","authorDashboard","messageBox","subscriptionBilling","coinBilling","creatorRights","noCreatorWorks","logoutAdmin","progressReport","trainingCoachHelp","securityAudit","securityAiHelp","contentActivity","runSecurityAi","profileAccount","verifiedContacts","privacyContent","interestPreferences","regionalActivity","accountSecurity"],
+  "sourceOfTruth":"website-first/public/app.js",
+  "note":"R31 adds governed keys and removes hardcoded runtime literals. Native/reviewed translation closure is intentionally not claimed until reviewed values are supplied for all 22 non-English locales."
+}

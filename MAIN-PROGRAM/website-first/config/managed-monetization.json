@@ -1,0 +1,553 @@
+{
+  "version": "KV30-P2-30W",
+  "currency": "INR",
+  "stickerCoinRate": 5,
+  "coinPacks": [
+    {
+      "coins": 100,
+      "price": 99
+    },
+    {
+      "coins": 500,
+      "price": 399
+    },
+    {
+      "coins": 1200,
+      "price": 799
+    },
+    {
+      "coins": 2500,
+      "price": 1499
+    }
+  ],
+  "offers": [
+    {
+      "id": "WELCOME50",
+      "type": "coin_bonus",
+      "active": true,
+      "bonusCoins": 50,
+      "scope": "first_purchase",
+      "languages": "all"
+    },
+    {
+      "id": "P1TEST",
+      "type": "coin_bonus",
+      "active": false,
+      "bonusCoins": 25,
+      "discountPercent": 0,
+      "discountCoins": 0,
+      "scope": "all",
+      "languages": "all",
+      "startsAt": null,
+      "endsAt": null
+    },
+    {
+      "id": "P1SAVE10",
+      "type": "coin_bonus",
+      "active": true,
+      "bonusCoins": 25,
+      "discountPercent": 10,
+      "discountCoins": 0,
+      "scope": "all",
+      "languages": "all",
+      "startsAt": null,
+      "endsAt": null
+    }
+  ],
+  "ads": {
+    "default": {
+      "loggedOut": true,
+      "loggedInFree": true,
+      "appSubscription": false,
+      "formatSubscription": false,
+      "authorSubscription": true
+    },
+    "placements": [
+      "home",
+      "discover",
+      "story",
+      "comic",
+      "fm",
+      "reel",
+      "search",
+      "rewarded"
+    ],
+    "types": [
+      "video",
+      "audio",
+      "text",
+      "banner",
+      "native",
+      "rewarded"
+    ],
+    "frequencyCaps": {
+      "enabled": true
+    }
+  },
+  "subscriptions": [
+    {
+      "id": "platform_subscription",
+      "label": "Katha Vistaar Platform Subscription",
+      "type": "platform",
+      "active": true,
+      "adFree": true,
+      "benefits": [
+        "Platform-wide eligible premium content",
+        "Creator support through consumption-based royalty pool"
+      ],
+      "price": 999,
+      "durationDays": 30,
+      "entitlementKey": "platformSubscription",
+      "accessScope": "platform"
+    },
+    {
+      "id": "app_reader",
+      "label": "App Reader",
+      "type": "reader",
+      "active": true,
+      "adFree": true,
+      "price": 99,
+      "durationDays": 30,
+      "benefits": [
+        "Administrator-configured entitlement"
+      ],
+      "entitlementKey": "appReader",
+      "accessScope": "app"
+    },
+    {
+      "id": "comic_reader",
+      "label": "Comic Reader",
+      "type": "reader",
+      "active": true,
+      "adFree": true,
+      "price": 99,
+      "durationDays": 30,
+      "benefits": [
+        "Administrator-configured entitlement"
+      ],
+      "entitlementKey": "comicReader",
+      "accessScope": "comic"
+    },
+    {
+      "id": "fm_reader",
+      "label": "FM Reader",
+      "type": "reader",
+      "active": true,
+      "adFree": true,
+      "price": 99,
+      "durationDays": 30,
+      "benefits": [
+        "Administrator-configured entitlement"
+      ],
+      "entitlementKey": "audioReader",
+      "accessScope": "audio"
+    },
+    {
+      "id": "reel_reader",
+      "label": "Reel Reader",
+      "type": "reader",
+      "active": true,
+      "adFree": true,
+      "price": 99,
+      "durationDays": 30,
+      "benefits": [
+        "Administrator-configured entitlement"
+      ],
+      "entitlementKey": "reelReader",
+      "accessScope": "reel"
+    },
+    {
+      "id": "author_subscription",
+      "label": "Author Subscription",
+      "type": "author",
+      "active": true,
+      "adFree": false,
+      "price": 99,
+      "durationDays": 30,
+      "benefits": [
+        "Administrator-configured entitlement"
+      ],
+      "entitlementKey": "authorSubscription",
+      "accessScope": "author"
+    },
+    {
+      "id": "comic_creator",
+      "label": "Comic Creator",
+      "type": "creator",
+      "active": true,
+      "price": 0,
+      "durationDays": 30,
+      "benefits": [
+        "Administrator-configured entitlement"
+      ],
+      "entitlementKey": "comicCreator",
+      "accessScope": "creator_comic"
+    },
+    {
+      "id": "fm_creator",
+      "label": "FM Creator",
+      "type": "creator",
+      "active": true,
+      "price": 0,
+      "durationDays": 30,
+      "benefits": [
+        "Administrator-configured entitlement"
+      ],
+      "entitlementKey": "audioCreator",
+      "accessScope": "creator_audio"
+    },
+    {
+      "id": "reel_creator",
+      "label": "Reel Creator",
+      "type": "creator",
+      "active": true,
+      "price": 0,
+      "durationDays": 30,
+      "benefits": [
+        "Administrator-configured entitlement"
+      ],
+      "entitlementKey": "reelCreator",
+      "accessScope": "creator_reel"
+    }
+  ],
+  "stickers": [
+    {
+      "id": "thanks",
+      "label": "Thanks",
+      "emoji": "🙏",
+      "costCoins": 5,
+      "active": true
+    },
+    {
+      "id": "star",
+      "label": "Star",
+      "emoji": "⭐",
+      "costCoins": 5,
+      "active": true
+    },
+    {
+      "id": "heart",
+      "label": "Heart",
+      "emoji": "❤️",
+      "costCoins": 5,
+      "active": true
+    },
+    {
+      "id": "fire",
+      "label": "Fire",
+      "emoji": "🔥",
+      "costCoins": 5,
+      "active": true
+    },
+    {
+      "id": "clap",
+      "label": "Clap",
+      "emoji": "👏",
+      "costCoins": 5,
+      "active": true
+    },
+    {
+      "id": "wow",
+      "label": "Wow",
+      "emoji": "🤩",
+      "costCoins": 5,
+      "active": true
+    },
+    {
+      "id": "love",
+      "label": "Love",
+      "emoji": "💖",
+      "costCoins": 5,
+      "active": true
+    },
+    {
+      "id": "bravo",
+      "label": "Bravo",
+      "emoji": "🎉",
+      "costCoins": 5,
+      "active": true
+    },
+    {
+      "id": "diamond",
+      "label": "Diamond",
+      "emoji": "💎",
+      "costCoins": 5,
+      "active": true
+    },
+    {
+      "id": "crown",
+      "label": "Crown",
+      "emoji": "👑",
+      "costCoins": 5,
+      "active": true
+    },
+    {
+      "id": "magic",
+      "label": "Magic",
+      "emoji": "✨",
+      "costCoins": 5,
+      "active": true
+    },
+    {
+      "id": "rocket",
+      "label": "Rocket",
+      "emoji": "🚀",
+      "costCoins": 5,
+      "active": true
+    },
+    {
+      "id": "gift",
+      "label": "Gift",
+      "emoji": "🎁",
+      "costCoins": 5,
+      "active": true
+    },
+    {
+      "id": "medal",
+      "label": "Medal",
+      "emoji": "🏅",
+      "costCoins": 5,
+      "active": true
+    },
+    {
+      "id": "trophy",
+      "label": "Trophy",
+      "emoji": "🏆",
+      "costCoins": 5,
+      "active": true
+    },
+    {
+      "id": "sparkle",
+      "label": "Sparkle",
+      "emoji": "🌟",
+      "costCoins": 5,
+      "active": true
+    },
+    {
+      "id": "rose",
+      "label": "Rose",
+      "emoji": "🌹",
+      "costCoins": 5,
+      "active": true
+    },
+    {
+      "id": "moon",
+      "label": "Moon",
+      "emoji": "🌙",
+      "costCoins": 5,
+      "active": true
+    },
+    {
+      "id": "sun",
+      "label": "Sun",
+      "emoji": "☀️",
+      "costCoins": 5,
+      "active": true
+    },
+    {
+      "id": "legend",
+      "label": "Legend",
+      "emoji": "🔥👑",
+      "costCoins": 5,
+      "active": true
+    }
+  ],
+  "royalty": {
+    "minGenuineFollowers": 200,
+    "externalPayoutRequired": false,
+    "active": true,
+    "platformSubscriptionRate": 0.4,
+    "platformSubscriptionAttribution": "eligible_consumption_share",
+    "platformSubscriptionEligibleContent": "locked_or_premium",
+    "creatorRate": 0.4,
+    "stickerDirectRate": 0.45,
+    "basis": "net_distributable_revenue",
+    "platformSubscriptionFormulaStatus": "approved",
+    "gstPolicyStatus": "approval_required",
+    "gstRate": null,
+    "gstStateOverrides": {},
+    "gstRuleVersion": null,
+    "gstSourceSnapshotRequired": true,
+    "platformSubscriptionAllocationFormula": {
+      "status": "approved",
+      "approvalAuthority": "human_master_admin",
+      "approvalRecord": "REF-8.3.155.9.2.48",
+      "version": "KV30-SUB-ALLOC-1.0",
+      "accountingBasis": "net_distributable_revenue_inr",
+      "netDistributableRevenue": "gross_customer_collection - approved_customer_tax - approved_payment_or_platform_charges - authoritative_refunds_or_chargebacks",
+      "creatorPool": "net_distributable_revenue * platformSubscriptionRate",
+      "creatorShare": "creator_eligible_weighted_consumption / total_eligible_weighted_consumption",
+      "creatorRoyalty": "creatorPool * creatorShare",
+      "qualifiedConsumption": "fraud_adjusted_eligible_consumption_units",
+      "zeroConsumption": "no_creator_allocation",
+      "zeroTotalConsumption": "no_creator_allocation; pool remains unallocated_pending_reconciliation",
+      "rounding": "currency_round_half_up_to_2_decimal_places",
+      "historicalReplayRequired": true,
+      "policyVersionSnapshotRequired": true,
+      "hardcodedBusinessFormulaForbidden": true,
+      "legalTaxClassificationSeparate": true
+    },
+    "stickerRefundChargebackPolicy": {
+      "status": "approved",
+      "version": "KV30-STICKER-REVERSAL-1.0",
+      "approvalAuthority": "human_master_admin",
+      "postSettlement": "reverse_original_creator_royalty_exactly_once",
+      "unpaidRoyalty": "cancel_or_reverse_pending_entitlement",
+      "alreadyPaidRoyalty": "create_recovery_receivable_linked_to_original_transaction",
+      "platformAmount": "reverse_only_authoritative_refunded_or_chargeback_amount",
+      "provenance": "original_sticker_transaction_and_root_coin_provenance_required",
+      "idempotency": "required",
+      "historicalReplayRequired": true,
+      "noNegativeCreatorCashBalance": "true"
+    },
+    "taxPolicyApproval": {
+      "status": "approved_policy_source_driven",
+      "approvalAuthority": "human_master_admin",
+      "productionActivation": "official_source_snapshot_and_legal_tax_classification_required",
+      "inventedRatesForbidden": true,
+      "historicalReplayRequired": true
+    },
+    "tdsWithholdingPolicy": {
+      "status": "approved_policy_source_driven",
+      "approvalAuthority": "human_master_admin",
+      "lawTransition": "income_tax_act_2025_applies_to_credit_or_payment_event_on_or_after_2026-04-01",
+      "classification": "recipient_and_payment_nature_specific",
+      "rateSource": "official_income_tax_source_snapshot",
+      "inventedRatesForbidden": true,
+      "historicalReplayRequired": true,
+      "advanceRecovery": "only_when_an_authoritative_approved_rule_applies"
+    }
+  },
+  "baseStickerValueCoins": 5,
+  "adminPermissions": {},
+  "adCampaigns": [
+    {
+      "id": "SAMPLE-TEXT-01",
+      "name": "Sample Text Ad",
+      "type": "text",
+      "placement": "discover",
+      "active": false,
+      "assetUrl": null,
+      "targetUrl": null,
+      "startsAt": null,
+      "endsAt": null,
+      "eligibleSubscriptions": "none",
+      "languages": "all",
+      "frequencyCap": 3
+    },
+    {
+      "id": "SAMPLE-VIDEO-01",
+      "name": "Sample Video Ad",
+      "type": "video",
+      "placement": "reel",
+      "active": true,
+      "assetUrl": "/ad-media/sample-video-ad.mp4",
+      "targetUrl": null,
+      "startsAt": null,
+      "endsAt": null,
+      "eligibleSubscriptions": "none",
+      "languages": "all",
+      "frequencyCap": 2
+    },
+    {
+      "id": "SAMPLE-AUDIO-01",
+      "name": "Sample Audio Ad",
+      "type": "audio",
+      "placement": "fm",
+      "active": true,
+      "assetUrl": "/ad-media/sample-audio-ad.m4a",
+      "targetUrl": null,
+      "startsAt": null,
+      "endsAt": null,
+      "eligibleSubscriptions": "none",
+      "languages": "all",
+      "frequencyCap": 2
+    },
+    {
+      "id": "SAMPLE-VIDEO-STORY-01",
+      "name": "Sample Video Ad · Story",
+      "type": "video",
+      "placement": "story",
+      "active": true,
+      "assetUrl": "/ad-media/sample-video-ad.mp4",
+      "targetUrl": null,
+      "startsAt": null,
+      "endsAt": null,
+      "eligibleSubscriptions": "none",
+      "languages": "all",
+      "frequencyCap": 2
+    },
+    {
+      "id": "SAMPLE-VIDEO-COMIC-01",
+      "name": "Sample Video Ad · Comic",
+      "type": "video",
+      "placement": "comic",
+      "active": true,
+      "assetUrl": "/ad-media/sample-video-ad.mp4",
+      "targetUrl": null,
+      "startsAt": null,
+      "endsAt": null,
+      "eligibleSubscriptions": "none",
+      "languages": "all",
+      "frequencyCap": 2
+    }
+  ],
+  "coinGiftAmounts": [
+    1,
+    5,
+    10,
+    25
+  ],
+  "coinRules": {
+    "registrationBonus": 50,
+    "referralBonus": 10
+  },
+  "tax": {
+    "version": "KV30-TAX-POLICY-1.0",
+    "status": "approved_policy_source_driven",
+    "checkout": {
+      "enforcement": "disabled",
+      "taxInclusive": null,
+      "chargeBasis": "approved_source_rule_required"
+    },
+    "supportedStates": "all_indian_states_and_union_territories",
+    "supportedCategories": [
+      "coin_purchase",
+      "sticker_purchase",
+      "subscription_purchase"
+    ],
+    "historicalReplay": {
+      "required": true,
+      "ruleVersionSnapshotRequired": true
+    },
+    "rules": [],
+    "stateCodeAliases": {
+      "MH": "MAHARASHTRA",
+      "GJ": "GUJARAT"
+    },
+    "approval": {
+      "authority": "human_master_admin",
+      "record": "REF-8.3.155.9.2.48",
+      "productionActivationRequiresOfficialSourceSnapshot": true,
+      "legalClassificationRequired": true,
+      "inventedRateForbidden": true
+    }
+  },
+  "creatorTiers": [
+    {
+      "id": "bronze",
+      "name": "Bronze",
+      "minFollowers": 0
+    },
+    {
+      "id": "silver",
+      "name": "Silver",
+      "minFollowers": 200
+    },
+    {
+      "id": "gold",
+      "name": "Gold",
+      "minFollowers": 1000
+    }
+  ]
+}

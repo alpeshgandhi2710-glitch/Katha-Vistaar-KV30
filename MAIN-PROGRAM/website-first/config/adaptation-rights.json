@@ -1,0 +1,28 @@
+{
+  "version": "30.0.0",
+  "separate_explicit_author_permission": true,
+  "formats": [
+    "audio",
+    "video",
+    "comic",
+    "webtoon",
+    "translation",
+    "short_form",
+    "screen_adaptation",
+    "ai_voice",
+    "ai_video"
+  ],
+  "fields": [
+    "work",
+    "format",
+    "language",
+    "territory",
+    "duration",
+    "exclusive",
+    "revenue_share",
+    "credit",
+    "termination",
+    "approval"
+  ],
+  "platform_basic_license_excludes_adaptation": true
+}

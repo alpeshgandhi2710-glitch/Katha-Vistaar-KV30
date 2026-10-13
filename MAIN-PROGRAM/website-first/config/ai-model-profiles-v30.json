@@ -1,0 +1,23 @@
+{
+  "version": "KV30-P2-30W-model-profiles-v1",
+  "principle": "Internal model first. External services are optional and policy-gated.",
+  "profiles": [
+    {
+      "id": "balanced",
+      "family": "Qwen3-32B",
+      "localRuntime": ["llama.cpp", "Ollama", "vLLM-compatible"],
+      "languages": "100+ languages/dialects claimed by model provider; Katha Vistaar exposes 23 required languages",
+      "recommendedFor": "production balance of quality and hardware cost"
+    },
+    {
+      "id": "high-capability",
+      "family": "Qwen3-235B-A22B",
+      "localRuntime": ["llama.cpp", "vLLM-compatible", "Ollama-compatible deployment"],
+      "languages": "100+ languages/dialects claimed by model provider; Katha Vistaar exposes 23 required languages",
+      "recommendedFor": "highest local reasoning quality when adequate compute is available"
+    }
+  ],
+  "modelWeightsBundling": "not bundled; model weights are external artifacts downloaded/installed by the operator because large model weights are not application source code",
+  "licenseReviewRequired": true,
+  "providerLockIn": false
+}

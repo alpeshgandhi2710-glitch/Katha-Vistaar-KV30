@@ -1,0 +1,12 @@
+{
+  "version": "KV30-P2-30W-external-provider-registry-v1",
+  "principle": "External AI is optional advisory support. Human Master Admin controls provider, billing mode, task routing and per-AI eligibility.",
+  "defaultEnabled": false,
+  "allowedBillingModes": ["free", "paid", "public", "auto"],
+  "providers": {
+    "openai": {"adapter": "openai-responses", "billingModes": ["paid"], "serverSideKey": "OPENAI_API_KEY"},
+    "gemini": {"adapter": "gemini-interactions", "billingModes": ["free", "paid"], "serverSideKey": "GEMINI_API_KEY"},
+    "openai-compatible": {"adapter": "generic-openai-compatible", "billingModes": ["free", "paid", "public"], "serverSideKey": "KV_EXTERNAL_OPENAI_COMPATIBLE_API_KEY", "endpointEnv": "KV_EXTERNAL_OPENAI_COMPATIBLE_URL", "modelEnv": "KV_EXTERNAL_OPENAI_COMPATIBLE_MODEL"}
+  },
+  "security": {"keysServerSideOnly": true, "restrictedDataDefault": "DO_NOT_SEND", "outputValidationRequired": true, "externalCannotAuthorize": true}
+}

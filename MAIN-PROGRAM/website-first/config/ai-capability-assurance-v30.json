@@ -1,0 +1,87 @@
+{
+  "version": "KV30-CAPABILITY-ASSURANCE-1",
+  "source": "Katha Vistaar native capability assurance layer",
+  "integrationPolicy": "native_contract_assurance",
+  "productionEngineIntegration": true,
+  "principle": "Capabilities formerly documented through renamed reference packages are independently implemented and governed by native Katha Vistaar contracts; no external reference ZIP is a runtime/build/test dependency.",
+  "modules": [
+    {
+      "id": "model-registry",
+      "label": "Model Registry & Weight Manifests",
+      "kv30Module": "AI Management / Internal Model Runtime",
+      "capability": "registry_and_weight_provenance",
+      "implementation": "live_kv30_status"
+    },
+    {
+      "id": "inference-studio",
+      "label": "Inference Studio & Streaming",
+      "kv30Module": "AI Workbench / Internal Inference",
+      "capability": "inference_workspace",
+      "implementation": "runtime_status_only",
+      "streaming": "not_claimed"
+    },
+    {
+      "id": "tts-voice-matrix",
+      "label": "TTS & Voice Matrix",
+      "kv30Module": "Audio AI / TTS Runtime",
+      "capability": "voice_matrix_and_provider_readiness",
+      "implementation": "live_tts_provider_status",
+      "neural": "blocked_until_real_model"
+    },
+    {
+      "id": "rag",
+      "label": "Knowledge & RAG Store",
+      "kv30Module": "AI Memory / Knowledge RAG",
+      "capability": "scoped_retrieval_and_approval",
+      "implementation": "live_memory_status"
+    },
+    {
+      "id": "lora",
+      "label": "Training & LoRA Governance",
+      "kv30Module": "Training AI / Learning Governance",
+      "capability": "dataset_and_training_governance",
+      "implementation": "external_service_adapter",
+      "production_lora": "external_provider_not_bundled",
+      "providerContract": "ComfyUI-compatible HTTP workflow adapter",
+      "internalFallback": "character_ai_plus_comic_ai_visual_continuity"
+    },
+    {
+      "id": "benchmark-safety",
+      "label": "Benchmark & Safety Suite",
+      "kv30Module": "AI Evaluation / Security Defense AI",
+      "capability": "benchmark_contract_and_red_team_checks",
+      "implementation": "live_evaluation_and_security_contracts",
+      "external_claims": "not_imported"
+    },
+    {
+      "id": "api-console",
+      "label": "API Contracts & Verification",
+      "kv30Module": "HTTP API / Route Contracts",
+      "capability": "contract_visibility",
+      "implementation": "implemented_route_inventory"
+    },
+    {
+      "id": "telemetry",
+      "label": "System Telemetry / Command Center",
+      "kv30Module": "AI Performance + Audit",
+      "capability": "live_internal_telemetry",
+      "implementation": "live_performance_state"
+    },
+    {
+      "id": "sdk",
+      "label": "Client SDK / Clean Integration",
+      "kv30Module": "Integration Boundary",
+      "capability": "future_local_sdk_contract",
+      "implementation": "reference_only",
+      "production_sdk": "not_claimed"
+    }
+  ],
+  "prohibitedImports": [
+    "external reference ZIP runtime/build/test dependency",
+    "unverified model weights",
+    "unverified neural TTS weights",
+    "simulated benchmark results",
+    "fake cryptographic verification",
+    "simulated backend actions"
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "version": "REF-9.2.57.18-R50-M29",
+  "sourceOfTruth": "backend",
+  "platforms": {
+    "website": {
+      "source": "website-first/public",
+      "backend": "website-first/src"
+    },
+    "desktop_pwa": {
+      "manifest": "website-first/public/manifest.webmanifest",
+      "serviceWorker": "website-first/public/sw.js",
+      "display": "standalone"
+    },
+    "android": {
+      "source": "mobile/android",
+      "flutter": "mobile/lib"
+    },
+    "ios": {
+      "source": "mobile/ios",
+      "flutter": "mobile/lib"
+    },
+    "desktop_electron": {
+      "source": "desktop-electron",
+      "webAppAuthority": "website-first/public",
+      "backendAuthority": "website-first/src",
+      "security": "sandboxed_context_isolation_no_node_integration"
+    }
+  },
+  "environments": {
+    "development": {
+      "sourceContract": "same",
+      "data": "isolated",
+      "secrets": "separate",
+      "externalActivation": "separate"
+    },
+    "production": {
+      "sourceContract": "same",
+      "data": "isolated",
+      "secrets": "separate",
+      "externalActivation": "separate"
+    }
+  },
+  "crossPlatformState": "backend_authoritative",
+  "contentFormats": [
+    "story",
+    "comic",
+    "fm_audio",
+    "reel"
+  ],
+  "languageContract": "config/final-ui-language-governance-v30.json"
+}

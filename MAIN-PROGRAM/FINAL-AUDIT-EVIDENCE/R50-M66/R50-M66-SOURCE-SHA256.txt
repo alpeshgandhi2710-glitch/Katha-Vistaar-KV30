@@ -1,0 +1,12 @@
+7a8c4bc777612d969a493609cef00f8f5ae3288ff518b35646dcb537390a41c9  backend/src/services/ai-tts-training-access-control.js
+72a90966d82b717aad9607af636cc12d344a1b19e9d1a264231ed60df876e99a  backend/src/services/ai-tts-model-lifecycle.js
+da0d80a419ba2fc88791d8034d9a1f4df422ceb0d42f7c40823b2da85a726e83  backend/test/ai-tts-training-access-control.test.js
+86b538d1dd22a6c862c5077391bfbbb027a98dc69328d7a28ab2c0202e79d74c  backend/test/ai-tts-model-lifecycle.test.js
+b94b946f8c57dec5b6caf72dbbda3d22a278f30ab0a543b71a6a88f625a4da18  website-first/config/tts-training-access-control-v30.json
+d8645a2e86b6bfeb5e836915caa0a6e4a6a81fa0533bb593193cddcb631d77b5  website-first/config/tts-model-lifecycle-v30.json
+28018ca02212013e74233242faf3b60d645dec9c4e3a46884da214c4630b7316  website-first/src/server.js
+83614ced31b81ae718569d4d61b8fae94934a63dd7f222c3590246fe62689840  website-first/tests/r50-m66-tts-training-access-control.test.js
+939eb564e717b23b86b9e0e4ac396a0b9a1cb766ddab7defb9843c5b9e4fb175  website-first/tests/r50-m40-source-reconciliation-runtime-boundary.test.js
+af918e3d8688f3658e092519ffe3f66bdf0e572017c6e5fad829881298e6e53f  website-first/config/version.json
+042fe4dd2f000df3950da71007c810e3473de97c5949985ca9eeb8a2a75070e4  website-first/config/release-registry-v30.json
+6c24fd63065d4fa1f2a8c392702aec6fc0929e523de854e5fb9159f85cce800c  website-first/RELEASE-MANIFEST-v30.json

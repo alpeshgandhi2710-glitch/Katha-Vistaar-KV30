@@ -1,0 +1,1472 @@
+{
+  "version": "REF-8.3.155.9",
+  "slotsPerService": 3,
+  "services": [
+    "email",
+    "sms",
+    "voice_otp",
+    "push",
+    "storage",
+    "ai_moderation",
+    "payments",
+    "payouts",
+    "google_play",
+    "apple_store",
+    "ads",
+    "stt",
+    "tts",
+    "whatsapp",
+    "external_ai",
+    "object_storage",
+    "cdn",
+    "virus_scanner",
+    "internet_access",
+    "network_server",
+    "reel_media",
+    "audio_processing",
+    "translation",
+    "natural_sounds"
+  ],
+  "slots": [
+    {
+      "id": "email_provider_01",
+      "service": "email",
+      "slot": 1,
+      "gate": "service_gate_email_alt_01",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_EMAIL_ALT_01_ENDPOINT",
+      "credentialEnv": "KV_EMAIL_ALT_01_API_KEY"
+    },
+    {
+      "id": "email_provider_02",
+      "service": "email",
+      "slot": 2,
+      "gate": "service_gate_email_alt_02",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_EMAIL_ALT_02_ENDPOINT",
+      "credentialEnv": "KV_EMAIL_ALT_02_API_KEY"
+    },
+    {
+      "id": "email_provider_03",
+      "service": "email",
+      "slot": 3,
+      "gate": "service_gate_email_alt_03",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_EMAIL_ALT_03_ENDPOINT",
+      "credentialEnv": "KV_EMAIL_ALT_03_API_KEY"
+    },
+    {
+      "id": "sms_provider_01",
+      "service": "sms",
+      "slot": 1,
+      "gate": "service_gate_sms_alt_01",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_SMS_ALT_01_ENDPOINT",
+      "credentialEnv": "KV_SMS_ALT_01_API_KEY"
+    },
+    {
+      "id": "sms_provider_02",
+      "service": "sms",
+      "slot": 2,
+      "gate": "service_gate_sms_alt_02",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_SMS_ALT_02_ENDPOINT",
+      "credentialEnv": "KV_SMS_ALT_02_API_KEY"
+    },
+    {
+      "id": "sms_provider_03",
+      "service": "sms",
+      "slot": 3,
+      "gate": "service_gate_sms_alt_03",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_SMS_ALT_03_ENDPOINT",
+      "credentialEnv": "KV_SMS_ALT_03_API_KEY"
+    },
+    {
+      "id": "voice_otp_provider_01",
+      "service": "voice_otp",
+      "slot": 1,
+      "gate": "service_gate_voice_otp_alt_01",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_VOICE_OTP_ALT_01_ENDPOINT",
+      "credentialEnv": "KV_VOICE_OTP_ALT_01_API_KEY"
+    },
+    {
+      "id": "voice_otp_provider_02",
+      "service": "voice_otp",
+      "slot": 2,
+      "gate": "service_gate_voice_otp_alt_02",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_VOICE_OTP_ALT_02_ENDPOINT",
+      "credentialEnv": "KV_VOICE_OTP_ALT_02_API_KEY"
+    },
+    {
+      "id": "voice_otp_provider_03",
+      "service": "voice_otp",
+      "slot": 3,
+      "gate": "service_gate_voice_otp_alt_03",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_VOICE_OTP_ALT_03_ENDPOINT",
+      "credentialEnv": "KV_VOICE_OTP_ALT_03_API_KEY"
+    },
+    {
+      "id": "push_provider_01",
+      "service": "push",
+      "slot": 1,
+      "gate": "service_gate_push_alt_01",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_PUSH_ALT_01_ENDPOINT",
+      "credentialEnv": "KV_PUSH_ALT_01_API_KEY"
+    },
+    {
+      "id": "push_provider_02",
+      "service": "push",
+      "slot": 2,
+      "gate": "service_gate_push_alt_02",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_PUSH_ALT_02_ENDPOINT",
+      "credentialEnv": "KV_PUSH_ALT_02_API_KEY"
+    },
+    {
+      "id": "push_provider_03",
+      "service": "push",
+      "slot": 3,
+      "gate": "service_gate_push_alt_03",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_PUSH_ALT_03_ENDPOINT",
+      "credentialEnv": "KV_PUSH_ALT_03_API_KEY"
+    },
+    {
+      "id": "storage_provider_01",
+      "service": "storage",
+      "slot": 1,
+      "gate": "service_gate_storage_alt_01",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_STORAGE_ALT_01_ENDPOINT",
+      "credentialEnv": "KV_STORAGE_ALT_01_API_KEY"
+    },
+    {
+      "id": "storage_provider_02",
+      "service": "storage",
+      "slot": 2,
+      "gate": "service_gate_storage_alt_02",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_STORAGE_ALT_02_ENDPOINT",
+      "credentialEnv": "KV_STORAGE_ALT_02_API_KEY"
+    },
+    {
+      "id": "storage_provider_03",
+      "service": "storage",
+      "slot": 3,
+      "gate": "service_gate_storage_alt_03",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_STORAGE_ALT_03_ENDPOINT",
+      "credentialEnv": "KV_STORAGE_ALT_03_API_KEY"
+    },
+    {
+      "id": "ai_moderation_provider_01",
+      "service": "ai_moderation",
+      "slot": 1,
+      "gate": "service_gate_ai_moderation_alt_01",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_AI_MODERATION_ALT_01_ENDPOINT",
+      "credentialEnv": "KV_AI_MODERATION_ALT_01_API_KEY"
+    },
+    {
+      "id": "ai_moderation_provider_02",
+      "service": "ai_moderation",
+      "slot": 2,
+      "gate": "service_gate_ai_moderation_alt_02",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_AI_MODERATION_ALT_02_ENDPOINT",
+      "credentialEnv": "KV_AI_MODERATION_ALT_02_API_KEY"
+    },
+    {
+      "id": "ai_moderation_provider_03",
+      "service": "ai_moderation",
+      "slot": 3,
+      "gate": "service_gate_ai_moderation_alt_03",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_AI_MODERATION_ALT_03_ENDPOINT",
+      "credentialEnv": "KV_AI_MODERATION_ALT_03_API_KEY"
+    },
+    {
+      "id": "payments_provider_01",
+      "service": "payments",
+      "slot": 1,
+      "gate": "service_gate_payments_alt_01",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_PAYMENTS_ALT_01_ENDPOINT",
+      "credentialEnv": "KV_PAYMENTS_ALT_01_API_KEY"
+    },
+    {
+      "id": "payments_provider_02",
+      "service": "payments",
+      "slot": 2,
+      "gate": "service_gate_payments_alt_02",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_PAYMENTS_ALT_02_ENDPOINT",
+      "credentialEnv": "KV_PAYMENTS_ALT_02_API_KEY"
+    },
+    {
+      "id": "payments_provider_03",
+      "service": "payments",
+      "slot": 3,
+      "gate": "service_gate_payments_alt_03",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_PAYMENTS_ALT_03_ENDPOINT",
+      "credentialEnv": "KV_PAYMENTS_ALT_03_API_KEY"
+    },
+    {
+      "id": "payouts_provider_01",
+      "service": "payouts",
+      "slot": 1,
+      "gate": "service_gate_payouts_alt_01",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_PAYOUTS_ALT_01_ENDPOINT",
+      "credentialEnv": "KV_PAYOUTS_ALT_01_API_KEY"
+    },
+    {
+      "id": "payouts_provider_02",
+      "service": "payouts",
+      "slot": 2,
+      "gate": "service_gate_payouts_alt_02",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_PAYOUTS_ALT_02_ENDPOINT",
+      "credentialEnv": "KV_PAYOUTS_ALT_02_API_KEY"
+    },
+    {
+      "id": "payouts_provider_03",
+      "service": "payouts",
+      "slot": 3,
+      "gate": "service_gate_payouts_alt_03",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_PAYOUTS_ALT_03_ENDPOINT",
+      "credentialEnv": "KV_PAYOUTS_ALT_03_API_KEY"
+    },
+    {
+      "id": "google_play_provider_01",
+      "service": "google_play",
+      "slot": 1,
+      "gate": "service_gate_google_play_alt_01",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_GOOGLE_PLAY_ALT_01_ENDPOINT",
+      "credentialEnv": "KV_GOOGLE_PLAY_ALT_01_API_KEY"
+    },
+    {
+      "id": "google_play_provider_02",
+      "service": "google_play",
+      "slot": 2,
+      "gate": "service_gate_google_play_alt_02",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_GOOGLE_PLAY_ALT_02_ENDPOINT",
+      "credentialEnv": "KV_GOOGLE_PLAY_ALT_02_API_KEY"
+    },
+    {
+      "id": "google_play_provider_03",
+      "service": "google_play",
+      "slot": 3,
+      "gate": "service_gate_google_play_alt_03",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_GOOGLE_PLAY_ALT_03_ENDPOINT",
+      "credentialEnv": "KV_GOOGLE_PLAY_ALT_03_API_KEY"
+    },
+    {
+      "id": "apple_store_provider_01",
+      "service": "apple_store",
+      "slot": 1,
+      "gate": "service_gate_apple_store_alt_01",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_APPLE_STORE_ALT_01_ENDPOINT",
+      "credentialEnv": "KV_APPLE_STORE_ALT_01_API_KEY"
+    },
+    {
+      "id": "apple_store_provider_02",
+      "service": "apple_store",
+      "slot": 2,
+      "gate": "service_gate_apple_store_alt_02",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_APPLE_STORE_ALT_02_ENDPOINT",
+      "credentialEnv": "KV_APPLE_STORE_ALT_02_API_KEY"
+    },
+    {
+      "id": "apple_store_provider_03",
+      "service": "apple_store",
+      "slot": 3,
+      "gate": "service_gate_apple_store_alt_03",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_APPLE_STORE_ALT_03_ENDPOINT",
+      "credentialEnv": "KV_APPLE_STORE_ALT_03_API_KEY"
+    },
+    {
+      "id": "ads_provider_01",
+      "service": "ads",
+      "slot": 1,
+      "gate": "service_gate_ads_alt_01",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_ADS_ALT_01_ENDPOINT",
+      "credentialEnv": "KV_ADS_ALT_01_API_KEY"
+    },
+    {
+      "id": "ads_provider_02",
+      "service": "ads",
+      "slot": 2,
+      "gate": "service_gate_ads_alt_02",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_ADS_ALT_02_ENDPOINT",
+      "credentialEnv": "KV_ADS_ALT_02_API_KEY"
+    },
+    {
+      "id": "ads_provider_03",
+      "service": "ads",
+      "slot": 3,
+      "gate": "service_gate_ads_alt_03",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_ADS_ALT_03_ENDPOINT",
+      "credentialEnv": "KV_ADS_ALT_03_API_KEY"
+    },
+    {
+      "id": "stt_provider_01",
+      "service": "stt",
+      "slot": 1,
+      "gate": "service_gate_stt_alt_01",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_STT_ALT_01_ENDPOINT",
+      "credentialEnv": "KV_STT_ALT_01_API_KEY"
+    },
+    {
+      "id": "stt_provider_02",
+      "service": "stt",
+      "slot": 2,
+      "gate": "service_gate_stt_alt_02",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_STT_ALT_02_ENDPOINT",
+      "credentialEnv": "KV_STT_ALT_02_API_KEY"
+    },
+    {
+      "id": "stt_provider_03",
+      "service": "stt",
+      "slot": 3,
+      "gate": "service_gate_stt_alt_03",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_STT_ALT_03_ENDPOINT",
+      "credentialEnv": "KV_STT_ALT_03_API_KEY"
+    },
+    {
+      "id": "tts_provider_01",
+      "service": "tts",
+      "slot": 1,
+      "gate": "service_gate_tts_alt_01",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_TTS_ALT_01_ENDPOINT",
+      "credentialEnv": "KV_TTS_ALT_01_API_KEY"
+    },
+    {
+      "id": "tts_provider_02",
+      "service": "tts",
+      "slot": 2,
+      "gate": "service_gate_tts_alt_02",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_TTS_ALT_02_ENDPOINT",
+      "credentialEnv": "KV_TTS_ALT_02_API_KEY"
+    },
+    {
+      "id": "tts_provider_03",
+      "service": "tts",
+      "slot": 3,
+      "gate": "service_gate_tts_alt_03",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_TTS_ALT_03_ENDPOINT",
+      "credentialEnv": "KV_TTS_ALT_03_API_KEY"
+    },
+    {
+      "id": "whatsapp_provider_01",
+      "service": "whatsapp",
+      "slot": 1,
+      "gate": "service_gate_whatsapp_alt_01",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_WHATSAPP_ALT_01_ENDPOINT",
+      "credentialEnv": "KV_WHATSAPP_ALT_01_API_KEY"
+    },
+    {
+      "id": "whatsapp_provider_02",
+      "service": "whatsapp",
+      "slot": 2,
+      "gate": "service_gate_whatsapp_alt_02",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_WHATSAPP_ALT_02_ENDPOINT",
+      "credentialEnv": "KV_WHATSAPP_ALT_02_API_KEY"
+    },
+    {
+      "id": "whatsapp_provider_03",
+      "service": "whatsapp",
+      "slot": 3,
+      "gate": "service_gate_whatsapp_alt_03",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_WHATSAPP_ALT_03_ENDPOINT",
+      "credentialEnv": "KV_WHATSAPP_ALT_03_API_KEY"
+    },
+    {
+      "id": "external_ai_provider_01",
+      "service": "external_ai",
+      "slot": 1,
+      "gate": "gate_75_alt_01",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_EXTERNAL_AI_ALT_01_ENDPOINT",
+      "credentialEnv": "KV_EXTERNAL_AI_ALT_01_API_KEY"
+    },
+    {
+      "id": "external_ai_provider_02",
+      "service": "external_ai",
+      "slot": 2,
+      "gate": "gate_75_alt_02",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_EXTERNAL_AI_ALT_02_ENDPOINT",
+      "credentialEnv": "KV_EXTERNAL_AI_ALT_02_API_KEY"
+    },
+    {
+      "id": "external_ai_provider_03",
+      "service": "external_ai",
+      "slot": 3,
+      "gate": "gate_75_alt_03",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_EXTERNAL_AI_ALT_03_ENDPOINT",
+      "credentialEnv": "KV_EXTERNAL_AI_ALT_03_API_KEY"
+    },
+    {
+      "id": "object_storage_provider_01",
+      "service": "object_storage",
+      "slot": 1,
+      "gate": "service_gate_object_storage_alt_01",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_OBJECT_STORAGE_ALT_01_ENDPOINT",
+      "credentialEnv": "KV_OBJECT_STORAGE_ALT_01_API_KEY"
+    },
+    {
+      "id": "object_storage_provider_02",
+      "service": "object_storage",
+      "slot": 2,
+      "gate": "service_gate_object_storage_alt_02",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_OBJECT_STORAGE_ALT_02_ENDPOINT",
+      "credentialEnv": "KV_OBJECT_STORAGE_ALT_02_API_KEY"
+    },
+    {
+      "id": "object_storage_provider_03",
+      "service": "object_storage",
+      "slot": 3,
+      "gate": "service_gate_object_storage_alt_03",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_OBJECT_STORAGE_ALT_03_ENDPOINT",
+      "credentialEnv": "KV_OBJECT_STORAGE_ALT_03_API_KEY"
+    },
+    {
+      "id": "cdn_provider_01",
+      "service": "cdn",
+      "slot": 1,
+      "gate": "service_gate_cdn_alt_01",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_CDN_ALT_01_ENDPOINT",
+      "credentialEnv": "KV_CDN_ALT_01_API_KEY"
+    },
+    {
+      "id": "cdn_provider_02",
+      "service": "cdn",
+      "slot": 2,
+      "gate": "service_gate_cdn_alt_02",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_CDN_ALT_02_ENDPOINT",
+      "credentialEnv": "KV_CDN_ALT_02_API_KEY"
+    },
+    {
+      "id": "cdn_provider_03",
+      "service": "cdn",
+      "slot": 3,
+      "gate": "service_gate_cdn_alt_03",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_CDN_ALT_03_ENDPOINT",
+      "credentialEnv": "KV_CDN_ALT_03_API_KEY"
+    },
+    {
+      "id": "virus_scanner_provider_01",
+      "service": "virus_scanner",
+      "slot": 1,
+      "gate": "service_gate_virus_scanner_alt_01",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_VIRUS_SCANNER_ALT_01_ENDPOINT",
+      "credentialEnv": "KV_VIRUS_SCANNER_ALT_01_API_KEY"
+    },
+    {
+      "id": "virus_scanner_provider_02",
+      "service": "virus_scanner",
+      "slot": 2,
+      "gate": "service_gate_virus_scanner_alt_02",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_VIRUS_SCANNER_ALT_02_ENDPOINT",
+      "credentialEnv": "KV_VIRUS_SCANNER_ALT_02_API_KEY"
+    },
+    {
+      "id": "virus_scanner_provider_03",
+      "service": "virus_scanner",
+      "slot": 3,
+      "gate": "service_gate_virus_scanner_alt_03",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_VIRUS_SCANNER_ALT_03_ENDPOINT",
+      "credentialEnv": "KV_VIRUS_SCANNER_ALT_03_API_KEY"
+    },
+    {
+      "id": "internet_access_provider_01",
+      "service": "internet_access",
+      "slot": 1,
+      "gate": "service_gate_reserved_01_alt_01",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_INTERNET_ACCESS_ALT_01_ENDPOINT",
+      "credentialEnv": "KV_INTERNET_ACCESS_ALT_01_API_KEY"
+    },
+    {
+      "id": "internet_access_provider_02",
+      "service": "internet_access",
+      "slot": 2,
+      "gate": "service_gate_reserved_01_alt_02",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_INTERNET_ACCESS_ALT_02_ENDPOINT",
+      "credentialEnv": "KV_INTERNET_ACCESS_ALT_02_API_KEY"
+    },
+    {
+      "id": "internet_access_provider_03",
+      "service": "internet_access",
+      "slot": 3,
+      "gate": "service_gate_reserved_01_alt_03",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_INTERNET_ACCESS_ALT_03_ENDPOINT",
+      "credentialEnv": "KV_INTERNET_ACCESS_ALT_03_API_KEY"
+    },
+    {
+      "id": "network_server_provider_01",
+      "service": "network_server",
+      "slot": 1,
+      "gate": "service_gate_reserved_02_alt_01",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_NETWORK_SERVER_ALT_01_ENDPOINT",
+      "credentialEnv": "KV_NETWORK_SERVER_ALT_01_API_KEY"
+    },
+    {
+      "id": "network_server_provider_02",
+      "service": "network_server",
+      "slot": 2,
+      "gate": "service_gate_reserved_02_alt_02",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_NETWORK_SERVER_ALT_02_ENDPOINT",
+      "credentialEnv": "KV_NETWORK_SERVER_ALT_02_API_KEY"
+    },
+    {
+      "id": "network_server_provider_03",
+      "service": "network_server",
+      "slot": 3,
+      "gate": "service_gate_reserved_02_alt_03",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_NETWORK_SERVER_ALT_03_ENDPOINT",
+      "credentialEnv": "KV_NETWORK_SERVER_ALT_03_API_KEY"
+    },
+    {
+      "id": "reel_media_provider_01",
+      "service": "reel_media",
+      "slot": 1,
+      "gate": "service_gate_reserved_03_alt_01",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_REEL_MEDIA_ALT_01_ENDPOINT",
+      "credentialEnv": "KV_REEL_MEDIA_ALT_01_API_KEY"
+    },
+    {
+      "id": "reel_media_provider_02",
+      "service": "reel_media",
+      "slot": 2,
+      "gate": "service_gate_reserved_03_alt_02",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_REEL_MEDIA_ALT_02_ENDPOINT",
+      "credentialEnv": "KV_REEL_MEDIA_ALT_02_API_KEY"
+    },
+    {
+      "id": "reel_media_provider_03",
+      "service": "reel_media",
+      "slot": 3,
+      "gate": "service_gate_reserved_03_alt_03",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_REEL_MEDIA_ALT_03_ENDPOINT",
+      "credentialEnv": "KV_REEL_MEDIA_ALT_03_API_KEY"
+    },
+    {
+      "id": "audio_processing_provider_01",
+      "service": "audio_processing",
+      "slot": 1,
+      "gate": "service_gate_reserved_04_alt_01",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_AUDIO_PROCESSING_ALT_01_ENDPOINT",
+      "credentialEnv": "KV_AUDIO_PROCESSING_ALT_01_API_KEY"
+    },
+    {
+      "id": "audio_processing_provider_02",
+      "service": "audio_processing",
+      "slot": 2,
+      "gate": "service_gate_reserved_04_alt_02",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_AUDIO_PROCESSING_ALT_02_ENDPOINT",
+      "credentialEnv": "KV_AUDIO_PROCESSING_ALT_02_API_KEY"
+    },
+    {
+      "id": "audio_processing_provider_03",
+      "service": "audio_processing",
+      "slot": 3,
+      "gate": "service_gate_reserved_04_alt_03",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_AUDIO_PROCESSING_ALT_03_ENDPOINT",
+      "credentialEnv": "KV_AUDIO_PROCESSING_ALT_03_API_KEY"
+    },
+    {
+      "id": "translation_provider_01",
+      "service": "translation",
+      "slot": 1,
+      "gate": "service_gate_reserved_05_alt_01",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_TRANSLATION_ALT_01_ENDPOINT",
+      "credentialEnv": "KV_TRANSLATION_ALT_01_API_KEY"
+    },
+    {
+      "id": "translation_provider_02",
+      "service": "translation",
+      "slot": 2,
+      "gate": "service_gate_reserved_05_alt_02",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_TRANSLATION_ALT_02_ENDPOINT",
+      "credentialEnv": "KV_TRANSLATION_ALT_02_API_KEY"
+    },
+    {
+      "id": "translation_provider_03",
+      "service": "translation",
+      "slot": 3,
+      "gate": "service_gate_reserved_05_alt_03",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_TRANSLATION_ALT_03_ENDPOINT",
+      "credentialEnv": "KV_TRANSLATION_ALT_03_API_KEY"
+    },
+    {
+      "id": "natural_sounds_provider_01",
+      "service": "natural_sounds",
+      "slot": 1,
+      "gate": "service_gate_natural_sounds_alt_01",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_NATURAL_SOUNDS_ALT_01_ENDPOINT",
+      "credentialEnv": "KV_NATURAL_SOUNDS_ALT_01_API_KEY"
+    },
+    {
+      "id": "natural_sounds_provider_02",
+      "service": "natural_sounds",
+      "slot": 2,
+      "gate": "service_gate_natural_sounds_alt_02",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_NATURAL_SOUNDS_ALT_02_ENDPOINT",
+      "credentialEnv": "KV_NATURAL_SOUNDS_ALT_02_API_KEY"
+    },
+    {
+      "id": "natural_sounds_provider_03",
+      "service": "natural_sounds",
+      "slot": 3,
+      "gate": "service_gate_natural_sounds_alt_03",
+      "enabled": false,
+      "defaultEnabled": false,
+      "providerType": "master_admin_defined",
+      "billingModes": [
+        "free",
+        "paid",
+        "public"
+      ],
+      "internalLayer": "always_on",
+      "externalLayer": "master_admin_controlled",
+      "firewallRequired": true,
+      "languageSupport": "all_23_required",
+      "endpointEnv": "KV_NATURAL_SOUNDS_ALT_03_ENDPOINT",
+      "credentialEnv": "KV_NATURAL_SOUNDS_ALT_03_API_KEY"
+    }
+  ]
+}

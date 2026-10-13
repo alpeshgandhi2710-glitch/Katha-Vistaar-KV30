@@ -1,0 +1,16 @@
+'use strict';
+const assert=require('node:assert/strict');
+const fs=require('node:fs'),path=require('node:path');
+const root=path.resolve(__dirname,'..');
+const src=fs.readFileSync(path.join(root,'src/server.js'),'utf8');
+const cfg=JSON.parse(fs.readFileSync(path.join(root,'config/payment-recovery-protocol-v30.json'),'utf8'));
+assert.equal(cfg.rules.duplicateRecoveryMustNotCreateSecondRefund,true);
+assert.match(src,/const recoveryRefundInFlight=new Set\(\)/);
+assert.ok(src.includes('const refundKey=`refund:${String(transactionId||recovery.transactionId||recovery.referenceId||\'\')}`'));
+assert.ok(src.includes('recoveryRefundInFlight.has(refundKey)'));assert.ok(src.includes("state:'recovery_in_progress'"));
+assert.match(src,/recoveryRefundInFlight\.add\(refundKey\)/);
+assert.ok(src.includes('recoveryRefundInFlight.delete(refundKey)'));
+assert.match(src,/recovery\.recoveryState='recovery_attempted'/);
+assert.match(src,/recovery\.refundIdempotencyKey=refundKey/);
+assert.match(src,/idempotencyKey:refundKey/);
+console.log('REF-8.3.155.9.2.43 external refund duplicate guard PASS');

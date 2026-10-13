@@ -1,0 +1,24 @@
+'use strict';
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const path=require('node:path');
+const tts=require('../../backend/src/services/ai-tts-runtime.js');
+(async()=>{
+const cfg=JSON.parse(fs.readFileSync(path.join(__dirname,'../config/ai-tts-runtime-v30.json'),'utf8'));
+assert.equal(cfg.unsupportedLanguagePolicy.unsupportedLanguageAction,'DENY');
+assert.equal(cfg.unsupportedLanguagePolicy.silentEnglishFallback,false);
+assert.equal(tts.normalizeLanguage('xx'),null);
+assert.equal(tts.normalizeLanguage('xx-IN'),null);
+assert.equal(tts.normalizeLanguage('en-US'),'en');
+const cap=tts.languageCapability('xx-IN');
+assert.equal(cap.supported,false);
+const local=await tts.synthesize({text:'test',language:'xx-IN'});
+assert.equal(local.ok,false);
+assert.equal(local.reason,'unsupported_language');
+assert.equal(local.silentEnglishFallback,false);
+const external=await tts.synthesizeExternal({text:'test',language:'xx-IN',actor:'master_admin'});
+assert.equal(external.ok,false);
+assert.equal(external.reason,'unsupported_language');
+assert.equal(external.silentEnglishFallback,false);
+console.log('PASS R40: TTS unsupported language fail-closed; no silent English fallback; local/external paths covered');
+})().catch(e=>{console.error(e);process.exit(1);});

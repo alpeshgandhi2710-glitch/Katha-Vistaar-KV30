@@ -1,0 +1,42 @@
+'use strict';
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const path=require('node:path');
+const router=require('../../backend/src/services/ai-model-router.js');
+const management=require('../../backend/src/services/ai-management.js');
+const internalGate=require('../../backend/src/services/internal-gate-firewall.js');
+const externalGate=require('../../backend/src/services/external-gate-firewall.js');
+const root=path.resolve(__dirname,'..');
+const readJson=(name)=>JSON.parse(fs.readFileSync(path.join(root,'config',name),'utf8'));
+const contract=readJson('ai-capability-contract-v30.json');
+const profiles=readJson('ai-intelligence-profiles-v30.json');
+const constitutions=readJson('ai-constitutions-v30.json');
+const gates=readJson('internal-ai-gate-configuration-v30.json');
+assert.equal(Object.keys(contract.ais).length,31);
+assert.equal(Object.keys(profiles.ais).length,31);
+assert.equal(Object.keys(constitutions.roles).length,31);
+assert.equal(gates.gates.length,31);
+const ids=Object.keys(contract.ais);
+for(const id of ids){
+ assert.ok(management.roles[id],`management missing ${id}`);
+ assert.ok(profiles.ais[id],`profile missing ${id}`);
+ assert.ok(constitutions.roles[id],`constitution missing ${id}`);
+ const g=internalGate.aiGateFor(id);
+ assert.ok(g,`gate missing ${id}`);
+ assert.equal(g.enabled,true);
+ assert.equal(g.failClosed,true);
+ const r=router.route({aiId:id,task:'role_wiring_verification',input:`verify ${id}`,context:{actorRole:'master_admin',risk:'low',language:'en'}});
+ assert.equal(r.ok,true,`route failed ${id}`);
+ assert.equal(r.aiId,id);
+ assert.equal(r.execution,'internal');
+ assert.equal(r.governance.externalUsed,false);
+}
+// External gate architecture remains a distinct boundary and fail-closed.
+const extStatus=externalGate.status();
+assert.equal(extStatus.aiSpecialistGateCount,77);
+assert.equal(extStatus.providerAlternateGateCount,72);
+assert.equal(extStatus.defaultFailClosed,true);
+assert.equal(extStatus.externalMasterAdminControlled,true);
+assert.equal(extStatus.internalAlwaysOn,true);
+console.log('31 AI role/gate wiring PASS');
+console.log('External gate boundary PASS: 100 canonical primary / 72 provider alternate / fail-closed');

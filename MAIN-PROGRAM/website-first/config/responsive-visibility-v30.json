@@ -1,0 +1,31 @@
+{
+  "version": "30.0.0",
+  "platforms": [
+    "android",
+    "ios",
+    "mobile-web",
+    "tablet",
+    "desktop-web"
+  ],
+  "rules": [
+    "no_required_text_clipping",
+    "wrap_long_text",
+    "horizontal_scroll_for_wide_tables",
+    "vertical_scroll_for_long_panels",
+    "safe_area_support",
+    "touch_targets",
+    "responsive_breakpoints",
+    "language_expansion_testing"
+  ],
+  "minimumWidths": [
+    320,
+    360,
+    390,
+    412,
+    480,
+    768,
+    1024,
+    1280,
+    1440
+  ]
+}

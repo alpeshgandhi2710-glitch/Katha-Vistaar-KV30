@@ -1,0 +1,49 @@
+{
+  "version": "REF-8.3.155.9.2.16",
+  "source": "historical external archive provenance; not a runtime/build dependency",
+  "dependency": "none",
+  "authority": "current-runtime-reproduction-required",
+  "status": "REFERENCE_EVIDENCE_REJECTED_AS_PRODUCTION_CERTIFICATION_PENDING_REPRODUCTION",
+  "tested_claims": {
+    "benchmarks": {
+      "status": "NOT_ACCEPTED",
+      "reason": "AAROHAN matrix is internally useful but master verification fails its own benchmark step; reported aggregate 34.8/29.2 is not reproduced by supplied 21-row CSV (14-row Indic arithmetic differs)."
+    },
+    "hardware_pass": {
+      "status": "NOT_ACCEPTED",
+      "reason": "reported EPYC/RTX/DDR5/MSR/RT measurements are assertions in report; current host cannot reproduce the stated hardware environment."
+    },
+    "worm_certification": {
+      "status": "NOT_ACCEPTED",
+      "reason": "WORM result is policy/code assertion, not independent storage-provider/hardware immutability proof."
+    },
+    "ed25519_merkle": {
+      "status": "FAILED_REPRODUCTION",
+      "reason": "AAROHAN master verifier produced STEP-01 Merkle FAIL and STEP-02 Ed25519 FAIL; embedded verifier returns overall PASS despite failures. Supplied signature/public-key data is not independently valid evidence."
+    },
+    "air_gap_certification": {
+      "status": "NOT_ACCEPTED",
+      "reason": "report asserts zero egress but current package does not provide independent packet-capture evidence sufficient to certify the present KV30 runtime."
+    },
+    "model_superiority": {
+      "status": "NOT_ACCEPTED",
+      "reason": "benchmark claims are historical experiment results; candidate model weights/runtime and reproducible dataset/harness are not included for independent rerun."
+    },
+    "deployment_pass": {
+      "status": "NOT_ACCEPTED",
+      "reason": "deployment scripts and reports describe a target environment; they do not prove current KV30 deployment success."
+    }
+  },
+  "direct_reproduction": {
+    "master_verifier_exit_code": 0,
+    "master_verifier_reported_checks": "9/12",
+    "failed_steps": [
+      "STEP-01-CR",
+      "STEP-02-ED",
+      "STEP-03-LLM"
+    ],
+    "critical_finding": "overall verdict says PRODUCTION PASS despite 3 failed checks"
+  },
+  "integrity_manifest_finding": "WORM archive manifest contains claimed hashes that do not match the actual similarly named files in the ZIP; several manifest filenames are absent at the stated paths.",
+  "policy": "Do not convert these claims into KV30 production PASS without independent reproduction against current runtime/hardware/storage/network/model environment."
+}

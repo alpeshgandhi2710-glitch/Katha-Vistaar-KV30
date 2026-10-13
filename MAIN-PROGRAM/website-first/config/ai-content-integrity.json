@@ -1,0 +1,31 @@
+{
+  "version": "30.0.0",
+  "original_immutable": true,
+  "ai_default_mode": "suggest_only",
+  "ai_can_modify_original": false,
+  "ai_can_publish": false,
+  "ai_can_delete": false,
+  "ai_can_overwrite": false,
+  "ai_translation_publish_without_author": false,
+  "ai_audio_publish_without_author": false,
+  "ai_video_publish_without_author": false,
+  "ai_comic_publish_without_author": false,
+  "ai_training_default": false,
+  "ai_training_requires_explicit_author_consent": true,
+  "workflow": [
+    "original",
+    "ai_draft",
+    "diff",
+    "author_or_authorized_human_approval",
+    "new_version",
+    "publish"
+  ],
+  "audit": [
+    "ai_action",
+    "model_or_service",
+    "input_version",
+    "output_version",
+    "approver",
+    "timestamp"
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "version": "REF-9.2.57.18-R18",
+  "languageCount": 23,
+  "internalFirst": true,
+  "externalOptional": true,
+  "readerVoiceProfiles": {
+    "female_adult": {
+      "gender": "female",
+      "age": "adult",
+      "emotionSupport": [
+        "neutral",
+        "happy",
+        "sad",
+        "angry",
+        "fearful",
+        "gentle",
+        "dramatic",
+        "excited"
+      ],
+      "pace": 1.0
+    },
+    "male_adult": {
+      "gender": "male",
+      "age": "adult",
+      "emotionSupport": [
+        "neutral",
+        "happy",
+        "sad",
+        "angry",
+        "fearful",
+        "gentle",
+        "dramatic",
+        "excited"
+      ],
+      "pace": 1.0
+    },
+    "female_child": {
+      "gender": "female",
+      "age": "child",
+      "emotionSupport": [
+        "neutral",
+        "happy",
+        "sad",
+        "fearful",
+        "excited"
+      ],
+      "pace": 1.08
+    },
+    "male_child": {
+      "gender": "male",
+      "age": "child",
+      "emotionSupport": [
+        "neutral",
+        "happy",
+        "sad",
+        "fearful",
+        "excited"
+      ],
+      "pace": 1.08
+    },
+    "female_elder": {
+      "gender": "female",
+      "age": "elder",
+      "emotionSupport": [
+        "neutral",
+        "sad",
+        "gentle",
+        "dramatic",
+        "happy"
+      ],
+      "pace": 0.92
+    },
+    "male_elder": {
+      "gender": "male",
+      "age": "elder",
+      "emotionSupport": [
+        "neutral",
+        "sad",
+        "gentle",
+        "dramatic",
+        "happy"
+      ],
+      "pace": 0.92
+    }
+  },
+  "characterRule": "Each character receives an explicit voiceProfile and stable voiceKey; character voices must remain distinct within a reading session.",
+  "emotionRule": "Emotion is derived from approved text/creator direction and is passed to the TTS runtime; runtime must not claim neural emotion control unless the selected model actually supports it.",
+  "fallbackRule": "If a neural voice is unavailable, use governed internal TTS fallback and disclose non-neural mode; never claim missing voice/model coverage.",
+  "languageRule": "All 23 languages use the same governed routing contract; actual speech availability is runtime/model/provider dependent."
+}

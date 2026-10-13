@@ -1,0 +1,33 @@
+{
+  "version": "30.0.0-rules-hardening-2",
+  "rule": "validly granted author/work/part/asset/comic-page/comic-panel rights cannot be arbitrarily revoked",
+  "revocation_requires": [
+    "defined_reason",
+    "scope",
+    "evidence_or_reference",
+    "effective_date",
+    "authorized_actor",
+    "audit_log",
+    "notification",
+    "appeal"
+  ],
+  "higher_approval_for_sensitive_revocation": true,
+  "growth_level_does_not_change_rights": true,
+  "masterAdminUltimateGrantRevokeAuthority": true,
+  "adminRightsRule": "Only explicitly delegated rights granted by Master Admin are executable by an Admin; absence of a grant means deny.",
+  "captureProtection": {
+    "android": "OS-level secure-window capture blocking where supported",
+    "ios": "OS-level capture protection where supported by native implementation",
+    "web": "best-effort content protection; no false guarantee of absolute screenshot prevention",
+    "nativeImplementationRequirement": "Android FLAG_SECURE / equivalent and iOS capture-protection APIs where supported; device capability must be surfaced, never falsely reported as universal."
+  },
+  "unauthorizedClickAudit": "Every unauthorized Admin dashboard/action click returns not_authorized and creates an auditable event.",
+  "rightsRequestWorkflow": [
+    "designated_admin_submits_ticket",
+    "master_admin_reviews",
+    "master_admin_approves_or_rejects",
+    "approved_rights_are_granted",
+    "rejected_rights_are_not_granted",
+    "all_decisions_audited"
+  ]
+}

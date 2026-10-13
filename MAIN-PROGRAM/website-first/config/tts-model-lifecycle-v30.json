@@ -1,0 +1,43 @@
+{
+  "version": "KV30-TTS-MODEL-LIFECYCLE-v2",
+  "enabled": true,
+  "internalFirst": true,
+  "consentRequired": true,
+  "rightsConfirmationRequired": true,
+  "privacyFilteredDatasetRequired": true,
+  "minimumUtterances": 100,
+  "minimumAudioSeconds": 1800,
+  "evaluation": {
+    "minimumUtterances": 100,
+    "minimumAudioSeconds": 1800,
+    "minimumMosLikeScore": 3.5,
+    "requiredChecks": [
+      "model_load",
+      "language_coverage",
+      "audio_quality",
+      "pronunciation",
+      "safety",
+      "license",
+      "privacy"
+    ]
+  },
+  "trainer": {
+    "command": "piper_train",
+    "args": [],
+    "note": "Use a deployment-pinned local trainer with a verified argument contract. External model acquisition and training-data transfer are separately controlled by Master Admin policy and external service gates."
+  },
+  "promotion": {
+    "evaluationRequired": true,
+    "masterAdminApprovalRequired": true,
+    "versionedRelease": true,
+    "rollback": true,
+    "automaticProductionPromotion": false
+  },
+  "accessControl": {
+    "config": "tts-training-access-control-v30.json",
+    "authority": "master_admin_only",
+    "externalModelDownload": "master_admin_controlled_default_off",
+    "trainingDataUpload": "master_admin_controlled_default_off",
+    "localTrainingNetworkRequired": false
+  }
+}

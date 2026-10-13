@@ -1,0 +1,174 @@
+{
+  "version": "30.0.0-v30-P2-30O",
+  "policy": "master-admin-controlled-feature-gates",
+  "features": {
+    "reader_customization": {
+      "enabled": true,
+      "dependency": null
+    },
+    "multilingual_ui": {
+      "enabled": true,
+      "dependency": null
+    },
+    "search": {
+      "enabled": true,
+      "dependency": null
+    },
+    "reader_library": {
+      "enabled": true,
+      "dependency": null
+    },
+    "author_publishing": {
+      "enabled": true,
+      "dependency": null
+    },
+    "follow_and_subscription": {
+      "enabled": true,
+      "dependency": null
+    },
+    "notifications": {
+      "enabled": true,
+      "dependency": "push_or_email_provider",
+      "internalEnabled": true,
+      "externalOptional": true
+    },
+    "email_notifications": {
+      "enabled": false,
+      "dependency": "email_provider"
+    },
+    "push_notifications": {
+      "enabled": false,
+      "dependency": "push_provider"
+    },
+    "payments": {
+      "enabled": true,
+      "dependency": "payment_provider",
+      "internalEnabled": true,
+      "externalOptional": true
+    },
+    "coins": {
+      "enabled": true,
+      "dependency": null
+    },
+    "premium_subscription": {
+      "enabled": true,
+      "dependency": "payment_provider",
+      "internalEnabled": true,
+      "externalOptional": true
+    },
+    "royalty_payouts": {
+      "enabled": false,
+      "dependency": "banking_payment_provider"
+    },
+    "audio": {
+      "enabled": true,
+      "dependency": null
+    },
+    "comic_webtoon": {
+      "enabled": true,
+      "dependency": null
+    },
+    "offline_web": {
+      "enabled": false,
+      "dependency": "browser_capability"
+    },
+    "external_ai": {
+      "enabled": true,
+      "dependency": "approved_ai_provider",
+      "externalOptional": true
+    },
+    "ads": {
+      "enabled": true,
+      "dependency": null
+    },
+    "recommendations": {
+      "enabled": true,
+      "dependency": null
+    },
+    "analytics": {
+      "enabled": true,
+      "dependency": null
+    },
+    "pdf_excel_reports": {
+      "enabled": true,
+      "dependency": null
+    },
+    "backup_recovery": {
+      "enabled": true,
+      "dependency": "production_storage",
+      "internalEnabled": true,
+      "externalOptional": true
+    },
+    "virus_spam_protection": {
+      "enabled": true,
+      "dependency": null
+    },
+    "reels": {
+      "enabled": true,
+      "dependency": null
+    },
+    "internal_ai_integrity": {
+      "enabled": true,
+      "dependency": null,
+      "kernelEnabled": true,
+      "continuousApprovedKnowledgeRefresh": true
+    },
+    "moderation": {
+      "enabled": true,
+      "dependency": null
+    },
+    "competitions": {
+      "enabled": true,
+      "dependency": null
+    },
+    "advanced_search": {
+      "enabled": true,
+      "dependency": null
+    },
+    "work_type_taxonomy": {
+      "enabled": true,
+      "dependency": null
+    },
+    "format_first_navigation": {
+      "enabled": true,
+      "dependency": null
+    },
+    "profile_menu": {
+      "enabled": true,
+      "dependency": null
+    },
+    "phone_settings": {
+      "enabled": true,
+      "dependency": null
+    },
+    "identity_login_management": {
+      "enabled": true,
+      "masterAdminOnlyForMultiple": true
+    },
+    "complimentary_staff_entitlements": {
+      "enabled": true,
+      "profitExcluded": true
+    },
+    "internal_ad_fallback": {
+      "enabled": true,
+      "externalOptional": true
+    },
+    "training_ai": {
+      "enabled": true,
+      "externalLearningOptional": true
+    },
+    "internal_ai_communication": {
+      "enabled": true,
+      "allowlistOnly": true
+    },
+    "duplicate_feature_guard": {
+      "enabled": true
+    },
+    "all_domain_master_intelligence_ai": {
+      "enabled": true,
+      "mode": "internal",
+      "policyBound": true,
+      "humanApprovalForCritical": true
+    }
+  }
+}

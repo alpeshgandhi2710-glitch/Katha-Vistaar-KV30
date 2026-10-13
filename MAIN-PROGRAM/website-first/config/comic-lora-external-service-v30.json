@@ -1,0 +1,113 @@
+{
+  "version": "KV30-COMIC-LORA-EXTERNAL-SERVICE-1",
+  "serviceId": "comic_lora",
+  "provider": "comfyui",
+  "providerMode": "master_admin_defined",
+  "endpointEnv": "KV_COMIC_LORA_ENDPOINT",
+  "credentialEnv": "KV_COMIC_LORA_API_KEY",
+  "healthPath": "/system_stats",
+  "promptPath": "/prompt",
+  "historyPath": "/history/{promptId}",
+  "viewPath": "/view",
+  "primaryGate": "service_gate_comic_lora",
+  "inboundGate": "gate_comic_lora_inbound",
+  "rightsGate": "gate_comic_lora_rights",
+  "outboundGate": "gate_comic_lora_outbound",
+  "internalFallback": "internal_character_comic_continuity",
+  "externalDefaultEnabled": false,
+  "masterAdminOnly": true,
+  "failClosed": true,
+  "polling": {
+    "intervalMs": 750,
+    "timeoutMs": 120000
+  },
+  "workflowContract": {
+    "requiredLoRA": true,
+    "acceptedLoRANodes": [
+      "LoraLoader",
+      "LoraLoaderModelOnly",
+      "LoraLoaderStacked"
+    ],
+    "workflowMustBeObject": true,
+    "maxWorkflowBytes": 524288,
+    "maxPromptChars": 12000,
+    "maxCharacterIdChars": 160,
+    "maxLoRANameChars": 240
+  },
+  "rightsContract": {
+    "required": true,
+    "fields": [
+      "rightsApproved",
+      "referenceAssetApproved",
+      "externalDataApproved"
+    ],
+    "trainingDataMustBeApproved": true
+  },
+  "outputContract": {
+    "acceptedOutputTypes": [
+      "image",
+      "video",
+      "latent",
+      "text"
+    ],
+    "maxHistoryBytes": 1048576,
+    "noExternalAuthoritativeMemory": true
+  },
+  "assetBoundary": "Production LoRA weights are external-provider-owned or Master-Admin-supplied; no unverified weights are bundled into KV30.",
+  "serviceSpec": {
+    "label": "Comic LoRA Character-Lock External Service",
+    "requiredFor": [
+      "comic_lora_character_lock_generation"
+    ],
+    "providerEnv": [
+      "KV_COMIC_LORA_PROVIDER",
+      "KV_COMIC_LORA_API_KEY"
+    ],
+    "fallback": "internal_character_comic_continuity",
+    "defaultEnabled": false,
+    "requiresLicenseGate": true,
+    "requiresDataPolicyGate": true,
+    "internalLayer": "always_on",
+    "externalLayer": "master_admin_controlled",
+    "endpointEnv": "KV_COMIC_LORA_ENDPOINT",
+    "healthEnv": "KV_COMIC_LORA_HEALTH_URL",
+    "healthPath": "/system_stats",
+    "providerSelection": "master_admin_defined",
+    "providerTypeSelection": "master_admin_defined",
+    "taskRouting": "master_admin_defined",
+    "budgetAndQuota": "master_admin_defined",
+    "emergencyDisable": "master_admin_only",
+    "externalEnabled": false,
+    "firewallRequired": true,
+    "externalGate": "service_gate_comic_lora"
+  },
+  "twoSwitchMatrixEntry": {
+    "serviceId": "comic_lora",
+    "serviceSwitch": "service_gate_comic_lora",
+    "internalFallback": "internal_character_comic_continuity",
+    "masterAdminControlled": true,
+    "internalAlwaysOn": true,
+    "externalDefaultEnabled": false,
+    "firewallRequired": true,
+    "primary": {
+      "gate": "service_gate_comic_lora",
+      "providerEnv": [
+        "KV_COMIC_LORA_PROVIDER",
+        "KV_COMIC_LORA_API_KEY"
+      ]
+    },
+    "secondarySlots": [],
+    "failureOrder": [
+      "primary",
+      "internal_fallback"
+    ],
+    "paidProviderRequiresExplicitApproval": true
+  },
+  "adapterConfigRef": "website-first/config/comic-lora-adapter-settings-v30.json",
+  "persistenceContract": {
+    "adapterSettingsPersisted": true,
+    "runtimeSwitchStatePersisted": true,
+    "credentialsPersisted": false,
+    "secretStorage": "environment_only"
+  }
+}

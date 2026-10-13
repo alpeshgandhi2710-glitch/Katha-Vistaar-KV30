@@ -1,0 +1,153 @@
+{
+  "version": "KV30-P2-30W-ai-language-support-v30",
+  "requiredCount": 23,
+  "languages": [
+    {
+      "code": "en",
+      "name": "English",
+      "iso639": "eng"
+    },
+    {
+      "code": "as",
+      "name": "Assamese",
+      "nativeName": "অসমীয়া",
+      "iso639": "asm"
+    },
+    {
+      "code": "bn",
+      "name": "Bengali",
+      "nativeName": "বাংলা",
+      "iso639": "ben"
+    },
+    {
+      "code": "brx",
+      "name": "Bodo",
+      "nativeName": "बड़ो",
+      "iso639": "brx"
+    },
+    {
+      "code": "doi",
+      "name": "Dogri",
+      "nativeName": "डोगरी",
+      "iso639": "doi"
+    },
+    {
+      "code": "gu",
+      "name": "Gujarati",
+      "nativeName": "ગુજરાતી",
+      "iso639": "guj"
+    },
+    {
+      "code": "hi",
+      "name": "Hindi",
+      "nativeName": "हिन्दी",
+      "iso639": "hin"
+    },
+    {
+      "code": "kn",
+      "name": "Kannada",
+      "nativeName": "ಕನ್ನಡ",
+      "iso639": "kan"
+    },
+    {
+      "code": "ks",
+      "name": "Kashmiri",
+      "nativeName": "कॉशुर / کٲشُر",
+      "iso639": "kas"
+    },
+    {
+      "code": "kok",
+      "name": "Konkani",
+      "nativeName": "कोंकणी",
+      "iso639": "kok"
+    },
+    {
+      "code": "mai",
+      "name": "Maithili",
+      "nativeName": "मैथिली",
+      "iso639": "mai"
+    },
+    {
+      "code": "ml",
+      "name": "Malayalam",
+      "nativeName": "മലയാളം",
+      "iso639": "mal"
+    },
+    {
+      "code": "mni",
+      "name": "Manipuri (Meitei)",
+      "nativeName": "মৈতৈলোন্ / ꯃꯤꯇꯩ ꯂꯣꯟ",
+      "iso639": "mni"
+    },
+    {
+      "code": "mr",
+      "name": "Marathi",
+      "nativeName": "मराठी",
+      "iso639": "mar"
+    },
+    {
+      "code": "ne",
+      "name": "Nepali",
+      "nativeName": "नेपाली",
+      "iso639": "nep"
+    },
+    {
+      "code": "or",
+      "name": "Odia",
+      "nativeName": "ଓଡ଼ିଆ",
+      "iso639": "ori"
+    },
+    {
+      "code": "pa",
+      "name": "Punjabi",
+      "nativeName": "ਪੰਜਾਬੀ",
+      "iso639": "pan"
+    },
+    {
+      "code": "sa",
+      "name": "Sanskrit",
+      "nativeName": "संस्कृतम्",
+      "iso639": "san"
+    },
+    {
+      "code": "sat",
+      "name": "Santali",
+      "nativeName": "ᱥᱟᱱᱛᱟᱲᱤ",
+      "iso639": "sat"
+    },
+    {
+      "code": "sd",
+      "name": "Sindhi",
+      "nativeName": "सिन्धी / سنڌي",
+      "iso639": "snd"
+    },
+    {
+      "code": "ta",
+      "name": "Tamil",
+      "nativeName": "தமிழ்",
+      "iso639": "tam"
+    },
+    {
+      "code": "te",
+      "name": "Telugu",
+      "nativeName": "తెలుగు",
+      "iso639": "tel"
+    },
+    {
+      "code": "ur",
+      "name": "Urdu",
+      "nativeName": "اردو",
+      "iso639": "urd"
+    }
+  ],
+  "policy": {
+    "everyAI": true,
+    "explicitLanguageWins": true,
+    "autoDetection": "best_effort",
+    "fallback": "en",
+    "futureLanguages": true,
+    "nativeGenerationDependsOnInternalModel": true,
+    "noExternalAIRequired": true
+  },
+  "release": "KV30-P2-30W"
+}

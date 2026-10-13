@@ -1,0 +1,72 @@
+{
+  "contract": "KV30-SINGLE-ACCOUNT-SOURCE-OF-TRUTH-v1",
+  "release": "R50-M61",
+  "authority": "server",
+  "clients": [
+    "web",
+    "desktop-electron",
+    "android",
+    "ios"
+  ],
+  "authoritativeDomains": [
+    "account_profile",
+    "identity_permissions",
+    "social",
+    "monetization",
+    "story_creator",
+    "reader"
+  ],
+  "localOnlyAllowed": [
+    "theme",
+    "temporary_ui_state",
+    "unsent_keystrokes",
+    "cache",
+    "offline_queue",
+    "device_preferences"
+  ],
+  "rules": [
+    "authorized mutations persist centrally",
+    "canonical state is user-scoped and server-authoritative",
+    "offline cache is never authoritative",
+    "persisted draft/autosave/revision state is shared across clients",
+    "draft/published state is server-authoritative",
+    "coins/subscriptions/entitlements/ledgers are server-authoritative",
+    "likes/comments/follows/bookmarks are server-authoritative",
+    "stale client mutations are rejected deterministically with stale_canonical_state",
+    "client refreshes canonical state before retrying a stale mutation",
+    "server-owned profile/preferences/permissions are included in canonical state",
+    "all client SDK mutation requests carry the current canonical state hash and client identity",
+    "mobile Story Studio autosave persists remotely after the debounce interval when authenticated",
+    "cross-platform acceptance must exercise mutation from each client and read-back from all other clients",
+    "state-sync authenticated mutations without a canonical state hash are rejected before mutation",
+    "all first-party client SDK mutation paths refresh canonical state and retry once on stale_canonical_state",
+    "local client persistence cannot be used as an authoritative account, social, monetization, story, or reader source"
+  ],
+  "mutationReadMatrix": [
+    [
+      "android",
+      "web",
+      "desktop-electron",
+      "ios"
+    ],
+    [
+      "ios",
+      "android",
+      "web",
+      "desktop-electron"
+    ],
+    [
+      "web",
+      "android",
+      "ios",
+      "desktop-electron"
+    ],
+    [
+      "desktop-electron",
+      "android",
+      "ios",
+      "web"
+    ]
+  ],
+  "contractVersion": "1.2"
+}

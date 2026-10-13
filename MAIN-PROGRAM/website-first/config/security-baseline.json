@@ -1,0 +1,12 @@
+{
+  "version": "30.0.0",
+  "mfa": true,
+  "server_side_authorization": true,
+  "audit_logging": true,
+  "secret_management": true,
+  "step_up_auth": true,
+  "session_management": true,
+  "rate_limiting": true,
+  "security_headers": true,
+  "no_hardcoded_production_credentials": true
+}

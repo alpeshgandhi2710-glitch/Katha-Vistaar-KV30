@@ -1,0 +1,13 @@
+{
+  "version": "30.0.0",
+  "principles": [
+    "author_control",
+    "no_silent_edit",
+    "no_auto_publish",
+    "no_destructive_original_edit",
+    "human_review_uncertain_moderation",
+    "disclosure_metadata",
+    "consent_for_training"
+  ],
+  "recommendation_ai_cannot_edit_content": true
+}

@@ -1,0 +1,52 @@
+{
+  "version": "REF-9.2.57.18-R50-M28",
+  "rule": "Development and Production use the same governed source contract; environment-specific secrets and activation state remain separate.",
+  "requiredSourcePaths": [
+    "website-first/src",
+    "website-first/public",
+    "website-first/config",
+    "backend/src",
+    "backend/test",
+    "mobile/lib",
+    "mobile/android",
+    "mobile/ios",
+    "mobile/assets/locales",
+    "shared",
+    "scripts"
+  ],
+  "requiredGovernanceFiles": [
+    "config/governed-gate-inventory-v30.json",
+    "config/ai-operational-inventory-v30.json",
+    "config/external-gate-configuration-profile-v30.json",
+    "config/ai-ecosystem-wiring-v30.json"
+  ],
+  "development": {
+    "sourceContract": "same",
+    "secrets": "separate",
+    "externalActivation": "separate"
+  },
+  "production": {
+    "sourceContract": "same",
+    "secrets": "separate",
+    "externalActivation": "separate"
+  },
+  "evidenceBoundary": "Source-package presence is verified here; live production deployment health/credentials require deployment-specific evidence.",
+  "uiLanguageContract": "config/final-ui-language-governance-v30.json",
+  "uiLanguageContractParity": "same in development and production",
+  "mobileLocaleBundles": "mobile/assets/locales",
+  "persistenceIsolation": {
+    "rule": "Development and Production default durable persistence paths are environment-scoped and must not share the same database file.",
+    "developmentDefault": "website-first/data/development/katha-vistaar.sqlite",
+    "productionDefault": "website-first/data/production/katha-vistaar.sqlite",
+    "override": "KV_DATABASE_PATH may override the default only when deployment configuration explicitly provisions the environment-specific path."
+  },
+  "desktopPwa": {
+    "sourceContract": "same",
+    "manifest": "website-first/public/manifest.webmanifest",
+    "serviceWorker": "website-first/public/sw.js",
+    "installableDisplay": "standalone",
+    "development": "same governed source contract",
+    "production": "same governed source contract"
+  },
+  "platformSourceContract": "Website + Desktop/PWA + Android + iOS use the same governed backend/source-of-truth contract."
+}

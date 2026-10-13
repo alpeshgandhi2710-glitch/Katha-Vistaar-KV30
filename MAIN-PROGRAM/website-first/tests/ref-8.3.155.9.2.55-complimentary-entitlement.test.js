@@ -1,0 +1,14 @@
+'use strict';
+const assert=require('node:assert/strict');
+const engine=require('../core/entitlement-engine');
+const future=new Date(Date.now()+86400000).toISOString();
+const now=new Date().toISOString();
+const membership={version:'test-fixture',status:'approved_test_only',bundles:[{bundleId:'bundle-1',active:true,contentIds:['c2']}]};
+const contentGrant={entitlementId:'ce-content-1',userId:'u1',type:'complimentary_content',contentIds:['c1'],source:'admin_grant',grantedBy:'master-admin-test',grantedAt:now,expiry:future,isRevocable:true,price:0,royalty:0};
+const bundleGrant={entitlementId:'ce-bundle-1',userId:'u1',type:'complimentary_bundle',bundleId:'bundle-1',source:'admin_grant',grantedBy:'master-admin-test',grantedAt:now,expiry:future,isRevocable:true,price:0,royalty:0};
+const invalidBundle={...bundleGrant,entitlementId:'ce-bundle-invalid',bundleId:'invalid-bundle'};
+const user={id:'u1',subscriptions:{},subscriptionRecords:{},complimentaryEntitlements:[contentGrant,bundleGrant,invalidBundle]};
+assert.equal(engine.hasComplimentaryEntitlement(user,{id:'c1'},Date.now(),membership),true,'complimentary content grant must grant');
+assert.equal(engine.hasComplimentaryEntitlement(user,{id:'c2'},Date.now(),membership),true,'valid complimentary bundleId must grant');
+assert.equal(engine.hasComplimentaryEntitlement({...user,complimentaryEntitlements:[invalidBundle]},{id:'c2'},Date.now(),membership),false,'invalid complimentary bundleId must deny');
+console.log('PASS complimentary entitlement 3/3');

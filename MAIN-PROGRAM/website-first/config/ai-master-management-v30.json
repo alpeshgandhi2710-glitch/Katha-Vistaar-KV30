@@ -1,0 +1,72 @@
+{
+  "version": "KV30-P2-30W-ai-management-v3",
+  "purpose": "Canonical management contract for every active Katha Vistaar AI.",
+  "managedBy": "AI Management",
+  "principle": "Every active AI is registered, policy-bound, permission-scoped, auditable and subordinate to Human Master Admin.",
+  "tiers": {
+    "L1": "Lead / Coordinator / Master-advisory AI",
+    "L2": "Specialist AI",
+    "L3": "Helper / Utility AI when introduced; must also be registered and managed"
+  },
+  "externalAI": {
+    "defaultPerAI": "disabled",
+    "enableOnlyByMasterPolicy": true,
+    "minimumData": true,
+    "restrictedDataDefault": "DO_NOT_SEND",
+    "outputValidationRequired": true,
+    "providerReplaceable": true
+  },
+  "authority": {
+    "humanMasterAdminHighest": true,
+    "aiCannotSelfElevate": true,
+    "aiCannotChangeOwnPermissions": true,
+    "aiCannotChangeAnotherAIPolicyWithoutApproval": true,
+    "criticalHumanApproval": true
+  },
+  "communication": {
+    "allowlistRequired": true,
+    "assignedScopeRequired": true,
+    "auditRequired": true,
+    "sharedContext": "minimum necessary, permission-scoped"
+  },
+  "learning": {
+    "productionAutoRetrain": false,
+    "candidateValidationRequired": true,
+    "rightsLicenseValidationRequired": true,
+    "stagingRequired": true,
+    "rollbackRequired": true
+  },
+  "coreBackbone": [
+    "internal_model_inference",
+    "model_tool_router",
+    "project_user_character_memory",
+    "knowledge_rag",
+    "evaluation_benchmark_versioning",
+    "learning_staging_rollback",
+    "external_ai_gateway_data_firewall"
+  ],
+  "internalCapability": {
+    "maturityModel": [
+      "governed_internal_brain",
+      "capable_internal_brain",
+      "controlled_self_improvement",
+      "internal_media_brain"
+    ],
+    "completionRequiresExecutableHandler": true,
+    "completionRequiresConstitution": true,
+    "completionRequiresBenchmark": true,
+    "externalProviderRequiredForCore": false,
+    "independenceTestRequired": true,
+    "memoryPersistenceRequired": true,
+    "capabilityContractFile": "website-first/config/ai-capability-contract-v30.json",
+    "multilingualMatrixRequired": true
+  },
+  "multilingualAI": {
+    "version": "KV30-P2-30W-language-v1",
+    "requiredLanguageCount": 23,
+    "everyManagedAI": true,
+    "futureLanguagesAllowed": true,
+    "externalProviderRequired": false,
+    "contractFile": "website-first/config/ai-language-support-v30.json"
+  }
+}
