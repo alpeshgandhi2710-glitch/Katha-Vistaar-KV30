@@ -115,15 +115,13 @@ jobs:
               echo "Creating dummy launch evidence (emulator screenshot not captured)"
               echo "dummy" > .native-build-artifacts/android/emulator-launch.png
             fi
-            printf '{"status":"PASS","kind":"android_emulator_launch_smoke","assetAcceptance":"PASS-ASSET","physicalDeviceExecution":"NOT_CLAIMED"}
-' > .native-build-artifacts/android/device-smoke.json
+            printf '%s\n' '{"status":"PASS","kind":"android_emulator_launch_smoke","assetAcceptance":"PASS-ASSET","physicalDeviceExecution":"NOT_CLAIMED"}' > .native-build-artifacts/android/device-smoke.json
             cat .native-build-artifacts/android/device-smoke.json
       - uses: actions/upload-artifact@v4
         with:
           name: kv30-android-native-build-verification-only
           if-no-files-found: error
           path: .native-build-artifacts/android/
-
   ios:
     runs-on: macos-latest
     timeout-minutes: 60
