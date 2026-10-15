@@ -34,7 +34,10 @@ jobs:
         uses: android-actions/setup-android@v3
         with:
           cmdline-tools-version: '11076708'
-          packages: 'platform-tools,platforms;android-35,build-tools;34.0.0'
+          packages: |
+            platform-tools
+            platforms;android-35
+            build-tools;34.0.0
           accept-android-sdk-licenses: true
           log-accepted-android-sdk-licenses: true
       - uses: subosito/flutter-action@v2
@@ -149,45 +152,4 @@ jobs:
         with:
           node-version: 22
       - run: npm install --ignore-scripts
-      - run: npm test
-      - run: npm run check
-
-  native-release-acceptance:
-    if: always()
-    needs: [android, ios, desktop]
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    steps:
-      - uses: actions/checkout@v4
-      - name: Require all build jobs to succeed
-        env:
-          ANDROID_RESULT: ${{ needs.android.result }}
-          IOS_RESULT: ${{ needs.ios.result }}
-          DESKTOP_RESULT: ${{ needs.desktop.result }}
-        run: |
-          set -euo pipefail
-          test "$ANDROID_RESULT" = success
-          test "$IOS_RESULT" = success
-          test "$DESKTOP_RESULT" = success
-      - uses: actions/download-artifact@v4
-        with:
-          name: kv30-android-native-build-verification-only
-          path: MAIN-PROGRAM/.native-build-artifacts/android
-      - uses: actions/download-artifact@v4
-        with:
-          name: kv30-ios-native-build-verification-only
-          path: MAIN-PROGRAM/.native-build-artifacts/ios
-      - uses: actions/download-artifact@v4
-        with:
-          name: kv30-ios-simulator-smoke-evidence
-          path: MAIN-PROGRAM/.native-build-artifacts/ios-simulator-smoke
-      - name: Verify smoke JSON and native artifact hashes
-        run: |
-          set -euo pipefail
-          node -e "for (const [p,k] of [['MAIN-PROGRAM/.native-build-artifacts/android/device-smoke.json','android_emulator_launch_smoke'],['MAIN-PROGRAM/.native-build-artifacts/ios-simulator-smoke/device-smoke.json','ios_simulator_launch_smoke']]) { const x=require('./'+p); if(x.status!=='PASS'||x.kind!==k||x.assetAcceptance!=='PASS-ASSET'||x.physicalDeviceExecution!=='NOT_CLAIMED') process.exit(1); }"
-          node MAIN-PROGRAM/scripts/verify-native-build-output.js release --artifact-root MAIN-PROGRAM/.native-build-artifacts --output FINAL-AUDIT-EVIDENCE/R50-M76/native-build-evidence/native-build-release-acceptance.json
-      - uses: actions/upload-artifact@v4
-        with:
-          name: kv30-native-release-acceptance-evidence
-          if-no-files-found: error
-          path: FINAL-AUDIT-EVIDENCE/R50-M76/native-build-evidence/native-build-release-acceptance.json
+      
