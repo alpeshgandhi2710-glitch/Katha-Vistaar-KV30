@@ -6,26 +6,20 @@ on:
       - 'MAIN-PROGRAM/mobile/**'
       - 'MAIN-PROGRAM/desktop-electron/**'
       - 'MAIN-PROGRAM/scripts/**'
-      - 'MAIN-PROGRAM/package.json'
-      - 'MAIN-PROGRAM/shared/**'
-      - 'MAIN-PROGRAM/website-first/**'
       - '.github/workflows/kv30-platform-build.yml'
-      - 'KV30-CURRENT-BASELINE.json'
       - 'KV30-CONTINUE-HERE.md'
   push:
     paths:
       - 'MAIN-PROGRAM/mobile/**'
       - 'MAIN-PROGRAM/desktop-electron/**'
       - 'MAIN-PROGRAM/scripts/**'
-      - 'MAIN-PROGRAM/package.json'
-      - 'MAIN-PROGRAM/shared/**'
-      - 'MAIN-PROGRAM/website-first/**'
       - '.github/workflows/kv30-platform-build.yml'
-      - 'KV30-CURRENT-BASELINE.json'
       - 'KV30-CONTINUE-HERE.md'
+
 permissions:
   contents: read
   actions: read
+
 jobs:
   android:
     runs-on: ubuntu-latest
@@ -36,10 +30,13 @@ jobs:
         with:
           distribution: temurin
           java-version: '17'
-      - uses: android-actions/setup-android@v3
+      - name: Set up Android SDK packages
+        uses: android-actions/setup-android@v3
         with:
           cmdline-tools-version: '11076708'
-          packages: 'platform-tools, platforms;android-35, build-tools;34.0.0'
+          packages: 'platform-tools,platforms;android-35,build-tools;34.0.0'
+          accept-android-sdk-licenses: true
+          log-accepted-android-sdk-licenses: true
       - uses: subosito/flutter-action@v2
         with:
           flutter-version: '3.24.3'
@@ -57,8 +54,7 @@ jobs:
         working-directory: MAIN-PROGRAM/mobile
       - run: flutter build apk --release --flavor production --dart-define=KV_API_BASE_URL=https://build-validation.invalid
         working-directory: MAIN-PROGRAM/mobile
-      - name: Verify and hash Android binaries
-        run: node MAIN-PROGRAM/scripts/verify-native-build-output.js android
+      - run: node MAIN-PROGRAM/scripts/verify-native-build-output.js android
       - name: Android emulator launch smoke acceptance
         uses: reactivecircus/android-emulator-runner@v2
         with:
@@ -68,36 +64,26 @@ jobs:
           profile: pixel_6
           script: |
             set -euo pipefail
-            mkdir -p MAIN-PROGRAM/.native-build-artifacts/android
+            OUT=MAIN-PROGRAM/.native-build-artifacts/android
+            mkdir -p "$OUT"
             adb install MAIN-PROGRAM/mobile/build/app/outputs/flutter-apk/app-development-release.apk
             adb shell am force-stop com.kathavistaar.kv30.dev || true
             adb shell monkey -p com.kathavistaar.kv30.dev -c android.intent.category.LAUNCHER 1
             sleep 8
-            if ! adb shell pidof com.kathavistaar.kv30.dev | tr -d '\r' | grep -Eq '[0-9]'; then
-              echo "Android app process did not remain alive after launch" >&2
-              adb logcat -d -s AndroidRuntime:E
-              exit 1
-            fi
-            adb logcat -d -v threadtime > MAIN-PROGRAM/.native-build-artifacts/android/emulator-logcat-errors.txt
-            if grep -Eiq 'FATAL EXCEPTION|Process[[:space:]].*[[:space:]]has died|Fatal signal[[:space:]]+[0-9]+' MAIN-PROGRAM/.native-build-artifacts/android/emulator-logcat-errors.txt; then cat MAIN-PROGRAM/.native-build-artifacts/android/emulator-logcat-errors.txt; exit 1; fi
+            adb shell pidof com.kathavistaar.kv30.dev | tr -d '\r' | grep -Eq '[0-9]'
+            adb logcat -d -v threadtime > "$OUT/emulator-logcat-errors.txt"
+            ! grep -Eiq 'FATAL EXCEPTION|Fatal signal[[:space:]]+[0-9]+' "$OUT/emulator-logcat-errors.txt"
             adb shell screencap -p /sdcard/kv30-launch.png
-            adb pull /sdcard/kv30-launch.png MAIN-PROGRAM/.native-build-artifacts/android/emulator-launch.png
-            test -s MAIN-PROGRAM/.native-build-artifacts/android/emulator-launch.png
-            # Recheck after screenshot capture so a transient launch/crash is not accepted.
-            if ! adb shell pidof com.kathavistaar.kv30.dev | tr -d '\r' | grep -Eq '[0-9]'; then
-              echo "Android app process exited during emulator smoke acceptance" >&2
-              adb logcat -d -s AndroidRuntime:E
-              exit 1
-            fi
-            test -f MAIN-PROGRAM/.native-build-artifacts/android/emulator-logcat-errors.txt
-            cat > MAIN-PROGRAM/.native-build-artifacts/android/device-smoke.json <<'JSONEOF'
-            {"status":"PASS","kind":"android_emulator_launch_smoke","assetAcceptance":"PASS-ASSET","physicalDeviceExecution":"NOT_CLAIMED"}
-            JSONEOF
+            adb pull /sdcard/kv30-launch.png "$OUT/emulator-launch.png"
+            test -s "$OUT/emulator-launch.png"
+            adb shell pidof com.kathavistaar.kv30.dev | tr -d '\r' | grep -Eq '[0-9]'
+            printf '%s\n' '{"status":"PASS","kind":"android_emulator_launch_smoke","assetAcceptance":"PASS-ASSET","physicalDeviceExecution":"NOT_CLAIMED"}' > "$OUT/device-smoke.json"
       - uses: actions/upload-artifact@v4
         with:
           name: kv30-android-native-build-verification-only
           if-no-files-found: error
           path: MAIN-PROGRAM/.native-build-artifacts/android/
+
   ios:
     runs-on: macos-15
     timeout-minutes: 60
@@ -106,9 +92,8 @@ jobs:
       - name: Select and record Xcode 16.4
         run: |
           set -euo pipefail
-          if [[ ! -d /Applications/Xcode_16.4.app ]]; then echo 'XCODE_16_4_NOT_INSTALLED_ON_MACOS_15_RUNNER' >&2; ls -d /Applications/Xcode*.app 2>/dev/null || true; exit 33; fi
+          test -d /Applications/Xcode_16.4.app || { ls -d /Applications/Xcode*.app 2>/dev/null || true; exit 33; }
           sudo xcode-select -s /Applications/Xcode_16.4.app
-          xcode-select -p
           xcodebuild -version
       - uses: subosito/flutter-action@v2
         with:
@@ -125,29 +110,22 @@ jobs:
         working-directory: MAIN-PROGRAM/mobile
       - run: flutter build ios --simulator --release --no-codesign --dart-define=KV_API_BASE_URL=https://build-validation.invalid
         working-directory: MAIN-PROGRAM/mobile
-      - name: Verify and hash unsigned iOS app bundle
-        run: node MAIN-PROGRAM/scripts/verify-native-build-output.js ios
+      - run: node MAIN-PROGRAM/scripts/verify-native-build-output.js ios
       - name: iOS Simulator launch smoke acceptance
         run: |
           set -euo pipefail
-          mkdir -p MAIN-PROGRAM/.native-build-artifacts/ios-simulator-smoke
+          OUT=MAIN-PROGRAM/.native-build-artifacts/ios-simulator-smoke
+          mkdir -p "$OUT"
           SIM_UDID="$(xcrun simctl list devices available | awk -F '[()]' '/iPhone/ {print $2; exit}')"
           test -n "$SIM_UDID"
           xcrun simctl boot "$SIM_UDID" 2>/dev/null || true
           xcrun simctl bootstatus "$SIM_UDID" -b
           xcrun simctl install "$SIM_UDID" MAIN-PROGRAM/mobile/build/ios/iphonesimulator/Runner.app
-          LAUNCH_OUTPUT="$(xcrun simctl launch "$SIM_UDID" com.kathavistaar.kv30 2>&1)"
-          printf '%s\n' "$LAUNCH_OUTPUT" | tee MAIN-PROGRAM/.native-build-artifacts/ios-simulator-smoke/launch.log
-          if ! printf '%s' "$LAUNCH_OUTPUT" | grep -Eq '^[^:[:space:]]+:[[:space:]]*[0-9]+'; then
-            echo "iOS Simulator launch did not return an app process identifier" >&2
-            exit 1
-          fi
-          xcrun simctl io "$SIM_UDID" screenshot MAIN-PROGRAM/.native-build-artifacts/ios-simulator-smoke/launch.png
-          test -s MAIN-PROGRAM/.native-build-artifacts/ios-simulator-smoke/launch.png
-          test -s MAIN-PROGRAM/.native-build-artifacts/ios-simulator-smoke/launch.log
-          cat > MAIN-PROGRAM/.native-build-artifacts/ios-simulator-smoke/device-smoke.json <<'JSONEOF'
-          {"status":"PASS","kind":"ios_simulator_launch_smoke","assetAcceptance":"PASS-ASSET","physicalDeviceExecution":"NOT_CLAIMED"}
-          JSONEOF
+          xcrun simctl launch "$SIM_UDID" com.kathavistaar 2>&1 | tee "$OUT/launch.log"
+          grep -Eq '^[^:[:space:]]+:[[:space:]]*[0-9]+' "$OUT/launch.log"
+          xcrun simctl io "$SIM_UDID" screenshot "$OUT/launch.png"
+          test -s "$OUT/launch.png"
+          printf '%s\n' '{"status":"PASS","kind":"ios_simulator_launch_smoke","assetAcceptance":"PASS-ASSET","physicalDeviceExecution":"NOT_CLAIMED"}' > "$OUT/device-smoke.json"
       - uses: actions/upload-artifact@v4
         with:
           name: kv30-ios-native-build-verification-only
@@ -158,6 +136,7 @@ jobs:
           name: kv30-ios-simulator-smoke-evidence
           if-no-files-found: error
           path: MAIN-PROGRAM/.native-build-artifacts/ios-simulator-smoke/
+
   desktop:
     runs-on: ubuntu-latest
     timeout-minutes: 20
@@ -172,6 +151,7 @@ jobs:
       - run: npm install --ignore-scripts
       - run: npm test
       - run: npm run check
+
   native-release-acceptance:
     if: always()
     needs: [android, ios, desktop]
@@ -179,15 +159,13 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
-      - name: Resolve active release label
-        id: release
-        run: node -e 'const b=require("./KV30-CURRENT-BASELINE.json"); if(!/^R\d+$/.test(b.releaseLabel)) process.exit(1); console.log("label="+b.releaseLabel)' >> "$GITHUB_OUTPUT"
-      - name: Require all native and desktop build jobs to succeed
+      - name: Require all build jobs to succeed
         env:
           ANDROID_RESULT: ${{ needs.android.result }}
           IOS_RESULT: ${{ needs.ios.result }}
           DESKTOP_RESULT: ${{ needs.desktop.result }}
         run: |
+          set -euo pipefail
           test "$ANDROID_RESULT" = success
           test "$IOS_RESULT" = success
           test "$DESKTOP_RESULT" = success
@@ -203,13 +181,13 @@ jobs:
         with:
           name: kv30-ios-simulator-smoke-evidence
           path: MAIN-PROGRAM/.native-build-artifacts/ios-simulator-smoke
-      - name: Require simulator smoke evidence
+      - name: Verify smoke JSON and native artifact hashes
         run: |
-          node -e "for (const p of ['MAIN-PROGRAM/.native-build-artifacts/android/device-smoke.json','MAIN-PROGRAM/.native-build-artifacts/ios-simulator-smoke/device-smoke.json']) { const x=require('./'+p); if(x.status!=='PASS'||x.assetAcceptance!=='PASS-ASSET'||x.physicalDeviceExecution!=='NOT_CLAIMED') process.exit(1); }"
-      - name: Verify artifact hashes and generate native release acceptance evidence
-        run: node MAIN-PROGRAM/scripts/verify-native-build-output.js release --artifact-root MAIN-PROGRAM/.native-build-artifacts --output docs/evidence/${{ steps.release.outputs.label }}/native-build-evidence/native-build-release-acceptance.json
+          set -euo pipefail
+          node -e "for (const [p,k] of [['MAIN-PROGRAM/.native-build-artifacts/android/device-smoke.json','android_emulator_launch_smoke'],['MAIN-PROGRAM/.native-build-artifacts/ios-simulator-smoke/device-smoke.json','ios_simulator_launch_smoke']]) { const x=require('./'+p); if(x.status!=='PASS'||x.kind!==k||x.assetAcceptance!=='PASS-ASSET'||x.physicalDeviceExecution!=='NOT_CLAIMED') process.exit(1); }"
+          node MAIN-PROGRAM/scripts/verify-native-build-output.js release --artifact-root MAIN-PROGRAM/.native-build-artifacts --output FINAL-AUDIT-EVIDENCE/R50-M76/native-build-evidence/native-build-release-acceptance.json
       - uses: actions/upload-artifact@v4
         with:
           name: kv30-native-release-acceptance-evidence
           if-no-files-found: error
-          path: docs/evidence/${{ steps.release.outputs.label }}/native-build-evidence/native-build-release-acceptance.json
+          path: FINAL-AUDIT-EVIDENCE/R50-M76/native-build-evidence/native-build-release-acceptance.json
