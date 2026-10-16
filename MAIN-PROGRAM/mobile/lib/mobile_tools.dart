@@ -3,7 +3,6 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
-
 final ValueNotifier<bool> kvSessionNotifier = ValueNotifier<bool>(false);
 
 class KvMobileSession {
@@ -45,7 +44,6 @@ class KvMobileSession {
 
   static void clear(){token=null;user=null;baseUrl=null;canonicalStateHash=null;kvSessionNotifier.value=false;}
 }
-
 
 class KvAccountApi {
   KvAccountApi({String? baseUrl, String? sessionToken})
@@ -266,8 +264,8 @@ class KvComicApi {
     return KvComicPanel.fromJson(Map<String,dynamic>.from(r['panel'] as Map));
   }
   Future<Map<String,dynamic>> aiPlan(String prompt,String language) => _request('POST','/api/ai/comic-illustrator',body:{'prompt':prompt,'language':language});
+  Future<Map<String,dynamic>> publishProject(String projectId,{required bool rightsConfirmed,required bool mediaRightsConfirmed})=>_request('POST','/api/studio/publish-project/comic/${Uri.encodeComponent(projectId)}',body:{'status':'published','rightsConfirmed':rightsConfirmed,'mediaRightsConfirmed':mediaRightsConfirmed,'idempotencyKey':'mobile-comic-publish-${DateTime.now().microsecondsSinceEpoch}'});
 }
-
 
 class KvAudioSegment {
   KvAudioSegment({this.id, required this.segmentNumber, this.title='', this.script='', this.startMs=0, this.endMs=0, this.audioAssetId, this.effects=const []});
@@ -302,7 +300,6 @@ class KvAudioApi {
   Future<Map<String,dynamic>> enhancementPlan(String assetId,String language) => _request('POST','/api/ai/audio/enhance',body:{'assetId':assetId,'language':language,'targetLufs':-16});
 }
 
-
 class KvReelClip {
   KvReelClip({this.id, required this.assetId, this.start=0, this.duration=0, this.caption='', this.scene='', this.order=1});
   String? id;
@@ -331,4 +328,5 @@ class KvReelApi {
   Future<KvReelClip> saveClip(String projectId,KvReelClip clip) async { final r=await _request('POST','/api/reel/clips',body:{'projectId':projectId,...clip.toJson()}); return KvReelClip.fromJson(Map<String,dynamic>.from(r['clip'] as Map)); }
   Future<Map<String,dynamic>> storyboard(String prompt,String language) => _request('POST','/api/ai/storyboard',body:{'type':'reel','prompt':prompt,'language':language,'scenes':5});
   Future<Map<String,dynamic>> render(List<KvReelClip> clips,{int fps=30,String resolution='720x1280'}) => _request('POST','/api/media/video/render',body:{'clips':clips.map((c)=>c.toJson()).toList(),'fps':fps,'resolution':resolution});
+  Future<Map<String,dynamic>> publishProject(String projectId,{required bool rightsConfirmed,required bool mediaRightsConfirmed})=>_request('POST','/api/studio/publish-project/reel/${Uri.encodeComponent(projectId)}',body:{'status':'published','rightsConfirmed':rightsConfirmed,'mediaRightsConfirmed':mediaRightsConfirmed,'idempotencyKey':'mobile-reel-publish-${DateTime.now().microsecondsSinceEpoch}'});
 }
