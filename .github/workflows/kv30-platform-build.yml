@@ -1,49 +1,26 @@
-KV30 Platform Build Verification
-
 
 name: KV30 Platform Build Verification
 
-
 on:
-
-workflow_dispatch:
-
-pull_request:
-
-paths:
-
-- "MAIN-PROGRAM/mobile/"
-
-- "MAIN-PROGRAM/desktop-electron/"
-
-- "MAIN-PROGRAM/scripts/"
-
-- ".github/workflows/kv30-platform-build.yml"
-
-- "KV30-CONTINUE-HERE.md"
-
-push:
-
-paths:
-
-- "MAIN-PROGRAM/mobile/"
-
-- "MAIN-PROGRAM/desktop-electron/"
-
-- "MAIN-PROGRAM/scripts/"
-
-- ".github/workflows/kv30-platform-build.yml"
-
-- "KV30-CONTINUE-HERE.md"
-
+  workflow_dispatch:
+  pull_request:
+    paths:
+     - "MAIN-PROGRAM/mobile/**"
+      - "MAIN-PROGRAM/desktop-electron/**"
+      - "MAIN-PROGRAM/scripts/**"
+      - ".github/workflows/kv30-platform-build.yml"
+      - "KV30-CONTINUE-HERE.md"
+  push:
+    paths:
+     - "MAIN-PROGRAM/mobile/**"
+      - "MAIN-PROGRAM/desktop-electron/**"
+      - "MAIN-PROGRAM/scripts/**"
+      - ".github/workflows/kv30-platform-build.yml"
+      - "KV30-CONTINUE-HERE.md"
 
 permissions:
-
-contents: read
-
-actions: read
-
-
+  contents: read
+  actions: read
 concurrency:
 
 group: kv30-platform-build-${{ github.ref }}
