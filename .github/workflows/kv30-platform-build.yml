@@ -398,12 +398,49 @@ jobs:
               except Exception:
                   signing_status = "INVALID_EVIDENCE"
 
-          required_files = [
-              root / "android" / "device-smoke.json",
-              root / "ios-simulator-smoke" / "device-smoke.json",
-              root / "ios" / "ios-signing-status.json",
-          ]
+          android_smoke_file = root / "android" / "device-smoke.json"
+          ios_smoke_file = root / "ios-simulator-smoke" / "device-smoke.json"
+          signing_file = root / "ios" / "ios-signing-status.json"
+          required_files = [android_smoke_file, ios_smoke_file, signing_file]
           evidence_files_present = all(path.is_file() for path in required_files)
+
+          evidence_checks = {
+              "androidSmokeValid": False,
+              "iosSimulatorSmokeValid": False,
+              "iosSigningStatusValid": signing_status in {
+                  "CONFIGURED_NOT_EXECUTED", "SIGNING_NOT_CONFIGURED"
+              },
+              "androidScreenshotPresent": (
+                  root / "android" / "emulator-launch.png"
+              ).is_file(),
+              "iosSimulatorScreenshotPresent": (
+                  root / "ios-simulator-smoke" / "launch.png"
+              ).is_file(),
+          }
+
+          def read_json(path):
+              try:
+                  return json.loads(path.read_text(encoding="utf-8"))
+              except (OSError, UnicodeError, json.JSONDecodeError):
+                  return {}
+
+          if android_smoke_file.is_file():
+              evidence = read_json(android_smoke_file)
+              evidence_checks["androidSmokeValid"] = (
+                  evidence.get("status") == "PASS"
+                  and evidence.get("kind") == "android_emulator_launch_smoke"
+                  and evidence.get("physicalDeviceExecution") == "NOT_CLAIMED"
+              )
+
+          if ios_smoke_file.is_file():
+              evidence = read_json(ios_smoke_file)
+              evidence_checks["iosSimulatorSmokeValid"] = (
+                  evidence.get("status") == "PASS"
+                  and evidence.get("kind") == "ios_simulator_launch_smoke"
+                  and evidence.get("physicalDeviceExecution") == "NOT_CLAIMED"
+              )
+
+          evidence_checks_pass = all(evidence_checks.values())
           all_jobs_pass = all(value == "success" for value in jobs.values())
 
           result = {
@@ -413,6 +450,8 @@ jobs:
               ).isoformat(),
               "platformJobs": jobs,
               "requiredEvidenceFilesPresent": evidence_files_present,
+              "evidenceChecks": evidence_checks,
+              "evidenceChecksPassed": evidence_checks_pass,
               "iosSigningStatus": signing_status,
               "binaryBuildVerified": (
                   jobs["android"] == "success" and jobs["ios"] == "success"
@@ -422,7 +461,7 @@ jobs:
               "productionReleaseReady": False,
               "status": (
                   "PASS_BUILD_AND_SIMULATOR_SMOKE_ONLY"
-                  if all_jobs_pass and evidence_files_present
+                  if all_jobs_pass and evidence_files_present and evidence_checks_pass
                   else "BLOCKED_OR_FAILED"
               ),
               "notes": [
@@ -438,9 +477,9 @@ jobs:
           target.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
           print(json.dumps(result, indent=2))
 
-          if not all_jobs_pass or not evidence_files_present:
+          if not all_jobs_pass or not evidence_files_present or not evidence_checks_pass:
               raise SystemExit(
-                  "Platform jobs failed or required evidence is missing; "
+                  "Platform jobs failed or required evidence is missing/invalid; "
                   "release acceptance blocked."
               )
           PY
@@ -450,6 +489,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: kv30-native-release-acceptance-evidence
-          if-no-files-found: warn
+          if-no-files-found: error
           path: MAIN-PROGRAM/.native-build-artifacts/release-acceptance/
           retention-days: 90
